@@ -1,7 +1,8 @@
 " Maintained by: Roy van der Meij
 set nocompatible                  " Always use vim mode, even when starting with vi
 
-silent! call pathogen#runtime_append_all_bundles()
+"silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#infect() 
 
 filetype plugin on
 filetype indent on
