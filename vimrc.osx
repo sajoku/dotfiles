@@ -8,7 +8,8 @@ if has("gui_running")
   "set guifont=Meslo\ LG\ S\ DZ:h11
   "
   "colorscheme solarized
-  colorscheme smyck
+  "colorscheme smyck
+  colorscheme base16-monokai
   set transparency=10
 
   set background=dark
