@@ -93,13 +93,14 @@ nmap <F8> :TagbarToggle<CR>
 
 " set 256 colors
 set t_Co=256
-
+""set encoding=utf-8
 "colorscheme Tomorrow-Night
 "colorscheme bespin
 colorscheme smyck
 
 "refresh on changes without confirmation
 set autoread
+"colorscheme smyck
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl}    set ft=ruby
