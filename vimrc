@@ -1,6 +1,4 @@
 " Maintained by: Roy van der Meij
-" roy@royapps.nl
-
 set nocompatible                  " Always use vim mode, even when starting with vi
 
 silent! call pathogen#runtime_append_all_bundles()
