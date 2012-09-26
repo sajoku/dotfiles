@@ -10,7 +10,7 @@ if has("gui_running")
   "colorscheme solarized
   "colorscheme smyck
   colorscheme base16-monokai
-  set transparency=10
+  set transparency=1
 
   set background=dark
 
