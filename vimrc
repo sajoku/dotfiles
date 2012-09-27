@@ -92,8 +92,8 @@ nmap <F8> :TagbarToggle<CR>
 
 " set 256 colors
 set t_Co=256
-""set encoding=utf-8
-let base16colorspace=256  " Access colors present in 256 colorspace
+"set encoding=utf-8
+"let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-monokai 
 set background=dark
 
