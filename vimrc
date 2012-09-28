@@ -82,6 +82,7 @@ set splitbelow   "Split windows below the current window.
 " typo fixes
 command! Q q
 command! W w
+command! Wa wa
 command! Wq wq
 command! Vsp vsp
 command! Sp sp
