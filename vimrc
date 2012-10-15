@@ -87,6 +87,7 @@ command! Wq wq
 command! Vsp vsp
 command! Sp sp
 command! Qa qa
+command! Vs vs
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -95,7 +96,8 @@ nmap <F8> :TagbarToggle<CR>
 set t_Co=256
 "set encoding=utf-8
 "let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-monokai 
+"colorscheme base16-monokai 
+colorscheme solarized
 set background=dark
 
 "refresh on changes without confirmation
