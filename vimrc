@@ -2,7 +2,9 @@
 set nocompatible                  " Always use vim mode, even when starting with vi
 
 "silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#infect() 
+"isilent! call pathogen#infect() 
+call pathogen#infect()
+
 
 filetype plugin on
 filetype indent on
@@ -78,6 +80,10 @@ nmap <C-l> <C-w>l
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
 set splitbelow   "Split windows below the current window.
+" Tab completion
+set wildmode=list:longest,list:full
+set complete=.,w,t
+imap <Tab> <C-P>"
 
 " typo fixes
 command! Q q
@@ -97,7 +103,7 @@ set t_Co=256
 "set encoding=utf-8
 "let base16colorspace=256  " Access colors present in 256 colorspace
 "colorscheme base16-monokai 
-colorscheme solarized
+colorscheme Solarized
 set background=dark
 
 "refresh on changes without confirmation
