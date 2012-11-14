@@ -103,7 +103,7 @@ set t_Co=256
 "set encoding=utf-8
 "let base16colorspace=256  " Access colors present in 256 colorspace
 "colorscheme base16-monokai 
-colorscheme Solarized
+colorscheme smyck
 set background=dark
 
 "refresh on changes without confirmation
@@ -123,3 +123,6 @@ if uname == "Linux" "ubuntu stuff
 elseif uname == "Darwin" "osx stuff
   :so ~/dotfiles/vimrc.osx
 endif
+
+"highlight RedundantWhitespace ctermbg=red guibg=red
+"match RedundantWhitespace /\s\+$\| \+\ze\t/
