@@ -103,7 +103,7 @@ set t_Co=256
 "set encoding=utf-8
 "let base16colorspace=256  " Access colors present in 256 colorspace
 "colorscheme base16-monokai 
-colorscheme smyck
+colorscheme solarized
 set background=dark
 
 "refresh on changes without confirmation

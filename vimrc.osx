@@ -7,7 +7,7 @@ if has("gui_running")
   "Font can be found at: https://github.com/andreberg/Meslo-Font
   "set guifont=Meslo\ LG\ S\ DZ:h11
   "
-  colorscheme smyck
+  colorscheme solarized
   set transparency=1
 
   set background=dark
