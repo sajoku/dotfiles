@@ -4,6 +4,7 @@ alias ..='cd ..'
 # ls
 alias ls="ls -F"
 alias l="ls -lAh"
+alias lh="ls -lh"
 alias ll="ls -l"
 alias la='ls -A'
 
@@ -42,6 +43,8 @@ alias reload!="touch tmp/restart.txt; echo 'Reloading app'"
 alias reload1="touch tmp/restart.txt; echo 'Reloading app'"
 alias repow!="touch ~/.pow/restart.txt; echo 'Reloading pow'"
 alias devlog='tail -f log/development.log'
+alias teslog='tail -f log/test.log'
+
 alias guard='bundle exec guard'
 
 

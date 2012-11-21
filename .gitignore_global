@@ -1,0 +1,13 @@
+.bundle
+db/*.sqlite3
+tmp/
+.DS_Store
+.livereload
+log/*
+.rvmrc
+.powrc
+.powenv
+config/shards.yml
+app/views/layouts/application.html.liquid
+app/views/articles/show.html.liquid
+.old
