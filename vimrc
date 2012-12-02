@@ -1,8 +1,5 @@
-" Maintained by: Roy van der Meij
 set nocompatible                  " Always use vim mode, even when starting with vi
 
-"silent! call pathogen#runtime_append_all_bundles()
-"isilent! call pathogen#infect() 
 call pathogen#infect()
 
 
@@ -36,7 +33,7 @@ set shiftwidth=2
 set softtabstop=2
 
 "set virtualedit=onemore 	   	" allow for cursor beyond last character
-"set cursorline  				" highlight current line
+set cursorline  				" highlight current line
 set incsearch					" find as you type search
 
 
@@ -58,7 +55,12 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+
+" change mapleader to ,
+let mapleader = ","
 " Shortcuts
+map <Leader>m :Rmodel
+map <Leader>c :Rcontroller
 nmap <leader>l :set list!<CR>
 map <C-t> :FuzzyFinderTextMate<CR>
 map <C-f> :ruby finder.rescan!<CR>
@@ -100,12 +102,8 @@ nmap <F8> :TagbarToggle<CR>
 
 " set 256 colors
 set t_Co=256
-"set encoding=utf-8
-"let base16colorspace=256  " Access colors present in 256 colorspace
-"colorscheme base16-monokai 
-colorscheme solarized
+colorscheme smyck
 set background=dark
-
 "refresh on changes without confirmation
 set autoread
 
