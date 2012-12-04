@@ -10,7 +10,7 @@ syntax on
 " set ruby path so ruby.vim can find it fast 
 " without this there is an extra 12 seconds of loading!!
 if !empty($MY_RUBY_HOME)
-   let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
+  let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
 endif
 
 runtime macros/matchit.vim        " Load the matchit plugin.
@@ -26,6 +26,7 @@ set mousehide                     " Hide mouse when typing
 set number                        " Show line numbers
 set timeoutlen=500                " Don't lag the leader key + command
 set nofoldenable                  " Don't fold by default
+:set virtualedit=onemore          "end of line + 1
 
 set expandtab                     " Use spaces instead of tabs
 set tabstop=2                     " Global tab width
@@ -51,22 +52,22 @@ set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B
 
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
 
 
 " change mapleader to ,
 let mapleader = ","
 " Shortcuts
-map <Leader>m :Rmodel
-map <Leader>c :Rcontroller
+map <Leader>m :Rmodel<CR>
+map <Leader>c :Rcontroller<CR>
 nmap <leader>l :set list!<CR>
 map <C-t> :FuzzyFinderTextMate<CR>
 map <C-f> :ruby finder.rescan!<CR>
 nmap ,n :NERDTreeToggle<CR>
 nmap ,r :NERDTreeFind<CR>
-map ,b :%s/></>\r</g<CR>:1<CR>=G " beautify xml
+map ,b :%s/></>\r</g<CR>:1<CR>=G " beautify xml"
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
@@ -113,6 +114,9 @@ au BufRead,BufNewFile Watchr set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile *.hjs  set ft=handlebars
 au BufRead,BufNewFile *.zsh-theme  set ft=sh
+
+"Remove trailing whitespace when writing a file
+autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache} :%s/\s\+$//e
 
 " load operating system specific settings
 let uname = substitute(system("uname"),"\n","","g")
