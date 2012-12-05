@@ -26,15 +26,14 @@ set mousehide                     " Hide mouse when typing
 set number                        " Show line numbers
 set timeoutlen=500                " Don't lag the leader key + command
 set nofoldenable                  " Don't fold by default
-:set virtualedit=onemore          "end of line + 1
-
 set expandtab                     " Use spaces instead of tabs
 set tabstop=2                     " Global tab width
 set shiftwidth=2
 set softtabstop=2
+set virtualedit=onemore          "end of line + 1
 
 "set virtualedit=onemore 	   	" allow for cursor beyond last character
-set cursorline  				" highlight current line
+"set cursorline  				" highlight current line
 set incsearch					" find as you type search
 
 
@@ -60,8 +59,8 @@ autocmd BufReadPost *
 " change mapleader to ,
 let mapleader = ","
 " Shortcuts
-map <Leader>m :Rmodel<CR>
-map <Leader>c :Rcontroller<CR>
+map <Leader>m :RVmodel<CR>
+map <Leader>c :RVcontroller<CR>
 nmap <leader>l :set list!<CR>
 map <C-t> :FuzzyFinderTextMate<CR>
 map <C-f> :ruby finder.rescan!<CR>
