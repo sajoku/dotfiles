@@ -8,6 +8,7 @@ if has("gui_running")
   "set guifont=Meslo\ LG\ S\ DZ:h11
   "
   colorscheme base16-railscasts
+  "colorscheme railscasts_roy
   set transparency=1
 
   set background=dark
