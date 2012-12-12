@@ -115,7 +115,7 @@ au BufRead,BufNewFile *.hjs  set ft=handlebars
 au BufRead,BufNewFile *.zsh-theme  set ft=sh
 
 "Remove trailing whitespace when writing a file
-autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache} :%s/\s\+$//e
+autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee} :%s/\s\+$//e
 
 " load operating system specific settings
 let uname = substitute(system("uname"),"\n","","g")
