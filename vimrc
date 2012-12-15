@@ -77,6 +77,8 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+"remap so i can use vim-suround
+xmap s S
 
 " Split settings
 nnoremap <leader>v <C-w>v
@@ -124,6 +126,3 @@ if uname == "Linux" "ubuntu stuff
 elseif uname == "Darwin" "osx stuff
   :so ~/dotfiles/vimrc.osx
 endif
-
-"highlight RedundantWhitespace ctermbg=red guibg=red
-"match RedundantWhitespace /\s\+$\| \+\ze\t/
