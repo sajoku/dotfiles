@@ -1,11 +1,14 @@
 set nocompatible                  " Always use vim mode, even when starting with vi
 
+runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 
 filetype plugin on
 filetype indent on
 syntax on
+set list listchars=tab:\ \ ,trail:·
+
 
 " set ruby path so ruby.vim can find it fast 
 " without this there is an extra 12 seconds of loading!!
@@ -16,11 +19,11 @@ endif
 runtime macros/matchit.vim        " Load the matchit plugin.
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
-
 set autoindent                    " Always set autoindenting on
-set history=50                    " Keep 50 lines in history
+set history=1000                    " Keep 50 lines in history
 set ruler                         " Always show cursor
 set showcmd                       " Display incomplete commands
+set showmode
 set mouse=a                       " Enable mouse
 set mousehide                     " Hide mouse when typing
 set number                        " Show line numbers
@@ -31,17 +34,17 @@ set tabstop=2                     " Global tab width
 set shiftwidth=2
 set softtabstop=2
 set virtualedit=onemore          "end of line + 1
-
-"set virtualedit=onemore 	   	" allow for cursor beyond last character
-"set cursorline  				" highlight current line
+set visualbell
 set incsearch					" find as you type search
-
-
 set listchars=tab:▸\ ,eol:¬       " fancy tabstops and eols symbols
+set hidden
+set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 
+silent !mkdir ~/.vim/backup > /dev/null 2>&1
+set undodir=~/.vim/backup
+set undofile
 " set rake as default build mechanism for vim"
 set makeprg=rake
-
 " Backup directories (don't polute project directory with .swp files)
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
