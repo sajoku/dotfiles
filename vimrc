@@ -7,7 +7,7 @@ call pathogen#infect()
 filetype plugin on
 filetype indent on
 syntax on
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
 
 
 " set ruby path so ruby.vim can find it fast 

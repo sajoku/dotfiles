@@ -24,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=/usr/local/bin:$PATH # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
