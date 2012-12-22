@@ -6,7 +6,6 @@ call pathogen#infect()
 filetype plugin on
 filetype indent on
 syntax on
-"set list listchars=tab:\ \ ,trail:·
 
 " set ruby path so ruby.vim can find it fast 
 " without this there is an extra 12 seconds of loading!!
@@ -33,11 +32,23 @@ set shiftwidth=2
 set softtabstop=2
 set virtualedit=onemore           "end of line + 1
 set visualbell                    "no sounds
-set incsearch					            "find as you type search
+set incsearch                     "find as you type search
 set listchars=tab:▸\ ,eol:¬       "fancy tabstops and eols symbols
+set list listchars=tab:\▸\ ,trail:·
+
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
 set hidden
 set viminfo='100,f1               "Save up to 100 marks, enable capital marks
 set autoread                      "refresh on changes without confirmation
+set ignorecase                    "Ignore case with /  searched
+set smartcase                     "Don't ignore case when search has capital
+set scrolloff=3                   "Keep more context when csrolling, also use zz
+"Scroll faster with ctrl-e and ctrl-y
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 
 
 " -----------------------------
@@ -135,10 +146,3 @@ if uname == "Linux" "ubuntu stuff
 elseif uname == "Darwin" "osx stuff
   :so ~/dotfiles/vimrc.osx
 endif
-
-"Strip whitespace..
-"function! StripWhitespace ()
-"      exec ':%s/ \+$//gc'
-"endfunction
-"map ,s :call StripWhitespace ()<CR>
-"
