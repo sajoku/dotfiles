@@ -3,12 +3,10 @@ set nocompatible                  " Always use vim mode, even when starting with
 runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-
 filetype plugin on
 filetype indent on
 syntax on
 "set list listchars=tab:\ \ ,trail:·
-
 
 " set ruby path so ruby.vim can find it fast 
 " without this there is an extra 12 seconds of loading!!
@@ -20,7 +18,7 @@ runtime macros/matchit.vim        " Load the matchit plugin.
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set autoindent                    " Always set autoindenting on
-set history=1000                    " Keep 50 lines in history
+set history=1000                  " Keep 50 lines in history
 set ruler                         " Always show cursor
 set showcmd                       " Display incomplete commands
 set showmode
@@ -33,21 +31,27 @@ set expandtab                     " Use spaces instead of tabs
 set tabstop=2                     " Global tab width
 set shiftwidth=2
 set softtabstop=2
-set virtualedit=onemore          "end of line + 1
-set visualbell
-set incsearch					" find as you type search
-set listchars=tab:▸\ ,eol:¬       " fancy tabstops and eols symbols
+set virtualedit=onemore           "end of line + 1
+set visualbell                    "no sounds
+set incsearch					            "find as you type search
+set listchars=tab:▸\ ,eol:¬       "fancy tabstops and eols symbols
 set hidden
-set viminfo='100,f1  "Save up to 100 marks, enable capital marks
+set viminfo='100,f1               "Save up to 100 marks, enable capital marks
+set autoread                      "refresh on changes without confirmation
 
+
+" -----------------------------
+"  Backup and restore
+"  ----------------------------
 silent !mkdir ~/.vim/backup > /dev/null 2>&1
 set undodir=~/.vim/backup
 set undofile
-" set rake as default build mechanism for vim"
-set makeprg=rake
 " Backup directories (don't polute project directory with .swp files)
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" set rake as default build mechanism for vim"
+set makeprg=rake
 
 " fancy status line
 set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B\ (%b)%)
@@ -59,6 +63,9 @@ autocmd BufReadPost *
       \ endif
 
 
+"---------------------------------
+"Mapping keys
+"---------------------------------
 " change mapleader to ,
 let mapleader = ","
 " Shortcuts
@@ -80,6 +87,7 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+
 "remap so i can use vim-suround
 xmap s S
 
@@ -109,8 +117,6 @@ nmap <F8> :TagbarToggle<CR>
 set t_Co=256
 colorscheme smyck
 set background=dark
-"refresh on changes without confirmation
-set autoread
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl}    set ft=ruby
@@ -129,3 +135,10 @@ if uname == "Linux" "ubuntu stuff
 elseif uname == "Darwin" "osx stuff
   :so ~/dotfiles/vimrc.osx
 endif
+
+"Strip whitespace..
+"function! StripWhitespace ()
+"      exec ':%s/ \+$//gc'
+"endfunction
+"map ,s :call StripWhitespace ()<CR>
+"
