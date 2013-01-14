@@ -45,8 +45,8 @@ alias repow!="touch ~/.pow/restart.txt; echo 'Reloading pow'"
 alias devlog='tail -f log/development.log'
 alias teslog='tail -f log/test.log'
 
-alias guard='bundle exec guard'
-
+alias c='cd ~/code'
+alias d='cd ~/.dotfiles'
 
 # commands starting with % for pasting from web
 alias %=' '
