@@ -40,7 +40,7 @@ set list listchars=tab:\▸\ ,trail:·
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
-set hidden
+"set hidden
 set viminfo='100,f1               "Save up to 100 marks, enable capital marks
 set autoread                      "refresh on changes without confirmation
 set ignorecase                    "Ignore case with /  searched
