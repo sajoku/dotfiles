@@ -51,6 +51,9 @@ alias d='cd ~/.dotfiles'
 # commands starting with % for pasting from web
 alias %=' '
 
+alias raker='rake retina=4'
+alias raked='rake device'
+
 powit(){
   local basedir=${PWD}
   local vhost=${PWD##*/}

@@ -51,6 +51,10 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 
+" set relative number depending on mode
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
+
 " -----------------------------
 "  Backup and restore
 "  ----------------------------
@@ -111,6 +115,22 @@ set wildmode=list:longest,list:full
 set complete=.,w,t
 imap <Tab> <C-P>"
 
+
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+
+"
+"exclude dirs for ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/
+
 " typo fixes
 command! Q q
 command! W w
@@ -134,6 +154,7 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru
 au BufRead,BufNewFile Watchr set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile *.hjs  set ft=handlebars
+au BufRead,BufNewFile *.jst.ejs  set ft=html
 au BufRead,BufNewFile *.zsh-theme  set ft=sh
 
 "Remove trailing whitespace when writing a file
