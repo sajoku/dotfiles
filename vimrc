@@ -33,7 +33,20 @@ set softtabstop=2
 set virtualedit=onemore           "end of line + 1
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
-set listchars=tab:▸\ ,eol:¬       "fancy tabstops and eols symbols
+
+""set listchars=tab:▸\ ,eol:¬       "fancy tabstops and eols symbols
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+  endif
+endif
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux'
+  set t_Co=16
+endif
+
 set list listchars=tab:\▸\ ,trail:·
 
 
