@@ -46,7 +46,9 @@ alias devlog='tail -f log/development.log'
 alias teslog='tail -f log/test.log'
 
 alias c='cd ~/code'
-alias d='cd ~/.dotfiles'
+alias p='cd ~/projects'
+alias pl='cd ~/playground'
+
 
 # commands starting with % for pasting from web
 alias %=' '
