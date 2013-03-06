@@ -33,6 +33,7 @@ set softtabstop=2
 set virtualedit=onemore           "end of line + 1
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
+set nowrap                        "Dont fold lines
 
 ""set listchars=tab:▸\ ,eol:¬       "fancy tabstops and eols symbols
 if &listchars ==# 'eol:$'
