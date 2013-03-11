@@ -30,7 +30,6 @@ set expandtab                     " Use spaces instead of tabs
 set tabstop=2                     " Global tab width
 set shiftwidth=2
 set softtabstop=2
-set virtualedit=onemore           "end of line + 1
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
 set nowrap                        "Dont fold lines
@@ -50,7 +49,6 @@ endif
 
 set list listchars=tab:\▸\ ,trail:·
 
-
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
@@ -63,6 +61,10 @@ set scrolloff=3                   "Keep more context when csrolling, also use zz
 "Scroll faster with ctrl-e and ctrl-y
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+"Map j and k when pressing tab to move, prevents from typing j and k though
+inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
+inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 
 " set relative number depending on mode
@@ -140,8 +142,6 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-
-"
 "exclude dirs for ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboard.c/
 
@@ -173,7 +173,6 @@ au BufRead,BufNewFile *.zsh-theme  set ft=sh
 
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee} :%s/\s\+$//e
-
 
 "Use silver searcher instead of ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
