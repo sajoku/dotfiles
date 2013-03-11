@@ -143,7 +143,7 @@ imap <right> <nop>
 
 "
 "exclude dirs for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboard.c/
 
 " typo fixes
 command! Q q
