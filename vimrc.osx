@@ -5,9 +5,10 @@ if has("gui_running")
   set guifont=inconsolata:h10
   "Font can be found at: https://github.com/andreberg/Meslo-Font
   "set guifont=Meslo\ LG\ S\ DZ:h11
-  colorscheme base16-railscasts
+  "colorscheme base16-railscasts
+  colorscheme solarized
   set transparency=1
-  set background=dark
+  set background=light
 
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
@@ -45,6 +46,6 @@ if has("gui_running")
 
   macmenu &File.New\ Tab key=<nop>
 
-  highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-  match OverLength /\%81v.\+/
+  "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+  "match OverLength /\%81v.\+/
 endif

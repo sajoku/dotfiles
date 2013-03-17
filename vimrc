@@ -32,9 +32,9 @@ set shiftwidth=2
 set softtabstop=2
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
-set nowrap                        "Dont fold lines
 
-""set listchars=tab:▸\ ,eol:¬       "fancy tabstops and eols symbols
+"set list listchars=tab:\▸\ ,trail:·
+"set listchars=tab:▸\ ,eol:¬       "fancy tabstops and eols symbols
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
   if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
@@ -47,7 +47,6 @@ if &t_Co == 8 && $TERM !~# '^linux'
   set t_Co=16
 endif
 
-set list listchars=tab:\▸\ ,trail:·
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -143,13 +142,14 @@ imap <left> <nop>
 imap <right> <nop>
 
 "exclude dirs for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboard.c/
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib
 
 " typo fixes
 command! Q q
 command! W w
 command! Wa wa
 command! Wq wq
+command! Wqa wqa
 command! Vsp vsp
 command! Sp sp
 command! Qa qa
@@ -170,6 +170,7 @@ au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile *.hjs  set ft=handlebars
 au BufRead,BufNewFile *.jst.ejs  set ft=html
 au BufRead,BufNewFile *.zsh-theme  set ft=sh
+au BufRead,BufNewFile *.strings set ft=yaml
 
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee} :%s/\s\+$//e
