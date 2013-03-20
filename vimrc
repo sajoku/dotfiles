@@ -178,6 +178,20 @@ autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature
 "Use silver searcher instead of ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+
+"mark syntax errors with :signs
+""let g:syntastic_enable_signs=1
+"""automatically jump to the error when saving the file
+""let g:syntastic_auto_jump=0
+"""show the error list automatically
+""let g:syntastic_auto_loc_list=1
+"don't care about warnings
+let g:syntastic_quiet_warnings=1
+
+
+"Highlight disabling shortcut
+ca nh nohl
+
 " load operating system specific settings
 let uname = substitute(system("uname"),"\n","","g")
 if uname == "Linux" "ubuntu stuff
