@@ -33,8 +33,6 @@ set softtabstop=2
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
 
-"set list listchars=tab:\▸\ ,trail:·
-"set listchars=tab:▸\ ,eol:¬       "fancy tabstops and eols symbols
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
   if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
@@ -67,8 +65,8 @@ inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 
 " set relative number depending on mode
-"autocmd InsertEnter * :set number
-"autocmd InsertLeave * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 " -----------------------------
 "  Backup and restore

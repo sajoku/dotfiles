@@ -1,14 +1,7 @@
 if has("gui_running")
-  set guifont=inconsolata:h10
-  set guifont=Menlo:h13
-  "Font can be found at: https://github.com/andreberg/Meslo-Font
-  "set guifont=Meslo\ LG\ S\ DZ:h11
-  "colorscheme base16-railscasts
-  "colorscheme solarized
-  "colorscheme Tomorrow-night-eighties
-  let g:hybrid_use_Xresources = 1
-  colorscheme hybrid
-  set transparency=1
+  set guifont=cousine:h12
+  colorscheme base16-railscasts 
+  "set transparency=1
   set background=dark
 
   set fuoptions=maxvert,maxhorz
