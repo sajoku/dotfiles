@@ -192,8 +192,6 @@ ca nh nohl
 
 " load operating system specific settings
 let uname = substitute(system("uname"),"\n","","g")
-if uname == "Linux" "ubuntu stuff
-  :so ~/dotfiles/vimrc.linux
-elseif uname == "Darwin" "osx stuff
+if uname == "Darwin"
   :so ~/dotfiles/vimrc.osx
 endif

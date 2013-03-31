@@ -9,13 +9,19 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 DEFAULT_USER="sajoku"
 
+# Save a ton of history
+HISTSIZE=20000
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
+
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby pow bundler)
+plugins=(git rails ruby pow bundler rvm)
 
-[[ -s "/Users/sander/.rvm/scripts/rvm" ]] && source "/Users/sander/.rvm/scripts/rvm" # #Load RVM into a shell session *as a function*
+#[[ -s "/Users/sander/.rvm/scripts/rvm" ]] && source "/Users/sander/.rvm/scripts/rvm" # #Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 PATH="${PATH}:/Users/sander/bin"
 
@@ -25,7 +31,6 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=/usr/local/bin:$PATH # Add RVM to PATH for scripting
 PATH=/usr/local/sbin:$PATH # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 

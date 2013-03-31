@@ -1,6 +1,6 @@
 Sajoku's dotfiles
 =================
 
-My dotfiles cotain: 
+My dotfiles contain: 
 - oh-my-zsh
 - macvim themes, plugins etc
