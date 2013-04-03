@@ -1,6 +1,7 @@
 if has("gui_running")
   set guifont=cousine:h13
-  colorscheme base16-eighties 
+  "colorscheme base16-eighties 
+  colorscheme base16-solarized
   set t_Co=256
   "set transparency=1
   set background=dark

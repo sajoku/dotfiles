@@ -158,7 +158,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " set 256 colors
 set t_Co=256
-colorscheme smyck
+colorscheme base16-solarized
 set background=dark
 
 " filetype mappings
