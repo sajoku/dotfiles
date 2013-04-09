@@ -1,5 +1,5 @@
 if has("gui_running")
-  set guifont=inconsolata:h13
+  set guifont=inconsolata:h15
   
   "colorscheme base16-eighties 
   colorscheme base16-solarized
@@ -13,7 +13,7 @@ if has("gui_running")
   set co=150
   set lines=55
   set go-=T
-  set linespace=1
+  "set linespace=1
 
   " remove scrollbars
   set guioptions-=r
