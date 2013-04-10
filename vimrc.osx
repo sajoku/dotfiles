@@ -1,5 +1,6 @@
 if has("gui_running")
   set guifont=inconsolata:h15
+  set relativenumber
   
   "colorscheme base16-eighties 
   colorscheme base16-solarized
