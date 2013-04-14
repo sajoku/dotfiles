@@ -3,6 +3,25 @@ set nocompatible                  " Always use vim mode, even when starting with
 runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+
+ " let Vundle manage Vundle
+ " required! 
+ Bundle 'gmarik/vundle'
+
+ " My bundles
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'wincent/Command-T'
+
 filetype plugin on
 filetype indent on
 syntax on
