@@ -68,6 +68,7 @@ inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 "autocmd InsertEnter * :set number
 "autocmd InsertLeave * :set relativenumber
 set relativenumber
+setglobal relativenumber
 
 " -----------------------------
 "  Backup and restore

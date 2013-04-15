@@ -47,6 +47,7 @@ alias teslog='tail -f log/test.log'
 
 alias c='cd ~/code'
 alias p='cd ~/projects'
+alias dot='cd ~/dotfiles'
 alias pl='cd ~/playground'
 
 
@@ -55,6 +56,10 @@ alias %=' '
 
 alias raker='rake retina=4'
 alias raked='rake device'
+
+#alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
+alias a='ls -lrthG'
+alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 
 powit(){
   local basedir=${PWD}
