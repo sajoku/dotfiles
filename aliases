@@ -21,6 +21,7 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gf='git difftool -t vimdiff'
+alias gg='git lg'
 
 #git extended 
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
@@ -31,7 +32,7 @@ alias reguard='killall -9 ruby ; guard'
 
 # rails
 #alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
+alias migrate='rake db:migrate db:test:prepare'
 
 alias reload!="touch tmp/restart.txt; echo 'Reloading app'"
 alias reload1="touch tmp/restart.txt; echo 'Reloading app'"
