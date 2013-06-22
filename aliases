@@ -33,6 +33,7 @@ alias reguard='killall -9 ruby ; guard'
 # rails
 #alias scaffold='script/generate nifty_scaffold'
 alias migrate='rake db:migrate db:test:prepare'
+alias rkae='rake'
 
 alias reload!="touch tmp/restart.txt; echo 'Reloading app'"
 alias reload1="touch tmp/restart.txt; echo 'Reloading app'"
