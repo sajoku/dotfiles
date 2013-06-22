@@ -4,8 +4,6 @@ ZSH=$HOME/.oh-my-zsh
 #include some other files
 . ~/dotfiles/aliases
 
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="af-magic"
 ZSH_THEME="agnoster"
 DEFAULT_USER="sajoku"
 
@@ -14,13 +12,13 @@ HISTSIZE=20000
 HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
+# Show contents of directory after cd-ing into it
+chpwd() {
+  ls -lrthG
+}
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git rails ruby pow bundler rvm)
 
-#[[ -s "/Users/sander/.rvm/scripts/rvm" ]] && source "/Users/sander/.rvm/scripts/rvm" # #Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 PATH="${PATH}:/Users/sander/bin"
@@ -35,3 +33,5 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 unsetopt correct_all
+export BASE_URL='http://192.168.1.6:3000/'
+export DEVELOPER_CERT='iPhone Developer: Sander Kuijper (3T33VF5D3Q)'
