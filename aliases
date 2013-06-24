@@ -7,6 +7,7 @@ alias l="ls -lAh"
 alias lh="ls -lh"
 alias ll="ls -l"
 alias la='ls -A'
+alias a='ls -lrthG'
 
 # git
 alias gl='git pull'
@@ -20,25 +21,20 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gf='git difftool -t vimdiff'
+alias gg='git lg'
 
 #git extended 
-alias git co="git checkout"
-alias 'git st'="git status"
-alias git ci="git commit"
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
+#ruby
+alias killruby='killall -9 ruby'
+alias reguard='killall -9 ruby ; guard'
 
 # rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
+#alias scaffold='script/generate nifty_scaffold'
+alias migrate='rake db:migrate db:test:prepare'
+alias rkae='rake'
 
-alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g"
 alias reload!="touch tmp/restart.txt; echo 'Reloading app'"
 alias reload1="touch tmp/restart.txt; echo 'Reloading app'"
 alias repow!="touch ~/.pow/restart.txt; echo 'Reloading pow'"
@@ -50,15 +46,14 @@ alias p='cd ~/projects'
 alias dot='cd ~/dotfiles'
 alias pl='cd ~/playground'
 
-
 # commands starting with % for pasting from web
 alias %=' '
 
+#rubymotion
 alias raker='rake retina=4'
 alias raked='rake device'
 
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
-alias a='ls -lrthG'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 
 powit(){
@@ -71,4 +66,9 @@ powit(){
     return 1
   fi
 }
+
+#projects
+alias uw='cd ~/projects/ugo_webinterface'
+alias up='cd ~/projects/ugo_passenger'
+alias ud='cd ~/projects/ugo_driver'
 

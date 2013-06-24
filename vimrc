@@ -3,6 +3,37 @@ set nocompatible                  " Always use vim mode, even when starting with
 runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+ " let Vundle manage Vundle
+ " required! 
+ Bundle 'gmarik/vundle'
+
+ " My bundles
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-ruby/vim-ruby'
+
+Bundle 'airblade/vim-gitgutter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-bundler'
+Bundle 'groenewege/vim-less'
+Bundle 'tsaleh/vim-align'
+Bundle 'mileszs/ack.vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'othree/html5.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdtree'
+
+
 filetype plugin on
 filetype indent on
 syntax on
@@ -23,7 +54,7 @@ set showcmd                       " Display incomplete commands
 set showmode
 set mouse=a                       " Enable mouse
 set mousehide                     " Hide mouse when typing
-set number                        " Show line numbers
+"set number                        " Show line numbers
 set timeoutlen=500                " Don't lag the leader key + command
 set nofoldenable                  " Don't fold by default
 set expandtab                     " Use spaces instead of tabs
@@ -186,7 +217,7 @@ let g:syntastic_auto_jump=0
 "show the error list automatically
 let g:syntastic_auto_loc_list=1
 "don't care about warnings
-let g:syntastic_quiet_warnings=1
+"let g:syntastic_quiet_warnings=1
 
 
 "Highlight disabling shortcut
