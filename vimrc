@@ -173,7 +173,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 "exclude dirs for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib,*.log
 
 " typo fixes
 command! Q q
@@ -191,7 +191,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " set 256 colors
 set t_Co=256
-colorscheme base16-solarized
+colorscheme molokai
 set background=dark
 
 " filetype mappings
