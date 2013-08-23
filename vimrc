@@ -37,9 +37,6 @@ filetype plugin indent on
 syntax on
 set encoding=utf-8
 
-" CntrP settings
-let g:ctrlp_map = '<c-t>'
-let g:ctrlp_cmd = 'CtrlP'
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set autoindent                    " Always set autoindenting on
