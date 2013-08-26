@@ -1,6 +1,6 @@
 if has("gui_running")
 " set relativenumber
-  set guifont=inconsolata:h12
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h13
   
   "colorscheme base16-eighties 
   colorscheme base16-solarized

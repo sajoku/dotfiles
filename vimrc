@@ -31,7 +31,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 "Bundle 'tpope/vim-repeat'
 Bundle 'ervandew/supertab'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 syntax on
@@ -84,6 +85,7 @@ inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 setglobal relativenumber
+set relativenumber
 
 " -----------------------------
 "  Backup and restore
@@ -223,3 +225,7 @@ au VimResized * exe "normal! \<c-w>="
 " easier moving of code blocks
 vnoremap < <gv
 vnoremap > >gv 
+
+let g:airline_powerline_fonts = 1
+set laststatus=2
+runtime! macros/matchit.vim
