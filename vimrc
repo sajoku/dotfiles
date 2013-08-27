@@ -34,6 +34,10 @@ Bundle 'ervandew/supertab'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'bling/vim-airline'
 
+"File specific
+Bundle 'bbommarito/vim-slim'
+Bundle 'kchmck/vim-coffee-script'
+
 filetype plugin indent on
 syntax on
 set encoding=utf-8
