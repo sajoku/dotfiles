@@ -39,6 +39,9 @@ Bundle 'bling/vim-airline'
 Bundle 'bbommarito/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
 
+"syntax
+Bundle 'scrooloose/syntastic'
+
 filetype plugin indent on
 syntax on
 set encoding=utf-8
@@ -165,7 +168,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 "exclude dirs for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib,*.tmp,*.log
 
 " typo fixes
 command! Q q
@@ -180,8 +183,8 @@ command! Vs vs
 
 " set 256 colors
 set t_Co=256
-colorscheme base16-solarized
-set background=dark
+colorscheme railscasts
+set background=light
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl}    set ft=ruby
@@ -206,8 +209,7 @@ let g:syntastic_auto_jump=0
 "show the error list automatically
 let g:syntastic_auto_loc_list=1
 "don't care about warnings
-"let g:syntastic_quiet_warnings=1
-
+let g:syntastic_quiet_warnings=1
 
 "Highlight disabling shortcut
 ca nh nohl
@@ -216,13 +218,6 @@ ca nh nohl
 let uname = substitute(system("uname"),"\n","","g")
 if uname == "Darwin"
   :so ~/dotfiles/vimrc.osx
-endif
-
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
 " autoresize splits when resizing

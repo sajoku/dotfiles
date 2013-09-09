@@ -19,7 +19,6 @@ chpwd() {
 
 plugins=(git rails ruby pow bundler rvm)
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 PATH="${PATH}:/Users/sander/bin"
 

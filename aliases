@@ -28,7 +28,7 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 #ruby
 alias killruby='killall -9 ruby'
-alias reguard='killall -9 ruby ; guard'
+alias reguard='killall -9 guard; be guard'
 
 # rails
 #alias scaffold='script/generate nifty_scaffold'
