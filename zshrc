@@ -19,6 +19,7 @@ chpwd() {
 
 plugins=(git rails ruby pow bundler rvm)
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 PATH="${PATH}:/Users/sander/bin"
 
@@ -32,5 +33,3 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 unsetopt correct_all
-export BASE_URL='http://192.168.1.6:3000/'
-export DEVELOPER_CERT='iPhone Developer: Sander Kuijper (3T33VF5D3Q)'

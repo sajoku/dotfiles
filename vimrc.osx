@@ -6,7 +6,7 @@ if has("gui_running")
   colorscheme base16-solarized
   set t_Co=256
   "set transparency=1
-  set background=light
+  set background=dark
 
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
