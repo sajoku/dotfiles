@@ -1,50 +1,51 @@
 set nocompatible                  " Always use vim mode, even when starting with vi
 
-runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
- " let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
-
- " My bundles
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
-
-Bundle 'airblade/vim-gitgutter'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-bundler'
-Bundle 'groenewege/vim-less'
-Bundle 'tsaleh/vim-align'
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'othree/html5.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/nerdtree'
-
-
-filetype plugin on
-filetype indent on
-syntax on
-
 " set ruby path so ruby.vim can find it fast 
 " without this there is an extra 12 seconds of loading!!
 if !empty($MY_RUBY_HOME)
   let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
 endif
 
-runtime macros/matchit.vim        " Load the matchit plugin.
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Bundles
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'kien/ctrlp.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+Bundle 'groenewege/vim-less'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-endwise'
+Bundle 'tsaleh/vim-align'
+Bundle 'endel/vim-github-colorscheme'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'kchmck/vim-coffee-script'
+"Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
+Bundle 'othree/html5.vim'
+
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+"Bundle 'tpope/vim-repeat'
+Bundle 'ervandew/supertab'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
+
+"File specific
+Bundle 'bbommarito/vim-slim'
+Bundle 'kchmck/vim-coffee-script'
+
+"syntax
+Bundle 'scrooloose/syntastic'
+
+filetype plugin indent on
+syntax on
+set encoding=utf-8
+
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set autoindent                    " Always set autoindenting on
@@ -86,27 +87,20 @@ set autoread                      "refresh on changes without confirmation
 set ignorecase                    "Ignore case with /  searched
 set smartcase                     "Don't ignore case when search has capital
 set scrolloff=3                   "Keep more context when csrolling, also use zz
-"Scroll faster with ctrl-e and ctrl-y
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
 
 "Map j and k when pressing tab to move, prevents from typing j and k though
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
-
-" set relative number depending on mode
-"autocmd InsertEnter * :set number
-"autocmd InsertLeave * :set relativenumber
-set relativenumber
 setglobal relativenumber
+set relativenumber
 
 " -----------------------------
 "  Backup and restore
 "  ----------------------------
-silent !mkdir ~/.vim/backup > /dev/null 2>&1
-set undodir=~/.vim/backup
-set undofile
+" silent !mkdir ~/.vim/backup > /dev/null 2>&1
+" set undodir=~/.vim/backup
+" set undofile
 " Backup directories (don't polute project directory with .swp files)
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
@@ -159,7 +153,8 @@ set splitbelow   "Split windows below the current window.
 " Tab completion
 set wildmode=list:longest,list:full
 set complete=.,w,t
-imap <Tab> <C-P>"
+set completeopt=menu,preview
+"imap <Tab> <C-P>"
 
 
 " disable arrow keys
@@ -173,7 +168,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 "exclude dirs for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib,*.log
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib,*.tmp,*.log
 
 " typo fixes
 command! Q q
@@ -186,13 +181,10 @@ command! Sp sp
 command! Qa qa
 command! Vs vs
 
-" tagbar
-nmap <F8> :TagbarToggle<CR>
-
 " set 256 colors
 set t_Co=256
-colorscheme molokai
-set background=dark
+colorscheme railscasts
+set background=light
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl}    set ft=ruby
@@ -217,8 +209,7 @@ let g:syntastic_auto_jump=0
 "show the error list automatically
 let g:syntastic_auto_loc_list=1
 "don't care about warnings
-"let g:syntastic_quiet_warnings=1
-
+let g:syntastic_quiet_warnings=1
 
 "Highlight disabling shortcut
 ca nh nohl
@@ -228,3 +219,13 @@ let uname = substitute(system("uname"),"\n","","g")
 if uname == "Darwin"
   :so ~/dotfiles/vimrc.osx
 endif
+
+" autoresize splits when resizing
+au VimResized * exe "normal! \<c-w>="
+" easier moving of code blocks
+vnoremap < <gv
+vnoremap > >gv 
+
+let g:airline_powerline_fonts = 1
+set laststatus=2
+runtime! macros/matchit.vim
