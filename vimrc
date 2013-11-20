@@ -6,7 +6,10 @@ if !empty($MY_RUBY_HOME)
   let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
 endif
 
-filetype off                   " required!
+" required!
+filetype off 
+
+"Vundles
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -17,47 +20,44 @@ Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
-Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-endwise'
 Bundle 'tsaleh/vim-align'
 Bundle 'endel/vim-github-colorscheme'
+Bundle 'rking/ag.vim'
+
+"languages
+Bundle 'othree/html5.vim'
+Bundle 'groenewege/vim-less'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
-"Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim'
-Bundle 'othree/html5.vim'
-
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-"Bundle 'tpope/vim-repeat'
-Bundle 'ervandew/supertab'
-"Bundle 'Lokaltog/vim-powerline'
-Bundle 'bling/vim-airline'
-
-"File specific
 Bundle 'bbommarito/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-surround'
+
+Bundle 'tpope/vim-unimpaired'
+Bundle 'ervandew/supertab'
+Bundle 'bling/vim-airline'
 
 "syntax
 Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on
 syntax on
+syntax enable
 set encoding=utf-8
-
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set autoindent                    " Always set autoindenting on
-set history=1000                  " Keep 50 lines in history
+set history=50                  " Keep 50 lines in history
 set ruler                         " Always show cursor
 set showcmd                       " Display incomplete commands
 set showmode
 set mouse=a                       " Enable mouse
 set mousehide                     " Hide mouse when typing
-"set number                        " Show line numbers
 set timeoutlen=500                " Don't lag the leader key + command
 set nofoldenable                  " Don't fold by default
+set foldlevel=99
 set expandtab                     " Use spaces instead of tabs
 set tabstop=2                     " Global tab width
 set shiftwidth=2
@@ -65,12 +65,13 @@ set softtabstop=2
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
 
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
-  endif
-endif
+set listchars=tab:▸\ ,extends:>,precedes:< " fancy tabstops and eols symbols
+"if &listchars ==# 'eol:$'
+"  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+"  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+"    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+"  endif
+"endif
 
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
@@ -94,6 +95,7 @@ inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 setglobal relativenumber
 set relativenumber
+set number                        " Show line numbers
 
 " -----------------------------
 "  Backup and restore
@@ -194,6 +196,7 @@ au BufRead,BufNewFile *.hjs  set ft=handlebars
 au BufRead,BufNewFile *.jst.ejs  set ft=html
 au BufRead,BufNewFile *.zsh-theme  set ft=sh
 au BufRead,BufNewFile *.strings set ft=yaml
+au BufRead,BufNewFile *.md set ft=markdown
 
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
@@ -210,9 +213,6 @@ let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 "don't care about warnings
 let g:syntastic_quiet_warnings=1
-
-"Highlight disabling shortcut
-ca nh nohl
 
 " load operating system specific settings
 let uname = substitute(system("uname"),"\n","","g")
@@ -234,3 +234,4 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#DA3435
 match OverLength /\%121v.\+/
 autocmd BufWinEnter,BufRead * match OverLength /\%121v.\+/
 
+nnoremap v$ vg_
