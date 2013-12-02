@@ -19,8 +19,9 @@ chpwd() {
 
 plugins=(git rails ruby pow bundler rvm urltools)
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
+rvm_silence_path_mismatch_check_flag=1
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 PATH="${PATH}:/Users/sander/bin"
 
 source $ZSH/oh-my-zsh.sh
@@ -31,5 +32,7 @@ PATH=/usr/local/bin:$PATH # Add RVM to PATH for scripting
 PATH=/usr/local/sbin:$PATH # Add RVM to PATH for scripting
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+
 
 unsetopt correct_all

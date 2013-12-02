@@ -36,7 +36,7 @@ Bundle 'ervandew/supertab'
 Bundle 'bling/vim-airline'
 
 "File specific
-Bundle 'bbommarito/vim-slim'
+Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
 
 "syntax
@@ -199,8 +199,21 @@ au BufRead,BufNewFile *.strings set ft=yaml
 autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
 
 "Use silver searcher instead of ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
+"let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
