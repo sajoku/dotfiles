@@ -1,7 +1,5 @@
 set nocompatible                  " Always use vim mode, even when starting with vi
 
-" set ruby path so ruby.vim can find it fast 
-" without this there is an extra 12 seconds of loading!!
 if !empty($MY_RUBY_HOME)
   let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
 endif
@@ -25,7 +23,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tsaleh/vim-align'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'rking/ag.vim'
-
 "languages
 Bundle 'othree/html5.vim'
 Bundle 'groenewege/vim-less'
@@ -35,13 +32,13 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'ervandew/supertab'
 Bundle 'bling/vim-airline'
-
 "File specific
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
-
 "syntax
 Bundle 'scrooloose/syntastic'
+"Specs
+Bundle 'sajoku/vim-rspec'
 
 filetype plugin indent on
 syntax on
@@ -73,11 +70,7 @@ if &t_Co == 8 && $TERM !~# '^linux'
   set t_Co=16
 endif
 
-
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
-"set hidden
 set viminfo='100,f1               "Save up to 100 marks, enable capital marks
 set autoread                      "refresh on changes without confirmation
 set ignorecase                    "Ignore case with /  searched
@@ -91,30 +84,18 @@ inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 setglobal relativenumber
 set relativenumber
 set number                        " Show line numbers
+set numberwidth=5
 
-" -----------------------------
-"  Backup and restore
-"  ----------------------------
-" silent !mkdir ~/.vim/backup > /dev/null 2>&1
-" set undodir=~/.vim/backup
-" set undofile
-" Backup directories (don't polute project directory with .swp files)
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" set rake as default build mechanism for vim"
 set makeprg=rake
-
 " fancy status line
 set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B\ (%b)%)
-
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
       \   exe "normal g`\"" |
       \ endif
-
-
 "---------------------------------
 "Mapping keys
 "---------------------------------
@@ -124,11 +105,8 @@ let mapleader = ","
 map <Leader>m :RVmodel<CR>
 map <Leader>c :RVcontroller<CR>
 nmap <leader>l :set list!<CR>
-map <C-t> :FuzzyFinderTextMate<CR>
-map <C-f> :ruby finder.rescan!<CR>
 nmap ,n :NERDTreeToggle<CR>
 nmap ,r :NERDTreeFind<CR>
-map ,b :%s/></>\r</g<CR>:1<CR>=G " beautify xml"
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
@@ -151,8 +129,6 @@ set splitbelow   "Split windows below the current window.
 set wildmode=list:longest,list:full
 set complete=.,w,t
 set completeopt=menu,preview
-"imap <Tab> <C-P>"
-
 
 " disable arrow keys
 map <up> <nop>
@@ -193,6 +169,8 @@ au BufRead,BufNewFile *.zsh-theme  set ft=sh
 au BufRead,BufNewFile *.strings set ft=yaml
 au BufRead,BufNewFile *.md set ft=markdown
 
+autocmd FileType markdown setlocal spell
+
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
 
@@ -204,14 +182,9 @@ if executable('ag')
 endif
 
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-"mark syntax errors with :signs
 let g:syntastic_enable_signs=1
-"automatically jump to the error when saving the file
 let g:syntastic_auto_jump=0
-"show the error list automatically
 let g:syntastic_auto_loc_list=1
-"don't care about warnings
 let g:syntastic_quiet_warnings=1
 
 " load operating system specific settings
@@ -233,5 +206,3 @@ runtime! macros/matchit.vim
 highlight OverLength ctermbg=red ctermfg=white guibg=#DA3435
 match OverLength /\%121v.\+/
 autocmd BufWinEnter,BufRead * match OverLength /\%121v.\+/
-
-nnoremap v$ vg_
