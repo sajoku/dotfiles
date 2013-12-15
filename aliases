@@ -70,6 +70,6 @@ powit(){
 
 #projects
 alias uw='cd ~/projects/ugo_webinterface'
-alias up='cd ~/projects/ugo_passenger'
+alias up='cd ~/projects/ugo_passenger_ios'
 alias ud='cd ~/projects/ugo_driver'
 
