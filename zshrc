@@ -33,6 +33,4 @@ PATH=/usr/local/sbin:$PATH # Add RVM to PATH for scripting
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-
-
 unsetopt correct_all
