@@ -1,0 +1,5 @@
+*.sql
+templates.js
+tmp
+log
+*.log
