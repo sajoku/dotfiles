@@ -2,7 +2,7 @@ if has("gui_running")
 " set relativenumber
   set guifont=Source\ Code\ Pro\ for\ Powerline:h13
   
-  colorscheme railscasts
+  colorscheme base16-eighties
   set t_Co=256
   set background=dark
 
