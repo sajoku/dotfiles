@@ -19,9 +19,7 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gf='git difftool -t vimdiff'
-alias gg='git lg'
 
 #git extended 
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
@@ -36,19 +34,12 @@ alias migrate='rake db:migrate db:test:prepare'
 alias rkae='rake'
 alias raek='rake'
 
-alias reload!="touch tmp/restart.txt; echo 'Reloading app'"
-alias reload1="touch tmp/restart.txt; echo 'Reloading app'"
-alias repow!="touch ~/.pow/restart.txt; echo 'Reloading pow'"
 alias devlog='tail -f log/development.log'
-alias teslog='tail -f log/test.log'
 
 alias c='cd ~/code'
 alias p='cd ~/projects'
 alias dot='cd ~/dotfiles'
 alias pl='cd ~/playground'
-
-# commands starting with % for pasting from web
-alias %=' '
 
 #rubymotion
 alias raker='rake retina=4'
@@ -56,17 +47,6 @@ alias raked='rake device'
 
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
-
-powit(){
-  local basedir=${PWD}
-  local vhost=${PWD##*/}
-  if [ ! -h ~/.pow/$vhost ]
-        then
-                echo "pow: Symlinking your app with pow. ${vhost}"
-          [ ! -d ~/.pow/${vhost} ] && ln -s $basedir ~/.pow/$vhost
-    return 1
-  fi
-}
 
 #projects
 alias uw='cd ~/projects/ugo_webinterface'
