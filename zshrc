@@ -19,6 +19,9 @@ chpwd() {
 
 plugins=(git rails ruby bundler rvm)
 
+# Disable flow control commands (keeps C-s from freezing everything)
+stty start undef
+stty stop undef
 
 rvm_silence_path_mismatch_check_flag=1
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 

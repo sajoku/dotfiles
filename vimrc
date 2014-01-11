@@ -45,6 +45,10 @@ Bundle 'scrooloose/syntastic'
 "Specs
 Bundle 'sajoku/vim-rspec'
 
+" nelstrom's plugin depends on kana's
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+
 filetype plugin indent on
 syntax on
 syntax enable
