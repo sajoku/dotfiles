@@ -187,12 +187,6 @@ let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
-" load operating system specific settings
-let uname = substitute(system("uname"),"\n","","g")
-if uname == "Darwin"
-  :so ~/dotfiles/vimrc.osx
-endif
-
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
 " easier moving of code blocks
