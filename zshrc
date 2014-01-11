@@ -17,7 +17,7 @@ chpwd() {
   ls -lrthG
 }
 
-plugins=(git rails ruby pow bundler rvm urltools)
+plugins=(git rails ruby bundler rvm)
 
 
 rvm_silence_path_mismatch_check_flag=1
@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=/usr/local/bin:$PATH # Add RVM to PATH for scripting
 PATH=/usr/local/sbin:$PATH # Add RVM to PATH for scripting
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
+
+[ "$TERM" = "xterm" ] && TERM="xterm-256color"
 
 unsetopt correct_all
