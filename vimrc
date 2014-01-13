@@ -141,7 +141,12 @@ imap <left> <nop>
 imap <right> <nop>
 
 "exclude dirs for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib,*.tmp,*.log
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib,*.tmp,*.log,releases/*
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$'
+  \ }
 
 " typo fixes
 command! Q q

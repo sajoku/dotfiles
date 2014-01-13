@@ -3,3 +3,5 @@ templates.js
 tmp
 log
 *.log
+vendor/**/*
+releases/**/*
