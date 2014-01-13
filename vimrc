@@ -1,4 +1,7 @@
-set nocompatible                  " Always use vim mode, even when starting with vi
+" Maintained by Sajoku
+"
+" Always use vim mode, even when starting with vi
+set nocompatible                  
 
 if !empty($MY_RUBY_HOME)
   let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
@@ -19,6 +22,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-endwise'
 Bundle 'tsaleh/vim-align'
 Bundle 'endel/vim-github-colorscheme'
@@ -35,10 +39,15 @@ Bundle 'bling/vim-airline'
 "File specific
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'othree/html5.vim'
 "syntax
 Bundle 'scrooloose/syntastic'
 "Specs
 Bundle 'sajoku/vim-rspec'
+
+" nelstrom's plugin depends on kana's
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 
 filetype plugin indent on
 syntax on
@@ -191,12 +200,6 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
-
-" load operating system specific settings
-let uname = substitute(system("uname"),"\n","","g")
-if uname == "Darwin"
-  :so ~/dotfiles/vimrc.osx
-endif
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
