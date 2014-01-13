@@ -37,5 +37,6 @@ if has("gui_running")
   map! <D-9> <C-O>:tabn 9<CR>
 
   macmenu &File.New\ Tab key=<nop>
+  map <D-t> :tabnew<CR>
 
 endif
