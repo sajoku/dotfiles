@@ -214,3 +214,6 @@ runtime! macros/matchit.vim
 highlight OverLength ctermbg=red ctermfg=white guibg=#DA3435
 match OverLength /\%121v.\+/
 autocmd BufWinEnter,BufRead * match OverLength /\%121v.\+/
+
+map <Leader>rt :!rake test %<CR>
+map <Leader>rr :!ruby %<CR>
