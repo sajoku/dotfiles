@@ -85,7 +85,7 @@ call <SID>hi("MatchParen",    s:gui03, s:gui00, s:cterm03, s:cterm00,  "reverse"
 call <SID>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "")
 call <SID>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "")
 call <SID>hi("Question",      s:gui0A, "", s:cterm0A, "", "")
-call <SID>hi("Search",        s:gui0A, s:gui01, s:cterm0A, s:cterm01,  "reverse")
+call <SID>hi("Search",        s:gui09, s:gui01, s:cterm0A, s:cterm01,  "reverse")
 call <SID>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "")
 call <SID>hi("TooLong",       s:gui08, "", s:cterm08, "", "")
 call <SID>hi("Underlined",    s:gui08, "", s:cterm08, "", "")
