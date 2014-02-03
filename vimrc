@@ -42,8 +42,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 "syntax
 Bundle 'scrooloose/syntastic'
-"Specs
-Bundle 'sajoku/vim-rspec'
 
 " nelstrom's plugin depends on kana's
 Bundle 'kana/vim-textobj-user'
@@ -169,9 +167,9 @@ command! Qa qa
 command! Vs vs
 
 " set 256 colors
+colorscheme base16-eighties
 set t_Co=256
-colorscheme railscasts
-set background=light
+set background=dark
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl}    set ft=ruby
