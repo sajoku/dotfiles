@@ -25,14 +25,16 @@ stty stop undef
 
 rvm_silence_path_mismatch_check_flag=1
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
-PATH="${PATH}:/Users/sander/bin"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#PATH="${PATH}:/Users/sander/bin"
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=/usr/local/bin:$PATH # Add RVM to PATH for scripting
-PATH=/usr/local/sbin:$PATH # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=/usr/local/bin:$PATH # Add RVM to PATH for scripting
+#PATH=/usr/local/sbin:$PATH # Add RVM to PATH for scripting
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
 
