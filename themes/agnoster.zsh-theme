@@ -74,7 +74,7 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
+      prompt_segment red black
     else
       prompt_segment green black
     fi
@@ -87,7 +87,7 @@ prompt_git() {
     zstyle ':vcs_info:*' check-for-changes true
     zstyle ':vcs_info:*' stagedstr '✚'
     zstyle ':vcs_info:git:*' unstagedstr '●'
-    zstyle ':vcs_info:*' formats ' %u%c'
+    zstyle ':vcs_info:*' formats ' ●'
     zstyle ':vcs_info:*' actionformats '%u%c'
     vcs_info
     echo -n "${ref/refs\/heads\//⭠ }${vcs_info_msg_0_}"
@@ -159,7 +159,7 @@ prompt_status() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_status
+  #prompt_status
   prompt_virtualenv
   prompt_context
   prompt_dir
