@@ -4,7 +4,7 @@ if has("gui_running")
   
   colorscheme base16-eighties
   set t_Co=256
-  set background=dark
+  set background=light
 
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
