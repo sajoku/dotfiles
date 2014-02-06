@@ -48,6 +48,10 @@ Bundle 'scrooloose/syntastic'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
+"color themes via vundle yeay
+Bundle 'chriskempson/base16-vim'
+
+
 filetype plugin indent on
 syntax on
 syntax enable
