@@ -215,8 +215,8 @@ set laststatus=2
 runtime! macros/matchit.vim
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#DA3435
-match OverLength /\%121v.\+/
-autocmd BufWinEnter,BufRead * match OverLength /\%121v.\+/
+match OverLength '\%>10v.\+'
+autocmd BufWinEnter,BufRead * match OverLength '\%>10v.\+' 
 
 
 
