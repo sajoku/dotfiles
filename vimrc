@@ -214,10 +214,10 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 runtime! macros/matchit.vim
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#DA3435
-match OverLength '\%>10v.\+'
-autocmd BufWinEnter,BufRead * match OverLength '\%>10v.\+' 
-
+hi LineProximity guibg=#FFCB75
+hi LineOverflow guibg=#F7767B
+let w:m1=matchadd('LineProximity', '\%<81v.\%>75v', -1)
+let w:m2=matchadd('LineOverflow', '\%>80v.\+', -1)
 
 
 " Quick'n'dirty hack to run rails tests

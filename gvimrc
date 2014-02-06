@@ -6,6 +6,11 @@ if has("gui_running")
   set t_Co=256
   set background=light
 
+  hi LineProximity guibg=#FFCB75
+  hi LineOverflow guibg=#F7767B
+  let w:m1=matchadd('LineProximity', '\%<81v.\%>75v', -1)
+  let w:m2=matchadd('LineOverflow', '\%>80v.\+', -1)
+
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
 
