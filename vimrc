@@ -231,3 +231,6 @@ function! RunSpec(spec_path, spec_opts)
   endif
 endfunction
 
+" Quick'n'dirty hack to run rails tests
+map <Leader>rt :!rake test %<CR>
+map <Leader>rr :!ruby %<CR>
