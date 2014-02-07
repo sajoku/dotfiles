@@ -8,7 +8,7 @@ if has("gui_running")
 
   hi LineProximity ctermbg=red guifg=white guibg=#757160
   hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
-  let w:m1=matchadd('LineProximity', '\%<120v.\%>80v', -1)
+  let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1)
   let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
 
   set fuoptions=maxvert,maxhorz
