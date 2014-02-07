@@ -214,8 +214,8 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 runtime! macros/matchit.vim
 
-hi LineProximity guibg=#FFCB75
-hi LineOverflow guibg=#F7767B
+hi LineProximity ctermbg=red guifg=white guibg=#757160
+hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
 let w:m1=matchadd('LineProximity', '\%<120v.\%>80v', -1)
 let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
 autocmd VimEnter * autocmd WinEnter * let w:created=1
