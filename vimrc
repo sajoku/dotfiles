@@ -216,12 +216,12 @@ runtime! macros/matchit.vim
 
 hi LineProximity guibg=#FFCB75
 hi LineOverflow guibg=#F7767B
-let w:m1=matchadd('LineProximity', '\%<81v.\%>75v', -1)
-let w:m2=matchadd('LineOverflow', '\%>80v.\+', -1)
+let w:m1=matchadd('LineProximity', '\%<120v.\%>80v', -1)
+let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
 autocmd VimEnter * autocmd WinEnter * let w:created=1
 autocmd VimEnter * let w:created=1
-autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<81v.\%>75v', -1) | endif
-autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>80v.\+', -1) | endif
+autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>80v', -1) | endif
+autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1) | endif
 
 " Quick'n'dirty hack to run rails tests
 map <Leader>rt :!rake test %<CR>
