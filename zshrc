@@ -39,8 +39,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-#PATH=/usr/local/bin:$PATH # Add RVM to PATH for scripting
-#PATH=/usr/local/sbin:$PATH # Add RVM to PATH for scripting
+PATH=/usr/local/bin:$PATH # Add RVM to PATH for scripting
+PATH=/usr/local/sbin:$PATH # Add RVM to PATH for scripting
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
 
