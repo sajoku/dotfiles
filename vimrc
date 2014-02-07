@@ -223,6 +223,8 @@ autocmd VimEnter * let w:created=1
 autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
 autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1) | endif
 
+nmap <Leader>h :call clearmatches()<CR>
+
 " Quick'n'dirty hack to run rails tests
 map <Leader>rt :!rake test %<CR>
 map <Leader>rr :!ruby %<CR>
