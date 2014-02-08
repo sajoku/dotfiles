@@ -23,7 +23,7 @@ chpwd() {
   ls -lrthG
 }
 
-plugins=(git rails ruby bundler rvm)
+plugins=(git rails ruby bundler rvm osx)
 
 # Disable flow control commands (keeps C-s from freezing everything)
 stty start undef
