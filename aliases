@@ -1,3 +1,5 @@
+# mvim
+alias m='mvim'
 # cd
 alias ..='cd ..'
 
