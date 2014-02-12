@@ -223,6 +223,26 @@ autocmd VimEnter * let w:created=1
 autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
 autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1) | endif
 
+function! Focus()
+  :let previous_line = (line(".") - 1)
+  :let current_line = line(".")
+  :let next_line = (".") + 1
+  :call HighLightLine(next_line)
+  :call HighLightLine(previous_line)
+  :call HighLightLine(current_line)
+endfunction
+
+function! HighLightLine(line)
+  let pattern="/"
+  let pattern .= "\\%" . a:line . "l/"
+  echo pattern
+  let commandToExecute = "match LineOverflow ".pattern
+  execute commandToExecute
+endfunction
+
+nmap <Leader>f :call Focus()<CR>
+
+
 nmap <Leader>h :call clearmatches()<CR>
 
 " Quick'n'dirty hack to run rails tests
