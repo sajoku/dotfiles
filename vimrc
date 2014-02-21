@@ -1,14 +1,13 @@
 " Maintained by Sajoku
 "
 " Always use vim mode, even when starting with vi
-set nocompatible                  
-
+set nocompatible
 if !empty($MY_RUBY_HOME)
   let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
 endif
 
 " required!
-filetype off 
+filetype off
 
 "Vundles
 set rtp+=~/.vim/bundle/vundle/
@@ -52,9 +51,9 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'chriskempson/base16-vim'
 
 
-filetype plugin indent on
 syntax on
 syntax enable
+filetype plugin indent on
 set encoding=utf-8
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
@@ -74,6 +73,9 @@ set shiftwidth=2
 set softtabstop=2
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
+
+" Get rid of the delay when hitting esc!
+set noesckeys
 
 set listchars=tab:▸\ ,extends:>,precedes:< " fancy tabstops and eols symbols
 
@@ -208,7 +210,7 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 au VimResized * exe "normal! \<c-w>="
 " easier moving of code blocks
 vnoremap < <gv
-vnoremap > >gv 
+vnoremap > >gv
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
@@ -235,7 +237,6 @@ endfunction
 function! HighLightLine(line)
   let pattern="/"
   let pattern .= "\\%" . a:line . "l/"
-  echo pattern
   let commandToExecute = "match LineOverflow ".pattern
   execute commandToExecute
 endfunction

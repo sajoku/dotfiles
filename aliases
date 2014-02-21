@@ -56,4 +56,3 @@ alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp 
 alias uw='cd ~/projects/ugo_webinterface'
 alias up='cd ~/projects/ugo_passenger_ios'
 alias ud='cd ~/projects/ugo_driver'
-
