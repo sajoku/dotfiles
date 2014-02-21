@@ -43,6 +43,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 "syntax
 Bundle 'scrooloose/syntastic'
+Bundle 'sajoku/vim-indent-guides'
 
 " nelstrom's plugin depends on kana's
 Bundle 'kana/vim-textobj-user'
@@ -248,3 +249,6 @@ nmap <Leader>h :call clearmatches()<CR>
 " Quick'n'dirty hack to run rails tests
 map <Leader>rt :!rake test %<CR>
 map <Leader>rr :!ruby %<CR>
+
+" associate *.eye with ruby filetype
+au BufRead,BufNewFile *.eye setfiletype ruby
