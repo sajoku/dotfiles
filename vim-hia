@@ -1,0 +1,5 @@
+:echo line(".") - 1
+:echo line(".")
+:echo line(".") + 1
+
+:match Search /\%15l\|\%23l/ 

@@ -51,6 +51,8 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 "color themes via vundle yeay
 Bundle 'chriskempson/base16-vim'
 
+Bundle 'Blackrush/vim-gocode'
+
 
 syntax on
 syntax enable
@@ -175,9 +177,9 @@ command! Qa qa
 command! Vs vs
 
 " set 256 colors
-colorscheme base16-eighties
+colorscheme base16-chalk
 set t_Co=256
-set background=dark
+set background=light
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl}    set ft=ruby

@@ -44,6 +44,7 @@ alias c='cd ~/code'
 alias p='cd ~/projects'
 alias dot='cd ~/dotfiles'
 alias pl='cd ~/playground'
+alias gocode='cd ~/gocode/src'
 
 #rubymotion
 alias raker='rake retina=4'

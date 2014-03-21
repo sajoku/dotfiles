@@ -2,9 +2,9 @@ if has("gui_running")
 " set relativenumber
   set guifont=Source\ Code\ Pro\ for\ Powerline:h13
   
-  colorscheme base16-eighties
+  colorscheme base16-chalk
   set t_Co=256
-  set background=dark
+  set background=light
 
   hi LineProximity ctermbg=red guifg=white guibg=#757160
   hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270

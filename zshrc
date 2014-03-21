@@ -45,5 +45,6 @@ source $ZSH/oh-my-zsh.sh
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
 
+export GOPATH=$HOME/gocode
 
 unsetopt correct_all

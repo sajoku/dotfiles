@@ -5,3 +5,4 @@ vim/.netrwhist
 vim/backup
 vim/backups
 vim/bundle
+vim/bundle/*.*
