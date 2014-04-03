@@ -36,6 +36,7 @@ alias reguard='killall -9 guard; be guard'
 alias migrate='rake db:migrate db:test:prepare'
 alias rkae='rake'
 alias raek='rake'
+alias ake='rake'
 alias bu='bundle update $1'
 
 alias devlog='tail -f log/development.log'

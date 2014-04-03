@@ -4,12 +4,12 @@ if has("gui_running")
   
   colorscheme base16-chalk
   set t_Co=256
-  set background=light
+  set background=dark
 
-  hi LineProximity ctermbg=red guifg=white guibg=#757160
-  hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
-  let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1)
-  let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
+  ""hi LineProximity ctermbg=red guifg=white guibg=#757160
+  ""hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
+  ""let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1)
+  ""let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
 
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
