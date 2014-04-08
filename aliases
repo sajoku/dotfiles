@@ -38,6 +38,7 @@ alias rkae='rake'
 alias raek='rake'
 alias ake='rake'
 alias bu='bundle update $1'
+alias rt='rake target=6.1 retina=false'
 
 alias devlog='tail -f log/development.log'
 

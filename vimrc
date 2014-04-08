@@ -179,7 +179,7 @@ command! Vs vs
 " set 256 colors
 colorscheme base16-chalk
 set t_Co=256
-set background=light
+set background=dark
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl}    set ft=ruby
@@ -219,14 +219,14 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 runtime! macros/matchit.vim
 
-hi LineProximity ctermbg=red guifg=white guibg=#757160
-hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
-let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1)
-let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
-autocmd VimEnter * autocmd WinEnter * let w:created=1
-autocmd VimEnter * let w:created=1
-autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
-autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1) | endif
+""hi LineProximity ctermbg=red guifg=white guibg=#757160
+""hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
+""let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1)
+""let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
+""autocmd VimEnter * autocmd WinEnter * let w:created=1
+""autocmd VimEnter * let w:created=1
+""autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
+""autocmd WinEnter * if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1) | endif
 
 function! Focus()
   :let previous_line = (line(".") - 1)
