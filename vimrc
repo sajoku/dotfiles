@@ -125,6 +125,17 @@ nmap <leader>l :set list!<CR>
 nmap ,n :NERDTreeToggle<CR>
 nmap ,r :NERDTreeFind<CR>
 
+nmap <Leader>f :call Focus()<CR>
+nmap <Leader>h :call clearmatches()<CR>
+" Quick'n'dirty hack to run rails tests
+map <Leader>rt :!rake test %<CR>
+map <Leader>rr :!ruby %<CR>
+
+"indent and move cursor back to previous pos
+map <Leader>i mmgg=G`m<CR>
+"Paste with correct indentation
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
@@ -244,14 +255,6 @@ function! HighLightLine(line)
   execute commandToExecute
 endfunction
 
-nmap <Leader>f :call Focus()<CR>
-
-
-nmap <Leader>h :call clearmatches()<CR>
-
-" Quick'n'dirty hack to run rails tests
-map <Leader>rt :!rake test %<CR>
-map <Leader>rr :!ruby %<CR>
 
 " associate *.eye with ruby filetype
 au BufRead,BufNewFile *.eye setfiletype ruby
