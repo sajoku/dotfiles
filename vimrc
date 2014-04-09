@@ -149,6 +149,9 @@ nmap <C-l> <C-w>l
 "remap so i can use vim-suround
 xmap s S
 
+"Disable Ex mode
+map Q <Nop>
+
 " Split settings
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
@@ -186,6 +189,7 @@ command! Vsp vsp
 command! Sp sp
 command! Qa qa
 command! Vs vs
+command! Qall qall
 
 " set 256 colors
 colorscheme base16-chalk
