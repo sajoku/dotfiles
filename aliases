@@ -33,12 +33,17 @@ alias reguard='killall -9 guard; be guard'
 
 # rails
 #alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:prepare'
 alias rkae='rake'
 alias raek='rake'
 alias ake='rake'
 alias bu='bundle update $1'
 alias rt='rake target=6.1 retina=false'
+
+alias rdm="be rake db:migrate"
+alias rdtp="be rake db:test:prepare"
+alias prepdb="rdm && rdtp"
+
+
 
 alias devlog='tail -f log/development.log'
 
