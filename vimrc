@@ -121,9 +121,10 @@ let mapleader = ","
 " Shortcuts
 map <Leader>m :RVmodel<CR>
 map <Leader>c :RVcontroller<CR>
-nmap <leader>l :set list!<CR>
-nmap ,n :NERDTreeToggle<CR>
-nmap ,r :NERDTreeFind<CR>
+map <Leader>l :set list!<CR>
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>r :NERDTreeFind<CR>
+map <Leader>ps ysiw
 
 nmap <Leader>f :call Focus()<CR>
 nmap <Leader>h :call clearmatches()<CR>
