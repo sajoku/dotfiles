@@ -19,28 +19,25 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-endwise'
 Bundle 'tsaleh/vim-align'
-Bundle 'endel/vim-github-colorscheme'
 Bundle 'rking/ag.vim'
-"languages
-Bundle 'othree/html5.vim'
+
 Bundle 'groenewege/vim-less'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'ervandew/supertab'
 Bundle 'bling/vim-airline'
-"File specific
+
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
-"syntax
+Bundle 'fatih/vim-go.git'
+
 Bundle 'scrooloose/syntastic'
 Bundle 'sajoku/vim-indent-guides'
 
@@ -50,8 +47,9 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 
 "color themes via vundle yeay
 Bundle 'chriskempson/base16-vim'
+Bundle 'endel/vim-github-colorscheme'
+Bundle 'altercation/vim-colors-solarized'
 
-Bundle 'Blackrush/vim-gocode'
 
 
 syntax on
@@ -131,6 +129,10 @@ nmap <Leader>h :call clearmatches()<CR>
 " Quick'n'dirty hack to run rails tests
 map <Leader>rt :!rake test %<CR>
 map <Leader>rr :!ruby %<CR>
+
+"resource and edit vimrc
+nmap <leader>rs :so ~/.vimrc<CR>
+nmap <leader>es :e ~/.vimrc<CR>
 
 "indent and move cursor back to previous pos
 map <Leader>i mmgg=G`m<CR>
