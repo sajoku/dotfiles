@@ -7,8 +7,11 @@ if has("gui_running")
 
   hi LineProximity ctermbg=red guifg=white guibg=#757160
   hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
-  let w:m1=matchadd('LineProximity', '\%<121v.\%>115v', -1)
-  let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
+  ""autocmd VimEnter *.rb call matchadd('LineProximity', '\%<120v.\%>115v', -1)
+  ""autocmd VimEnter *.rb call matchadd('LineOverflow', '\%>120v.\+', -1)
+
+  autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
+  autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
 
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
