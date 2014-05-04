@@ -48,3 +48,4 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/gocode
 
 unsetopt correct_all
+export BUNDLER_EDITOR=mvim
