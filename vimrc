@@ -36,7 +36,7 @@ Bundle 'bling/vim-airline'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
-Bundle 'fatih/vim-go.git'
+"Bundle 'fatih/vim-go.git'
 
 Bundle 'scrooloose/syntastic'
 Bundle 'sajoku/vim-indent-guides'
