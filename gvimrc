@@ -1,13 +1,13 @@
 if has("gui_running")
 " set relativenumber
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h11
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h12
   colorscheme base16-eighties
   set t_Co=256
   set background=dark
 
   hi LineProximity ctermbg=red guifg=white guibg=#757160
   hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
-  let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1)
+  let w:m1=matchadd('LineProximity', '\%<121v.\%>115v', -1)
   let w:m2=matchadd('LineOverflow', '\%>120v.\+', -1)
 
   set fuoptions=maxvert,maxhorz

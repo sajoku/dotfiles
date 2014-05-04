@@ -200,7 +200,7 @@ set t_Co=256
 set background=dark
 
 " filetype mappings
-au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
 au BufRead,BufNewFile Watchr set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile *.hjs  set ft=handlebars
