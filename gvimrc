@@ -1,17 +1,17 @@
 if has("gui_running")
 " set relativenumber
   set guifont=Source\ Code\ Pro\ for\ Powerline:h12
-  colorscheme base16-eighties
+  colorscheme base16-solarized
   set t_Co=256
-  set background=dark
+  set background=light
 
-  hi LineProximity ctermbg=red guifg=white guibg=#757160
-  hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
-  ""autocmd VimEnter *.rb call matchadd('LineProximity', '\%<120v.\%>115v', -1)
-  ""autocmd VimEnter *.rb call matchadd('LineOverflow', '\%>120v.\+', -1)
+  ""hi LineProximity ctermbg=red guifg=white guibg=#757160
+  ""hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
+  """"autocmd VimEnter *.rb call matchadd('LineProximity', '\%<120v.\%>115v', -1)
+  """"autocmd VimEnter *.rb call matchadd('LineOverflow', '\%>120v.\+', -1)
 
-  autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
-  autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
+  ""autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
+  ""autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
 
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>

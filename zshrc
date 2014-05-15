@@ -49,3 +49,5 @@ export GOPATH=$HOME/gocode
 
 unsetopt correct_all
 export BUNDLER_EDITOR=mvim
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
