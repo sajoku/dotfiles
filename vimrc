@@ -50,7 +50,7 @@ Bundle 'chriskempson/base16-vim'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'altercation/vim-colors-solarized'
 
-
+Bundle 'thoughtbot/vim-rspec'
 
 syntax on
 syntax enable
@@ -266,3 +266,18 @@ endfunction
 
 " associate *.eye with ruby filetype
 au BufRead,BufNewFile *.eye setfiletype ruby
+
+" RSpec.vim mappings
+set shell=sh
+let g:rspec_runner = "os_x_iterm"
+let g:rspec_command = "!rspec --drb -fd {spec}"
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>as :call RunAllSpecs()<CR>
+
+" Rails configuration
+autocmd User Rails map <Leader>m :Rmodel
+autocmd User Rails map <Leader>c :Rcontroller
+autocmd User Rails map <Leader>v :Rview
