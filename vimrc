@@ -210,6 +210,10 @@ au BufRead,BufNewFile *.jst.ejs  set ft=html
 au BufRead,BufNewFile *.zsh-theme  set ft=sh
 au BufRead,BufNewFile *.strings set ft=yaml
 au BufRead,BufNewFile *.md set ft=markdown
+au BufRead,BufNewFile *.eye set ft=ruby
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+
+
 
 autocmd FileType markdown setlocal spell
 
@@ -264,10 +268,6 @@ function! HighLightLine(line)
   let commandToExecute = "match LineOverflow ".pattern
   execute commandToExecute
 endfunction
-
-
-" associate *.eye with ruby filetype
-au BufRead,BufNewFile *.eye setfiletype ruby
 
 " RSpec.vim mappings
 set shell=sh
