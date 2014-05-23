@@ -23,8 +23,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-endwise'
-Bundle 'tsaleh/vim-align'
+Bundle 'junegunn/vim-easy-align'
 Bundle 'rking/ag.vim'
+Bundle "skwp/greplace.vim"
 
 Bundle 'groenewege/vim-less'
 Bundle 'vim-ruby/vim-ruby'
@@ -69,7 +70,7 @@ set timeoutlen=500                " Don't lag the leader key + command
 set nofoldenable                  " Don't fold by default
 set foldlevel=99
 set expandtab                     " Use spaces instead of tabs
-set tabstop=2                     " Global tab width
+set tabstop=2                     " Globul tab width
 set shiftwidth=2
 set softtabstop=2
 set visualbell                    "no sounds
@@ -126,9 +127,10 @@ map <Leader>ps ysiw
 
 nmap <Leader>f :call Focus()<CR>
 nmap <Leader>h :call clearmatches()<CR>
-" Quick'n'dirty hack to run rails tests
-map <Leader>rt :!rake test %<CR>
-map <Leader>rr :!ruby %<CR>
+
+map <Leader>ea: :EasyAlign \<CR>
+map <Leader>ea= :EasyAlign =<CR>
+map <leader>ea :EasyAlign 
 
 "resource and edit vimrc
 nmap <leader>rs :so ~/.vimrc<CR>
@@ -275,9 +277,10 @@ let g:rspec_command = "!rspec --drb -fd {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
-map <Leader>as :call RunAllSpecs()<CR>
+map <Leader>g :call RunAllSpecs()<CR>
 
 " Rails configuration
 autocmd User Rails map <Leader>m :Rmodel
 autocmd User Rails map <Leader>c :Rcontroller
 autocmd User Rails map <Leader>v :Rview
+
