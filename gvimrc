@@ -4,15 +4,6 @@ if has("gui_running")
   colorscheme base16-solarized
   set t_Co=256
   set background=light
-
-  ""hi LineProximity ctermbg=red guifg=white guibg=#757160
-  ""hi LineOverflow  ctermbg=red guifg=white guibg=#FF2270
-  """"autocmd VimEnter *.rb call matchadd('LineProximity', '\%<120v.\%>115v', -1)
-  """"autocmd VimEnter *.rb call matchadd('LineOverflow', '\%>120v.\+', -1)
-
-  ""autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
-  ""autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
-
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
 
@@ -45,5 +36,14 @@ if has("gui_running")
 
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :tabnew<CR>
+
+  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160 
+  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
+  autocmd BufRead,BufNewFile,WinEnter *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
+  autocmd BufRead,BufNewFile,WinEnter *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
+  " autocmd VimEnter *.rb autocmd WinEnter * let w:created=1
+  " autocmd VimEnter *.rb let w:created=1
+
+
 
 endif

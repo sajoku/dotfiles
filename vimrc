@@ -243,32 +243,6 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 runtime! macros/matchit.vim
 
-""hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-""hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-""
-""autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
-""autocmd BufRead,BufNewFile *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
-""autocmd VimEnter *.rb autocmd WinEnter * let w:created=1
-""autocmd VimEnter *.rb let w:created=1
-""autocmd WinEnter *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
-""autocmd WinEnter *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
-
-function! Focus()
-  :let previous_line = (line(".") - 1)
-  :let current_line = line(".")
-  :let next_line = (".") + 1
-  :call HighLightLine(next_line)
-  :call HighLightLine(previous_line)
-  :call HighLightLine(current_line)
-endfunction
-
-function! HighLightLine(line)
-  let pattern="/"
-  let pattern .= "\\%" . a:line . "l/"
-  let commandToExecute = "match LineOverflow ".pattern
-  execute commandToExecute
-endfunction
-
 " RSpec.vim mappings
 set shell=sh
 let g:rspec_runner = "os_x_iterm"
