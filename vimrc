@@ -2,9 +2,6 @@
 "
 " Always use vim mode, even when starting with vi
 set nocompatible
-if !empty($MY_RUBY_HOME)
-  let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
-endif
 
 " required!
 filetype off
@@ -75,16 +72,11 @@ set shiftwidth=2
 set softtabstop=2
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
-
-" Get rid of the delay when hitting esc!
 set noesckeys
-
-set listchars=tab:▸\ ,extends:>,precedes:< " fancy tabstops and eols symbols
-
-" Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux'
-  set t_Co=16
-endif
+setglobal relativenumber
+set relativenumber
+set number                        " Show line numbers
+set numberwidth=5
 
 " http://items.sjbach.com/319/configuring-vim-right
 set viminfo='100,f1               "Save up to 100 marks, enable capital marks
@@ -93,25 +85,30 @@ set ignorecase                    "Ignore case with /  searched
 set smartcase                     "Don't ignore case when search has capital
 set scrolloff=3                   "Keep more context when csrolling, also use zz
 
-"Map j and k when pressing tab to move, prevents from typing j and k though
-inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
-
-setglobal relativenumber
-set relativenumber
-set number                        " Show line numbers
-set numberwidth=5
+set listchars=tab:▸\ ,extends:>,precedes:< " fancy tabstops and eols symbols
 
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 set makeprg=rake
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux'
+  set t_Co=16
+endif
+
+"Map j and k when pressing tab to move, prevents from typing j and k though
+inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
+inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+
 " fancy status line
 set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B\ (%b)%)
+
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
       \   exe "normal g`\"" |
       \ endif
+
 "---------------------------------
 "Mapping keys
 "---------------------------------
@@ -124,9 +121,6 @@ map <Leader>l :set list!<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>r :NERDTreeFind<CR>
 map <Leader>ps ysiw
-
-nmap <Leader>f :call Focus()<CR>
-nmap <Leader>h :call clearmatches()<CR>
 
 map <Leader>ea: :EasyAlign \<CR>
 map <Leader>ea= :EasyAlign =<CR>
@@ -180,9 +174,9 @@ imap <right> <nop>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib,*.tmp,*.log,releases/*
 " Sane Ignore For ctrlp
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$',
-  \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$'
-  \ }
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$',
+      \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$'
+      \ }
 
 " typo fixes
 command! Q q
@@ -212,13 +206,10 @@ au BufRead,BufNewFile *.strings set ft=yaml
 au BufRead,BufNewFile *.md set ft=markdown
 au BufRead,BufNewFile *.eye set ft=ruby
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
-
-
-
 autocmd FileType markdown setlocal spell
 
 "Remove trailing whitespace when writing a file
-autocmd BufWritePre *.{rb,php,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
+autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
 
 " The Silver Searcher
 if executable('ag')
