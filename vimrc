@@ -115,8 +115,6 @@ autocmd BufReadPost *
 " change mapleader to ,
 let mapleader = ","
 " Shortcuts
-map <Leader>m :RVmodel<CR>
-map <Leader>c :RVcontroller<CR>
 map <Leader>l :set list!<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>r :NERDTreeFind<CR>

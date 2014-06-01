@@ -12,7 +12,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 . ~/dotfiles/functions
 
 # Allow completing of the remainder of a command
-bindkey "^N" insert-last-word
+#bindkey "^N" insert-last-word
 
 # Save a ton of history
 HISTSIZE=20000
