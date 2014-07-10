@@ -1,5 +1,3 @@
-# mvim
-alias m='mvim'
 # cd
 alias ..='cd ..'
 
@@ -13,6 +11,7 @@ alias a='ls -lrthG'
 
 # git
 alias gl='git pull'
+alias glr='git pull --rebase'
 alias gp='git push'
 alias gd='git diff'
 alias gc='git commit'
@@ -38,6 +37,10 @@ alias raek='rake'
 alias ake='rake'
 alias bu='bundle update $1'
 alias rt='rake target=6.1 retina=false'
+alias migrate="rake db:migrate db:rollback && rake db:migrate"
+alias m="migrate"
+alias rk="rake"
+alias s="rspec"
 
 alias rdm="be rake db:migrate"
 alias rdtp="be rake db:test:prepare"

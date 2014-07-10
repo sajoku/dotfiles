@@ -1,9 +1,9 @@
 if has("gui_running")
 " set relativenumber
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h16
   colorscheme base16-solarized
   set t_Co=256
-  set background=light
+  set background=dark
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
 
@@ -39,8 +39,8 @@ if has("gui_running")
 
   hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160 
   hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-  autocmd BufRead,BufNewFile,WinEnter *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
-  autocmd BufRead,BufNewFile,WinEnter *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
+  autocmd BufRead,BufNewFile,VimEnter *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
+  autocmd BufRead,BufNewFile,VimEnter *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
   " autocmd VimEnter *.rb autocmd WinEnter * let w:created=1
   " autocmd VimEnter *.rb let w:created=1
 

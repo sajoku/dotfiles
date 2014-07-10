@@ -48,6 +48,7 @@ Plugin 'endel/vim-github-colorscheme'
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'thoughtbot/vim-rspec'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -230,6 +231,10 @@ vnoremap < <gv
 vnoremap > >gv
 
 let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#fnamemod = ':t'
+
+
 set laststatus=2
 runtime! macros/matchit.vim
 
@@ -248,3 +253,4 @@ autocmd User Rails map <Leader>m :Rmodel
 autocmd User Rails map <Leader>c :Rcontroller
 autocmd User Rails map <Leader>v :Rview
 
+let @t="ggirequire 'spec_helpero"
