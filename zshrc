@@ -37,8 +37,6 @@ stty stop undef
 
 #rvm_silence_path_mismatch_check_flag=1
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 source $ZSH/oh-my-zsh.sh
 
 #export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -51,3 +49,5 @@ unsetopt correct_all
 export BUNDLER_EDITOR=mvim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
