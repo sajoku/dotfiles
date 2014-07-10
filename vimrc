@@ -7,48 +7,49 @@ set nocompatible
 filetype off
 
 "Vundles
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Plugins
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-commentary'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-liquid'
+Plugin 'tpope/vim-endwise'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'rking/ag.vim'
+"Plugin "skwp/greplace.vim"
 
-" Bundles
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-commentary'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-liquid'
-Bundle 'tpope/vim-endwise'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'rking/ag.vim'
-Bundle "skwp/greplace.vim"
+Plugin 'groenewege/vim-less'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'ervandew/supertab'
+Plugin 'bling/vim-airline'
 
-Bundle 'groenewege/vim-less'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'ervandew/supertab'
-Bundle 'bling/vim-airline'
+Plugin 'slim-template/vim-slim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/html5.vim'
+"Plugin 'fatih/vim-go.git'
 
-Bundle 'slim-template/vim-slim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'othree/html5.vim'
-"Bundle 'fatih/vim-go.git'
-
-Bundle 'scrooloose/syntastic'
-Bundle 'sajoku/vim-indent-guides'
+Plugin 'scrooloose/syntastic'
+Plugin 'sajoku/vim-indent-guides'
 
 " nelstrom's plugin depends on kana's
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 "color themes via vundle yeay
-Bundle 'chriskempson/base16-vim'
-Bundle 'endel/vim-github-colorscheme'
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'altercation/vim-colors-solarized'
 
-Bundle 'thoughtbot/vim-rspec'
+Plugin 'thoughtbot/vim-rspec'
+call vundle#end()
+filetype plugin indent on
 
 syntax on
 syntax enable
@@ -87,8 +88,8 @@ set scrolloff=3                   "Keep more context when csrolling, also use zz
 
 set listchars=tab:▸\ ,extends:>,precedes:< " fancy tabstops and eols symbols
 
-set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+set backupdir=~/.vim/backup
 set makeprg=rake
 
 " Allow color schemes to do bright colors without forcing bold.
@@ -122,7 +123,7 @@ map <Leader>ps ysiw
 
 map <Leader>ea: :EasyAlign \<CR>
 map <Leader>ea= :EasyAlign =<CR>
-map <leader>ea :EasyAlign 
+map <leader>ea :EasyAlign
 
 "resource and edit vimrc
 nmap <leader>rs :so ~/.vimrc<CR>
