@@ -33,7 +33,7 @@ Plugin 'bling/vim-airline'
 Plugin 'slim-template/vim-slim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/html5.vim'
-"Plugin 'fatih/vim-go.git'
+Plugin 'fatih/vim-go.git'
 
 Plugin 'scrooloose/syntastic'
 Plugin 'sajoku/vim-indent-guides'
