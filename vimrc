@@ -37,6 +37,7 @@ Plugin 'fatih/vim-go.git'
 
 Plugin 'scrooloose/syntastic'
 Plugin 'sajoku/vim-indent-guides'
+Plugin 'Raimondi/delimitMate'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -248,3 +249,4 @@ autocmd User Rails map <Leader>m :Rmodel
 autocmd User Rails map <Leader>c :Rcontroller
 autocmd User Rails map <Leader>v :Rview
 
+map <Leader>a :DelimitMateSwitch<CR>
