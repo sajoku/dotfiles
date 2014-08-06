@@ -33,10 +33,11 @@ Plugin 'bling/vim-airline'
 Plugin 'slim-template/vim-slim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/html5.vim'
-"Plugin 'fatih/vim-go.git'
+Plugin 'fatih/vim-go.git'
 
 Plugin 'scrooloose/syntastic'
 Plugin 'sajoku/vim-indent-guides'
+Plugin 'Raimondi/delimitMate'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -254,3 +255,4 @@ autocmd User Rails map <Leader>c :Rcontroller
 autocmd User Rails map <Leader>v :Rview
 
 let @t="ggirequire 'spec_helpero"
+map <Leader>a :DelimitMateSwitch<CR>
