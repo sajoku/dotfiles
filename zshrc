@@ -2,10 +2,6 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 DEFAULT_USER="sajoku"
-# Base16 Shell
-BASE16_SCHEME="eighties"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 #include some other files
 . ~/dotfiles/aliases
@@ -18,11 +14,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 HISTSIZE=20000
 HISTFILE=~/.zsh_history
 SAVEHIST=20000
-
-#Show contents of directory after cd-ing into it
-chpwd() {
-  ls -lrthG
-}
 
 # Enable completion
 autoload -U compinit
