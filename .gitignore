@@ -6,3 +6,5 @@ vim/backup
 vim/backups
 vim/bundle
 vim/bundle/*.*
+vim/plugin
+vim/plugin/*.*
