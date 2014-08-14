@@ -19,7 +19,7 @@ SAVEHIST=20000
 autoload -U compinit
 compinit
 
-plugins=(git rails ruby bundler zsh-syntax-highlighting)
+plugins=(git rails ruby bundler)
 
 # Disable flow control commands (keeps C-s from freezing everything)
 stty start undef
