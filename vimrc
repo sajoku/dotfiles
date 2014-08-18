@@ -7,10 +7,10 @@ set nocompatible
 filetype off
 
 "Vundles
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 " Plugins
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-commentary'
@@ -33,7 +33,7 @@ Plugin 'bling/vim-airline'
 Plugin 'slim-template/vim-slim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/html5.vim'
-Plugin 'fatih/vim-go.git'
+"Plugin 'fatih/vim-go.git'
 
 Plugin 'scrooloose/syntastic'
 Plugin 'sajoku/vim-indent-guides'
