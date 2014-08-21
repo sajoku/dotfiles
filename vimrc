@@ -256,3 +256,6 @@ autocmd User Rails map <Leader>v :Rview
 
 let @t="ggirequire 'spec_helpero"
 map <Leader>a :DelimitMateSwitch<CR>
+
+" Remap to escape
+inoremap jk <esc>
