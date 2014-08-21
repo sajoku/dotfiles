@@ -7,9 +7,6 @@ DEFAULT_USER="sajoku"
 . ~/dotfiles/aliases
 . ~/dotfiles/functions
 
-# Allow completing of the remainder of a command
-#bindkey "^N" insert-last-word
-
 # Save a ton of history
 HISTSIZE=20000
 HISTFILE=~/.zsh_history
