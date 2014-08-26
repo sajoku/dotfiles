@@ -22,13 +22,12 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gf='git difftool -t vimdiff'
 
-#git extended 
+#git extended
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 #ruby
 alias killruby='killall -9 ruby'
 alias reguard='killall -9 guard; be guard'
-
 
 # rails
 #alias scaffold='script/generate nifty_scaffold'
@@ -46,8 +45,6 @@ alias rdm="be rake db:migrate"
 alias rdtp="be rake db:test:prepare"
 alias prepdb="rdm && rdtp"
 
-
-
 alias devlog='tail -f log/development.log'
 
 alias c='cd ~/code'
@@ -59,6 +56,7 @@ alias gocode='cd ~/gocode/src'
 #rubymotion
 alias raker='rake retina=4'
 alias raked='rake device'
+alias rake_debug = 'bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
 
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
