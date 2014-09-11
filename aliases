@@ -56,7 +56,7 @@ alias gocode='cd ~/gocode/src'
 #rubymotion
 alias raker='rake retina=4'
 alias raked='rake device'
-alias rake_debug = 'bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
+alias rake_debug='bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
 
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
