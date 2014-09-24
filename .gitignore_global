@@ -13,4 +13,3 @@ app/views/layouts/application.html.liquid
 app/views/articles/show.html.liquid
 .old
 .sass-cache
-.ruby-version
