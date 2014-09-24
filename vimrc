@@ -22,6 +22,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'rking/ag.vim'
 "Plugin "skwp/greplace.vim"
+Plugin 'takac/vim-hardtime'
 
 Plugin 'groenewege/vim-less'
 Plugin 'vim-ruby/vim-ruby'
@@ -259,3 +260,7 @@ map <Leader>a :DelimitMateSwitch<CR>
 
 " Remap to escape
 inoremap jk <esc>
+let g:hardtime_default_on = 1
+let g:hardtime_timeout = 1000
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 2
