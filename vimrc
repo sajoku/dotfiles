@@ -58,7 +58,7 @@ syntax enable
 filetype plugin indent on
 set encoding=utf-8
 
-set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
+"set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set autoindent                    " Always set autoindenting on
 set history=50                  " Keep 50 lines in history
 set ruler                         " Always show cursor
