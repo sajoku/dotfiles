@@ -265,3 +265,4 @@ let g:hardtime_default_on = 1
 let g:hardtime_timeout = 1000
 let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
+map <Leader>ht :call HardTimeToggle()<CR>
