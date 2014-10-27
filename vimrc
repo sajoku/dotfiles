@@ -193,7 +193,7 @@ command! Vs vs
 command! Qall qall
 
 " set 256 colors
-colorscheme base16-chalk
+colorscheme base16-solarized
 set t_Co=256
 set background=dark
 
