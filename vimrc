@@ -56,7 +56,6 @@ filetype plugin indent on
 
 syntax on
 syntax enable
-filetype plugin indent on
 set encoding=utf-8
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
