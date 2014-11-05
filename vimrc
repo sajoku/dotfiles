@@ -58,7 +58,7 @@ syntax on
 syntax enable
 set encoding=utf-8
 
-set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
+"set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set autoindent                    " Always set autoindenting on
 set history=50                  " Keep 50 lines in history
 set ruler                         " Always show cursor
@@ -192,7 +192,7 @@ command! Vs vs
 command! Qall qall
 
 " set 256 colors
-colorscheme base16-chalk
+colorscheme base16-solarized
 set t_Co=256
 set background=dark
 
@@ -264,3 +264,4 @@ let g:hardtime_default_on = 1
 let g:hardtime_timeout = 1000
 let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
+map <Leader>ht :call HardTimeToggle()<CR>

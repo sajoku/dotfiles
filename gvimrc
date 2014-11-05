@@ -1,7 +1,7 @@
 if has("gui_running")
 " set relativenumber
-  set guifont=Source\ Code\ Pro\ Light:h18
-  colorscheme solarized
+  set guifont=Source\ Code\ Pro\ Light:h14
+  colorscheme base16-solarized
   set t_Co=256
   set background=light
   set fuoptions=maxvert,maxhorz
