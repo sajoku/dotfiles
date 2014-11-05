@@ -39,8 +39,8 @@ if has("gui_running")
 
   hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160 
   hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-  autocmd BufRead,BufNewFile,VimEnter *.rb if !exists('w:created') | let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1) | endif
-  autocmd BufRead,BufNewFile,VimEnter *.rb if !exists('w:created') | let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1) | endif
+  autocmd BufRead,BufNewFile,VimEnter *.rb let w:m1=matchadd('LineProximity', '\%<120v.\%>115v', -1)
+  autocmd BufRead,BufNewFile,VimEnter *.rb let w:m2=matchadd('LineOverflow', '\%>119v.\+', -1)
   " autocmd VimEnter *.rb autocmd WinEnter * let w:created=1
   " autocmd VimEnter *.rb let w:created=1
 
