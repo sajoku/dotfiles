@@ -1,16 +1,9 @@
 " Maintained by Sajoku
-"
 " Always use vim mode, even when starting with vi
 set nocompatible
 
 " change mapleader to ,
 let mapleader = ","
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
 
 if filereadable(expand("~/dotfiles/vimrc.plugins"))
   source ~/dotfiles/vimrc.plugins
@@ -18,11 +11,19 @@ endif
 
 filetype plugin indent on
 
-syntax on
 syntax enable
 set encoding=utf-8
 
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
+
 "set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
+set nobackup
+set nowritebackup
+set noswapfile                    " Stop using .swp files
 set autoindent                    " Always set autoindenting on
 set history=50                  " Keep 50 lines in history
 set ruler                         " Always show cursor
@@ -33,10 +34,8 @@ set mousehide                     " Hide mouse when typing
 set timeoutlen=500                " Don't lag the leader key + command
 set nofoldenable                  " Don't fold by default
 set foldlevel=99
-set expandtab                     " Use spaces instead of tabs
-set tabstop=2                     " Globul tab width
-set shiftwidth=2
-set softtabstop=2
+
+
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
 set noesckeys
@@ -44,6 +43,7 @@ setglobal relativenumber
 set relativenumber
 set number                        " Show line numbers
 set numberwidth=5
+set laststatus=2
 
 " http://items.sjbach.com/319/configuring-vim-right
 set viminfo='100,f1               "Save up to 100 marks, enable capital marks
@@ -52,7 +52,14 @@ set ignorecase                    "Ignore case with /  searched
 set smartcase                     "Don't ignore case when search has capital
 set scrolloff=3                   "Keep more context when csrolling, also use zz
 
-set listchars=tab:▸\ ,extends:>,precedes:< " fancy tabstops and eols symbols
+"Softtabs 
+set expandtab                     " Use spaces instead of tabs
+set tabstop=2                     " Globul tab width
+set shiftwidth=2
+set softtabstop=2
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
 set directory=~/.vim/backup
 set backupdir=~/.vim/backup
@@ -133,6 +140,18 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 "exclude dirs for ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,/resources/Storyboard.storyboardc/*,*.nib,*.tmp,*.log,releases/*
 " Sane Ignore For ctrlp
@@ -187,6 +206,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
@@ -199,7 +219,6 @@ let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#fnamemod = ':t'
 
 
-set laststatus=2
 runtime! macros/matchit.vim
 
 " RSpec.vim mappings
@@ -227,3 +246,7 @@ let g:hardtime_timeout = 1000
 let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
 map <Leader>ht :call HardTimeToggle()<CR>
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
