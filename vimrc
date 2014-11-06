@@ -3,55 +3,19 @@
 " Always use vim mode, even when starting with vi
 set nocompatible
 
-" required!
-filetype off
+" change mapleader to ,
+let mapleader = ","
 
-"Vundles
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim
-call vundle#begin()
-" Plugins
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-commentary'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-liquid'
-Plugin 'tpope/vim-endwise'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'rking/ag.vim'
-"Plugin "skwp/greplace.vim"
-Plugin 'takac/vim-hardtime'
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
 
-Plugin 'groenewege/vim-less'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'ervandew/supertab'
-Plugin 'bling/vim-airline'
+if filereadable(expand("~/dotfiles/vimrc.plugins"))
+  source ~/dotfiles/vimrc.plugins
+endif
 
-Plugin 'slim-template/vim-slim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'othree/html5.vim'
-"Plugin 'fatih/vim-go.git'
-
-Plugin 'scrooloose/syntastic'
-Plugin 'sajoku/vim-indent-guides'
-Plugin 'Raimondi/delimitMate'
-
-" nelstrom's plugin depends on kana's
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-
-"color themes via vundle yeay
-Plugin 'chriskempson/base16-vim'
-Plugin 'endel/vim-github-colorscheme'
-Plugin 'altercation/vim-colors-solarized'
-
-Plugin 'thoughtbot/vim-rspec'
-
-call vundle#end()
 filetype plugin indent on
 
 syntax on
@@ -115,8 +79,6 @@ autocmd BufReadPost *
 "---------------------------------
 "Mapping keys
 "---------------------------------
-" change mapleader to ,
-let mapleader = ","
 " Shortcuts
 map <Leader>l :set list!<CR>
 map <Leader>n :NERDTreeToggle<CR>
