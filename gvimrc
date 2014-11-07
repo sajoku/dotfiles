@@ -6,7 +6,9 @@ if has("gui_running")
   set background=light
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
-
+  
+  "use cnsole dialogs instead of popups
+  set guioptions+=c
   " remove scrollbars
   set guioptions-=r
   set guioptions-=L
