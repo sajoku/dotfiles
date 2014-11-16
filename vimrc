@@ -87,7 +87,6 @@ autocmd BufReadPost *
 "Mapping keys
 "---------------------------------
 " Shortcuts
-map <Leader>l :set list!<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>r :NERDTreeFind<CR>
 map <Leader>ps ysiw
