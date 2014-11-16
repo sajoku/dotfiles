@@ -120,9 +120,6 @@ xmap s S
 "Disable Ex mode
 map Q <Nop>
 
-" Split settings
-nnoremap <leader>v <C-w>v
-nnoremap <leader>s <C-w>s
 set splitbelow   "Split windows below the current window.
 " Tab completion
 set wildmode=list:longest,list:full
@@ -174,7 +171,7 @@ command! Qall qall
 " set 256 colors
 colorscheme base16-solarized
 set t_Co=256
-set background=dark
+set background=light
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
@@ -214,9 +211,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#fnamemod = ':t'
-
 
 runtime! macros/matchit.vim
 
@@ -229,11 +223,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>g :call RunAllSpecs()<CR>
-
-" Rails configuration
-autocmd User Rails map <Leader>m :Rmodel
-autocmd User Rails map <Leader>c :Rcontroller
-autocmd User Rails map <Leader>v :Rview
 
 let @t="ggirequire 'spec_helpero"
 map <Leader>a :DelimitMateSwitch<CR>
