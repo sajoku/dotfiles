@@ -59,8 +59,3 @@ alias rake_debug='bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLoggin
 
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
-
-#projects
-alias uw='cd ~/projects/ugo_webinterface'
-alias up='cd ~/projects/ugo_passenger_ios'
-alias ud='cd ~/projects/ugo_driver'
