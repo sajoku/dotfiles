@@ -2,8 +2,9 @@ if has("gui_running")
 " set relativenumber
   set guifont=Source\ Code\ Pro\ Light:h14
   colorscheme base16-solarized
+  colorscheme base16-railscasts
   set t_Co=256
-  set background=light
+  set background=dark
   set fuoptions=maxvert,maxhorz
   :map <D-enter> :set fullscreen! <CR>
   

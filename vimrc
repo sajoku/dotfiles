@@ -169,9 +169,9 @@ command! Vs vs
 command! Qall qall
 
 " set 256 colors
-colorscheme base16-solarized
+colorscheme base16-railscasts
 set t_Co=256
-set background=light
+set background=dark
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
