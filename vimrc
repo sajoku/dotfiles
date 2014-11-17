@@ -238,3 +238,5 @@ map <Leader>ht :call HardTimeToggle()<CR>
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+let g:ruby_indent_access_modifier_style = "indent"
