@@ -65,6 +65,10 @@ set directory=~/.vim/backup
 set backupdir=~/.vim/backup
 set makeprg=rake
 
+
+"highlight search words
+set hlsearch
+
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
   set t_Co=16
@@ -217,7 +221,7 @@ runtime! macros/matchit.vim
 " RSpec.vim mappings
 set shell=sh
 let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "!rspec --drb -fd {spec}"
+let g:rspec_command = "!rspec --drb {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>

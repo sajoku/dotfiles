@@ -1,7 +1,6 @@
 if has("gui_running")
 " set relativenumber
-  set guifont=Source\ Code\ Pro\ Light:h14
-  colorscheme base16-solarized
+  set guifont=Source\ Code\ Pro\ Light:h18
   colorscheme base16-railscasts
   set t_Co=256
   set background=dark
@@ -13,7 +12,6 @@ if has("gui_running")
   " remove scrollbars
   set guioptions-=r
   set guioptions-=L
-  set hlsearch
 
   "tab switching in normal mode
   map <D-1> :tabn 1<CR>
