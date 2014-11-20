@@ -220,8 +220,8 @@ runtime! macros/matchit.vim
 
 " RSpec.vim mappings
 set shell=sh
-let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "!rspec --drb {spec}"
+"let g:rspec_runner = "os_x_iterm"
+let g:rspec_command = "!spring rspec --drb {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
