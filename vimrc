@@ -221,16 +221,18 @@ let g:airline_powerline_fonts = 1
 runtime! macros/matchit.vim
 
 " RSpec.vim mappings
+
 set shell=sh
-"let g:rspec_runner = "os_x_iterm"
+let g:rspec_runner = "os_x_iterm"
 let g:rspec_command = "!spring rspec --drb {spec}"
+"let g:rspec_command = "rspec --drb {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>g :call RunAllSpecs()<CR>
 
-let @t="ggirequire 'spec_helpero"
+let @t="ggirequire 'rails_helpero"
 map <Leader>a :DelimitMateSwitch<CR>
 
 " Remap to escape
