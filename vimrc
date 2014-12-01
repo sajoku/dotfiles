@@ -162,15 +162,17 @@ let g:ctrlp_custom_ignore = {
 
 " typo fixes
 command! Q q
+command! Qa qa
+command! Qall qall
+
 command! W w
 command! Wa wa
 command! Wq wq
 command! Wqa wqa
+
 command! Vsp vsp
 command! Sp sp
-command! Qa qa
 command! Vs vs
-command! Qall qall
 
 " set 256 colors
 colorscheme base16-railscasts
