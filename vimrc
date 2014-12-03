@@ -65,6 +65,8 @@ set directory=~/.vim/backup
 set backupdir=~/.vim/backup
 set makeprg=rake
 
+"Allow copy paste in terminal vim
+set clipboard=unnamed
 
 "highlight search words
 set hlsearch
