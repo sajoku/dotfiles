@@ -1,14 +1,11 @@
 if has("gui_running")
-" set relativenumber
   set guifont=Source\ Code\ Pro\ Light:h18
-  "set guifont=Anonymice\ Powerline:h24
-  colorscheme solarized
-  set t_Co=256
-  set background=light
+  colorscheme base16-ocean
+  set background=dark
   set fuoptions=maxvert,maxhorz
+
   :map <D-enter> :set fullscreen! <CR>
-  
-  "use cnsole dialogs instead of popups
+  "use console dialogs instead of popups
   set guioptions+=c
   " remove scrollbars
   set guioptions-=r
