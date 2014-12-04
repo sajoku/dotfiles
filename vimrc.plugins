@@ -48,6 +48,7 @@ Plugin 'endel/vim-github-colorscheme'
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-dispatch'
 
 call vundle#end()
 filetype on
