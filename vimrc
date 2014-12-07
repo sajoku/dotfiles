@@ -179,7 +179,7 @@ command! Vs vs
 " set 256 colors
 colorscheme base16-ocean
 set t_Co=256
-set background=dark
+set background=light
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
