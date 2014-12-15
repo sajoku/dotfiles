@@ -228,7 +228,7 @@ if !has("gui_running")
   set shell=sh
 end
 let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "!spring rspec --drb {spec}"
+let g:rspec_command = "!spring rspec {spec}"
 "let g:rspec_command = "Dispatch spring rspec --drb {spec}"
 "let g:rspec_command = "rspec --drb {spec}"
 
