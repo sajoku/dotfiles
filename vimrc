@@ -35,7 +35,6 @@ set timeoutlen=500                " Don't lag the leader key + command
 set nofoldenable                  " Don't fold by default
 set foldlevel=99
 
-
 set visualbell                    "no sounds
 set incsearch                     "find as you type search
 set noesckeys
@@ -52,8 +51,8 @@ set ignorecase                    "Ignore case with /  searched
 set smartcase                     "Don't ignore case when search has capital
 set scrolloff=3                   "Keep more context when csrolling, also use zz
 
-"Softtabs 
-set expandtab                     " Use spaces instead of tabs
+"Softtabs
+set expandtab                     " Use spaces instead of tab
 set tabstop=2                     " Globul tab width
 set shiftwidth=2
 set softtabstop=2
@@ -179,7 +178,7 @@ command! Vs vs
 " set 256 colors
 colorscheme base16-ocean
 set t_Co=256
-set background=dark
+set background=light
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
@@ -223,7 +222,6 @@ let g:airline_powerline_fonts = 1
 runtime! macros/matchit.vim
 
 " RSpec.vim mappings
-
 if !has("gui_running")
   set shell=sh
 end
@@ -248,15 +246,9 @@ let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
 map <Leader>ht :call HardTimeToggle()<CR>
 
-" Open new split panes to right and bottom, which feels more natural
-"set splitbelow
-"set splitright
-
 let g:ruby_indent_access_modifier_style = "indent"
 
-
-
-hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160 
+hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
 hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
 autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
 autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
