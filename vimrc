@@ -178,7 +178,7 @@ command! Vs vs
 " set 256 colors
 colorscheme base16-ocean
 set t_Co=256
-set background=light
+set background=dark
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
@@ -226,7 +226,12 @@ if !has("gui_running")
   set shell=sh
 end
 let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "!spring rspec {spec}"
+if executable('spring')
+  let g:rspec_command = "!spring rspec {spec}"
+else
+  let g:rspec_command = "!rspec {spec}"
+end
+
 "let g:rspec_command = "Dispatch spring rspec --drb {spec}"
 "let g:rspec_command = "rspec --drb {spec}"
 
