@@ -49,6 +49,7 @@ Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-dispatch'
+Bundle 'jgdavey/tslime.vim'
 
 call vundle#end()
 filetype on

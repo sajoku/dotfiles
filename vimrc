@@ -232,8 +232,13 @@ else
   let g:rspec_command = "!rspec {spec}"
 end
 
+"let g:rspec_runner = "os_x_iterm"
+"let g:rspec_command = "!spring rspec {spec}"
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 "let g:rspec_command = "Dispatch spring rspec --drb {spec}"
 "let g:rspec_command = "rspec --drb {spec}"
+"let g:rspec_runner = "os_x_iterm"
+"let g:rspec_command = "!spring rspec --drb {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
