@@ -1,7 +1,7 @@
 if has("gui_running")
   set guifont=Source\ Code\ Pro\ Light:h18
-  colorscheme base16-ocean
-  set background=dark
+  colorscheme base16-mocha
+  set background=light
   set fuoptions=maxvert,maxhorz
 
   :map <D-enter> :set fullscreen! <CR>
