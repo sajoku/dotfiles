@@ -225,6 +225,7 @@ runtime! macros/matchit.vim
 if !has("gui_running")
   set shell=sh
 end
+
 let g:rspec_runner = "os_x_iterm"
 if executable('spring')
   let g:rspec_command = "!spring rspec {spec}"
@@ -232,8 +233,6 @@ else
   let g:rspec_command = "!rspec {spec}"
 end
 
-"let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "!spring rspec {spec}"
 "let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 "let g:rspec_command = "Dispatch spring rspec --drb {spec}"
 "let g:rspec_command = "rspec --drb {spec}"
@@ -258,9 +257,9 @@ map <Leader>ht :call HardTimeToggle()<CR>
 
 let g:ruby_indent_access_modifier_style = "indent"
 
-hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
+"hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
+"hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
+"autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
+"autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
 " autocmd VimEnter *.rb autocmd WinEnter * let w:created=1
 " autocmd VimEnter *.rb let w:created=1
