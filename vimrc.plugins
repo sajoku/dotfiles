@@ -48,12 +48,11 @@ Plugin 'endel/vim-github-colorscheme'
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-dispatch'
-Plugin 'jgdavey/tslime.vim'
+"Plugin 'jgdavey/tslime.vim'
 
+"tmux
 Plugin 'christoomey/vim-tmux-navigator'
-
-
+Plugin 'christoomey/vim-tmux-runner'
 
 call vundle#end()
 filetype on
