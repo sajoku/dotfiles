@@ -49,7 +49,11 @@ Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-dispatch'
-Bundle 'jgdavey/tslime.vim'
+Plugin 'jgdavey/tslime.vim'
+
+Plugin 'christoomey/vim-tmux-navigator'
+
+
 
 call vundle#end()
 filetype on

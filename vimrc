@@ -197,6 +197,13 @@ autocmd FileType markdown setlocal spell
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
 
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
 " The Silver Searcher
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
@@ -256,6 +263,7 @@ let g:hardtime_maxcount = 2
 map <Leader>ht :call HardTimeToggle()<CR>
 
 let g:ruby_indent_access_modifier_style = "indent"
+
 
 "hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
 "hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
