@@ -259,7 +259,7 @@ let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
 map <Leader>ht :call HardTimeToggle()<CR>
 
-let g:ruby_indent_access_modifier_style = "indent"
+"let g:ruby_indent_access_modifier_style = "indent"
 
 
 "hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
