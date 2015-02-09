@@ -38,6 +38,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'sajoku/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 
+Plugin 'ap/vim-css-color'
+
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
