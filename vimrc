@@ -259,9 +259,9 @@ let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
 map <Leader>ht :call HardTimeToggle()<CR>
 
-"hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-"hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-"autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-"autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
-" autocmd VimEnter *.rb autocmd WinEnter * let w:created=1
-" autocmd VimEnter *.rb let w:created=1
+hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
+hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
+autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
+autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
+autocmd VimEnter *.rb autocmd WinEnter * let w:created=1
+autocmd VimEnter *.rb let w:created=1
