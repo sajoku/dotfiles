@@ -114,10 +114,10 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 " easier window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+"nmap <C-h> <C-w>h
+"nmap <C-j> <C-w>j
+"nmap <C-k> <C-w>k
+"nmap <C-l> <C-w>l
 
 "remap so i can use vim-suround
 xmap s S
