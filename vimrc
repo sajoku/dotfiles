@@ -245,6 +245,8 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>g :call RunAllSpecs()<CR>
 
+nnoremap <leader>va :VtrAttachToPane<cr>
+
 let @t="ggirequire 'rails_helpero"
 map <Leader>a :DelimitMateSwitch<CR>
 
