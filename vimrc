@@ -114,10 +114,10 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 " easier window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+"nmap <C-h> <C-w>h
+"nmap <C-j> <C-w>j
+"nmap <C-k> <C-w>k
+"nmap <C-l> <C-w>l
 
 "remap so i can use vim-suround
 xmap s S
@@ -244,6 +244,8 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>g :call RunAllSpecs()<CR>
+
+nnoremap <leader>va :VtrAttachToPane<cr>
 
 let @t="ggirequire 'rails_helpero"
 map <Leader>a :DelimitMateSwitch<CR>
