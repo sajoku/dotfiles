@@ -66,3 +66,5 @@ ensure_tmux_is_running() {
 }
 
 ensure_tmux_is_running
+
+alias tls="tmux list-sessions"
