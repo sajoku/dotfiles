@@ -56,6 +56,12 @@ alias gocode='cd ~/gocode/src'
 alias raker='rake retina=4'
 alias rake_debug='bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
 
+alias rc="spring stop && rails console"
+
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 alias rm='trash'
+
+#show config for rails projects with capistrano
+alias staging="cat config/deploy/staging.rb"
+alias prod="cat config/deploy/production.rb"
