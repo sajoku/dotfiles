@@ -226,6 +226,9 @@ vnoremap > >gv
 
 let g:airline_powerline_fonts = 1
 
+" Set airline theme
+let g:airline_theme='base16'
+
 runtime! macros/matchit.vim
 
 " RSpec.vim mappings
