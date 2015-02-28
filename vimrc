@@ -255,6 +255,13 @@ noremap jk <esc> :echo '>>>>>> Use jj! <<<<<'<CR>
 inoremap jk <esc> :echo '>>>>> Use jj! <<<<<'<CR>
 inoremap jj <esc>
 
+" insert blank lines without going into insert mode
+nmap go o<esc>
+nmap gO O<esc>
+
+" shortcut for searching
+nmap g/ :Ag<space>
+
 let g:hardtime_default_on = 0
 let g:hardtime_timeout = 1000
 let g:hardtime_allow_different_key = 1
