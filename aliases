@@ -18,8 +18,6 @@ alias gca='git commit -a'
 alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias gf='git difftool -t vimdiff'
 
 #git extended
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
@@ -27,24 +25,33 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 #ruby
 alias killruby='killall -9 ruby'
 alias reguard='killall -9 guard; be guard'
-
-# rails
-#alias scaffold='script/generate nifty_scaffold'
-alias rkae='rake'
-alias raek='rake'
-alias ake='rake'
 alias bu='bundle update $1'
-alias rt='rake target=6.1 retina=false'
+
+#rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
-alias rk="rake"
-alias s="rspec"
-
 alias rdm="be rake db:migrate"
 alias rdtp="be rake db:test:prepare"
 alias prepdb="rdm && rdtp"
 
+alias s="rspec"
 alias devlog='tail -f log/development.log'
+alias rc="spring stop && rails console"
+
+#show config for rails projects with capistrano
+alias staging="cat config/deploy/staging.rb"
+alias prod="cat config/deploy/production.rb"
+
+#rake typos
+alias rkae='rake'
+alias raek='rake'
+alias ake='rake'
+alias rk="rake"
+
+#rubymotion
+alias rt='rake target=6.1 retina=false'
+alias raker='rake retina=4'
+alias rake_debug='bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
 
 alias c='cd ~/code'
 alias p='cd ~/projects'
@@ -52,16 +59,8 @@ alias dot='cd ~/dotfiles'
 alias pl='cd ~/playground'
 alias gocode='cd ~/gocode/src'
 
-#rubymotion
-alias raker='rake retina=4'
-alias rake_debug='bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
-
-alias rc="spring stop && rails console"
 
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
-alias rm='trash'
 
-#show config for rails projects with capistrano
-alias staging="cat config/deploy/staging.rb"
-alias prod="cat config/deploy/production.rb"
+alias rm='trash'
