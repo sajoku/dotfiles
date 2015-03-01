@@ -60,10 +60,8 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-  local user=`whoami`
-
-  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$user@%m"
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
   fi
 }
 
@@ -125,10 +123,10 @@ prompt_hg() {
       st=""
       rev=$(hg id -n 2>/dev/null | sed 's/[^-0-9]//g')
       branch=$(hg id -b 2>/dev/null)
-      if `hg st | grep -Eq "^\?"`; then
+      if `hg st | grep -q "^\?"`; then
         prompt_segment red black
         st='±'
-      elif `hg st | grep -Eq "^(M|A)"`; then
+      elif `hg st | grep -q "^(M|A)"`; then
         prompt_segment yellow black
         st='±'
       else
@@ -141,7 +139,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue black '%2d'
+  prompt_segment blue black '%~'
 }
 
 # Virtualenv: current working virtualenv
@@ -166,6 +164,18 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+prompt_newline() {
+  if [[ -n $CURRENT_BG ]]; then
+    echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
+%{%k%F{blue}%}$SEGMENT_SEPARATOR"
+  else
+    echo -n "%{%k%}"
+  fi
+
+  echo -n "%{%f%}"
+  CURRENT_BG=''
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -175,6 +185,7 @@ build_prompt() {
   prompt_dir
   prompt_git
   prompt_hg
+  prompt_newline
   prompt_end
 }
 
