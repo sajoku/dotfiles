@@ -107,7 +107,7 @@ nmap <leader>es :e ~/.vimrc<CR>
 "indent and move cursor back to previous pos
 map <Leader>i mmgg=G`m<CR>
 "Paste with correct indentation
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+"map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
@@ -153,6 +153,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+nnoremap <C-P> :call PickFile()<CR>
 "exclude dirs for ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*
 " Sane Ignore For ctrlp
