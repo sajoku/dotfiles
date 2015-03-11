@@ -6,11 +6,11 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 " Plugs
-Plug 'gmarik/Vundle.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-commentary'
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
+Plug 'thoughtbot/pick.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-liquid'
