@@ -153,7 +153,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-nnoremap <C-P> :call PickFile()<CR>
+"nnoremap <C-P> :call PickFile()<CR>
 "exclude dirs for ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*
 " Sane Ignore For ctrlp
