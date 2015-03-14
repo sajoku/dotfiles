@@ -238,11 +238,12 @@ if !has("gui_running")
 end
 
 let g:rspec_runner = "os_x_iterm"
-if executable('spring')
-  let g:rspec_command = "VtrSendCommandToRunner! spring rspec {spec}"
-else
-  let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
-end
+"if executable('spring')
+"  let g:rspec_command = "VtrSendCommandToRunner! spring rspec {spec}"
+"else
+"  let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+"end
+let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
