@@ -178,7 +178,7 @@ command! Sp sp
 command! Vs vs
 
 " set 256 colors
-colorscheme base16-mocha
+colorscheme base16-railscasts
 set t_Co=256
 set background=dark
 
