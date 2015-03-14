@@ -52,9 +52,10 @@ set smartcase                     "Don't ignore case when search has capital
 set scrolloff=3                   "Keep more context when csrolling, also use zz
 
 "Softtabs
-set expandtab                     " Use spaces instead of tab
 set tabstop=2                     " Globul tab width
 set shiftwidth=2
+set shiftround
+set expandtab                     " Use spaces instead of tab
 set softtabstop=2
 
 " Display extra whitespace
