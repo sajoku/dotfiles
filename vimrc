@@ -279,7 +279,7 @@ autocmd BufEnter,VimEnter,FileType *.rb,*.coffee let w:m2=matchadd('LineOverflow
 autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee autocmd WinEnter *.rb,*.coffee let w:created=1
 autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee let w:created=1
 
-"Resize splits with ctrl-shift-(h,j,k,l)
+"Resize splits with shift-(h,j,k,l)
 nnoremap <S-h> :exe "vertical resize +10"<CR>
 nnoremap <S-l> :exe "vertical resize -10"<CR>
 nnoremap <S-k> :exe "resize +10"<CR>
