@@ -199,12 +199,6 @@ autocmd FileType markdown setlocal spell
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
 
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-" zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
 
 " The Silver Searcher
 if executable('ag')
@@ -279,8 +273,18 @@ autocmd BufEnter,VimEnter,FileType *.rb,*.coffee let w:m2=matchadd('LineOverflow
 autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee autocmd WinEnter *.rb,*.coffee let w:created=1
 autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee let w:created=1
 
+">>>>>
+"Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
 nnoremap <S-h> :exe "vertical resize +10"<CR>
 nnoremap <S-l> :exe "vertical resize -10"<CR>
 nnoremap <S-k> :exe "resize +10"<CR>
 nnoremap <S-j> :exe "resize -10"<CR>
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+"<<<<<
