@@ -276,3 +276,9 @@ autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m1=matchadd('LineProximi
 autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
 autocmd VimEnter *.rb,*.coffee autocmd WinEnter *.rb,*.coffee let w:created=1
 autocmd VimEnter *.rb,*.coffee let w:created=1
+
+"Resize splits with ctrl-shift-(h,j,k,l)
+nnoremap <S-h> :exe "vertical resize +10"<CR>
+nnoremap <S-l> :exe "vertical resize -10"<CR>
+nnoremap <S-k> :exe "resize +10"<CR>
+nnoremap <S-j> :exe "resize -10"<CR>
