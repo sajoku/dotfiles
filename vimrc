@@ -22,7 +22,7 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-"set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
+set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set nobackup
 set nowritebackup
 set noswapfile                    " Stop using .swp files
