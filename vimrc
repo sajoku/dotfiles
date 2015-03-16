@@ -54,9 +54,10 @@ set smartcase                     "Don't ignore case when search has capital
 set scrolloff=3                   "Keep more context when csrolling, also use zz
 
 "Softtabs
-set expandtab                     " Use spaces instead of tab
 set tabstop=2                     " Globul tab width
 set shiftwidth=2
+set shiftround
+set expandtab                     " Use spaces instead of tab
 set softtabstop=2
 
 " Display extra whitespace
@@ -155,7 +156,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-nnoremap <C-P> :call PickFile()<CR>
+"nnoremap <C-P> :call PickFile()<CR>
 "exclude dirs for ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*
 " Sane Ignore For ctrlp
@@ -179,9 +180,9 @@ command! Sp sp
 command! Vs vs
 
 " set 256 colors
-colorscheme base16-mocha
+colorscheme base16-railscasts
 set t_Co=256
-set background=light
+set background=dark
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
@@ -200,12 +201,6 @@ autocmd FileType markdown setlocal spell
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
 
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-" zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
 
 " The Silver Searcher
 if executable('ag')
@@ -240,11 +235,12 @@ if !has("gui_running")
 end
 
 let g:rspec_runner = "os_x_iterm"
-if executable('spring')
-  let g:rspec_command = "VtrSendCommandToRunner! spring rspec {spec}"
-else
-  let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
-end
+"if executable('spring')
+"  let g:rspec_command = "VtrSendCommandToRunner! spring rspec {spec}"
+"else
+"  let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+"end
+let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -274,7 +270,23 @@ map <Leader>ht :call HardTimeToggle()<CR>
 
 hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
 hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-autocmd BufRead,BufNewFile,VimEnter *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
-autocmd VimEnter *.rb autocmd WinEnter * let w:created=1
-autocmd VimEnter *.rb let w:created=1
+autocmd BufEnter,VimEnter,FileType *.rb,*.coffee let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
+autocmd BufEnter,VimEnter,FileType *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
+autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee autocmd WinEnter *.rb,*.coffee let w:created=1
+autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee let w:created=1
+
+">>>>>
+"Zoom and resize stuff
+"Resize splits with shift-(h,j,k,l)
+nnoremap <S-h> :exe "vertical resize +10"<CR>
+nnoremap <S-l> :exe "vertical resize -10"<CR>
+nnoremap <S-k> :exe "resize +10"<CR>
+nnoremap <S-j> :exe "resize -10"<CR>
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+"<<<<<
