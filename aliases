@@ -66,3 +66,8 @@ alias rm='trash'
 
 #vim
 alias bim='vim'
+
+#term
+alias hcl='history -c; clear'
+#tmux
+alias tma='tmux attach'
