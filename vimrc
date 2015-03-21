@@ -281,7 +281,7 @@ autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee let w:created=1
 nnoremap <S-h> :exe "vertical resize +10"<CR>
 nnoremap <S-l> :exe "vertical resize -10"<CR>
 nnoremap <S-k> :exe "resize +10"<CR>
-nnoremap <S-j> :exe "resize -10"<CR>
+"nnoremap <S-j> :exe "resize -10"<CR>
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
