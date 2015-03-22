@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root>
   <item>
-    <name>Allow esc+wasd keys to behave like arrow keys</name>
+    <name>Allow Shift+WASD keys to behave like arrow keys</name>
     <identifier>private.allow_esc_with_arrow_keys</identifier>
     <autogen>__KeyToKey__ KeyCode::W , ModifierFlag::SHIFT_L, KeyCode::CURSOR_UP | ModifierFlag::NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::A , ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT | ModifierFlag::NONE</autogen>
