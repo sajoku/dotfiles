@@ -253,6 +253,7 @@ let @t="ggirequire 'rails_helpero"
 map <Leader>a :DelimitMateSwitch<CR>
 
 " Remap to escape
+inoremap <esc>  <esc>:echom ">>> Okay, I'll escap for your this time. But use your own predefined jj remap the next time!<<<"<CR>
 inoremap jj <esc>
 
 " insert blank lines without going into insert mode
