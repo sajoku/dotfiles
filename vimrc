@@ -196,7 +196,9 @@ au BufRead,BufNewFile *.md set ft=markdown
 au BufRead,BufNewFile *.eye set ft=ruby
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.hamlc set ft=haml
+
 autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
 
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
