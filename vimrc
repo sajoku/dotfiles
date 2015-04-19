@@ -180,9 +180,9 @@ command! Sp sp
 command! Vs vs
 
 " set 256 colors
-colorscheme base16-chalk
+colorscheme base16-mocha
 set t_Co=256
-set background=light
+set background=dark
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
@@ -255,7 +255,7 @@ let @t="ggirequire 'rails_helpero"
 map <Leader>a :DelimitMateSwitch<CR>
 
 " Remap to escape
-inoremap <esc>  <esc>:echom ">>> Okay, I'll escap for your this time. But use your own predefined jj remap the next time!<<<"<CR>
+inoremap <esc> <nop>
 inoremap jj <esc>
 
 " insert blank lines without going into insert mode
@@ -273,10 +273,10 @@ map <Leader>ht :call HardTimeToggle()<CR>
 
 hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
 hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-autocmd BufEnter,VimEnter,FileType *.rb,*.coffee let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-autocmd BufEnter,VimEnter,FileType *.rb,*.coffee let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
-autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee autocmd WinEnter *.rb,*.coffee let w:created=1
-autocmd BufEnter,VimEnter,FileType,VimEnter *.rb,*.coffee let w:created=1
+autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
+autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
+autocmd BufEnter,VimEnter,FileType ruby,coffeescript autocmd WinEnter,Filetype ruby,coffeescript let w:created=1
+autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:created=1
 
 ">>>>>
 "Zoom and resize stuff
