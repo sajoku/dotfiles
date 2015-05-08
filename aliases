@@ -38,6 +38,8 @@ alias s="rspec"
 alias devlog='tail -f log/development.log'
 alias rc="spring stop && rails console"
 
+alias summer="spring stop"
+
 #show config for rails projects with capistrano
 alias staging="cat config/deploy/staging.rb"
 alias prod="cat config/deploy/production.rb"
@@ -62,7 +64,6 @@ alias gocode='cd ~/gocode/src'
 
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
-alias rm='trash'
 
 #vim
 alias bim='vim'
