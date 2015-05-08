@@ -30,7 +30,7 @@ Plug 'bling/vim-airline'
 Plug 'slim-template/vim-slim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'othree/html5.vim'
-"Plug 'fatih/vim-go.git'
+Plug 'fatih/vim-go'
 
 Plug 'scrooloose/syntastic'
 Plug 'sajoku/vim-indent-guides'
