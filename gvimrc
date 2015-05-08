@@ -35,9 +35,4 @@ if has("gui_running")
 
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :tabnew<CR>
-
-  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-  autocmd BufRead,BufNewFile,VimEnter *.rb let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-  autocmd BufRead,BufNewFile,VimEnter *.rb let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
 endif
