@@ -8,7 +8,7 @@ DEFAULT_USER="sajoku"
 . ~/dotfiles/functions
 
 # Base16 Shell
-BASE16_SHELL="$HOME/playground/base16-shell/base16-mocha.dark.sh"
+BASE16_SHELL="$HOME/playground/base16-shell/base16-monokai.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Save a ton of history
