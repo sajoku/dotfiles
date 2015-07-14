@@ -1,25 +1,23 @@
 alias ..='cd ..'
 
 # ls
-alias ls="ls -F"
+alias a='ls -lrthG'
 alias l="ls -lAh"
+alias la='ls -A'
 alias lh="ls -lh"
 alias ll="ls -l"
-alias la='ls -A'
-alias a='ls -lrthG'
+alias ls="ls -F"
 
 # git
-alias gl='git pull'
-alias glr='git pull --rebase'
-alias gp='git push'
-alias gd='git diff'
+alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
-alias gb='git branch'
+alias gd='git diff'
+alias gl='git pull'
+alias glr='git pull --rebase'
+alias gp='git push'
 alias gs='git status'
-
-#git extended
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 #ruby
@@ -45,22 +43,22 @@ alias staging="cat config/deploy/staging.rb"
 alias prod="cat config/deploy/production.rb"
 
 #rake typos
-alias rkae='rake'
-alias raek='rake'
 alias ake='rake'
+alias raek='rake'
 alias rk="rake"
+alias rkae='rake'
 
 #rubymotion
-alias rt='rake target=6.1 retina=false'
-alias raker='rake retina=4'
 alias rake_debug='bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
+alias raker='rake retina=4'
+alias rt='rake target=6.1 retina=false'
 
 alias c='cd ~/code'
-alias p='cd ~/projects'
 alias dot='cd ~/dotfiles'
-alias pl='cd ~/playground'
 alias gocode='cd ~/gocode/src'
-
+alias notes='cd ~/notes'
+alias p='cd ~/projects'
+alias pl='cd ~/playground'
 
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
