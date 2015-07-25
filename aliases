@@ -13,34 +13,21 @@ alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
-alias gd='git diff'
 alias gl='git pull'
 alias glr='git pull --rebase'
 alias gp='git push'
-alias gs='git status'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
-#ruby
-alias killruby='killall -9 ruby'
-alias reguard='killall -9 guard; be guard'
-alias bu='bundle update $1'
-
 #rails
+alias devlog='tail -f log/development.log'
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
-alias m="migrate"
+alias prepdb="rdm && rdtp"
 alias rdm="be rake db:migrate"
 alias rdtp="be rake db:test:prepare"
-alias prepdb="rdm && rdtp"
-
-alias s="rspec"
-alias devlog='tail -f log/development.log'
-alias rc="spring stop && rails console"
-
-alias summer="spring stop"
 
 #show config for rails projects with capistrano
-alias staging="cat config/deploy/staging.rb"
 alias prod="cat config/deploy/production.rb"
+alias staging="cat config/deploy/staging.rb"
 
 #rake typos
 alias ake='rake'
@@ -52,8 +39,9 @@ alias rkae='rake'
 alias rake_debug='bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
 alias raker='rake retina=4'
 alias rt='rake target=6.1 retina=false'
-
 alias c='cd ~/code'
+
+#directory navigation
 alias dot='cd ~/dotfiles'
 alias gocode='cd ~/gocode/src'
 alias notes='cd ~/notes'
@@ -63,10 +51,5 @@ alias pl='cd ~/playground'
 #alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 
-#vim
-alias bim='vim'
-
-#term
-alias hcl='history -c; clear'
 #tmux
 alias tma='tmux attach'
