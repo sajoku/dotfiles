@@ -26,9 +26,6 @@ plugins=(git rails ruby bundler)
 stty start undef
 stty stop undef
 
-#rvm_silence_path_mismatch_check_flag=1
-#
-
 source $ZSH/oh-my-zsh.sh
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
@@ -40,13 +37,6 @@ export BUNDLER_EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-##export PATH=$PATH:/usr/local/opt/go/libexec/bin
-##export PATH=$PATH:/usr/local/go/bin
-##export PATH=$PATH:/usr/local/opt/go/libexec/bin #Add go gopath
-#export PATH="$HOME/.bin:/usr/local/bin:$PATH"
-#export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-#export PATH=".git/safe/../../bin:$PATH"
 # use vim as the visual editor
 export VISUAL=vim
 export EDITOR=$VISUAL
@@ -58,7 +48,6 @@ export PATH="$HOME/.bin:/usr/local/bin:$PATH"
 # mkdir .git/safe in the root of repositories you trust
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=".git/safe/../../bin:$PATH"
-#export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 # Add this to your zshrc or bzshrc file
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
