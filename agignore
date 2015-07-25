@@ -1,8 +1,0 @@
-*.sql
-templates.js
-tmp
-log
-*.log
-vendor/**/*
-vendor/Pods/**/*
-releases/**/*
