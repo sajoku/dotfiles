@@ -5,7 +5,6 @@ DEFAULT_USER="sajoku"
 
 #include some other files
 . ~/dotfiles/aliases
-. ~/dotfiles/functions
 
 # Base16 Shell
 BASE16_SHELL="$HOME/playground/base16-shell/base16-monokai.dark.sh"
