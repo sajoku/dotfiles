@@ -7,7 +7,7 @@ DEFAULT_USER="sajoku"
 . ~/dotfiles/aliases
 
 # Base16 Shell
-BASE16_SHELL="$HOME/playground/base16-shell/base16-eighties.dark.sh"
+BASE16_SHELL="$HOME/playground/base16-shell/base16-solarized.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Save a ton of history

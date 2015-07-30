@@ -181,7 +181,7 @@ command! Vs vs
 
 " set 256 colors
 let base16colorspace=256
-colorscheme base16-mocha
+colorscheme base16-solarized
 set t_Co=256
 set background=dark
 
