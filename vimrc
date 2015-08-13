@@ -265,7 +265,7 @@ nmap gO O<esc>
 " shortcut for searching
 nmap g/ :Ag<space>
 
-let g:hardtime_default_on = 0
+let g:hardtime_default_on = 1
 let g:hardtime_timeout = 1000
 let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
