@@ -14,8 +14,6 @@ filetype plugin indent on
 syntax enable
 set encoding=utf-8
 
-let g:plug_threads=1
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
