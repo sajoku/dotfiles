@@ -179,11 +179,9 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-" set 256 colors
-let base16colorspace=256
 colorscheme base16-solarized
 set t_Co=256
-set background=dark
+set background=light
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
