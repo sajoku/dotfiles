@@ -18,8 +18,8 @@ compinit
 plugins=(git rails ruby bundler)
 
 # Disable flow control commands (keeps C-s from freezing everything)
-stty start undef
-stty stop undef
+#stty start undef
+#stty stop undef
 
 source $ZSH/oh-my-zsh.sh
 
