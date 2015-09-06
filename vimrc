@@ -178,7 +178,14 @@ command! Vs vs
 
 colorscheme base16-solarized
 set t_Co=256
-set background=dark
+
+if $THEME == "light"
+  set background=light
+endif
+
+if $THEME == "dark"
+  set background=dark
+endif
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
@@ -258,7 +265,7 @@ nmap gO O<esc>
 " shortcut for searching
 nmap g/ :Ag<space>
 
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 let g:hardtime_timeout = 1000
 let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
