@@ -176,7 +176,7 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-colorscheme base16-monokai
+colorscheme base16-railscasts
 set t_Co=256
 
 if $THEME == "light"
