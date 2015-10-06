@@ -151,16 +151,16 @@ if executable('ag')
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
-endif
 
-"nnoremap <C-P> :call PickFile()<CR>
-"exclude dirs for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*
-" Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc',
-      \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$'
-      \ }
+  "nnoremap <C-P> :call PickFile()<CR>
+  "exclude dirs for ctrlp
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*
+  " Sane Ignore For ctrlp
+  let g:ctrlp_custom_ignore = {
+        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc',
+        \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$'
+        \ }
+endif
 
 " typo fixes
 command! Q q
