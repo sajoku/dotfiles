@@ -213,10 +213,11 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
-let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 "let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
+let g:syntastic_javascript_checkers = ['jshint']
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
