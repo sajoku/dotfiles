@@ -187,8 +187,6 @@ if $THEME == "dark"
   set background=dark
 endif
 
-set background=light
-
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
 au BufRead,BufNewFile Watchr set ft=ruby
