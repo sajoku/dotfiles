@@ -18,6 +18,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'rking/ag.vim'
 Plug 'skwp/greplace.vim'
 Plug 'takac/vim-hardtime'
+Plug 'elixir-lang/vim-elixir'
 
 Plug 'groenewege/vim-less'
 Plug 'vim-ruby/vim-ruby'
