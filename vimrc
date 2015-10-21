@@ -176,7 +176,7 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-colorscheme base16-solarized
+colorscheme base16-monokai
 set t_Co=256
 
 if $THEME == "light"
@@ -186,6 +186,8 @@ endif
 if $THEME == "dark"
   set background=dark
 endif
+
+set background=dark
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
