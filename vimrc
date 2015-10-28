@@ -36,7 +36,14 @@ set nofoldenable                  " Don't fold by default
 set foldlevel=99
 
 set visualbell                    "no sounds
+
+"Search related settings
 set incsearch                     "find as you type search
+set hlsearch                      "Highlight all search matches
+nmap <leader>h :nohlsearch<cr>
+set ignorecase                    "Ignore case with / searched
+set smartcase                     "Don't ignore case when search has capital
+
 set noesckeys
 setglobal relativenumber
 set relativenumber
@@ -47,8 +54,6 @@ set laststatus=2
 " http://items.sjbach.com/319/configuring-vim-right
 set viminfo='100,f1               "Save up to 100 marks, enable capital marks
 set autoread                      "refresh on changes without confirmation
-set ignorecase                    "Ignore case with /  searched
-set smartcase                     "Don't ignore case when search has capital
 set scrolloff=3                   "Keep more context when csrolling, also use zz
 
 "Softtabs
@@ -68,8 +73,6 @@ set makeprg=rake
 "Allow copy paste in terminal vim
 set clipboard=unnamed
 
-"highlight search words
-set hlsearch
 
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
@@ -131,6 +134,7 @@ set splitbelow   "Split windows below the current window.
 set wildmode=list:longest,list:full
 set complete=.,w,t
 set completeopt=menu,preview
+
 
 " disable arrow keys
 map <up> <nop>
