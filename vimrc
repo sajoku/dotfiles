@@ -73,12 +73,6 @@ set makeprg=rake
 "Allow copy paste in terminal vim
 set clipboard=unnamed
 
-
-" Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux'
-  set t_Co=16
-endif
-
 "Map j and k when pressing tab to move, prevents from typing j and k though
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
@@ -211,7 +205,7 @@ autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 
 "Remove trailing whitespace when writing a file
-autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim} :%s/\s\+$//e
+autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim,eex} :%s/\s\+$//e
 
 
 
