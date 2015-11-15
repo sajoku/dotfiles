@@ -186,6 +186,9 @@ if $THEME == "dark"
 endif
 
 set background=dark
+" Reload vimrc when saving .vimrc file
+autocmd bufwritepost vimrc source $MYVIMRC
+
 
 " filetype mappings
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
