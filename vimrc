@@ -32,10 +32,15 @@ set showmode
 set mouse=a                       " Enable mouse
 set mousehide                     " Hide mouse when typing
 set timeoutlen=500                " Don't lag the leader key + command
+set showmatch
 set nofoldenable                  " Don't fold by default
 set foldlevel=99
 
 set visualbell                    "no sounds
+
+syntax sync minlines=256
+set lazyredraw
+set ttyfast
 
 "Search related settings
 set incsearch                     "find as you type search
