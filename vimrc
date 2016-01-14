@@ -309,3 +309,19 @@ autocmd VimResized * :wincmd =
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
+
+
+" Use better search highlighting
+nnoremap <silent> n   n:call HLNext(0.4)<cr>
+nnoremap <silent> N   N:call HLNext(0.4)<cr>
+" Blink current search item - from Damian Conway 'More Instantly Better Vim'
+function! HLNext (blinktime)
+  let [bufnum, lnum, col, off] = getpos('.')
+  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+  let target_pat = '\c\%#'.@/
+  let ring = matchadd('ErrorMsg', target_pat, 101)
+  redraw
+  exec 'sleep ' . float2nr(a:blinktime * 600) . 'm'
+  call matchdelete(ring)
+  redraw
+endfunction
