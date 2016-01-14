@@ -25,7 +25,7 @@ set nobackup
 set nowritebackup
 set noswapfile                    " Stop using .swp files
 set autoindent                    " Always set autoindenting on
-set history=50                  " Keep 50 lines in history
+set history=100                  " Keep x lines in history
 set ruler                         " Always show cursor
 set showcmd                       " Display incomplete commands
 set showmode
