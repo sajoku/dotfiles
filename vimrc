@@ -16,9 +16,9 @@ set encoding=utf-8
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+"if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
-endif
+"endif
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set nobackup
