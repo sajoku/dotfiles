@@ -209,6 +209,7 @@ au BufRead,BufNewFile *.eye set ft=ruby
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.hamlc set ft=haml
 au BufNewFile,BufRead *.html.eex set ft=html
+au BufNewFile,BufRead *.exs set ft=elixir
 
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
