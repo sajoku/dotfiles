@@ -288,7 +288,6 @@ augroup vimrc_autocmd
   autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:created=1
 augroup END
 
-">>>>>
 "Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
 nnoremap <S-h> :exe "vertical resize +10"<CR>
