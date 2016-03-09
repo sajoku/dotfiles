@@ -179,7 +179,8 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-colorscheme base16-railscasts
+colorscheme base16-solarized
+set background=light
 set t_Co=256
 
 
