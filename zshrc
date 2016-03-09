@@ -7,6 +7,10 @@ export THEME=dark
 #include some other files
 . ~/dotfiles/aliases
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # Save a ton of history
 HISTSIZE=20000
 HISTFILE=~/.zsh_history
@@ -63,3 +67,5 @@ tm-select-session() {
     (cd "$project" && tat)
   fi
 }
+
+
