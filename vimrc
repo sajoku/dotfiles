@@ -182,15 +182,6 @@ command! Vs vs
 colorscheme base16-railscasts
 set t_Co=256
 
-if $THEME == "light"
-  set background=light
-endif
-
-if $THEME == "dark"
-  set background=dark
-endif
-
-set background=dark
 
 " Reload vimrc when saving .vimrc file
 autocmd bufwritepost vimrc source $MYVIMRC
