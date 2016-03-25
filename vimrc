@@ -181,7 +181,7 @@ command! Vs vs
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-solarized
-set background=light
+set background=dark
 set t_Co=256
 
 
@@ -232,8 +232,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 let g:airline_powerline_fonts = 1
-
-" Set airline theme
 let g:airline_theme='base16'
 
 runtime! macros/matchit.vim
@@ -278,16 +276,16 @@ let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
 map <Leader>ht :call HardTimeToggle()<CR>
 
-augroup vimrc_autocmd
-  "autocmd! clears out the vimrc_autocmd group before adding the next one. 
-  autocmd!
-  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
-  autocmd BufEnter,VimEnter,FileType ruby,coffeescript autocmd WinEnter,Filetype ruby,coffeescript let w:created=1
-  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:created=1
-augroup END
+"augroup vimrc_autocmd
+"  "autocmd! clears out the vimrc_autocmd group before adding the next one.
+"  autocmd!
+"  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
+"  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
+"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
+"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
+"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript autocmd WinEnter,Filetype ruby,coffeescript let w:created=1
+"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:created=1
+"augroup END
 
 "Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
@@ -305,8 +303,8 @@ nnoremap <leader>= :wincmd =<cr>
 
 
 " Use better search highlighting
-nnoremap <silent> n   n:call HLNext(0.4)<cr>
-nnoremap <silent> N   N:call HLNext(0.4)<cr>
+nnoremap <silent> n   n:call HLNext(0.1)<cr>
+nnoremap <silent> N   N:call HLNext(0.1)<cr>
 " Blink current search item - from Damian Conway 'More Instantly Better Vim'
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')
