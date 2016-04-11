@@ -225,6 +225,7 @@ let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'rubylint']
+let g:syntastic_ruby_rubocop_exec = "/Users/sajoku/.rvm/rubies/ruby-2.3.0/bin/ruby /Users/sajoku/.rvm/gems/ruby-2.3.0/bin/rubocop"
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
