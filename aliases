@@ -53,3 +53,7 @@ alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp 
 
 #tmux
 alias tma='tmux attach'
+
+#wifi
+alias wion='networksetup -setairportpower en0 on'
+alias wioff='networksetup -setairportpower en0 off'
