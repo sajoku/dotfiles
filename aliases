@@ -24,6 +24,7 @@ alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias prepdb="rdm && rdtp"
 alias rdm="be rake db:migrate"
 alias rdtp="be rake db:test:prepare"
+alias rpu="rails s Puma"
 
 #show config for rails projects with capistrano
 alias prod="cat config/deploy/production.rb"
