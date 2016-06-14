@@ -179,8 +179,7 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-solarized
+colorscheme gruvbox
 set background=dark
 set t_Co=256
 
