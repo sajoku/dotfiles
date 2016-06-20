@@ -16,6 +16,8 @@ autoload -U compinit
 compinit
 
 plugins=(zsh-syntax-highlightin git rails ruby bundler)
+export DISABLE_AUTO_UPDATE="true"
+
 
 # Disable flow control commands (keeps C-s from freezing everything)
 #stty start undef
