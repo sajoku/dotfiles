@@ -35,6 +35,8 @@ alias ake='rake'
 alias raek='rake'
 alias rk="rake"
 alias rkae='rake'
+alias rale='rake'
+alias rak='rake'
 
 #rubymotion
 alias rake_debug='bundle exec rake debug=1 NSZombieEnabled=YES MallocStackLogging=1'
