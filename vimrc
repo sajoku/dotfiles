@@ -179,7 +179,7 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-colorscheme gruvbox
+colorscheme smyck
 set background=dark
 set t_Co=256
 
