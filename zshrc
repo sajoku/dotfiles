@@ -66,3 +66,4 @@ tm-select-session() {
 
 
 eval "$(rbenv init -)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

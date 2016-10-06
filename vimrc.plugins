@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-commentary'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-liquid'
@@ -18,6 +17,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'rking/ag.vim'
 Plug 'takac/vim-hardtime'
 Plug 'elixir-lang/vim-elixir'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-surround'
