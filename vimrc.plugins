@@ -28,6 +28,8 @@ Plug 'ervandew/supertab'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
+Plug 'isRuslan/vim-es6'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'slim-template/vim-slim'
 Plug 'kchmck/vim-coffee-script'
