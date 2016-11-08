@@ -268,8 +268,26 @@ inoremap jj <esc>
 nmap go o<esc>
 nmap gO O<esc>
 
-" shortcut for searching
+" shortcut for searching through whole directory
 nmap g/ :Ag<space>
+" FZF
+nmap <c-p> :cclose<CR>:FZF<CR>
+"nmap <c-o> :cclose<CR>:Tags<CR>
+"nmap <c-i> :cclose<CR>:BLines<CR>
+
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+set grepprg=rg\ --vimgrep
 
 let g:hardtime_default_on = 0
 let g:hardtime_timeout = 1000
@@ -317,3 +335,6 @@ function! HLNext (blinktime)
   call matchdelete(ring)
   redraw
 endfunction
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
