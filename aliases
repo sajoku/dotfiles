@@ -60,3 +60,5 @@ alias tma='tmux attach'
 #wifi
 alias wion='networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
 alias wioff='networksetup -setairportpower en0 off'
+
+alias loc="find . -name '*.rb' | xargs wc -l"
