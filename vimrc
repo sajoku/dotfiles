@@ -67,6 +67,8 @@ set shiftwidth=2
 set shiftround
 set expandtab                     " Use spaces instead of tab
 set softtabstop=2
+set cursorline
+
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -208,6 +210,18 @@ autocmd FileType gitcommit setlocal spell
 
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim,eex} :%s/\s\+$//e
+
+"Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
+"to in Ruby land
+autocmd BufNewFile,BufRead *.py
+    \ setlocal tabstop=4
+    \ setlocal softtabstop=4
+    \ setlocal shiftwidth=4
+    \ setlocal textwidth=80
+    \ setlocal smarttab
+    \ setlocal expandtab
+
+let python_highlight_all = 1
 
 
 
