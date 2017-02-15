@@ -213,15 +213,29 @@ autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,ham
 
 "Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
 "to in Ruby land
-autocmd BufNewFile,BufRead *.py
-    \ setlocal tabstop=4
-    \ setlocal softtabstop=4
-    \ setlocal shiftwidth=4
-    \ setlocal textwidth=80
-    \ setlocal smarttab
-    \ setlocal expandtab
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
 
 let python_highlight_all = 1
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 
 
@@ -267,7 +281,7 @@ let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
-map <Leader>g :call RunAllSpecs()<CR>
+"map <Leader>g :call RunAllSpecs()<CR>
 
 nnoremap <leader>va :VtrAttachToPane<cr>
 

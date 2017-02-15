@@ -31,12 +31,17 @@ Plug 'morhetz/gruvbox'
 Plug 'isRuslan/vim-es6'
 Plug 'leafgarland/typescript-vim'
 
+Plug 'vim-scripts/indentpython.vim'
+Plug 'Valloric/YouCompleteMe'
+
+
 Plug 'slim-template/vim-slim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'othree/html5.vim'
 Plug 'fatih/vim-go'
 
 Plug 'scrooloose/syntastic'
+Plug 'nvie/vim-flake8'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Raimondi/delimitMate'
 
