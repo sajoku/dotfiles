@@ -15,7 +15,7 @@ SAVEHIST=20000
 autoload -U compinit
 compinit
 
-plugins=(zsh-syntax-highlightin git rails ruby bundler)
+plugins=(zsh-syntax-highlighting git rails ruby bundler)
 export DISABLE_AUTO_UPDATE="true"
 
 
