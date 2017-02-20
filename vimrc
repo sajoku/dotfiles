@@ -181,7 +181,7 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-colorscheme smyck
+colorscheme Tomorrow-Night-Eighties
 set background=dark
 set t_Co=256
 
