@@ -67,7 +67,6 @@ set shiftwidth=2
 set shiftround
 set expandtab                     " Use spaces instead of tab
 set softtabstop=2
-set cursorline
 
 
 " Display extra whitespace
@@ -80,9 +79,9 @@ set makeprg=rake
 "Allow copy paste in terminal vim
 set clipboard=unnamed
 
-"Map j and k when pressing tab to move, prevents from typing j and k though
-inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+""Map j and k when pressing tab to move, prevents from typing j and k though
+"inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
+"inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 " fancy status line
 set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B\ (%b)%)
@@ -313,7 +312,7 @@ nmap <c-p> :cclose<CR>:FZF<CR>
 " --follow: Follow symlinks
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 set grepprg=rg\ --vimgrep
 
