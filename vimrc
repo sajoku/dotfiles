@@ -180,10 +180,12 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-colorscheme Tomorrow-Night-Eighties
-set background=dark
 set t_Co=256
+set background=dark
 
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 0 " Remove this line if using the default palette.
+colorscheme hybrid
 
 " Reload vimrc when saving .vimrc file
 autocmd bufwritepost vimrc source $MYVIMRC
