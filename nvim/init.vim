@@ -182,8 +182,6 @@ command! Vs vs
 colorscheme base16-tomorrow
 set t_Co=256
 
-set background=dark
-
 " Reload vimrc when saving .vimrc file
 autocmd bufwritepost vimrc source $MYVIMRC
 
