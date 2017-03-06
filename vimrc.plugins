@@ -15,7 +15,6 @@ Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-endwise'
 Plug 'junegunn/vim-easy-align'
 Plug 'rking/ag.vim'
-Plug 'takac/vim-hardtime'
 Plug 'elixir-lang/vim-elixir'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -27,12 +26,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'ervandew/supertab'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
 Plug 'isRuslan/vim-es6'
 Plug 'leafgarland/typescript-vim'
 
 Plug 'vim-scripts/indentpython.vim'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 
 Plug 'slim-template/vim-slim'
@@ -44,10 +42,6 @@ Plug 'scrooloose/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Raimondi/delimitMate'
-
-" nelstrom's plugin depends on kana's
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
 
 "color themes via vundle yeay
 Plug 'chriskempson/base16-vim'
