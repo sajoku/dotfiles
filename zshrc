@@ -17,7 +17,6 @@ compinit
 
 
 plugins=(zsh-syntax-highlighting git rails ruby bundler)
-source $ZSH/oh-my-zsh.sh
 
 # Disable flow control commands (keeps C-s from freezing everything)
 #stty start undef
@@ -25,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
+source $ZSH/oh-my-zsh.sh
 
 export GOPATH=$HOME/gocode
 

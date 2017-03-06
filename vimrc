@@ -12,13 +12,12 @@ endif
 filetype plugin indent on
 
 syntax enable
+syntax on
 set encoding=utf-8
+set t_Co=256
+set background=light
+colorscheme solarized
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-"if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-"endif
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set nobackup
@@ -180,12 +179,6 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-set t_Co=256
-set background=dark
-
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 0 " Remove this line if using the default palette.
-colorscheme hybrid
 
 " Reload vimrc when saving .vimrc file
 autocmd bufwritepost vimrc source $MYVIMRC
@@ -225,8 +218,8 @@ au BufNewFile,BufRead *.py
 
 let python_highlight_all = 1
 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
 py << EOF
@@ -261,8 +254,8 @@ au VimResized * exe "normal! \<c-w>="
 vnoremap < <gv
 vnoremap > >gv
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
+"let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
 runtime! macros/matchit.vim
 
@@ -367,3 +360,4 @@ endfunction
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
