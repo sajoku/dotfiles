@@ -208,22 +208,18 @@ autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,ham
 "Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
 "to in Ruby land
 au BufNewFile,BufRead *.py
-      \ set tabstop=4 |
-      \ set softtabstop=4 |
-      \ set shiftwidth=4 |
-      \ set textwidth=79 |
-      \ set expandtab |
-      \ set autoindent |
-      \ set fileformat=unix
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
 
 let python_highlight_all = 1
 
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:airline#extensions#ycm#enabled = 1
-let g:airline#extensions#ycm#error_symbol = 'E:'
-
-let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file' ]
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
 py << EOF
@@ -233,135 +229,135 @@ if 'VIRTUAL_ENV' in os.environ:
   project_base_dir = os.environ['VIRTUAL_ENV']
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
-  EOF
+EOF
 
 
 
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-  let g:syntastic_enable_signs=1
-  let g:syntastic_check_on_open=1
-  let g:syntastic_auto_jump=0
-  let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs=1
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_jump=0
+let g:syntastic_auto_loc_list=1
 
-  let g:syntastic_always_populate_loc_list = 1
-  "let g:syntastic_quiet_messages = {'level': 'warnings'}
-  let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-  let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
-  let g:syntastic_javascript_checkers = ['jshint']
-  let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'rubylint']
-  let g:syntastic_ruby_rubocop_exec = "/Users/sajoku/.rvm/rubies/ruby-2.3.0/bin/ruby /Users/sajoku/.rvm/gems/ruby-2.3.0/bin/rubocop"
+let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_quiet_messages = {'level': 'warnings'}
+let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'rubylint']
+let g:syntastic_ruby_rubocop_exec = "/Users/sajoku/.rvm/rubies/ruby-2.3.0/bin/ruby /Users/sajoku/.rvm/gems/ruby-2.3.0/bin/rubocop"
 
-  " autoresize splits when resizing
-  au VimResized * exe "normal! \<c-w>="
-  " easier moving of code blocks
-  vnoremap < <gv
-  vnoremap > >gv
+" autoresize splits when resizing
+au VimResized * exe "normal! \<c-w>="
+" easier moving of code blocks
+vnoremap < <gv
+vnoremap > >gv
 
-  "let g:airline_powerline_fonts = 1
-  let g:airline_theme='solarized'
+"let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
-  runtime! macros/matchit.vim
+runtime! macros/matchit.vim
 
-  " RSpec.vim mappings
-  if !has("gui_running")
-    set shell=sh
-  end
+" RSpec.vim mappings
+if !has("gui_running")
+  set shell=sh
+end
 
-  let g:rspec_runner = "os_x_iterm"
-  "if executable('spring')
-  "  let g:rspec_command = "VtrSendCommandToRunner! spring rspec {spec}"
-  "else
-  "  let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
-  "end
-  let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+let g:rspec_runner = "os_x_iterm"
+"if executable('spring')
+"  let g:rspec_command = "VtrSendCommandToRunner! spring rspec {spec}"
+"else
+"  let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+"end
+let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
 
-  map <Leader>t :call RunCurrentSpecFile()<CR>
-  map <Leader>s :call RunNearestSpec()<CR>
-  map <Leader>l :call RunLastSpec()<CR>
-  "map <Leader>g :call RunAllSpecs()<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+"map <Leader>g :call RunAllSpecs()<CR>
 
-  nnoremap <leader>va :VtrAttachToPane<cr>
+nnoremap <leader>va :VtrAttachToPane<cr>
 
-  let @t="ggirequire 'rails_helpero"
-  map <Leader>a :DelimitMateSwitch<CR>
+let @t="ggirequire 'rails_helpero"
+map <Leader>a :DelimitMateSwitch<CR>
 
-  " Remap to escape
-  "inoremap <esc> <nop>
-  inoremap jj <esc>
+" Remap to escape
+"inoremap <esc> <nop>
+inoremap jj <esc>
 
-  " insert blank lines without going into insert mode
-  nmap go o<esc>
-  nmap gO O<esc>
+" insert blank lines without going into insert mode
+nmap go o<esc>
+nmap gO O<esc>
 
-  " shortcut for searching through whole directory
-  nmap g/ :Ag<space>
-  " FZF
-  nmap <c-p> :cclose<CR>:FZF<CR>
-  "nmap <c-o> :cclose<CR>:Tags<CR>
-  "nmap <c-i> :cclose<CR>:BLines<CR>
+" shortcut for searching through whole directory
+nmap g/ :Ag<space>
+" FZF
+nmap <c-p> :cclose<CR>:FZF<CR>
+"nmap <c-o> :cclose<CR>:Tags<CR>
+"nmap <c-i> :cclose<CR>:BLines<CR>
 
-  " --column: Show column number
-  " --line-number: Show line number
-  " --no-heading: Do not show file headings in results
-  " --fixed-strings: Search term as a literal string
-  " --ignore-case: Case insensitive search
-  " --no-ignore: Do not respect .gitignore, etc...
-  " --hidden: Search hidden files and folders
-  " --follow: Follow symlinks
-  " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-  " --color: Search color options
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
-  set grepprg=rg\ --vimgrep
+set grepprg=rg\ --vimgrep
 
-  let g:hardtime_default_on = 0
-  let g:hardtime_timeout = 1000
-  let g:hardtime_allow_different_key = 1
-  let g:hardtime_maxcount = 2
-  map <Leader>ht :call HardTimeToggle()<CR>
+let g:hardtime_default_on = 0
+let g:hardtime_timeout = 1000
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 2
+map <Leader>ht :call HardTimeToggle()<CR>
 
-  "augroup vimrc_autocmd
-  "  "autocmd! clears out the vimrc_autocmd group before adding the next one.
-  "  autocmd!
-  "  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-  "  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-  "  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-  "  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
-  "  autocmd BufEnter,VimEnter,FileType ruby,coffeescript autocmd WinEnter,Filetype ruby,coffeescript let w:created=1
-  "  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:created=1
-  "augroup END
+"augroup vimrc_autocmd
+"  "autocmd! clears out the vimrc_autocmd group before adding the next one.
+"  autocmd!
+"  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
+"  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
+"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
+"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
+"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript autocmd WinEnter,Filetype ruby,coffeescript let w:created=1
+"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:created=1
+"augroup END
 
-  "Zoom and resize stuff
-  "Resize splits with shift-(h,j,k,l)
-  nnoremap <S-h> :exe "vertical resize +10"<CR>
-  nnoremap <S-l> :exe "vertical resize -10"<CR>
-  nnoremap <S-k> :exe "resize +10"<CR>
-  "nnoremap <S-j> :exe "resize -10"<CR>
+"Zoom and resize stuff
+"Resize splits with shift-(h,j,k,l)
+nnoremap <S-h> :exe "vertical resize +10"<CR>
+nnoremap <S-l> :exe "vertical resize -10"<CR>
+nnoremap <S-k> :exe "resize +10"<CR>
+"nnoremap <S-j> :exe "resize -10"<CR>
 
-  " automatically rebalance windows on vim resize
-  autocmd VimResized * :wincmd =
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
-  " zoom a vim pane, <C-w>= to re-balance
-  nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-  nnoremap <leader>= :wincmd =<cr>
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
 
 
-  " Use better search highlighting
-  nnoremap <silent> n   n:call HLNext(0.1)<cr>
-  nnoremap <silent> N   N:call HLNext(0.1)<cr>
-  " Blink current search item - from Damian Conway 'More Instantly Better Vim'
-  function! HLNext (blinktime)
-    let [bufnum, lnum, col, off] = getpos('.')
-    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    let target_pat = '\c\%#'.@/
-    let ring = matchadd('ErrorMsg', target_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 600) . 'm'
-    call matchdelete(ring)
-    redraw
-  endfunction
+" Use better search highlighting
+nnoremap <silent> n   n:call HLNext(0.1)<cr>
+nnoremap <silent> N   N:call HLNext(0.1)<cr>
+" Blink current search item - from Damian Conway 'More Instantly Better Vim'
+function! HLNext (blinktime)
+  let [bufnum, lnum, col, off] = getpos('.')
+  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+  let target_pat = '\c\%#'.@/
+  let ring = matchadd('ErrorMsg', target_pat, 101)
+  redraw
+  exec 'sleep ' . float2nr(a:blinktime * 600) . 'm'
+  call matchdelete(ring)
+  redraw
+endfunction
 
-  autocmd QuickFixCmdPost [^l]* nested cwindow
-  autocmd QuickFixCmdPost    l* nested lwindow
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
