@@ -31,6 +31,7 @@ alias rpu="rails s Puma"
 #show config for rails projects with capistrano
 alias prod="cat config/deploy/production.rb"
 alias staging="cat config/deploy/staging.rb"
+alias acc="cat config/deploy/acceptance.rb"
 
 #rake typos
 alias ake='rake'
