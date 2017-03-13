@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="pure"
+ZSH_THEME=""
 DEFAULT_USER="sajoku"
 
 #include some other files
@@ -17,11 +17,6 @@ compinit
 
 
 plugins=(zsh-syntax-highlighting git rails ruby bundler)
-
-# Disable flow control commands (keeps C-s from freezing everything)
-#stty start undef
-#stty stop undef
-
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh

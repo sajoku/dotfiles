@@ -44,8 +44,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Raimondi/delimitMate'
 
 "color themes via vundle yeay
-Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 Plug 'thoughtbot/vim-rspec'
 

@@ -15,8 +15,8 @@ syntax enable
 syntax on
 set encoding=utf-8
 set t_Co=256
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme gruvbox
 
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
