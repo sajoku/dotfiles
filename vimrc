@@ -315,12 +315,6 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 
 set grepprg=rg\ --vimgrep
 
-let g:hardtime_default_on = 0
-let g:hardtime_timeout = 1000
-let g:hardtime_allow_different_key = 1
-let g:hardtime_maxcount = 2
-map <Leader>ht :call HardTimeToggle()<CR>
-
 "augroup vimrc_autocmd
 "  "autocmd! clears out the vimrc_autocmd group before adding the next one.
 "  autocmd!
