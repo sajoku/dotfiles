@@ -5,7 +5,7 @@ alias a='ls -lrthG'
 alias l="ls -lAh"
 alias la='ls -A'
 alias lh="ls -lh"
-alias ll="ls -l"
+alias ll="ls -la"
 alias ls="ls -F"
 
 # git
