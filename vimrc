@@ -9,6 +9,10 @@ if filereadable(expand("~/dotfiles/vimrc.plugins"))
   source ~/dotfiles/vimrc.plugins
 endif
 
+
+filetype off
+let &runtimepath.=',~/.vim/bundle/ale'
+
 filetype plugin indent on
 
 syntax enable
@@ -16,8 +20,9 @@ syntax on
 set encoding=utf-8
 set t_Co=256
 set background=dark
-colorscheme gruvbox
-
+"colorscheme gruvbox
+set background=light
+colorscheme PaperColor
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set nobackup
@@ -239,18 +244,28 @@ EOF
 
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open=1
-let g:syntastic_auto_jump=0
-let g:syntastic_auto_loc_list=1
+"let g:syntastic_enable_signs=1
+"let g:syntastic_check_on_open=1
+"let g:syntastic_auto_jump=0
+"let g:syntastic_auto_loc_list=1
+"
+"let g:syntastic_always_populate_loc_list = 1
+""let g:syntastic_quiet_messages = {'level': 'warnings'}
+"let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+"let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
+"let g:syntastic_javascript_checkers = ['jshint']
+"let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'rubylint']
+"let g:syntastic_ruby_rubocop_exec = "/Users/sajoku/.rvm/rubies/ruby-2.3.0/bin/ruby /Users/sajoku/.rvm/gems/ruby-2.3.0/bin/rubocop"
 
-let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_quiet_messages = {'level': 'warnings'}
-let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'rubylint']
-let g:syntastic_ruby_rubocop_exec = "/Users/sajoku/.rvm/rubies/ruby-2.3.0/bin/ruby /Users/sajoku/.rvm/gems/ruby-2.3.0/bin/rubocop"
+
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '☠️'
+let g:ale_sign_warning = '--'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
@@ -259,7 +274,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 "let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
+"let g:airline_theme='solarized'
+let g:airline_theme='papercolor'
 
 runtime! macros/matchit.vim
 
@@ -294,9 +310,11 @@ inoremap jj <esc>
 nmap go o<esc>
 nmap gO O<esc>
 
+"SEARCHING --------------------
+set rtp+=/usr/local/opt/fzf
 " shortcut for searching through whole directory
 nmap g/ :Ag<space>
-" FZF
+"let g:ackprg = 'ag --nogroup --nocolor --column'
 nmap <c-p> :cclose<CR>:FZF<CR>
 "nmap <c-o> :cclose<CR>:Tags<CR>
 "nmap <c-i> :cclose<CR>:BLines<CR>
@@ -313,7 +331,8 @@ nmap <c-p> :cclose<CR>:FZF<CR>
 " --color: Search color options
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
-set grepprg=rg\ --vimgrep
+
+"SEARCHING --------------------
 
 "augroup vimrc_autocmd
 "  "autocmd! clears out the vimrc_autocmd group before adding the next one.
