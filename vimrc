@@ -9,7 +9,7 @@ if filereadable(expand("~/dotfiles/vimrc.plugins"))
   source ~/dotfiles/vimrc.plugins
 endif
 
-
+"Add ale to the runtime path so it can execute
 filetype off
 let &runtimepath.=',~/.vim/bundle/ale'
 
@@ -228,7 +228,18 @@ let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file' ]
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '☠️'
+let g:ale_sign_warning = '--'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:airline_theme='papercolor'
+
+
 
 "python with virtualenv support
 py << EOF
@@ -240,32 +251,7 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-
-
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-"let g:syntastic_enable_signs=1
-"let g:syntastic_check_on_open=1
-"let g:syntastic_auto_jump=0
-"let g:syntastic_auto_loc_list=1
-"
-"let g:syntastic_always_populate_loc_list = 1
-""let g:syntastic_quiet_messages = {'level': 'warnings'}
-"let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-"let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
-"let g:syntastic_javascript_checkers = ['jshint']
-"let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'rubylint']
-"let g:syntastic_ruby_rubocop_exec = "/Users/sajoku/.rvm/rubies/ruby-2.3.0/bin/ruby /Users/sajoku/.rvm/gems/ruby-2.3.0/bin/rubocop"
-
-
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '☠️'
-let g:ale_sign_warning = '--'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
@@ -273,9 +259,6 @@ au VimResized * exe "normal! \<c-w>="
 vnoremap < <gv
 vnoremap > >gv
 
-"let g:airline_powerline_fonts = 1
-"let g:airline_theme='solarized'
-let g:airline_theme='papercolor'
 
 runtime! macros/matchit.vim
 
