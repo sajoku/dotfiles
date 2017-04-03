@@ -42,7 +42,7 @@ set foldlevel=99
 
 set visualbell                    "no sounds
 
-syntax sync minlines=256
+"syntax sync minlines=256
 set lazyredraw
 set ttyfast
 
