@@ -87,9 +87,6 @@ set clipboard=unnamed
 "inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 "inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
-" fancy status line
-set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B\ (%b)%)
-
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
