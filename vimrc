@@ -352,9 +352,6 @@ function! HLNext (blinktime)
   let target_pat = '\c\%#'.@/
   let ring = matchadd('ErrorMsg', target_pat, 101)
   redraw
-  exec 'sleep ' . float2nr(a:blinktime * 600) . 'm'
-  call matchdelete(ring)
-  redraw
 endfunction
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
