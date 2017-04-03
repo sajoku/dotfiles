@@ -57,7 +57,7 @@ set noesckeys
 setglobal relativenumber
 set relativenumber
 set number                        " Show line numbers
-set numberwidth=5
+set numberwidth=2
 set laststatus=2
 
 " http://items.sjbach.com/319/configuring-vim-right
