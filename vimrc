@@ -316,16 +316,16 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 
 "SEARCHING --------------------
 
-"augroup vimrc_autocmd
-"  "autocmd! clears out the vimrc_autocmd group before adding the next one.
-"  autocmd!
-"  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-"  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
-"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript autocmd WinEnter,Filetype ruby,coffeescript let w:created=1
-"  autocmd BufEnter,VimEnter,FileType ruby,coffeescript let w:created=1
-"augroup END
+augroup vimrc_autocmd
+  "autocmd! clears out the vimrc_autocmd group before adding the next one.
+  autocmd!
+  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
+  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
+  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
+  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
+  autocmd BufEnter,VimEnter,FileType ruby,javascript,python autocmd WinEnter,Filetype ruby,javascript let w:created=1
+  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:created=1
+augroup END
 
 "Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
