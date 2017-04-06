@@ -321,8 +321,8 @@ augroup vimrc_autocmd
   autocmd!
   hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
   hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m1=matchadd('LineProximity', '\%<85v.\%>80v', -1)
-  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m2=matchadd('LineOverflow', '\%>84v.\+', -1)
+  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m1=matchadd('LineProximity', '\%<119v.\%>115v', -1)
+  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m2=matchadd('LineOverflow', '\%>118v.\+', -1)
   autocmd BufEnter,VimEnter,FileType ruby,javascript,python autocmd WinEnter,Filetype ruby,javascript let w:created=1
   autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:created=1
 augroup END
@@ -356,4 +356,3 @@ endfunction
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-
