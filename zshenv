@@ -11,3 +11,4 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=".git/safe/../../bin:$PATH"
 #export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+eval "$(pyenv init -)"
