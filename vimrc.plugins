@@ -31,6 +31,7 @@ Plug 'leafgarland/typescript-vim'
 
 Plug 'vim-scripts/indentpython.vim'
 "Plug 'Valloric/YouCompleteMe'
+Plug 'davidhalter/jedi-vim'
 
 
 Plug 'slim-template/vim-slim'
@@ -55,6 +56,8 @@ Plug 'thoughtbot/vim-rspec'
 "tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
+
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 filetype on
