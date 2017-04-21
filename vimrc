@@ -19,10 +19,11 @@ syntax enable
 syntax on
 set encoding=utf-8
 set t_Co=256
+
+"let base16colorspace=256
 set background=dark
-"colorscheme gruvbox
-set background=light
-colorscheme PaperColor
+colorscheme base16-solarflare
+
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set nobackup
@@ -223,6 +224,8 @@ let python_highlight_all = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file' ]
 
@@ -236,7 +239,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
-let g:airline_theme='papercolor'
+let g:airline_theme='base16'
 
 
 
