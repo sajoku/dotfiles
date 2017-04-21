@@ -359,3 +359,6 @@ endfunction
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+"Start with nerdtree opened
+autocmd vimenter * NERDTree
