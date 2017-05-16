@@ -22,7 +22,7 @@ set t_Co=256
 
 "let base16colorspace=256
 set background=dark
-colorscheme base16-solarflare
+colorscheme solarized
 
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
@@ -361,4 +361,4 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 "Start with nerdtree opened
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
