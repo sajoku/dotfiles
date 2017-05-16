@@ -4,7 +4,7 @@ ZSH_THEME=""
 DEFAULT_USER="sajoku"
 
 #include some other files
-. ~/dotfiles/aliases
+source ~/dotfiles/aliases
 
 # Save a ton of history
 HISTSIZE=20000
@@ -15,8 +15,7 @@ SAVEHIST=20000
 autoload -U compinit
 compinit
 
-
-plugins=(zsh-syntax-highlighting git rails ruby bundler)
+plugins=(git rails ruby bundler)
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh
