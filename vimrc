@@ -21,7 +21,7 @@ set encoding=utf-8
 set t_Co=256
 
 "let base16colorspace=256
-set background=dark
+set background=light
 colorscheme base16-solarflare
 
 
