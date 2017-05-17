@@ -61,7 +61,7 @@ alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp 
 alias tma='tmux attach'
 
 #wifi
-alias wion='networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
-alias wioff='networksetup -setairportpower en0 off'
+alias wion='networksetup -setairportpower en1 off; networksetup -setairportpower en1 on'
+alias wioff='networksetup -setairportpower en1 off'
 
 alias loc="find . -name '*.rb' | xargs wc -l"
