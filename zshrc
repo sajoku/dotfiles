@@ -12,6 +12,7 @@ HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
 # Enable completion
+
 autoload -U compinit
 compinit
 
@@ -68,7 +69,13 @@ eval "$(rbenv init -)"
 # --hidden: Search hidden files and folders
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+#export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+
+autoload -U promptinit; promptinit
+prompt pure
+
+. ~/dotfiles/pyenv-pure-prompt
