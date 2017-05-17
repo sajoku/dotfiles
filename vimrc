@@ -20,9 +20,8 @@ syntax on
 set encoding=utf-8
 set t_Co=256
 
-"let base16colorspace=256
-set background=light
-colorscheme base16-solarflare
+set background=dark
+colorscheme base16-railscasts
 
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
@@ -40,20 +39,16 @@ set timeoutlen=500                " Don't lag the leader key + command
 set showmatch
 set nofoldenable                  " Don't fold by default
 set foldlevel=99
-
 set visualbell                    "no sounds
-
 "syntax sync minlines=256
 set lazyredraw
 set ttyfast
-
 "Search related settings
 set incsearch                     "find as you type search
 set hlsearch                      "Highlight all search matches
 nmap <leader>h :nohlsearch<cr>
 set ignorecase                    "Ignore case with / searched
 set smartcase                     "Don't ignore case when search has capital
-
 set noesckeys
 setglobal relativenumber
 set relativenumber
@@ -73,6 +68,11 @@ set shiftround
 set expandtab                     " Use spaces instead of tab
 set softtabstop=2
 
+set splitbelow   "Split windows below the current window.
+" Tab completion
+set wildmode=list:longest,list:full
+set complete=.,w,t,i
+set completeopt=menu,preview
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -83,10 +83,6 @@ set makeprg=rake
 
 "Allow copy paste in terminal vim
 set clipboard=unnamed
-
-""Map j and k when pressing tab to move, prevents from typing j and k though
-"inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
-"inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
@@ -99,44 +95,25 @@ autocmd BufReadPost *
 "---------------------------------
 " Shortcuts
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>r :NERDTreeFind<CR>
-map <Leader>ps ysiw
 
 map <Leader>ea: :EasyAlign \<CR>
 map <Leader>ea= :EasyAlign =<CR>
 map <leader>ea :EasyAlign
 
-"resource and edit vimrc
-nmap <leader>rs :so ~/.vimrc<CR>
-nmap <leader>es :e ~/.vimrc<CR>
-
-"indent and move cursor back to previous pos
-map <Leader>i mmgg=G`m<CR>
-"Paste with correct indentation
-"map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
-" easier window navigation
-"nmap <C-h> <C-w>h
-"nmap <C-j> <C-w>j
-"nmap <C-k> <C-w>k
-"nmap <C-l> <C-w>l
-
 "remap so i can use vim-suround
 xmap s S
 
-"Disable Ex mode
-map Q <Nop>
+map <Leader>a :DelimitMateSwitch<CR>
+" Remap to escape
+"inoremap <esc> <nop>
+inoremap jj <esc>
 
-set splitbelow   "Split windows below the current window.
-" Tab completion
-set wildmode=list:longest,list:full
-set complete=.,w,t
-set completeopt=menu,preview
-
+" insert blank lines without going into insert mode
+nmap go o<esc>
 
 " disable arrow keys
 map <up> <nop>
@@ -147,6 +124,7 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -168,7 +146,10 @@ if executable('ag')
         \ }
 endif
 
-" typo fixes
+
+"---------------------------------
+"Typo fixes
+"---------------------------------
 command! Q q
 command! Qa qa
 command! Qall qall
@@ -182,23 +163,14 @@ command! Vsp vsp
 command! Sp sp
 command! Vs vs
 
-
-" Reload vimrc when saving .vimrc file
-autocmd bufwritepost vimrc source $MYVIMRC
-
-
-" filetype mappings
+"---------------------------------
+"filetype mappings
+"---------------------------------
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
-au BufRead,BufNewFile Watchr set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
-au BufRead,BufNewFile *.hjs  set ft=handlebars
-au BufRead,BufNewFile *.jst.ejs  set ft=html
-au BufRead,BufNewFile *.zsh-theme  set ft=sh
 au BufRead,BufNewFile *.strings set ft=yaml
 au BufRead,BufNewFile *.md set ft=markdown
-au BufRead,BufNewFile *.eye set ft=ruby
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
-au BufNewFile,BufRead *.hamlc set ft=haml
 au BufNewFile,BufRead *.html.eex set ft=html
 au BufNewFile,BufRead *.exs set ft=elixir
 
@@ -241,8 +213,6 @@ let g:ale_set_quickfix = 1
 
 let g:airline_theme='base16'
 
-
-
 "python with virtualenv support
 py << EOF
 import os
@@ -257,52 +227,22 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
-" easier moving of code blocks
-vnoremap < <gv
-vnoremap > >gv
-
 
 runtime! macros/matchit.vim
 
-" RSpec.vim mappings
-if !has("gui_running")
-  set shell=sh
-end
-
 let g:rspec_runner = "os_x_iterm"
-"if executable('spring')
-"  let g:rspec_command = "VtrSendCommandToRunner! spring rspec {spec}"
-"else
-"  let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
-"end
 let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
-
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
-"map <Leader>g :call RunAllSpecs()<CR>
-
 nnoremap <leader>va :VtrAttachToPane<cr>
 
-let @t="ggirequire 'rails_helpero"
-map <Leader>a :DelimitMateSwitch<CR>
-
-" Remap to escape
-"inoremap <esc> <nop>
-inoremap jj <esc>
-
-" insert blank lines without going into insert mode
-nmap go o<esc>
-nmap gO O<esc>
 
 "SEARCHING --------------------
 set rtp+=/usr/local/opt/fzf
-" shortcut for searching through whole directory
+" shortcut for searching through whole folder
 nmap g/ :Ag<space>
-"let g:ackprg = 'ag --nogroup --nocolor --column'
 nmap <c-p> :cclose<CR>:FZF<CR>
-"nmap <c-o> :cclose<CR>:Tags<CR>
-"nmap <c-i> :cclose<CR>:BLines<CR>
 
 " --column: Show column number
 " --line-number: Show line number
@@ -317,13 +257,15 @@ nmap <c-p> :cclose<CR>:FZF<CR>
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 
-"SEARCHING --------------------
-
+"---------------------------------------
+"Line proximity matcher
+"---------------------------------------
 augroup vimrc_autocmd
   "autocmd! clears out the vimrc_autocmd group before adding the next one.
   autocmd!
   hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
   hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
+
   autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m1=matchadd('LineProximity', '\%<119v.\%>115v', -1)
   autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m2=matchadd('LineOverflow', '\%>118v.\+', -1)
   autocmd BufEnter,VimEnter,FileType ruby,javascript,python autocmd WinEnter,Filetype ruby,javascript let w:created=1
@@ -335,30 +277,26 @@ augroup END
 nnoremap <S-h> :exe "vertical resize +10"<CR>
 nnoremap <S-l> :exe "vertical resize -10"<CR>
 nnoremap <S-k> :exe "resize +10"<CR>
-"nnoremap <S-j> :exe "resize -10"<CR>
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
-
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-
 " Use better search highlighting
-nnoremap <silent> n   n:call HLNext(0.1)<cr>
-nnoremap <silent> N   N:call HLNext(0.1)<cr>
-" Blink current search item - from Damian Conway 'More Instantly Better Vim'
-function! HLNext (blinktime)
+nnoremap <silent> n   n:call HLNext()<cr>
+nnoremap <silent> N   N:call HLNext()<cr>
+"Blink current search item - from Damian Conway 'More Instantly Better Vim'
+" Remove the blinktime and just highlight the selected searchterm
+function! HLNext()
   let [bufnum, lnum, col, off] = getpos('.')
   let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-  let target_pat = '\c\%#'.@/
+  let target_pat  '\c\%#'.@/
   let ring = matchadd('ErrorMsg', target_pat, 101)
   redraw
 endfunction
 
+" Allow ale to open the quickfix window and show all warnings and errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-
-"Start with nerdtree opened
-autocmd vimenter * NERDTree

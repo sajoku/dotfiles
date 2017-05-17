@@ -24,14 +24,18 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'ervandew/supertab'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+
 Plug 'isRuslan/vim-es6'
 Plug 'leafgarland/typescript-vim'
 
 Plug 'vim-scripts/indentpython.vim'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
+
 
 
 Plug 'slim-template/vim-slim'
