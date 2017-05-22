@@ -21,7 +21,7 @@ set encoding=utf-8
 set t_Co=256
 
 set background=dark
-colorscheme base16-railscasts
+colorscheme solarized
 
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
