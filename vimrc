@@ -292,7 +292,7 @@ nnoremap <silent> N   N:call HLNext()<cr>
 function! HLNext()
   let [bufnum, lnum, col, off] = getpos('.')
   let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-  let target_pat  '\c\%#'.@/
+  let target_pat  = '\c\%#'.@/
   let ring = matchadd('ErrorMsg', target_pat, 101)
   redraw
 endfunction

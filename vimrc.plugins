@@ -36,8 +36,6 @@ Plug 'vim-scripts/indentpython.vim'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
 
-
-
 Plug 'slim-template/vim-slim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'othree/html5.vim'
