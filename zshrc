@@ -35,6 +35,7 @@ export EDITOR=$VISUAL
 # ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.bin:/usr/local/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$PATH"
 
 # mkdir .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:$PATH"
@@ -71,8 +72,6 @@ eval "$(rbenv init -)"
 #export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 eval "$(pyenv init -)"
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
 
 autoload -U promptinit; promptinit
 prompt pure
