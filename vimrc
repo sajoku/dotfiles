@@ -20,7 +20,7 @@ syntax on
 set encoding=utf-8
 set t_Co=256
 
-set background=dark
+set background=light
 colorscheme solarized
 
 
@@ -43,6 +43,9 @@ set visualbell                    "no sounds
 "syntax sync minlines=256
 set lazyredraw
 set ttyfast
+"disabling syntax highlighting after 128 columns and/or minlines set to 256
+set synmaxcol=128
+syntax sync minlines=256
 "Search related settings
 set incsearch                     "find as you type search
 set hlsearch                      "Highlight all search matches
@@ -58,11 +61,10 @@ set laststatus=2
 
 " http://items.sjbach.com/319/configuring-vim-right
 set viminfo='100,f1               "Save up to 100 marks, enable capital marks
-set autoread                      "refresh on changes without confirmation
 set scrolloff=3                   "Keep more context when csrolling, also use zz
 
 "Softtabs
-set tabstop=2                     " Globul tab width
+set tabstop=2                     " Global tab width
 set shiftwidth=2
 set shiftround
 set expandtab                     " Use spaces instead of tab
@@ -79,7 +81,8 @@ set list listchars=tab:»·,trail:·,nbsp:·
 
 set directory=~/.vim/backup
 set backupdir=~/.vim/backup
-set makeprg=rake
+"Set rake as default make program. Uncomment if I do alot of Rails
+"set makeprg=rake
 
 "Allow copy paste in terminal vim
 set clipboard=unnamed
@@ -182,14 +185,23 @@ autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,ham
 
 "Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
 "to in Ruby land
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4 |
+"    \ set softtabstop=4 |
+"    \ set shiftwidth=4 |
+"    \ set textwidth=79 |
+"    \ set expandtab |
+"    \ set autoindent |
+"    \ set fileformat=unix
+
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sts=4
+autocmd FileType python set autoindent
+autocmd FileType python set expandtab
+autocmd FileType python set shiftwidth=4
+autocmd FileType python set fileformat=unix
+
 
 let python_highlight_all = 1
 
@@ -260,17 +272,17 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 "---------------------------------------
 "Line proximity matcher
 "---------------------------------------
-augroup vimrc_autocmd
-  "autocmd! clears out the vimrc_autocmd group before adding the next one.
-  autocmd!
-  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-
-  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m1=matchadd('LineProximity', '\%<119v.\%>115v', -1)
-  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m2=matchadd('LineOverflow', '\%>118v.\+', -1)
-  autocmd BufEnter,VimEnter,FileType ruby,javascript,python autocmd WinEnter,Filetype ruby,javascript let w:created=1
-  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:created=1
-augroup END
+"augroup vimrc_autocmd
+"  "autocmd! clears out the vimrc_autocmd group before adding the next one.
+"  autocmd!
+"  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
+"  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
+"
+"  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m1=matchadd('LineProximity', '\%<119v.\%>115v', -1)
+"  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m2=matchadd('LineOverflow', '\%>118v.\+', -1)
+"  autocmd BufEnter,VimEnter,FileType ruby,javascript,python autocmd WinEnter,Filetype ruby,javascript let w:created=1
+"  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:created=1
+"augroup END
 
 "Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
@@ -279,7 +291,7 @@ nnoremap <S-l> :exe "vertical resize -10"<CR>
 nnoremap <S-k> :exe "resize +10"<CR>
 
 " automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
+"autocmd VimResized * :wincmd =
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
