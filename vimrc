@@ -20,8 +20,9 @@ syntax on
 set encoding=utf-8
 set t_Co=256
 
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
@@ -185,23 +186,22 @@ autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,ham
 
 "Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
 "to in Ruby land
-"au BufNewFile,BufRead *.py
-"    \ set tabstop=4 |
-"    \ set softtabstop=4 |
-"    \ set shiftwidth=4 |
-"    \ set textwidth=79 |
-"    \ set expandtab |
-"    \ set autoindent |
-"    \ set fileformat=unix
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
 
-autocmd FileType python set sw=4
-autocmd FileType python set ts=4
-autocmd FileType python set sts=4
-autocmd FileType python set autoindent
-autocmd FileType python set expandtab
-autocmd FileType python set shiftwidth=4
-autocmd FileType python set fileformat=unix
-
+"autocmd FileType python set sw=4
+"autocmd FileType python set ts=4
+"autocmd FileType python set sts=4
+"autocmd FileType python set autoindent
+"autocmd FileType python set expandtab
+"autocmd FileType python set shiftwidth=4
+"autocmd FileType python set fileformat=unix
 
 let python_highlight_all = 1
 
@@ -222,8 +222,15 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
+let g:ale_linters = {
+\   'javascript': ['jshint'],
+\}
 
-let g:airline_theme='base16'
+
+" Set the correct flake8 executable and arguments to have typechecking
+let g:ale_python_flake8_executable = 'python3'
+let g:ale_python_flake8_args = '-m flake8'
+
 
 "python with virtualenv support
 py << EOF
