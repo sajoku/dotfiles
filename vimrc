@@ -42,10 +42,9 @@ set nofoldenable                  " Don't fold by default
 set foldlevel=99
 set visualbell                    "no sounds
 "syntax sync minlines=256
-set lazyredraw
 set ttyfast
 "disabling syntax highlighting after 128 columns and/or minlines set to 256
-set synmaxcol=128
+set synmaxcol=200
 syntax sync minlines=256
 "Search related settings
 set incsearch                     "find as you type search
@@ -55,7 +54,7 @@ set ignorecase                    "Ignore case with / searched
 set smartcase                     "Don't ignore case when search has capital
 set noesckeys
 setglobal relativenumber
-set relativenumber
+"set relativenumber
 set number                        " Show line numbers
 set numberwidth=2
 set laststatus=2
@@ -187,13 +186,13 @@ autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,ham
 "Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
 "to in Ruby land
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+    \ setlocal tabstop=4 |
+    \ setlocal softtabstop=4 |
+    \ setlocal shiftwidth=4 |
+    \ setlocal textwidth=120 |
+    \ setlocal expandtab |
+    \ setlocal autoindent |
+    \ setlocal fileformat=unix
 
 "autocmd FileType python set sw=4
 "autocmd FileType python set ts=4
@@ -215,7 +214,7 @@ let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mi
 
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = '☠️'
+let g:ale_sign_error = 'x'
 let g:ale_sign_warning = '⚠ '
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -231,6 +230,8 @@ let g:ale_linters = {
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
+"Disable linting when typing so I ccan get some speed without input lag
+let g:ale_lint_on_text_changed = 0
 
 "python with virtualenv support
 py << EOF
