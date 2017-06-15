@@ -20,10 +20,8 @@ syntax on
 set encoding=utf-8
 set t_Co=256
 
-set background=dark
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
-
+set background=light
+colorscheme base16-tomorrow-night
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set nobackup
@@ -100,7 +98,7 @@ autocmd BufReadPost *
 map <Leader>n :NERDTreeToggle<CR>
 
 map <Leader>ea: :EasyAlign \<CR>
-map <Leader>ea= :EasyAlign =<CR>
+map <Leader>ea = :EasyAlign =<CR>
 map <leader>ea :EasyAlign
 
 " Emacs-like beginning and end of line.
@@ -194,17 +192,12 @@ au BufNewFile,BufRead *.py
     \ setlocal autoindent |
     \ setlocal fileformat=unix
 
-"autocmd FileType python set sw=4
-"autocmd FileType python set ts=4
-"autocmd FileType python set sts=4
-"autocmd FileType python set autoindent
-"autocmd FileType python set expandtab
-"autocmd FileType python set shiftwidth=4
-"autocmd FileType python set fileformat=unix
-
 let python_highlight_all = 1
 
+"You complete me plugin
 let g:ycm_autoclose_preview_window_after_completion=1
+
+"Airline and extension settings
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#tabline#left_sep = ' '
@@ -212,6 +205,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file' ]
 
+"Ale syntax checker settings
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'x'
@@ -224,7 +218,6 @@ let g:ale_set_quickfix = 1
 let g:ale_linters = {
 \   'javascript': ['jshint'],
 \}
-
 
 " Set the correct flake8 executable and arguments to have typechecking
 let g:ale_python_flake8_executable = 'python3'
