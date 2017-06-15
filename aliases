@@ -23,15 +23,6 @@ alias grs='git rebase --skip'
 #rails
 alias devlog='tail -f log/development.log'
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
-alias prepdb="rdm && rdtp"
-alias rdm="be rake db:migrate"
-alias rdtp="be rake db:test:prepare"
-alias rpu="rails s Puma"
-
-#show config for rails projects with capistrano
-alias prod="cat config/deploy/production.rb"
-alias staging="cat config/deploy/staging.rb"
-alias acc="cat config/deploy/acceptance.rb"
 
 #rake typos
 alias ake='rake'
@@ -49,12 +40,9 @@ alias c='cd ~/code'
 
 #directory navigation
 alias dot='cd ~/dotfiles'
-alias gocode='cd ~/gocode/src'
-alias notes='cd ~/notes'
 alias p='cd ~/projects'
 alias pl='cd ~/playground'
 
-#alias mostused='history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=tmp *'
 
 #tmux
@@ -64,4 +52,5 @@ alias tma='tmux attach'
 alias wion='networksetup -setairportpower en1 off; networksetup -setairportpower en1 on'
 alias wioff='networksetup -setairportpower en1 off'
 
+#shows lines of code for rb files
 alias loc="find . -name '*.rb' | xargs wc -l"
