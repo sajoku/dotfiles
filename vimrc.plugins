@@ -11,9 +11,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-liquid'
+"Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-endwise'
 Plug 'junegunn/vim-easy-align'
+
 Plug 'mileszs/ack.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -47,15 +48,13 @@ Plug 'nvie/vim-flake8'
 Plug 'Raimondi/delimitMate'
 
 "color themes via vundle yeay
-Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 "Plug 'thoughtbot/vim-rspec'
 
 "tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-
-Plug 'chriskempson/base16-vim'
 
 call plug#end()
 filetype on
