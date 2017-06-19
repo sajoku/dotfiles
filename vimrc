@@ -20,8 +20,9 @@ syntax on
 set encoding=utf-8
 set t_Co=256
 
-set background=light
-colorscheme base16-tomorrow-night
+set background=dark
+colorscheme base16-flat
+
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
 set nobackup
@@ -52,7 +53,7 @@ set ignorecase                    "Ignore case with / searched
 set smartcase                     "Don't ignore case when search has capital
 set noesckeys
 setglobal relativenumber
-"set relativenumber
+set relativenumber
 set number                        " Show line numbers
 set numberwidth=2
 set laststatus=2
@@ -215,6 +216,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
+let g:ale_set_highlights = 1
 let g:ale_linters = {
 \   'javascript': ['jshint'],
 \}
@@ -224,7 +226,8 @@ let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
 "Disable linting when typing so I ccan get some speed without input lag
-let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_text_changed = 1
+highlight ALEErrorSign guibg=yellow guifg=red ctermbg=NONE ctermfg=red
 
 "python with virtualenv support
 py << EOF
