@@ -5,9 +5,13 @@ set nocompatible
 " change mapleader to ,
 let mapleader = ","
 
-if filereadable(expand("~/dotfiles/vimrc.plugins"))
-  source ~/dotfiles/vimrc.plugins
+if filereadable(expand("~/dotfiles/vimrc.packages"))
+  source ~/dotfiles/vimrc.packages
 endif
+
+" minpac commands:
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
 
 "Add ale to the runtime path so it can execute
 filetype off
@@ -20,8 +24,14 @@ syntax on
 set encoding=utf-8
 set t_Co=256
 
+"Tru color support
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+
 set background=dark
-colorscheme base16-flat
+colorscheme solarized8_dark_high
 
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
@@ -143,8 +153,8 @@ if executable('ag')
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*
   " Sane Ignore For ctrlp
   let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc',
-        \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$'
+        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc|node_modules',
+        \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$|\.pyc$'
         \ }
 endif
 
@@ -218,16 +228,24 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_set_highlights = 1
 let g:ale_linters = {
-\   'javascript': ['jshint'],
+\   'javascript': ['jshint', 'eslint'],
 \}
+
+"let g:ale_fixers = {
+"\ 'javacsript': ['prettier'],
+" \}
+"let g:ale_javascript_prettier_use_global = 1
+
+
+"let g:ale_javascript_eslint_executable = '/usr/local/Cellar/node/8.1.2/bin/eslint'
 
 " Set the correct flake8 executable and arguments to have typechecking
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
-"Disable linting when typing so I ccan get some speed without input lag
 let g:ale_lint_on_text_changed = 1
 highlight ALEErrorSign guibg=yellow guifg=red ctermbg=NONE ctermfg=red
+
 
 "python with virtualenv support
 py << EOF
@@ -259,6 +277,7 @@ set rtp+=/usr/local/opt/fzf
 " shortcut for searching through whole folder
 nmap g/ :Ag<space>
 nmap <c-p> :cclose<CR>:FZF<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " --column: Show column number
 " --line-number: Show line number
@@ -316,3 +335,20 @@ endfunction
 " Allow ale to open the quickfix window and show all warnings and errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+"Refresh NerdTree automagically taken from
+"https://bluz71.github.io/2017/05/21/vim-plugins-i-like.html
+function! NERDTreeRefresh()
+    if &filetype == "nerdtree"
+        silent exe substitute(mapcheck("R"), "<CR>", "", "")
+    endif
+endfunction
+
+autocmd BufEnter * call NERDTreeRefresh()
+
+"Git integration for nerdtree, uses Plug nerdtree-git-plugin
+let g:NERDTreeUpdateOnCursorHold = 0
+
+"Show indentlines uses Plug indentLine
+"let g:indentLine_faster = 1
+"let g:indentLine_setConceal = 0
