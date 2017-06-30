@@ -31,7 +31,12 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 set background=dark
-colorscheme solarized8_dark_high
+silent! colorscheme solarized8_dark_high
+" Solarized8 {{{2
+nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "dark"
+      \ ? substitute(g:colors_name, 'dark', 'light', '')
+      \ : substitute(g:colors_name, 'light', 'dark', '')
+      \ )<cr>
 
 
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
@@ -209,6 +214,7 @@ let python_highlight_all = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 
 "Airline and extension settings
+set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#tabline#left_sep = ' '

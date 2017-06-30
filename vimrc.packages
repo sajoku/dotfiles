@@ -24,8 +24,6 @@ call minpac#add('ervandew/supertab')
 
 "call minpac#add('Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' })
 
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
 
 
 " call minpac#add('isRuslan/vim-es6')
@@ -53,4 +51,9 @@ call minpac#add('Raimondi/delimitMate')
 "tmux
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('christoomey/vim-tmux-runner')
+
+"Colors and theme related
 call minpac#add('lifepillar/vim-solarized8')
+"call minpac#add('sajoku/vim-moonfly-statusline')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
