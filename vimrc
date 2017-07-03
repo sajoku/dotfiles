@@ -220,7 +220,7 @@ let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file' ]
+let g:airline#extensions#whitespace#checks = ['indent', 'trailing', 'long', 'mixed-indent-file']
 
 "Ale syntax checker settings
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -250,7 +250,7 @@ let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
 let g:ale_lint_on_text_changed = 1
-highlight ALEErrorSign guibg=yellow guifg=red ctermbg=NONE ctermfg=red
+highlight ALEErrorSign guibg=black guifg=red ctermbg=NONE ctermfg=red
 
 
 "python with virtualenv support
@@ -263,19 +263,19 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
 
 runtime! macros/matchit.vim
 
-let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-nnoremap <leader>va :VtrAttachToPane<cr>
+"let g:rspec_runner = "os_x_iterm"
+"let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+"map <Leader>t :call RunCurrentSpecFile()<CR>
+"map <Leader>s :call RunNearestSpec()<CR>
+"map <Leader>l :call RunLastSpec()<CR>
+"nnoremap <leader>va :VtrAttachToPane<cr>
 
 
 "SEARCHING --------------------
@@ -296,22 +296,6 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-
-
-"---------------------------------------
-"Line proximity matcher
-"---------------------------------------
-"augroup vimrc_autocmd
-"  "autocmd! clears out the vimrc_autocmd group before adding the next one.
-"  autocmd!
-"  hi LineProximity ctermfg=white ctermbg=gray guifg=white guibg=#757160
-"  hi LineOverflow  ctermfg=white ctermbg=red guifg=white guibg=#FF2270
-"
-"  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m1=matchadd('LineProximity', '\%<119v.\%>115v', -1)
-"  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:m2=matchadd('LineOverflow', '\%>118v.\+', -1)
-"  autocmd BufEnter,VimEnter,FileType ruby,javascript,python autocmd WinEnter,Filetype ruby,javascript let w:created=1
-"  autocmd BufEnter,VimEnter,FileType ruby,javascript,python let w:created=1
-"augroup END
 
 "Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
