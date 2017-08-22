@@ -16,7 +16,7 @@ SAVEHIST=20000
 autoload -U compinit
 compinit
 
-plugins=(git rails ruby bundler)
+plugins=(git zsh-syntax-highlighting osx pip)
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh
