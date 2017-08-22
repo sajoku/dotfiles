@@ -31,61 +31,63 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 set background=dark
-silent! colorscheme solarized8_dark_high
+silent! colorscheme dracula
+
 " Solarized8 {{{2
-nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "dark"
+nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "light"
       \ ? substitute(g:colors_name, 'dark', 'light', '')
       \ : substitute(g:colors_name, 'light', 'dark', '')
       \ )<cr>
 
 
-set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
+set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set nobackup
 set nowritebackup
-set noswapfile                    " Stop using .swp files
-set autoindent                    " Always set autoindenting on
-set history=100                  " Keep x lines in history
-set ruler                         " Always show cursor
-set showcmd                       " Display incomplete commands
+set noswapfile                 " Stop using .swp files
+set autoindent                 " Always set autoindenting on
+set history=100                " Keep x lines in history
+set ruler                      " Always show cursor
+set showcmd                    " Display incomplete commands
 set showmode
-set mouse=a                       " Enable mouse
-set mousehide                     " Hide mouse when typing
-set timeoutlen=500                " Don't lag the leader key + command
+set mouse=a                    " Enable mouse
+set mousehide                  " Hide mouse when typing
+set timeoutlen=500             " Don't lag the leader key + command
 set showmatch
-set nofoldenable                  " Don't fold by default
+set nofoldenable               " Don't fold by default
 set foldlevel=99
-set visualbell                    "no sounds
-"syntax sync minlines=256
+set visualbell                 " no sounds
+                               " syntax sync minlines=256
 set ttyfast
-"disabling syntax highlighting after 128 columns and/or minlines set to 256
+                               " disabling syntax highlighting after 128 columns and/or minlines set to 256
 set synmaxcol=200
 syntax sync minlines=256
-"Search related settings
-set incsearch                     "find as you type search
-set hlsearch                      "Highlight all search matches
+                               " Search related settings
+set incsearch                  " find as you type search
+set hlsearch                   " Highlight all search matches
 nmap <leader>h :nohlsearch<cr>
-set ignorecase                    "Ignore case with / searched
-set smartcase                     "Don't ignore case when search has capital
+set ignorecase                 " Ignore case with / searched
+set smartcase                  " Don't ignore case when search has capital
 set noesckeys
 setglobal relativenumber
 set relativenumber
-set number                        " Show line numbers
+set number                     " Show line numbers
 set numberwidth=2
 set laststatus=2
+set autoread                   " Automatically read files changed on disk by other programs
 
-" http://items.sjbach.com/319/configuring-vim-right
-set viminfo='100,f1               "Save up to 100 marks, enable capital marks
-set scrolloff=3                   "Keep more context when csrolling, also use zz
+                               " http://items.sjbach.com/319/configuring-vim-right
+set viminfo='100,f1            " Save up to 100 marks, enable capital marks
+set scrolloff=3                " Keep more context when csrolling, also use zz
 
-"Softtabs
-set tabstop=2                     " Global tab width
+                               " Softtabs
+set tabstop=2                  " Global tab width
 set shiftwidth=2
 set shiftround
-set expandtab                     " Use spaces instead of tab
+set expandtab                  " Use spaces instead of tab
 set softtabstop=2
 
-set splitbelow   "Split windows below the current window.
-" Tab completion
+set splitbelow                 " Split windows below the current window.
+                               " Tab completion
 set wildmode=list:longest,list:full
 set complete=.,w,t,i
 set completeopt=menu,preview
@@ -249,19 +251,31 @@ let g:ale_linters = {
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
-let g:ale_lint_on_text_changed = 1
-highlight ALEErrorSign guibg=black guifg=red ctermbg=NONE ctermfg=red
+"let g:ale_lint_on_text_changed = 1
+set updatetime=1000
+let g:ale_lint_on_text_changed = 0
+autocmd CursorHold * call ale#Lint()
+autocmd CursorHoldI * call ale#Lint()
+autocmd InsertEnter * call ale#Lint()
+autocmd InsertLeave * call ale#Lint()
 
+highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
+highlight ALEError cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
+highlight ALEWarning cterm=underline guibg=NONE guifg=yellow ctermbg=NONE ctermfg=red
+
+" Move between linting errors
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
 
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 "nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -277,6 +291,24 @@ runtime! macros/matchit.vim
 "map <Leader>l :call RunLastSpec()<CR>
 "nnoremap <leader>va :VtrAttachToPane<cr>
 
+" These are coming from jank-m/vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+
+if filereadable(expand("~/dotfiles/vimrc.test_runners"))
+  source ~/dotfiles/vimrc.test_runners
+endif
+let g:test#strategy = 'vtr'
+
+
+"Python support for vim tmux runner
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
 
 "SEARCHING --------------------
 set rtp+=/usr/local/opt/fzf
@@ -342,3 +374,7 @@ let g:NERDTreeUpdateOnCursorHold = 0
 "Show indentlines uses Plug indentLine
 "let g:indentLine_faster = 1
 "let g:indentLine_setConceal = 0
+let g:diminactive_enable_focus = 1
+
+:ia pry <CR>import code; code.interact(local=dict(globals(), **locals()))
+"inoremap <leader> c <CR>import code; code.interact(local=dict(globals(), **locals()))
