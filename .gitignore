@@ -12,3 +12,4 @@ vim/autoload/*.*
 vim/plugged/*.*
 vim/plugged
 base16.rb
+vimrc.test_runners
