@@ -24,6 +24,8 @@ call minpac#add('ervandew/supertab')
 
 "call minpac#add('Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' })
 
+"Tests and code
+call minpac#add('janko-m/vim-test')
 
 
 " call minpac#add('isRuslan/vim-es6')
@@ -31,7 +33,8 @@ call minpac#add('ervandew/supertab')
 
 "call minpac#add('vim-scripts/indentpython.vim')
 "call minpac#add('Valloric/YouCompleteMe')
-call minpac#add('davidhalter/jedi-vim')
+"call minpac#add('davidhalter/jedi-vim')
+call minpac#add('maralla/completor.vim')
 
 
 " call minpac#add('slim-template/vim-slim')
@@ -57,3 +60,6 @@ call minpac#add('lifepillar/vim-solarized8')
 "call minpac#add('sajoku/vim-moonfly-statusline')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('blueyed/vim-diminactive')
+call minpac#add('sickill/vim-monokai')
+call minpac#add('dracula/vim')
