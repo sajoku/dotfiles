@@ -31,7 +31,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 set background=dark
-silent! colorscheme dracula
+silent! colorscheme onehalfdark
 
 " Solarized8 {{{2
 nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "light"
@@ -91,6 +91,7 @@ set splitbelow                 " Split windows below the current window.
 set wildmode=list:longest,list:full
 set complete=.,w,t,i
 set completeopt=menu,preview
+set fileformat=unix
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -252,16 +253,16 @@ let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
 "let g:ale_lint_on_text_changed = 1
-set updatetime=1000
-let g:ale_lint_on_text_changed = 0
-autocmd CursorHold * call ale#Lint()
-autocmd CursorHoldI * call ale#Lint()
-autocmd InsertEnter * call ale#Lint()
-autocmd InsertLeave * call ale#Lint()
+"set updatetime=1000
+let g:ale_lint_on_text_changed = 1
+"autocmd CursorHold * call ale#Lint()
+"autocmd CursorHoldI * call ale#Lint()
+"autocmd InsertEnter * call ale#Lint()
+"autocmd InsertLeave * call ale#Lint()
 
 highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEError cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
-highlight ALEWarning cterm=underline guibg=NONE guifg=yellow ctermbg=NONE ctermfg=red
+highlight ALEWarning cterm=underline guibg=NONE guifg=cyan ctermbg=NONE ctermfg=red
 
 " Move between linting errors
 nnoremap ]r :ALENextWrap<CR>
