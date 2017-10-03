@@ -1,12 +1,10 @@
 packadd minpac
 call minpac#init()
 
+
 call minpac#add('tpope/vim-fugitive')
-"call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('scrooloose/nerdtree')
-call minpac#add('tpope/vim-bundler')
-"call minpac#add('tpope/vim-liquid')
 call minpac#add('tpope/vim-endwise')
 call minpac#add('junegunn/vim-easy-align')
 "call minpac#add('Yggdroot/indentLine')
@@ -16,50 +14,47 @@ call minpac#add('mileszs/ack.vim')
 
 call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' })
 call minpac#add('junegunn/fzf.vim')
+call minpac#add('ctrlpvim/ctrlp.vim')
 
-call minpac#add('vim-ruby/vim-ruby')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('ervandew/supertab')
 
-"call minpac#add('Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' })
-
-"Tests and code
+"->Tests
 call minpac#add('janko-m/vim-test')
+"<- Tests
 
 
 " call minpac#add('isRuslan/vim-es6')
 " call minpac#add('leafgarland/typescript-vim')
 
-"call minpac#add('vim-scripts/indentpython.vim')
-"call minpac#add('Valloric/YouCompleteMe')
-"call minpac#add('davidhalter/jedi-vim')
 call minpac#add('maralla/completor.vim')
 
-
-" call minpac#add('slim-template/vim-slim')
-" call minpac#add('kchmck/vim-coffee-script')
 call minpac#add('othree/html5.vim')
 " call minpac#add('fatih/vim-go')
 
-"call minpac#add('scrooloose/syntastic')
-"scrooloose/syntastic
 call minpac#add('w0rp/ale')
-call minpac#add('nvie/vim-flake8')
 call minpac#add('Raimondi/delimitMate')
 
+"->Python
+call minpac#add('nvie/vim-flake8')
+"<-Python
+"
+"-> Rails
+call minpac#add('tpope/vim-rails')
+"<- Rails
+"
+"->Ruby
+call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('tpope/vim-bundler')
+"<-Ruby
 
-"call minpac#add('thoughtbot/vim-rspec')
 
 "tmux
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('christoomey/vim-tmux-runner')
 
 "Colors and theme related
-call minpac#add('lifepillar/vim-solarized8')
-"call minpac#add('sajoku/vim-moonfly-statusline')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('blueyed/vim-diminactive')
-call minpac#add('sickill/vim-monokai')
-call minpac#add('dracula/vim')
