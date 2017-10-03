@@ -369,9 +369,9 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "Refresh NerdTree automagically taken from
 "https://bluz71.github.io/2017/05/21/vim-plugins-i-like.html
 function! NERDTreeRefresh()
-    if &filetype == "nerdtree"
-        silent exe substitute(mapcheck("R"), "<CR>", "", "")
-    endif
+  if &filetype == "nerdtree"
+    silent exe substitute(mapcheck("R"), "<CR>", "", "")
+  endif
 endfunction
 
 autocmd BufEnter * call NERDTreeRefresh()
