@@ -31,7 +31,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 set background=dark
-silent! colorscheme onehalfdark
+silent! colorscheme Tomorrow-Night
 
 " Solarized8 {{{2
 nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "light"
@@ -54,6 +54,7 @@ set mousehide                  " Hide mouse when typing
 set timeoutlen=500             " Don't lag the leader key + command
 set showmatch
 set nofoldenable               " Don't fold by default
+set foldmethod=indent
 set foldlevel=99
 set visualbell                 " no sounds
                                " syntax sync minlines=256
