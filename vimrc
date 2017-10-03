@@ -385,5 +385,5 @@ let g:NERDTreeUpdateOnCursorHold = 0
 "let g:indentLine_setConceal = 0
 let g:diminactive_enable_focus = 1
 
-:ia pry <CR>import code; code.interact(local=dict(globals(), **locals()))
+:ia pryp <CR>import code; code.interact(local=dict(globals(), **locals()))
 "inoremap <leader> c <CR>import code; code.interact(local=dict(globals(), **locals()))
