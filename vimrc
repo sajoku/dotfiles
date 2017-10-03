@@ -110,6 +110,9 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
+
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
 "---------------------------------
 "Mapping keys
 "---------------------------------
