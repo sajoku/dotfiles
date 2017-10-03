@@ -146,27 +146,6 @@ imap <left> <nop>
 imap <right> <nop>
 
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  "nnoremap <C-P> :call PickFile()<CR>
-  "exclude dirs for ctrlp
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*
-  " Sane Ignore For ctrlp
-  let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc|node_modules',
-        \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$|\.pyc$'
-        \ }
-endif
-
-
 "---------------------------------
 "Typo fixes
 "---------------------------------
@@ -316,7 +295,7 @@ set rtp+=/usr/local/opt/fzf
 " shortcut for searching through whole folder
 nmap g/ :Ag<space>
 nmap <c-p> :cclose<CR>:FZF<CR>
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+"let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " --column: Show column number
 " --line-number: Show line number
@@ -328,7 +307,32 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " --follow: Follow symlinks
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+"
+"command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --glob"!__init__.py" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
+  " Sane Ignore For ctrlp
+  let g:ctrlp_custom_ignore = {
+        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc|node_modules',
+        \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$|\.pyc$'
+        \ }
+endif
+
+"Introduce ripgrep
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "!*.{min.js,swp,o,zip,pyc}" 
+  \ -g "!{__init__.py}" 
+  \ -g "!{.git,node_modules,vendor,__pycache__}/*" '
+
 
 "Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
