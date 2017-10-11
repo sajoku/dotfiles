@@ -10,7 +10,7 @@ alias ls="ls -F"
 
 # git
 alias gb='git branch'
-alias gc='git commit -s'
+alias gc='git commit -S'
 alias gca='git commit -a'
 alias gco='git checkout'
 alias gl='git pull'
