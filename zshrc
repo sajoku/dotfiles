@@ -40,6 +40,10 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 # mkdir .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:$PATH"
 
+#Add support for gpg and commit signing
+GPG_TTY=$(tty)
+export GPG_TTY
+
 # Add this to your zshrc or bzshrc file
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
