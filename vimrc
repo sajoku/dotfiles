@@ -223,9 +223,9 @@ let g:ale_linters = {
 \   'javascript': ['jshint', 'eslint'],
 \}
 
-"let g:ale_fixers = {
-"\ 'javacsript': ['prettier'],
-" \}
+let g:ale_fixers = {
+\ 'javacsript': ['prettier', 'eslint'],
+ \}
 "let g:ale_javascript_prettier_use_global = 1
 
 
@@ -235,17 +235,12 @@ let g:ale_linters = {
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
-"let g:ale_lint_on_text_changed = 1
-"set updatetime=1000
 let g:ale_lint_on_text_changed = 1
-"autocmd CursorHold * call ale#Lint()
-"autocmd CursorHoldI * call ale#Lint()
-"autocmd InsertEnter * call ale#Lint()
-"autocmd InsertLeave * call ale#Lint()
+let g:ale_fix_on_save = 1
 
 highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEError cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
-highlight ALEWarning cterm=underline guibg=NONE guifg=cyan ctermbg=NONE ctermfg=red
+highlight ALEWarning cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 
 " Move between linting errors
 nnoremap ]r :ALENextWrap<CR>
