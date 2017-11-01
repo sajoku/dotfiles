@@ -388,6 +388,9 @@ nnoremap <S-k> :exe "resize +10"<CR>
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
+"Git 
+nnoremap <leader>G :Gcommit<cr>
+
 " Use better search highlighting
 nnoremap <silent> n   n:call HLNext()<cr>
 nnoremap <silent> N   N:call HLNext()<cr>
