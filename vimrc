@@ -111,6 +111,49 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
+"--------------------
+" Autoformat code when saving files
+" Uses neoformat
+"--------------------
+
+let g:neoformat_try_formatprg = 1
+
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
+let g:neoformat_javascript_prettier = {
+  \ 'exe': 'prettier',
+  \ 'args': ['--stdin', '--single-quote', '--print-width 120', '--no-bracket-spacing'],
+  \ 'stdin': 1,
+  \ }
+
+let g:neoformat_elixir_exfmt = {
+  \ 'exe': 'mix',
+  \ 'args': ['exfmt', '--stdin'],
+  \ 'stdin': 1
+  \ }
+
+let g:neoformat_enabled_elixir = ['exfmt']
+
+let g:neoformat_htmldjango_tidyhtml5 = {
+        \ 'exe': 'tidy',
+        \ 'args': ['-quiet',
+        \          '--indent auto',
+        \          '--indent-spaces ' . shiftwidth(),
+        \          '--vertical-space yes',
+        \          '--tidy-mark no',
+        \          '-wrap ' . &textwidth
+        \         ]
+        \ }
+let g:neoformat_enabled_htmldjango = ['htmlbeautify', 'tidy', 'prettydiff', 'tidyhtml5']
+
+"--------------------
+" End of autoformat
+"--------------------
+
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
