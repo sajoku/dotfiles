@@ -2,10 +2,11 @@ precmd() {
     if [[ -n $PYENV_SHELL ]]; then
         local version
         version=${(@)$(pyenv version)[1]}
+        ruby_version=${(@)$(rbenv version)[1]}
         if [[ $version = system ]]; then
-            PROMPT="%(?.%F{magenta}.%F{red})❯%f "
+            PROMPT="($ruby_version) %(?.%F{magenta}.%F{red})❯%f "
         else
-            PROMPT="(pyenv $version) %(?.%F{magenta}.%F{red})❯%f "
+            PROMPT="($version) %(?.%F{magenta}.%F{red})❯%f "
         fi
     fi
 }
