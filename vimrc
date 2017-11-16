@@ -130,13 +130,13 @@ let g:neoformat_javascript_prettier = {
   \ 'stdin': 1,
   \ }
 
-let g:neoformat_elixir_exfmt = {
-  \ 'exe': 'mix',
-  \ 'args': ['exfmt', '--stdin'],
-  \ 'stdin': 1
-  \ }
-
-let g:neoformat_enabled_elixir = ['exfmt']
+"let g:neoformat_elixir_exfmt = {
+"  \ 'exe': 'mix',
+"  \ 'args': ['exfmt', '--stdin'],
+"  \ 'stdin': 1
+"  \ }
+"
+"let g:neoformat_enabled_elixir = ['exfmt']
 
 let g:neoformat_htmldjango_tidyhtml5 = {
         \ 'exe': 'tidy',
@@ -241,6 +241,10 @@ let python_highlight_all = 1
 
 "You complete me plugin
 let g:ycm_autoclose_preview_window_after_completion=1
+
+let g:UltiSnipsExpandTrigger="<c-a>"
+let g:UltiSnipsJumpForwardTrigger="<c-t>"
+let g:UltiSnipsJumpBackwardTrigger="<c-r>"
 
 "Airline and extension settings
 set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
@@ -426,5 +430,8 @@ let g:NERDTreeUpdateOnCursorHold = 0
 "let g:indentLine_setConceal = 0
 let g:diminactive_enable_focus = 1
 
+
 :ia pryp <CR>import code; code.interact(local=dict(globals(), **locals()))
+"If openen a read only file without sudo:
+" :w !sudo tee % 
 "inoremap <leader> c <CR>import code; code.interact(local=dict(globals(), **locals()))
