@@ -15,7 +15,6 @@ call minpac#add('mileszs/ack.vim')
 
 call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' })
 call minpac#add('junegunn/fzf.vim')
-call minpac#add('ctrlpvim/ctrlp.vim')
 
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')

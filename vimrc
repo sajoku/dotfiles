@@ -33,12 +33,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
 silent! colorscheme Tomorrow-Night
 
-" Solarized8 {{{2
-nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "light"
-      \ ? substitute(g:colors_name, 'dark', 'light', '')
-      \ : substitute(g:colors_name, 'light', 'dark', '')
-      \ )<cr>
-
+" ==========================================================================================================
+"  OPTIONS  {{{~
+" ==========================================================================================================
 
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set nobackup
@@ -94,6 +91,9 @@ set complete=.,w,t,i
 set completeopt=menu,preview
 set fileformat=unix
 
+"Prepend linebreaks with @ symbol
+set showbreak="@"
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
@@ -104,6 +104,10 @@ set backupdir=~/.vim/backup
 
 "Allow copy paste in terminal vim
 set clipboard=unnamed
+
+" ==========================================================================================================
+"  }}}
+" ==========================================================================================================
 
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
@@ -359,25 +363,36 @@ nmap <c-p> :cclose<CR>:FZF<CR>
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
-  " Sane Ignore For ctrlp
-  let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc|node_modules',
-        \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$|\.pyc$'
-        \ }
-endif
+"if executable('rg')
+"  set grepprg=rg\ --color=never
+"  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+"  let g:ctrlp_use_caching = 0
+"  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
+"  " Sane Ignore For ctrlp
+"  let g:ctrlp_custom_ignore = {
+"        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc|node_modules',
+"        \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$|\.pyc$'
+"        \ }
+"endif
+"
+"
+" FZF
+" -----------------
+" This prefixes all FZF-provided commands with 'Fzf' so I can easily find cool
+" FZF commands and not have to remember 'Colors' and 'History/' etc.
+let g:fzf_command_prefix = 'Fzf'
+
+nnoremap <ctrl>p :FZF<CR>
+nnoremap <leader>p :FZF<CR>
+nnoremap <leader>b :FzfBuffers<CR>
 
 "Introduce ripgrep
-let g:rg_command = '
-  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
-  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
-  \ -g "!*.{min.js,swp,o,zip,pyc}" 
-  \ -g "!{__init__.py}" 
-  \ -g "!{.git,node_modules,vendor,__pycache__}/*" '
+"let g:rg_command = '
+"  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+"  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+"  \ -g "!*.{min.js,swp,o,zip,pyc}" 
+"  \ -g "!{__init__.py}" 
+"  \ -g "!{.git,node_modules,vendor,__pycache__}/*" '
 
 
 "Zoom and resize stuff
