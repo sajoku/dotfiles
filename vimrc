@@ -31,7 +31,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 set background=dark
-silent! colorscheme onehalfdark
+silent! colorscheme loyal
 
 " ==========================================================================================================
 "  OPTIONS  {{{~
