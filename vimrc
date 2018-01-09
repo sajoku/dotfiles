@@ -244,6 +244,7 @@ au BufNewFile,BufRead *.py
 let python_highlight_all = 1
 
 "You complete me plugin
+let g:ycm_path_to_python_interpreter = '/Users/sajoku/.pyenv/shims/python'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 let g:UltiSnipsExpandTrigger="<c-a>"
@@ -343,9 +344,12 @@ let g:VtrAppendNewline = 1
 "SEARCHING --------------------
 set rtp+=/usr/local/opt/fzf
 " shortcut for searching through whole folder
-nmap g/ :Ag<space>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+nmap g/ :Ack!<space>
 nmap <c-p> :cclose<CR>:FZF<CR>
-"let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " --column: Show column number
 " --line-number: Show line number

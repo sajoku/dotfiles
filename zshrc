@@ -76,3 +76,5 @@ autoload -U promptinit; promptinit
 prompt pure
 
 . ~/dotfiles/pyenv-pure-prompt
+
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
