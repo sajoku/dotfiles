@@ -31,7 +31,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 set background=dark
-silent! colorscheme loyal
+silent! colorscheme solarized
 
 " ==========================================================================================================
 "  OPTIONS  {{{~
@@ -69,6 +69,7 @@ set noesckeys
 setglobal relativenumber
 set relativenumber
 set number                     " Show line numbers
+set linespace=3
 set numberwidth=2
 set laststatus=2
 set autoread                   " Automatically read files changed on disk by other programs
@@ -121,8 +122,8 @@ autocmd BufReadPost *
 "--------------------
 
 let g:neoformat_try_formatprg = 1
-
-
+"
+"
 augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
@@ -228,7 +229,7 @@ autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 
 "Remove trailing whitespace when writing a file
-autocmd BufWritePre *.{rb,erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim,eex} :%s/\s\+$//e
+autocmd BufWritePre *.{erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim,eex} :%s/\s\+$//e
 
 "Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
 "to in Ruby land
@@ -245,11 +246,13 @@ let python_highlight_all = 1
 
 "You complete me plugin
 let g:ycm_path_to_python_interpreter = '/Users/sajoku/.pyenv/shims/python'
+"let g:ycm_server_python_interpreter = '/Users/sajoku/.pyenv/shims/python'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 let g:UltiSnipsExpandTrigger="<c-a>"
 let g:UltiSnipsJumpForwardTrigger="<c-t>"
 let g:UltiSnipsJumpBackwardTrigger="<c-r>"
+
 
 "Airline and extension settings
 set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
@@ -287,8 +290,8 @@ let g:ale_fixers = {
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
-let g:ale_lint_on_text_changed = 1
-let g:ale_fix_on_save = 1
+"let g:ale_lint_on_text_changed = 1
+"let g:ale_fix_on_save = 1
 
 highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEError cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
@@ -367,18 +370,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
-"if executable('rg')
-"  set grepprg=rg\ --color=never
-"  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-"  let g:ctrlp_use_caching = 0
-"  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
-"  " Sane Ignore For ctrlp
-"  let g:ctrlp_custom_ignore = {
-"        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public\/images\|public\/system\|data\|log\|tmp$|*.Storyboardc|node_modules',
-"        \ 'file': '\.app$\|\.so$\|\.dat$\|.nib$\|.log$|\.pyc$'
-"        \ }
-"endif
-"
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
 "
 " FZF
 " -----------------
