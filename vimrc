@@ -29,10 +29,8 @@ set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-
-set background=dark
-silent! colorscheme solarized
-
+set background=light
+silent! colorscheme solarized8_flat
 " ==========================================================================================================
 "  OPTIONS  {{{~
 " ==========================================================================================================
@@ -290,7 +288,7 @@ let g:ale_fixers = {
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 
-"let g:ale_lint_on_text_changed = 1
+let g:ale_lint_on_text_changed = 1
 "let g:ale_fix_on_save = 1
 
 highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
@@ -435,11 +433,6 @@ autocmd BufEnter * call NERDTreeRefresh()
 
 "Git integration for nerdtree, uses Plug nerdtree-git-plugin
 let g:NERDTreeUpdateOnCursorHold = 0
-
-"Show indentlines uses Plug indentLine
-"let g:indentLine_faster = 1
-"let g:indentLine_setConceal = 0
-let g:diminactive_enable_focus = 1
 
 
 :ia pryp <CR>import code; code.interact(local=dict(globals(), **locals()))
