@@ -20,7 +20,6 @@ alias gp='git push'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
-alias github='open /Applications/GitHub\ Desktop.app'
 
 #rails
 alias devlog='tail -f log/development.log'
