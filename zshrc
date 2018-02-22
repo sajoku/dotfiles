@@ -64,6 +64,16 @@ tm-select-session() {
   fi
 }
 
+# Add gpg agent so wecan use signed commits and do not have to fill in creds every commit
+if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
+  source ~/.gnupg/.gpg-agent-info
+  export GPG_AGENT_INFO
+  GPG_TTY=$(tty)
+  export GPG_TTY
+#else
+#  eval $(gpg-agent --daemon)
+fi
+
 
 eval "$(rbenv init -)"
 
