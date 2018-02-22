@@ -29,8 +29,8 @@ set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-set background=light
-silent! colorscheme solarized8_flat
+set background=dark
+silent! colorscheme dracula
 " ==========================================================================================================
 "  OPTIONS  {{{~
 " ==========================================================================================================
@@ -151,7 +151,7 @@ let g:neoformat_htmldjango_tidyhtml5 = {
         \          '-wrap ' . &textwidth
         \         ]
         \ }
-let g:neoformat_enabled_htmldjango = ['htmlbeautify', 'tidy', 'prettydiff', 'tidyhtml5']
+let g:neoformat_enabled_htmldjango = ['htmlbeautify', 'tidy', 'js-beautify', 'tidyhtml5']
 
 "--------------------
 " End of autoformat
@@ -254,18 +254,18 @@ let g:UltiSnipsJumpBackwardTrigger="<c-r>"
 
 "Airline and extension settings
 set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
+let g:airline_theme='dracula'
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
 let g:airline#extensions#whitespace#checks = ['indent', 'trailing', 'long', 'mixed-indent-file']
 
 "Ale syntax checker settings
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = 'x'
-let g:ale_sign_warning = '⚠ '
+let g:ale_sign_error = '🚫'
+let g:ale_sign_warning = '⚠'
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
