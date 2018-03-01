@@ -119,19 +119,20 @@ autocmd BufReadPost *
 " Uses neoformat
 "--------------------
 
-let g:neoformat_try_formatprg = 1
-"
-"
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+"let g:neoformat_try_formatprg = 1
+""
+""
+"augroup fmt
+"  autocmd!
+"  "autocmd BufWritePre * undojoin | Neoformat
+"  autocmd BufWritePre,TextChanged,InsertLeave * Neoformat
+"augroup END
 
-let g:neoformat_javascript_prettier = {
-  \ 'exe': 'prettier',
-  \ 'args': ['--stdin', '--single-quote', '--print-width 120', '--no-bracket-spacing'],
-  \ 'stdin': 1,
-  \ }
+"let g:neoformat_javascript_prettier = {
+"  \ 'exe': 'prettier',
+"  \ 'args': ['--stdin', '--single-quote', '--print-width 120', '--no-bracket-spacing'],
+"  \ 'stdin': 1,
+"  \ }
 
 "let g:neoformat_elixir_exfmt = {
 "  \ 'exe': 'mix',
@@ -141,17 +142,17 @@ let g:neoformat_javascript_prettier = {
 "
 "let g:neoformat_enabled_elixir = ['exfmt']
 
-let g:neoformat_htmldjango_tidyhtml5 = {
-        \ 'exe': 'tidy',
-        \ 'args': ['-quiet',
-        \          '--indent auto',
-        \          '--indent-spaces ' . shiftwidth(),
-        \          '--vertical-space yes',
-        \          '--tidy-mark no',
-        \          '-wrap ' . &textwidth
-        \         ]
-        \ }
-let g:neoformat_enabled_htmldjango = ['htmlbeautify', 'tidy', 'js-beautify', 'tidyhtml5']
+"let g:neoformat_htmldjango_tidyhtml5 = {
+"        \ 'exe': 'tidy',
+"        \ 'args': ['-quiet',
+"        \          '--indent auto',
+"        \          '--indent-spaces ' . shiftwidth(),
+"        \          '--vertical-space yes',
+"        \          '--tidy-mark no',
+"        \          '-wrap ' . &textwidth
+"        \         ]
+"        \ }
+"let g:neoformat_enabled_htmldjango = ['htmlbeautify', 'tidy', 'js-beautify', 'tidyhtml5']
 
 "--------------------
 " End of autoformat
@@ -272,14 +273,40 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_set_highlights = 1
-let g:ale_linters = {
-\   'javascript': ['jshint', 'eslint'],
+
+let g:ale_linters = {}
+let g:ale_fixers = {}
+
+let g:ale_linters.javascript = [
+\    'prettier', 'jshint', 'eslint'
+\]
+
+let g:ale_fixers.javascript = [
+\ 'prettier', 'eslint'
+\]
+
+let g:ale_linters.python = [
+\    'autopep8', 'flake8', 'isort', 'pylint'
+\]
+
+let g:ale_fixers.python = [
+\ 'autopep8', 'isort', 'yapf'
+\]
+
+let g:ale_linters.css = [
+\    'prettier'
+\]
+
+let g:ale_fixers.css = [
+\ 'prettier'
+\]
+let g:ale_linter_aliases = {}
+let g:ale_linter_aliases = {
+\ 'html': 'javascript',
+\ 'htmldjango': 'javascript',
 \}
 
-let g:ale_fixers = {
-\ 'javacsript': ['prettier', 'eslint'],
- \}
-"let g:ale_javascript_prettier_use_global = 1
+let g:ale_javascript_prettier_use_global = 1
 
 
 "let g:ale_javascript_eslint_executable = '/usr/local/Cellar/node/8.1.2/bin/eslint'
@@ -287,9 +314,16 @@ let g:ale_fixers = {
 " Set the correct flake8 executable and arguments to have typechecking
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
-
 let g:ale_lint_on_text_changed = 1
-"let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
+
+
+augroup fmt
+  autocmd!
+  "autocmd BufWritePre * undojoin | Neoformat
+  autocmd BufWritePre,TextChanged,InsertLeave * ALEFix
+augroup END
+
 
 highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEError cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
