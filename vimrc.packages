@@ -56,7 +56,7 @@ call minpac#add('elixir-editors/vim-elixir')
 "-->
 
 "<-- Auto formatting
-call minpac#add('sbdchd/neoformat')
+"call minpac#add('sbdchd/neoformat')
 "-->
 
 "tmux
