@@ -281,9 +281,9 @@ let g:ale_linters.javascript = [
 \    'prettier', 'jshint', 'eslint'
 \]
 
-let g:ale_fixers.javascript = [
-\ 'prettier', 'eslint'
-\]
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters.python = [
 \    'autopep8', 'flake8', 'isort', 'pylint'
@@ -293,13 +293,9 @@ let g:ale_fixers.python = [
 \ 'autopep8', 'isort', 'yapf'
 \]
 
-let g:ale_linters.css = [
-\    'prettier'
-\]
+let g:ale_linters['css'] = ['prettier']
+let g:ale_fixers['css'] = ['prettier']
 
-let g:ale_fixers.css = [
-\ 'prettier'
-\]
 let g:ale_linter_aliases = {}
 let g:ale_linter_aliases = {
 \ 'html': 'javascript',
