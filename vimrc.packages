@@ -36,7 +36,7 @@ call minpac#add('othree/html5.vim')
 " call minpac#add('fatih/vim-go')
 
 call minpac#add('w0rp/ale')
-call minpac#add('Raimondi/delimitMate')
+call minpac#add('jiangmiao/auto-pairs')
 
 "->Python
 call minpac#add('nvie/vim-flake8')
