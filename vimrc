@@ -223,6 +223,7 @@ au BufRead,BufNewFile *.md set ft=markdown
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.html.eex set ft=html
 au BufNewFile,BufRead *.exs set ft=elixir
+au BufNewFile, BufRead *.handlebars ft=mustache
 
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell

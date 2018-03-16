@@ -62,6 +62,8 @@ call minpac#add('elixir-editors/vim-elixir')
 "call minpac#add('sbdchd/neoformat')
 "-->
 
+"handlebars - mustach
+call minpac#add('mustache/vim-mustache-handlebars')
 "tmux
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('christoomey/vim-tmux-runner')
