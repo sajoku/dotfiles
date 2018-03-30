@@ -60,6 +60,8 @@ alias loc="find . -name '*.rb' | xargs wc -l"
 #move to django builtin tempaltes
 alias djdocs="cd ~/.pyenv/versions/3.6.1/lib/python3.6/site-packages/django/contrib/admin/templates/registration"
 
+#move to administration directory on iCloud Drive
+alias am="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Muliphen/"
 #### FUNCTIONS ####
 function lock {
   /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
@@ -67,3 +69,5 @@ function lock {
 function ip {
   dig +short myip.opendns.com @resolver1.opendns.com
 }
+
+
