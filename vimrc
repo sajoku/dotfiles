@@ -465,8 +465,8 @@ autocmd BufEnter * call NERDTreeRefresh()
 "Git integration for nerdtree, uses Plug nerdtree-git-plugin
 let g:NERDTreeUpdateOnCursorHold = 0
 
+nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
 
-:ia pryp <CR>import code; code.interact(local=dict(globals(), **locals()))
 "If openen a read only file without sudo:
 " :w !sudo tee % 
 "inoremap <leader> c <CR>import code; code.interact(local=dict(globals(), **locals()))
