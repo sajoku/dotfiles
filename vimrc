@@ -315,11 +315,11 @@ let g:ale_lint_on_text_changed = 1
 let g:ale_fix_on_save = 1
 
 
-augroup fmt
-  autocmd!
-  "autocmd BufWritePre * undojoin | Neoformat
-  autocmd BufWritePre,TextChanged,InsertLeave * ALEFix
-augroup END
+"augroup fmt
+"  autocmd!
+"  "autocmd BufWritePre * undojoin | Neoformat
+"  autocmd BufWritePre,TextChanged,InsertLeave * ALEFix
+"augroup END
 
 
 highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
