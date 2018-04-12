@@ -70,4 +70,8 @@ function ip {
   dig +short myip.opendns.com @resolver1.opendns.com
 }
 
+function ipl {
+  ifconfig | grep -C4 en0 | grep inet
+}
+
 
