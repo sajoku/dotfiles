@@ -31,7 +31,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let base16colorspace=256
 set background=dark
-silent! colorscheme base16-default-dark
+silent! colorscheme nord
 " ==========================================================================================================
 "  OPTIONS  {{{~
 " ==========================================================================================================
@@ -212,7 +212,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-r>"
 
 "Airline and extension settings
 set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
-let g:airline_theme='dracula'
+let g:airline_theme='nord'
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#tabline#left_sep = ' '
@@ -371,8 +371,8 @@ nnoremap <leader>b :FzfBuffers<CR>
 "let g:rg_command = '
 "  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
 "  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
-"  \ -g "!*.{min.js,swp,o,zip,pyc}" 
-"  \ -g "!{__init__.py}" 
+"  \ -g "!*.{min.js,swp,o,zip,pyc}"
+"  \ -g "!{__init__.py}"
 "  \ -g "!{.git,node_modules,vendor,__pycache__}/*" '
 
 
@@ -388,7 +388,7 @@ nnoremap <S-k> :exe "resize +10"<CR>
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-"Git 
+"Git
 nnoremap <leader>G :Gcommit<cr>
 
 " Use better search highlighting
