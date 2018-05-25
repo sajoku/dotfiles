@@ -201,11 +201,9 @@ au BufNewFile,BufRead *.py
 let python_highlight_all = 1
 
 "You complete me plugin
-let g:ycm_path_to_python_interpreter = '/Users/sajoku/.pyenv/shims/python'
-"let g:ycm_server_python_interpreter = '/Users/sajoku/.pyenv/shims/python'
-let g:ycm_autoclose_preview_window_after_completion=1
+let g:deoplete#enable_at_startup = 1
 
-let g:UltiSnipsExpandTrigger="<c-a>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-t>"
 let g:UltiSnipsJumpBackwardTrigger="<c-r>"
 
@@ -218,6 +216,8 @@ let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#whitespace#checks = ['indent', 'trailing', 'long', 'mixed-indent-file']
+
+let g:airline#extensions#ale#enabled = 1
 
 "Ale syntax checker settings
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -260,7 +260,7 @@ let g:ale_linter_aliases = {
 \}
 
 let g:ale_javascript_prettier_use_global = 1
-
+let g:ale_completion_enabled = 1
 
 "let g:ale_javascript_eslint_executable = '/usr/local/Cellar/node/8.1.2/bin/eslint'
 
@@ -339,20 +339,6 @@ nmap g/ :Ack!<space>
 nmap <c-p> :cclose<CR>:FZF<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-" --column: Show column number
-" --line-number: Show line number
-" --no-heading: Do not show file headings in results
-" --fixed-strings: Search term as a literal string
-" --ignore-case: Case insensitive search
-" --no-ignore: Do not respect .gitignore, etc...
-" --hidden: Search hidden files and folders
-" --follow: Follow symlinks
-" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-" --color: Search color options
-"
-"command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --glob"!__init__.py" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-
-
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
@@ -429,5 +415,4 @@ nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals())
 "
 "Golang (vim-go settings)
 "" format with goimports instead of gofmt
-
 let g:go_fmt_command = "goimports"
