@@ -267,7 +267,9 @@ let g:ale_completion_enabled = 1
 " Set the correct flake8 executable and arguments to have typechecking
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
-let g:ale_lint_on_text_changed = 1
+let g:ale_python_pylint_options = '--rcfile ~/dotfiles/pylint.rc'
+
+let g:ale_lint_on_text_changed = 0
 let g:ale_fix_on_save = 1
 
 let g:rufo_auto_formatting = 1
