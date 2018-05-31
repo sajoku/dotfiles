@@ -270,6 +270,8 @@ let g:ale_python_flake8_args = '-m flake8'
 let g:ale_lint_on_text_changed = 1
 let g:ale_fix_on_save = 1
 
+let g:rufo_auto_formatting = 1
+
 
 "augroup fmt
 "  autocmd!
