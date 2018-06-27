@@ -92,3 +92,8 @@ export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# Keep pipenv packages inside projects instead of home directory (This is what's being done in production so mimick that behaviour)
+PIPENV_VENV_IN_PROJECT=1
