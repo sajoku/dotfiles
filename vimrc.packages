@@ -36,7 +36,7 @@ call minpac#add('honza/vim-snippets')
 "Deoplete
 call minpac#add('Shougo/deoplete.nvim')
 call minpac#add('roxma/nvim-yarp')
-call minpac#add('roxma/vim-hug-neovim-rpc')
+"call minpac#add('roxma/vim-hug-neovim-rpc')
 "Python completion
 call minpac#add('zchee/deoplete-jedi')
 "Ruby completion
