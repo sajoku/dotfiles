@@ -210,7 +210,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-r>"
 
 "Airline and extension settings
 set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
-let g:airline_theme='nord'
+let g:airline_theme='base16'
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#tabline#left_sep = ' '
