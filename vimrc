@@ -31,7 +31,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let base16colorspace=256
 set background=dark
-silent! colorscheme base16-harmonic-dark
+silent! colorscheme base16-eighties
 " ==========================================================================================================
 "  OPTIONS  {{{~
 " ==========================================================================================================
