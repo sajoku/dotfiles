@@ -72,7 +72,7 @@ call minpac#add('elixir-editors/vim-elixir')
 "handlebars - mustach
 call minpac#add('mustache/vim-mustache-handlebars')
 "tmux
-call minpac#add('christoomey/vim-tmux-navigator')
+call minpac#add('christoomey/vim-tmux-navigator', {'branch': 'indicator'})
 call minpac#add('christoomey/vim-tmux-runner')
 
 "Colors and theme related

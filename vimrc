@@ -31,11 +31,11 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let base16colorspace=256
 set background=dark
-silent! colorscheme nord
+silent! colorscheme base16-harmonic-dark
 " ==========================================================================================================
 "  OPTIONS  {{{~
 " ==========================================================================================================
-
+set nocursorline               " Do not show a horizontal bar where the cursor is
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set nobackup
 set nowritebackup
