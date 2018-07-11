@@ -1,8 +1,5 @@
 [push]
   default = current
-[branch]
-  autosetupmerge = always
-  autosetuprebase = always
 [color]
   branch = auto
   diff = auto
