@@ -30,8 +30,8 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let base16colorspace=256
-set background=dark
-silent! colorscheme base16-eighties
+set background=light
+silent! colorscheme base16-one-light
 " ==========================================================================================================
 "  OPTIONS  {{{~
 " ==========================================================================================================
@@ -256,7 +256,6 @@ let g:ale_fixers['css'] = ['prettier']
 let g:ale_linter_aliases = {}
 let g:ale_linter_aliases = {
 \ 'html': 'javascript',
-\ 'htmldjango': 'javascript',
 \}
 
 let g:ale_javascript_prettier_use_global = 1
