@@ -71,15 +71,14 @@ call minpac#add('elixir-editors/vim-elixir')
 
 "handlebars - mustach
 call minpac#add('mustache/vim-mustache-handlebars')
-"tmux
-call minpac#add('christoomey/vim-tmux-navigator', {'branch': 'indicator'})
-call minpac#add('christoomey/vim-tmux-runner')
 
 "Colors and theme related
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 "call minpac#add('rainglow/vim')
 "call minpac#add('lifepillar/vim-solarized8')
-call minpac#add('dracula/vim')
 call minpac#add('chriskempson/base16-vim')
-call minpac#add('arcticicestudio/nord-vim')
+
+"tmux
+call minpac#add('christoomey/vim-tmux-navigator', {'branch': 'indicator'})
+call minpac#add('christoomey/vim-tmux-runner')
