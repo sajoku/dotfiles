@@ -111,3 +111,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 # Keep pipenv packages inside projects instead of home directory (This is what's being done in production so mimick that behaviour)
 export PIPENV_VENV_IN_PROJECT=1
+
+# Run pipenv shell command when there's a Pipfile
+source  ~/dotfiles/scripts/pipenv_shell
