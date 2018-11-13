@@ -1,7 +1,7 @@
 " Maintained by Sajoku
 " Always use vim mode, even when starting with vi
 set nocompatible
-
+"set cmdheight=20
 " change mapleader to ,
 let mapleader = ","
 
