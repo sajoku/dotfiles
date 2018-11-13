@@ -113,4 +113,5 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=1
 
 # Run pipenv shell command when there's a Pipfile
-source  ~/dotfiles/scripts/pipenv_shell
+#
+#source  ~/dotfiles/scripts/pipenv_shell
