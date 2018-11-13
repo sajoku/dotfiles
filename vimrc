@@ -201,6 +201,10 @@ au BufNewFile,BufRead *.py
 let python_highlight_all = 1
 
 "You complete me plugin
+set pyxversion=3
+let g:python3_host_prog = '/Users/sajoku/.pyenv/versions/3.7.0/bin/python'
+"let g:python3_host_prog = '/Users/sajoku/.pyenv/shims/python3'
+
 let g:deoplete#enable_at_startup = 1
 
 let g:UltiSnipsExpandTrigger="<tab>"

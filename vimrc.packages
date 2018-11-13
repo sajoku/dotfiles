@@ -34,11 +34,17 @@ call minpac#add('SirVer/ultisnips')
 call minpac#add('honza/vim-snippets')
 
 "Deoplete
-call minpac#add('Shougo/deoplete.nvim')
-call minpac#add('roxma/nvim-yarp')
-"call minpac#add('roxma/vim-hug-neovim-rpc')
+if has('nvim')
+  call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+else
+  call minpac#add('Shougo/deoplete.nvim')
+  call minpac#add('roxma/nvim-yarp')
+  call minpac#add('roxma/vim-hug-neovim-rpc')
+endif
+
 "Python completion
 call minpac#add('zchee/deoplete-jedi')
+
 "Ruby completion
 call minpac#add('fishbullet/deoplete-ruby')
 
