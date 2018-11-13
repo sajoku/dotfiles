@@ -4,6 +4,7 @@ spec_hits = []
 checks = {
             '_spec\.rb$' => ['focus:\s*true'],
             '\.rb$' => ['binding\.pry', 'debugger'],
+            '\.py$' => ['code.interact'],
          }
  
 # Find the names of all the filenames that have been (A)dded (C)opied or (M)odified
