@@ -199,9 +199,9 @@ let g:python3_host_prog = '/Users/sajoku/.pyenv/versions/3.7.0/bin/python'
 
 let g:deoplete#enable_at_startup = 1
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-t>"
-let g:UltiSnipsJumpBackwardTrigger="<c-r>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-t>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-r>"
 
 
 "Airline and extension settings
