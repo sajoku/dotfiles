@@ -81,8 +81,6 @@ call minpac#add('mustache/vim-mustache-handlebars')
 "Colors and theme related
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
-"call minpac#add('rainglow/vim')
-"call minpac#add('lifepillar/vim-solarized8')
 call minpac#add('chriskempson/base16-vim')
 
 "tmux

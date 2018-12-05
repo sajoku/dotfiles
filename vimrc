@@ -22,16 +22,8 @@ filetype plugin indent on
 syntax enable
 syntax on
 set encoding=utf-8
-set t_Co=256
 
-"Tru color support
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-let base16colorspace=256
-set background=light
-silent! colorscheme base16-one-light
+silent! colorscheme dim
 " ==========================================================================================================
 "  OPTIONS  {{{~
 " ==========================================================================================================
