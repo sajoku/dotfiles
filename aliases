@@ -63,9 +63,7 @@ alias djdocs="cd ~/.pyenv/versions/3.6.1/lib/python3.6/site-packages/django/cont
 #move to administration directory on iCloud Drive
 alias am="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Muliphen/"
 #### FUNCTIONS ####
-function lock {
-  /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
-}
+
 function ip {
   dig +short myip.opendns.com @resolver1.opendns.com
 }
