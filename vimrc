@@ -251,7 +251,7 @@ let g:ale_fixers['css'] = ['prettier']
 
 let g:ale_linter_aliases = {}
 let g:ale_linter_aliases = {
-\ 'html': 'javascript',
+\ 'js': 'javascript',
 \}
 
 let g:ale_javascript_prettier_use_global = 1
@@ -309,6 +309,7 @@ if filereadable(expand("~/dotfiles/vimrc.test_runners"))
   source ~/dotfiles/vimrc.test_runners
 endif
 let g:test#strategy = 'vtr'
+"let g:test#strategy = 'asyncrun'
 
 
 "Python support for vim tmux runner
