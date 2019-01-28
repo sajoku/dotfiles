@@ -16,7 +16,7 @@ SAVEHIST=20000
 autoload -U compinit
 compinit
 
-plugins=(git osx pip zsh-syntax-highlighting)
+plugins=(git osx)
 
 [ "$TERM" = "xterm" ] && TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh
