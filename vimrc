@@ -394,3 +394,7 @@ nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals())
 "Golang (vim-go settings)
 "" format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
+
+"Enable per project .vimrc
+set exrc
+set secure

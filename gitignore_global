@@ -13,3 +13,4 @@ app/views/articles/show.html.liquid
 .old
 .sass-cache
 vendor/bundle
+.vimrc
