@@ -84,5 +84,5 @@ call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('chriskempson/base16-vim')
 
 "tmux
-call minpac#add('christoomey/vim-tmux-navigator', {'branch': 'indicator'})
+call minpac#add('sajoku/vim-tmux-navigator', {'branch': 'indicator'})
 call minpac#add('christoomey/vim-tmux-runner')
