@@ -230,6 +230,9 @@ let g:ale_set_highlights = 1
 let g:ale_linters = {}
 let g:ale_fixers = {}
 
+let g:ale_linters = {'ruby': ['standardrb']}
+let g:ale_fixers = {'ruby': ['standardrb']}
+
 let g:ale_linters.javascript = [
 \    'prettier', 'jshint', 'eslint'
 \]
