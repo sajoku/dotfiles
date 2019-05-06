@@ -24,11 +24,11 @@ syntax on
 set encoding=utf-8
 
 silent! colorscheme dim
-" ==========================================================================================================
+" ============================================================
 "  OPTIONS  {{{~
-" ==========================================================================================================
-set nocursorline               " Do not show a horizontal bar where the cursor is
-set backspace=indent,eol,start " Allow backspacing over everything in insert mode
+" =============================================================
+set nocursorline               " Do not show a horizontal bar the cursor is
+set backspace=indent,eol,start " Allow backspace over everything in insert
 set nobackup
 set nowritebackup
 set noswapfile                 " Stop using .swp files
