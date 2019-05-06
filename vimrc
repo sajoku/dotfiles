@@ -197,12 +197,19 @@ set pyxversion=3
 let g:python3_host_prog = '/Users/sajoku/.pyenv/versions/3.7.0/bin/python'
 "let g:python3_host_prog = '/Users/sajoku/.pyenv/shims/python3'
 
-let g:deoplete#enable_at_startup = 1
+" Use `tab` key to select completions.  Default is arrow keys.
+" When enter is pressed, select option and insert return
 
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-t>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-r>"
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+let g:completor_auto_close_doc = 1
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+" Use tab to cycle through options
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "Airline and extension settings
 set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
