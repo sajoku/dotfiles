@@ -47,9 +47,9 @@ set foldlevel=99
 set visualbell                 " no sounds
                                " syntax sync minlines=256
 set ttyfast
-                               " disabling syntax highlighting after 128 columns and/or minlines set to 256
-set synmaxcol=200
-syntax sync minlines=256
+" disabling syntax highlighting after 128 columns and/or minlines set to 256
+"set synmaxcol=200
+"syntax sync minlines=256
                                " Search related settings
 set incsearch                  " find as you type search
 set hlsearch                   " Highlight all search matches
