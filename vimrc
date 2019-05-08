@@ -280,7 +280,8 @@ let g:ale_linters.javascript = [
 \]
 
 let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+let g:ale_fixers['vue'] = ['prettier']
+"let g:ale_javascript_prettier_options = '--trailing-comma es5'
 let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters.python = [
