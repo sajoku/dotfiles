@@ -179,6 +179,11 @@ au BufNewFile, BufRead *.handlebars ft=mustache
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.html set filetype=html
+augroup END
+
 "Remove trailing whitespace when writing a file
 autocmd BufWritePre *.{erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim,eex} :%s/\s\+$//e
 
