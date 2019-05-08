@@ -200,11 +200,6 @@ au BufNewFile,BufRead *.py
 
 let python_highlight_all = 1
 
-"You complete me plugin
-set pyxversion=3
-let g:python3_host_prog = '/Users/sajoku/.pyenv/versions/3.7.0/bin/python'
-"let g:python3_host_prog = '/Users/sajoku/.pyenv/shims/python3'
-
 " Use `tab` key to select completions.  Default is arrow keys.
 " When enter is pressed, select option and insert return
 
