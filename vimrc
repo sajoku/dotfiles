@@ -276,7 +276,7 @@ let g:ale_linters = {'ruby': ['standardrb']}
 let g:ale_fixers = {'ruby': ['standardrb']}
 
 let g:ale_linters.javascript = [
-\    'prettier', 'jshint', 'eslint'
+\    'prettier', 'jshint'
 \]
 
 let g:ale_fixers['javascript'] = ['prettier']
