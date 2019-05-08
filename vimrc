@@ -439,8 +439,7 @@ let g:NERDTreeUpdateOnCursorHold = 0
 nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
 
 "If openen a read only file without sudo:
-" :w !sudo tee % 
-"inoremap <leader> c <CR>import code; code.interact(local=dict(globals(), **locals()))
+" :w !sudo tee %
 "
 "Golang (vim-go settings)
 "" format with goimports instead of gofmt
