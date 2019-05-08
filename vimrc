@@ -101,6 +101,9 @@ set clipboard=unnamed
 "  }}}
 " ==========================================================================================================
 
+set undodir=~/.vim/undodir
+set undofile
+
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
