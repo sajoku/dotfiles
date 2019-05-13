@@ -290,11 +290,11 @@ let g:ale_fixers['vue'] = ['prettier']
 let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters.python = [
-\    'autopep8', 'flake8', 'isort', 'pylint'
+\    'black', 'flake8', 'isort', 'pylint'
 \]
 
 let g:ale_fixers.python = [
-\ 'autopep8', 'isort'
+\ 'black', 'isort'
 \]
 
 let g:ale_linters['css'] = ['prettier']
