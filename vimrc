@@ -248,14 +248,33 @@ inoremap <expr> <Tab> Tab_Or_Complete()
 
 
 set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
-let g:airline_theme='base16'
-let g:airline#extensions#ycm#enabled = 1
-let g:airline#extensions#ycm#error_symbol = 'E:'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#whitespace#checks = ['indent', 'trailing', 'long', 'mixed-indent-file']
 
-let g:airline#extensions#ale#enabled = 1
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
+function! StatusLine(current)
+  return (a:current ? crystalline#mode() . '%#Crystalline#' : '%#CrystallineInactive#')
+        \ . ' %f%h%w%m%r '
+        \ . (a:current ? '%#CrystallineFill# %{fugitive#head()} ' : '')
+        \ . '%=' . (a:current ? '%#Crystalline# %{&paste?"PASTE ":""}%{&spell?"SPELL ":""}' . crystalline#mode_color() : '')
+        \ . (a:current ? ' %{LinterStatus()}': '')
+        \ . ' %{&ft}[%{&enc}][%{&ffs}] %l/%L %c%V %P '
+endfunction
+
+let g:crystalline_statusline_fn = 'StatusLine'
+let g:crystalline_theme = 'hybrid'
+set showtabline=0
+set laststatus=2
 
 "Ale syntax checker settings
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']

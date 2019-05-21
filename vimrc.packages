@@ -97,9 +97,7 @@ call minpac#add('AndrewRadev/tagalong.vim')
 call minpac#add('mustache/vim-mustache-handlebars')
 
 "Colors and theme related
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('chriskempson/base16-vim')
+call minpac#add('rbong/vim-crystalline')
 
 "tmux
 call minpac#add('sajoku/vim-tmux-navigator', {'branch': 'indicator'})
