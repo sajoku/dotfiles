@@ -83,13 +83,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 eval "$(pyenv init -)"
 
-# autoload -U promptinit; promptinit
-# . ~/dotfiles/pyenv-pure-prompt
-# PURE_PROMPT_SYMBOL="➜"
-# prompt pure
-
 function zle-line-init zle-keymap-select {
-  PROMPT=`~/code/purs/target/release/purs prompt -k "$KEYMAP" -r "$?"`
+  PROMPT=`~/code/purs_saj/target/release/purs prompt -k "$KEYMAP" -r "$?"`
   zle reset-prompt
 }
 zle -N zle-line-init
@@ -98,7 +93,7 @@ zle -N zle-keymap-select
 autoload -Uz add-zsh-hook
 
 function _prompt_purs_precmd() {
-  ~/code/purs/target/release/purs precmd
+  ~/code/purs_saj/target/release/purs precmd
 }
 add-zsh-hook precmd _prompt_purs_precmd
 
