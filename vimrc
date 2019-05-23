@@ -1,8 +1,8 @@
-" Maintained by Sajoku
 " Always use vim mode, even when starting with vi
 set nocompatible
+
 "set cmdheight=20
-" change mapleader to ,
+"change mapleader to ,
 let mapleader = ","
 
 if filereadable(expand("~/dotfiles/vimrc.packages"))
@@ -27,82 +27,70 @@ silent! colorscheme dim
 " ============================================================
 "  OPTIONS  {{{~
 " =============================================================
-set nocursorline               " Do not show a horizontal bar the cursor is
-set backspace=indent,eol,start " Allow backspace over everything in insert
+set nocursorline                         " Do not show a horizontal bar the cursor is
+set backspace=indent,eol,start           " Allow backspace over everything in insert
 set nobackup
 set nowritebackup
-set noswapfile                 " Stop using .swp files
-set autoindent                 " Always set autoindenting on
-set history=100                " Keep x lines in history
-set ruler                      " Always show cursor
-set showcmd                    " Display incomplete commands
+set noswapfile                           " Stop using .swp files
+set autoindent                           " Always set autoindenting on
+set history=100                          " Keep x lines in history
+set ruler                                " Always show cursor
+set showcmd                              " Display incomplete commands
 set showmode
-set mouse=a                    " Enable mouse
-set mousehide                  " Hide mouse when typing
-set timeoutlen=500             " Don't lag the leader key + command
+set mouse=a                              " Enable mouse
+set mousehide                            " Hide mouse when typing
+set timeoutlen=500                       " Don't lag the leader key + command
 set showmatch
-set nofoldenable               " Don't fold by default
+set nofoldenable                         " Don't fold by default
 set foldmethod=indent
 set foldlevel=99
-set visualbell                 " no sounds
-                               " syntax sync minlines=256
+set visualbell                           " no sounds
 set ttyfast
-" disabling syntax highlighting after 128 columns and/or minlines set to 256
-"set synmaxcol=200
-"syntax sync minlines=256
-                               " Search related settings
-set incsearch                  " find as you type search
-set hlsearch                   " Highlight all search matches
-nmap <leader>h :nohlsearch<cr>
-set ignorecase                 " Ignore case with / searched
-set smartcase                  " Don't ignore case when search has capital
+                                         " Search related settings
+set incsearch                            " find as you type search
+set hlsearch                             " Highlight all search matches
+set ignorecase                           " Ignore case with / searched
+set smartcase                            " Don't ignore case when search has capital
 set noesckeys
 setglobal relativenumber
 set relativenumber
-set number                     " Show line numbers
+set number                               " Show line numbers
 set linespace=3
 set numberwidth=2
 set laststatus=2
-set autoread                   " Automatically read files changed on disk by other programs
-
-                               " http://items.sjbach.com/319/configuring-vim-right
-set viminfo='100,f1            " Save up to 100 marks, enable capital marks
-set scrolloff=3                " Keep more context when csrolling, also use zz
-
-                               " Softtabs
-set tabstop=2                  " Global tab width
+set autoread                             " Automatically read files changed on disk by other programs
+                                         " http://items.sjbach.com/319/configuring-vim-right
+set viminfo='100,f1                      " Save up to 100 marks, enable capital marks
+set scrolloff=3                          " Keep more context when csrolling, also use zz
+                                         " Softtabs
+set tabstop=2                            " Global tab width
 set shiftwidth=2
 set shiftround
-set expandtab                  " Use spaces instead of tab
+set expandtab                            " Use spaces instead of tab
 set softtabstop=2
 
-set splitbelow                 " Split windows below the current window.
-                               " Tab completion
+set splitbelow                           " Split windows below the current window.
+                                         " Tab completion
 set wildmode=list:longest,list:full
 set complete=.,w,t,i
 set completeopt=menu,preview
 set fileformat=unix
-
-"Prepend linebreaks with @ symbol
-set showbreak="@"
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+set showbreak="@"                        " Prepend linebreaks with @ symbol
+set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 
 set directory=~/.vim/backup
 set backupdir=~/.vim/backup
+set undodir=~/.vim/undodir
+set undofile
+
+set clipboard=unnamed                    "Allow copy paste in terminal vim
+
 "Set rake as default make program. Uncomment if I do alot of Rails
 "set makeprg=rake
-
-"Allow copy paste in terminal vim
-set clipboard=unnamed
 
 " ==========================================================================================================
 "  }}}
 " ==========================================================================================================
-
-set undodir=~/.vim/undodir
-set undofile
 
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
@@ -110,7 +98,8 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore files in NERDTree
+let g:NERDTreeUpdateOnCursorHold = 0 " Git integration for nerdtree, uses Plug nerdtree-git-plugin
 
 "---------------------------------
 "Mapping keys
@@ -129,7 +118,6 @@ imap <c-a> <c-o>^
 "remap so i can use vim-suround
 xmap s S
 
-map <Leader>a :DelimitMateSwitch<CR>
 " Remap to escape
 "inoremap <esc> <nop>
 inoremap jj <esc>
@@ -305,7 +293,6 @@ let g:ale_linters.javascript = [
 
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['vue'] = ['prettier']
-"let g:ale_javascript_prettier_options = '--trailing-comma es5'
 let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters.python = [
@@ -337,16 +324,6 @@ let g:ale_python_pylint_options = '--rcfile ~/dotfiles/pylint.rc'
 let g:ale_lint_on_text_changed = 0
 let g:ale_fix_on_save = 1
 
-let g:rufo_auto_formatting = 1
-
-
-"augroup fmt
-"  autocmd!
-"  "autocmd BufWritePre * undojoin | Neoformat
-"  autocmd BufWritePre,TextChanged,InsertLeave * ALEFix
-"augroup END
-
-
 highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEError cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEWarning cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
@@ -359,13 +336,6 @@ nnoremap [r :ALEPreviousWrap<CR>
 au VimResized * exe "normal! \<c-w>="
 
 runtime! macros/matchit.vim
-
-"let g:rspec_runner = "os_x_iterm"
-"let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
-"map <Leader>t :call RunCurrentSpecFile()<CR>
-"map <Leader>s :call RunNearestSpec()<CR>
-"map <Leader>l :call RunLastSpec()<CR>
-"nnoremap <leader>va :VtrAttachToPane<cr>
 
 " These are coming from jank-m/vim-test
 nmap <silent> <leader>t :TestNearest<CR>
@@ -411,15 +381,6 @@ nnoremap <ctrl>p :FZF<CR>
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>b :FzfBuffers<CR>
 
-"Introduce ripgrep
-"let g:rg_command = '
-"  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
-"  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
-"  \ -g "!*.{min.js,swp,o,zip,pyc}"
-"  \ -g "!{__init__.py}"
-"  \ -g "!{.git,node_modules,vendor,__pycache__}/*" '
-
-
 "Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
 nnoremap <S-h> :exe "vertical resize +10"<CR>
@@ -427,7 +388,7 @@ nnoremap <S-l> :exe "vertical resize -10"<CR>
 nnoremap <S-k> :exe "resize +10"<CR>
 
 " automatically rebalance windows on vim resize
-"autocmd VimResized * :wincmd =
+autocmd VimResized * :wincmd =
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
@@ -436,6 +397,7 @@ nnoremap <leader>= :wincmd =<cr>
 nnoremap <leader>G :Gcommit<cr>
 
 " Use better search highlighting
+nmap <leader>h :nohlsearch<cr>
 nnoremap <silent> n   n:call HLNext()<cr>
 nnoremap <silent> N   N:call HLNext()<cr>
 "Blink current search item - from Damian Conway 'More Instantly Better Vim'
@@ -452,8 +414,6 @@ endfunction
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-"Git integration for nerdtree, uses Plug nerdtree-git-plugin
-let g:NERDTreeUpdateOnCursorHold = 0
 
 nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
 
