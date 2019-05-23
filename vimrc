@@ -84,7 +84,7 @@ set undodir=~/.vim/undodir
 set undofile
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
-
+set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
 "Set rake as default make program. Uncomment if I do alot of Rails
 "set makeprg=rake
 
@@ -232,10 +232,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Use tab to trigger auto completion.  Default suggests completions as you type.
 let g:completor_auto_trigger = 1
 inoremap <expr> <Tab> Tab_Or_Complete()
-
-
-
-set noshowmode "Do not show the regular mode ( --- INSERT --) because airline already does this"
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
