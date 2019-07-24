@@ -110,3 +110,4 @@ export PIPENV_VENV_IN_PROJECT=1
 # Run pipenv shell command when there's a Pipfile
 #
 #source  ~/dotfiles/scripts/pipenv_shell
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
