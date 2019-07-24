@@ -423,6 +423,7 @@ nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals())
 "" format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
 
-"Enable per project .vimrc
-set exrc
 set secure
+if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc')))
+  exec printf('source %s/%s', getcwd(), '.vimrc')
+endif
