@@ -5,7 +5,7 @@ call minpac#init()
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-commentary')
-call minpac#add('scrooloose/nerdtree')
+
 call minpac#add('tpope/vim-endwise')
 call minpac#add('junegunn/vim-easy-align')
 "call minpac#add('Yggdroot/indentLine')

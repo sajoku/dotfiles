@@ -98,14 +98,23 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore files in NERDTree
-let g:NERDTreeUpdateOnCursorHold = 0 " Git integration for nerdtree, uses Plug nerdtree-git-plugin
+let g:netrw_banner = 1 "Show the banner until i get all these commands in my muscle memory
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
+let g:netrw_list_hide = &wildignore
+let g:netrw_sort_sequence = '[\/]$,*' " sort is affecting only: directories on the top, files below
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
 
 "---------------------------------
 "Mapping keys
 "---------------------------------
 " Shortcuts
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>n :Lexplore<CR>
 
 map <Leader>ea: :EasyAlign \<CR>
 map <Leader>ea = :EasyAlign =<CR>
