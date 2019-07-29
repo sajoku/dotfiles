@@ -304,7 +304,7 @@ let g:ale_fixers['vue'] = ['prettier']
 let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters.python = [
-\    'black', 'flake8', 'isort', 'pylint'
+\    'black', 'isort',
 \]
 
 let g:ale_fixers.python = [
