@@ -80,8 +80,8 @@ set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 
 set directory=~/.vim/backup
 set backupdir=~/.vim/backup
-set undodir=~/.vim/undodir
-set undofile
+"set undodir=~/.vim/undodir
+"set undofile
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
