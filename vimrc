@@ -15,7 +15,7 @@ command! PackClean call minpac#clean()
 
 "Add ale to the runtime path so it can execute
 filetype off
-let &runtimepath.=',~/.vim/bundle/ale'
+let &runtimepath.=',~/.vim/pack/minpac/start'
 
 filetype plugin indent on
 
