@@ -314,6 +314,9 @@ let g:ale_fixers.python = [
 let g:ale_linters['css'] = ['prettier']
 let g:ale_fixers['css'] = ['prettier']
 
+let g:ale_linters['json'] = ['prettier']
+let g:ale_fixers['json'] = ['prettier']
+
 let g:ale_linter_aliases = {}
 let g:ale_linter_aliases = {
 \ 'js': 'javascript',
