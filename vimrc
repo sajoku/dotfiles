@@ -426,6 +426,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 
 
 nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
+"nnoremap <leader>f %!python -m json.tool
 
 "If openen a read only file without sudo:
 " :w !sudo tee %
