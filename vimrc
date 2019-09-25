@@ -165,7 +165,6 @@ command! Vs vs
 "filetype mappings
 "---------------------------------
 au BufRead,BufNewFile {Gemfile,Rakefile,Guardfile,Vagrantfile,Thorfile,config.ru,*.rabl,Capfile}    set ft=ruby
-au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile *.strings set ft=yaml
 au BufRead,BufNewFile *.md set ft=markdown
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
