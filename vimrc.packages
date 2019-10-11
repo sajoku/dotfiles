@@ -66,6 +66,10 @@ call minpac#add('posva/vim-vue')
 "call minpac#add('quramy/tsuquyomi')
 "-->
 
+"<--
+call minpac#add('pangloss/vim-javascript')
+"-->
+
 "-->
 "<-- Auto formatting
 call minpac#add('AndrewRadev/tagalong.vim')
