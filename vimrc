@@ -101,7 +101,7 @@ autocmd BufReadPost *
 
 let g:netrw_banner = 1 "Show the banner until i get all these commands in my muscle memory
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 0
+let g:netrw_browse_split = 2
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_list_hide = &wildignore
