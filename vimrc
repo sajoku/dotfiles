@@ -111,6 +111,7 @@ let g:netrw_sort_sequence = '[\/]$,*' " sort is affecting only: directories on t
 "  autocmd VimEnter * :Vexplore
 "augroup END
 
+
 "---------------------------------
 "Mapping keys
 "---------------------------------
@@ -145,6 +146,8 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+"disable gitgutter keys
+let g:gitgutter_map_keys = 0
 
 "---------------------------------
 "Typo fixes
