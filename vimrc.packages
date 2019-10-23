@@ -9,7 +9,6 @@ call minpac#add('tpope/vim-vinegar')
 
 call minpac#add('tpope/vim-endwise')
 call minpac#add('junegunn/vim-easy-align')
-"call minpac#add('Yggdroot/indentLine')
 call minpac#add('ap/vim-css-color')
 
 call minpac#add('mileszs/ack.vim')
@@ -47,9 +46,7 @@ call minpac#add('tpope/vim-rails')
 "<- Rails
 "
 "->Ruby
-"call minpac#add('vim-ruby/vim-ruby')
 call minpac#add('tpope/vim-bundler')
-"call minpac#add('ruby-formatter/rufo-vim')
 "<-Ruby
 
 "<-- Elixir
