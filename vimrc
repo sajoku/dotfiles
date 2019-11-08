@@ -187,9 +187,6 @@ augroup FiletypeGroup
     au BufNewFile,BufRead *.html set filetype=html
 augroup END
 
-"Remove trailing whitespace when writing a file
-autocmd BufWritePre *.{erb,js,css,sass,scss,html,htm,yml,markdown,feature,haml,mustache,cofffee,slim,eex} :%s/\s\+$//e
-
 "Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
 "to in Ruby land
 au BufNewFile,BufRead *.py
