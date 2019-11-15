@@ -182,11 +182,6 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType gitcommit setlocal spelllang=en,nl
 
 
-augroup FiletypeGroup
-    autocmd!
-    au BufNewFile,BufRead *.html set filetype=html
-augroup END
-
 "Alert tabstops for python. Python uses 4 spaces instead of 2 which I'm used
 "to in Ruby land
 au BufNewFile,BufRead *.py
@@ -199,9 +194,6 @@ au BufNewFile,BufRead *.py
     \ setlocal fileformat=unix
 
 let python_highlight_all = 1
-
-" Use `tab` key to select completions.  Default is arrow keys.
-" When enter is pressed, select option and insert return
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -342,7 +334,6 @@ if filereadable(expand("~/dotfiles/vimrc.test_runners"))
   source ~/dotfiles/vimrc.test_runners
 endif
 let g:test#strategy = 'vtr'
-"let g:test#strategy = 'asyncrun'
 
 
 "Python support for vim tmux runner
