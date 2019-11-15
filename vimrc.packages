@@ -3,11 +3,14 @@ call minpac#init()
 
 
 call minpac#add('airblade/vim-gitgutter')
+
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-vinegar')
-
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-endwise')
+
 call minpac#add('junegunn/vim-easy-align')
 call minpac#add('ap/vim-css-color')
 
@@ -15,8 +18,6 @@ call minpac#add('mileszs/ack.vim')
 call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' })
 call minpac#add('junegunn/fzf.vim')
 
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-unimpaired')
 
 "->Tests
 call minpac#add('janko-m/vim-test')
@@ -25,9 +26,6 @@ call minpac#add('janko-m/vim-test')
 "golang
 call minpac#add('fatih/vim-go')
 
-
-" call minpac#add('isRuslan/vim-es6')
-" call minpac#add('leafgarland/typescript-vim')
 
 "coc.vim intellisense
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
@@ -57,16 +55,10 @@ call minpac#add('elixir-editors/vim-elixir')
 call minpac#add('posva/vim-vue')
 "-->
 
-"<-- TypeScript
-"call minpac#add('leafgarland/typescript-vim')
-"call minpac#add('quramy/tsuquyomi')
-"-->
-
 "<--
 call minpac#add('pangloss/vim-javascript')
 "-->
 
-"-->
 "<-- Auto formatting
 call minpac#add('AndrewRadev/tagalong.vim')
 "-->
