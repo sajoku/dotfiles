@@ -12,7 +12,6 @@ HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
 # Enable completion
-
 autoload -U compinit
 compinit
 
@@ -41,11 +40,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # mkdir .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:$PATH"
 
-#Add support for gpg and commit signing
-GPG_TTY=$(tty)
-export GPG_TTY
 
-# Add this to your zshrc or bzshrc file
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
 ensure_tmux_is_running() {
@@ -53,25 +48,18 @@ ensure_tmux_is_running() {
     tat
   fi
 }
-
 ensure_tmux_is_running
 
-alias tls="tmux list-sessions"
-tm-select-session() {
-  project=$(projects | fzf --reverse)
-  if [ ! -z "$project" ]; then
-    (cd "$project" && tat)
-  fi
-}
 
+#Add support for gpg and commit signing
+GPG_TTY=$(tty)
+export GPG_TTY
 # Add gpg agent so wecan use signed commits and do not have to fill in creds every commit
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   source ~/.gnupg/.gpg-agent-info
   export GPG_AGENT_INFO
   GPG_TTY=$(tty)
   export GPG_TTY
-#else
-#  eval $(gpg-agent --daemon)
 fi
 
 
@@ -97,17 +85,8 @@ function _prompt_purs_precmd() {
 }
 add-zsh-hook precmd _prompt_purs_precmd
 
-export PYTHON_CONFIGURE_OPTS="--enable-framework"
-
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 # Keep pipenv packages inside projects instead of home directory (This is what's being done in production so mimick that behaviour)
 export PIPENV_VENV_IN_PROJECT=1
-
-# Run pipenv shell command when there's a Pipfile
-#
-#source  ~/dotfiles/scripts/pipenv_shell
-#export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
