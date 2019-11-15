@@ -148,11 +148,6 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-"disable gitgutter keys
-let g:gitgutter_map_keys = 0
-autocmd! gitgutter CursorHold,CursorHoldI
-autocmd BufWritePost * GitGutter
-
 "---------------------------------
 "Typo fixes
 "---------------------------------
@@ -316,10 +311,6 @@ let g:ale_fix_on_save = 1
 highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEError cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEWarning cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
-
-highlight GitGutterAdd    guifg=#009900  ctermfg=2
-highlight GitGutterChange guifg=#bbbb00  ctermfg=3
-highlight GitGutterDelete guifg=#ff2222  ctermfg=1
 
 " Move between linting errors
 nnoremap ]r :ALENextWrap<CR>
