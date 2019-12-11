@@ -13,7 +13,6 @@ endif
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
-filetype off
 let &runtimepath.=',~/.vim/pack/minpac/start'
 
 filetype plugin indent on
