@@ -13,7 +13,6 @@ endif
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
-"Add ale to the runtime path so it can execute
 filetype off
 let &runtimepath.=',~/.vim/pack/minpac/start'
 
@@ -194,19 +193,6 @@ au BufNewFile,BufRead *.py
 
 let python_highlight_all = 1
 
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? '' : printf(
-    \   '%dW %dE',
-    \   all_non_errors,
-    \   all_errors
-    \)
-endfunction
-
 function! StatusDiagnostic() abort
   let info = get(b:, 'coc_diagnostic_info', {})
   if empty(info) | return '' | endif
@@ -229,7 +215,7 @@ function! StatusLine(current)
         \ . ' %f%h%w%m%r '
         \ . (a:current ? '%#CrystallineFill# %{fugitive#head()} ' : '')
         \ . '%=' . (a:current ? '%#Crystalline# %{&paste?"PASTE ":""}%{&spell?"SPELL ":""}' . crystalline#mode_color() : '')
-        \ . (a:current ? '[%{LinterStatus()} %{StatusDiagnostic()}]' : '[]')
+        \ . (a:current ? '[%{StatusDiagnostic()}]' : '[]')
         \ . ' %{&ft}[%{&enc}][%{&ffs}] %l/%L %c%V %P '
 endfunction
 
@@ -237,84 +223,6 @@ let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_theme = 'hybrid'
 set showtabline=0
 set laststatus=2
-
-"Ale syntax checker settings
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '✖'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 0
-let g:ale_set_highlights = 1
-
-let g:ale_linters = {}
-let g:ale_fixers = {}
-
-let g:ale_html_htmlhint_executable = 'htmlhint'
-let g:ale_html_htmlhint_use_global = 1
-let g:html_htmlhint_use_global = 1
-
-
-let g:ale_linters = {'ruby': ['standardrb']}
-let g:ale_fixers = {'ruby': ['standardrb']}
-
-let g:ale_linters.javascript = [
-\    'prettier', 'jshint'
-\]
-
-let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_fixers['vue'] = ['prettier']
-let g:ale_javascript_prettier_use_local_config = 1
-
-let g:ale_linters.python = [
-\    'black', 'isort', 'flake8'
-\]
-
-let g:ale_fixers.python = [
-\ 'black', 'isort'
-\]
-
-let g:ale_linters['css'] = ['prettier']
-let g:ale_fixers['css'] = ['prettier']
-
-let g:ale_linters['json'] = ['prettier']
-let g:ale_fixers['json'] = ['prettier']
-
-let g:ale_linter_aliases = {}
-let g:ale_linter_aliases = {
-\ 'js': 'javascript',
-\}
-
-let g:ale_linters = {
-\   'c': [], 'cpp': [], 'rust': [], 'go': [], 'python': [], 'sh': [],
-\   'html': [], 'css': [], 'javascript': [], 'typescript': [], 'reason': [],
-\   'json': [], 'vue': [],
-\   'tex': [], 'latex': [], 'bib': [], 'bibtex': []
-\ }
-
-let g:ale_javascript_prettier_use_global = 1
-let g:ale_completion_enabled = 1
-
-"let g:ale_javascript_eslint_executable = '/usr/local/Cellar/node/8.1.2/bin/eslint'
-
-" Set the correct flake8 executable and arguments to have typechecking
-let g:ale_python_flake8_executable = 'python3'
-let g:ale_python_flake8_args = '-m flake8'
-let g:ale_python_pylint_options = '--rcfile ~/dotfiles/pylint.rc'
-
-let g:ale_lint_on_text_changed = 0
-let g:ale_fix_on_save = 1
-
-highlight ALEErrorSign guibg=NONE guifg=red ctermbg=NONE ctermfg=red
-highlight ALEError cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
-highlight ALEWarning cterm=underline guibg=NONE guifg=red ctermbg=NONE ctermfg=red
-
-" Move between linting errors
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
 
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
