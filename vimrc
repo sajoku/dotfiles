@@ -53,7 +53,7 @@ set incsearch                            " find as you type search
 set hlsearch                             " Highlight all search matches
 set ignorecase                           " Ignore case with / searched
 set smartcase                            " Don't ignore case when search has capital
-set noesckeys
+
 setglobal relativenumber
 set relativenumber
 set number                               " Show line numbers
