@@ -24,7 +24,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "ruby"
+    "ruby",
+    "python"
   ],
   "html.format.enable": true,
   "tsserver.formatOnType": true,
@@ -32,5 +33,9 @@
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
-  "solargraph.hover": true
+  "solargraph.hover": true,
+  "python.linting.enabled": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/Users/sajoku/.pyenv/shims/black",
+  "python.linting.pylintUseMinimalCheckers": false
 }
