@@ -23,75 +23,9 @@ set encoding=utf-8
 
 
 silent! colorscheme dim
-" ============================================================
-"  OPTIONS  {{{~
-" =============================================================
-
-set updatetime=200
-set nocursorline                         " Do not show a horizontal bar the cursor is
-set backspace=indent,eol,start           " Allow backspace over everything in insert
-set nobackup
-set nowritebackup
-set noswapfile                           " Stop using .swp files
-set autoindent                           " Always set autoindenting on
-set history=100                          " Keep x lines in history
-set ruler                                " Always show cursor
-set showcmd                              " Display incomplete commands
-set showmode
-set mouse=a                              " Enable mouse
-set mousehide                            " Hide mouse when typing
-set timeoutlen=500                       " Don't lag the leader key + command
-set showmatch
-set nofoldenable                         " Don't fold by default
-set foldmethod=indent
-set foldlevel=99
-set visualbell                           " no sounds
-set ttyfast
-                                         " Search related settings
-set incsearch                            " find as you type search
-set hlsearch                             " Highlight all search matches
-set ignorecase                           " Ignore case with / searched
-set smartcase                            " Don't ignore case when search has capital
-
-setglobal relativenumber
-set relativenumber
-set number                               " Show line numbers
-set linespace=3
-set numberwidth=2
-set laststatus=2
-set autoread                             " Automatically read files changed on disk by other programs
-                                         " http://items.sjbach.com/319/configuring-vim-right
-set viminfo='100,f1                      " Save up to 100 marks, enable capital marks
-set scrolloff=3                          " Keep more context when csrolling, also use zz
-                                         " Softtabs
-set tabstop=2                            " Global tab width
-set shiftwidth=2
-set shiftround
-set expandtab                            " Use spaces instead of tab
-set softtabstop=2
-
-set splitbelow                           " Split windows below the current window.
-                                         " Tab completion
-set wildmode=list:longest,list:full
-set complete=.,w,t,i
-set completeopt=menu,preview
-set fileformat=unix
-set showbreak="@"                        " Prepend linebreaks with @ symbol
-set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
-
-set directory=~/.vim/backup
-set backupdir=~/.vim/backup
-"set undodir=~/.vim/undodir
-"set undofile
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
-"Set rake as default make program. Uncomment if I do alot of Rails
-"set makeprg=rake
-
-" ==========================================================================================================
-"  }}}
-" ==========================================================================================================
 
 " Automatic go to last edited line when opening file
 autocmd BufReadPost *
@@ -205,9 +139,6 @@ function! StatusDiagnostic() abort
   return join(msgs, ' '). ' ' . get(g:, '', '')
 endfunction
 
-" Use `tab` key to select completions.  Default is arrow keys.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 function! StatusLine(current)
   return (a:current ? crystalline#mode() . '%#Crystalline#' : '%#CrystallineInactive#')
@@ -271,39 +202,12 @@ nnoremap <ctrl>p :FZF<CR>
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>b :FzfBuffers<CR>
 
-"Zoom and resize stuff
-"Resize splits with shift-(h,j,k,l)
-nnoremap <S-h> :exe "vertical resize +10"<CR>
-nnoremap <S-l> :exe "vertical resize -10"<CR>
-nnoremap <S-k> :exe "resize +10"<CR>
-
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-" zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
-
 "Git
 nnoremap <leader>G :Gcommit<cr>
-
-" Use better search highlighting
-nmap <leader>h :nohlsearch<cr>
-nnoremap <silent> n   n:call HLNext()<cr>
-nnoremap <silent> N   N:call HLNext()<cr>
-"Blink current search item - from Damian Conway 'More Instantly Better Vim'
-" Remove the blinktime and just highlight the selected searchterm
-function! HLNext()
-  let [bufnum, lnum, col, off] = getpos('.')
-  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-  let target_pat  = '\c\%#'.@/
-  let ring = matchadd('ErrorMsg', target_pat, 101)
-  redraw
-endfunction
 
 " Allow ale to open the quickfix window and show all warnings and errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-
 
 nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
 "nnoremap <leader>f %!python -m json.tool
@@ -319,3 +223,20 @@ set secure
 if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc')))
   exec printf('source %s/%s', getcwd(), '.vimrc')
 endif
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/dotfiles/vim/' . a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+      execute 'source' config_file
+    endif
+  endfor
+endfunction
+"source files from rcfiles moves config files for plugins to own files
+call s:SourceConfigFilesIn('rcplugins')
+call s:SourceConfigFilesIn('rcfiles')

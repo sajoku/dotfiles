@@ -1,0 +1,26 @@
+" Search / Substitute related configurations
+"-------------------------------------------
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+nnoremap <leader>sub :%s///g<left><left>
+vnoremap <leader>sub :s///g<left><left>
+
+" Use better search highlighting
+nmap <leader>h :nohlsearch<cr>
+nnoremap <silent> n   n:call HLNext()<cr>
+nnoremap <silent> N   N:call HLNext()<cr>
+"Blink current search item - from Damian Conway 'More Instantly Better Vim'
+" Remove the blinktime and just highlight the selected searchterm
+function! HLNext()
+  let [bufnum, lnum, col, off] = getpos('.')
+  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+  let target_pat  = '\c\%#'.@/
+  let ring = matchadd('ErrorMsg', target_pat, 101)
+  redraw
+endfunction
+
+
+" vim:ft=vim
