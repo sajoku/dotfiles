@@ -25,9 +25,8 @@ call minpac#add('fatih/vim-go')
 
 "coc.vim intellisense
 "call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
-call minpac#add('neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'})
-
-call minpac#add('jiangmiao/auto-pairs')
+"call minpac#add('neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'})
+call minpac#add('neoclide/coc.nvim')
 
 "->Python
 call minpac#add('nvie/vim-flake8')
