@@ -25,6 +25,7 @@
     "typescript",
     "typescriptreact",
     "ruby",
+    "rust",
     "python"
   ],
   "html.format.enable": true,
