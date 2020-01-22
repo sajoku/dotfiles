@@ -10,7 +10,7 @@ alias ls="ls -F"
 
 # vim
 alias vimp="pipenv run vim"
-alias vim="echo 'Did you mean nvim?'; nvim"
+alias vim="nvim"
 
 # git
 alias gb='git branch'
