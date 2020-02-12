@@ -31,6 +31,10 @@ call minpac#add('fatih/vim-go')
 "call minpac#add('neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'})
 call minpac#add('neoclide/coc.nvim')
 
+"-->
+call minpac#add('sheerun/vim-polyglot')
+"<--
+"
 "->Python
 call minpac#add('nvie/vim-flake8')
 "<-Python
