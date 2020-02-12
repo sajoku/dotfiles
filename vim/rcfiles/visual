@@ -31,5 +31,6 @@ nnoremap <S-h> :exe "vertical resize +10"<CR>
 nnoremap <S-l> :exe "vertical resize -10"<CR>
 nnoremap <S-k> :exe "resize +10"<CR>
 
+autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 
 " vim:ft=vim
