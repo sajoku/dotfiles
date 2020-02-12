@@ -17,7 +17,8 @@ compinit
 
 plugins=(git osx)
 
-[ "$TERM" = "xterm" ] && TERM="xterm-256color"
+#Disable xterm colors since we set this in the tmux settings
+#[ "$TERM" = "xterm" ] && TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh
 
 export GOPATH=$HOME/gocode
