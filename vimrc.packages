@@ -8,14 +8,15 @@ call minpac#add('tpope/vim-vinegar')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-endwise')
-
 call minpac#add('junegunn/vim-easy-align')
+call minpac#add('rhysd/git-messenger.vim')
+
 
 call minpac#add('mileszs/ack.vim')
 call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('roman/golden-ratio')
-
+call minpac#add('thaerkh/vim-indentguides')
 
 
 "->Tests
