@@ -24,12 +24,12 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/gocode
 
 unsetopt correct_all
-export BUNDLER_EDITOR=vim
+export BUNDLER_EDITOR=nvim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # use vim as the visual editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # ensure dotfiles bin directory is loaded first
