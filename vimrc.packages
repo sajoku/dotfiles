@@ -71,5 +71,6 @@ call minpac#add('mustache/vim-mustache-handlebars')
 call minpac#add('rbong/vim-crystalline')
 
 "tmux
-call minpac#add('sajoku/vim-tmux-navigator', {'branch': 'indicator'})
+"call minpac#add('sajoku/vim-tmux-navigator', {'branch': 'indicator'})
+call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('christoomey/vim-tmux-runner')
