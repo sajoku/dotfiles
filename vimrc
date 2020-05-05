@@ -109,6 +109,10 @@ au BufNewFile, BufRead *.handlebars ft=mustache
 
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown setlocal spelllang=en,nl
+
+autocmd FileType asciidoc setlocal spell
+autocmd FileType asciidoc setlocal spelllang=en,nl
+
 autocmd FileType gitcommit setlocal spell
 autocmd FileType gitcommit setlocal spelllang=en,nl
 
