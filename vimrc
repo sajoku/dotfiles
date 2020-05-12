@@ -170,7 +170,6 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
-
 if filereadable(expand("~/dotfiles/vimrc.test_runners"))
   source ~/dotfiles/vimrc.test_runners
 endif
@@ -189,10 +188,13 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 nmap g/ :Ack!<space>
-nmap <c-p> :cclose<CR>:FZF<CR>
+nmap <c-p> :cclose<CR>:FzfFiles<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+
+let g:fzf_files_options =
+\ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
 "
