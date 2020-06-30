@@ -23,6 +23,7 @@ plugins=(git osx)
 #Disable xterm colors since we set this in the tmux settings
 #[ "$TERM" = "xterm" ] && TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh
+export TERM=xterm
 
 export GOPATH=$HOME/gocode
 
