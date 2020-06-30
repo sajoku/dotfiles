@@ -25,7 +25,7 @@ highlight Search         ctermfg=0    ctermbg=11
 " columns.
 if &background == "light"
   highlight LineNr       ctermfg=7
-  highlight Comment      ctermfg=7
+  highlight Comment      ctermfg=7                 cterm=italic
   highlight ColorColumn  ctermfg=8    ctermbg=7
   highlight Folded       ctermfg=8    ctermbg=7
   highlight FoldColumn   ctermfg=8    ctermbg=7
@@ -39,7 +39,7 @@ if &background == "light"
   highlight SignColumn                ctermbg=7
 else
   highlight LineNr       ctermfg=8
-  highlight Comment      ctermfg=13
+  highlight Comment      ctermfg=13               cterm=italic
   highlight ColorColumn  ctermfg=7    ctermbg=8
   highlight Folded       ctermfg=7    ctermbg=8
   highlight FoldColumn   ctermfg=7    ctermbg=8

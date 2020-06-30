@@ -33,4 +33,8 @@ nnoremap <S-k> :exe "resize +10"<CR>
 
 autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 
+" the ^[ is entered in insert mode with <ctrl-v><Esc>
+set t_ZH=[3m
+set t_ZR=[23m
+
 " vim:ft=vim
