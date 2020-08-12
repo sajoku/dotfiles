@@ -39,7 +39,7 @@ if &background == "light"
   highlight SignColumn                ctermbg=7
 else
   highlight LineNr       ctermfg=8
-  highlight Comment      ctermfg=13               cterm=italic
+  highlight Comment      ctermfg=7                 cterm=italic
   highlight ColorColumn  ctermfg=7    ctermbg=8
   highlight Folded       ctermfg=7    ctermbg=8
   highlight FoldColumn   ctermfg=7    ctermbg=8
