@@ -5,7 +5,7 @@
   "suggest.floatEnable": true,
   "suggest.noselect": false,
   "suggest.acceptSuggestionOnCommitCharacter": true,
-  "suggest.enablePreview": true,
+  "suggest.enablePreview": false,
   "suggest.enablePreselect": true,
   "diagnostic.errorSign": "🚫",
   "diagnostic.warningSign": "❌",
@@ -34,9 +34,8 @@
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
-  "solargraph.hover": true,
+  "solargraph.hover": false,
   "python.linting.enabled": true,
   "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/Users/sajoku/.pyenv/shims/black",
   "python.linting.pylintUseMinimalCheckers": false
 }
