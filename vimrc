@@ -40,11 +40,6 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_list_hide = &wildignore
 let g:netrw_sort_sequence = '[\/]$,*' " sort is affecting only: directories on the top, files below
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
-
 
 "---------------------------------
 "Mapping keys
