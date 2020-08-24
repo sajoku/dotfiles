@@ -152,40 +152,34 @@ draw_bold_text_with_bright_colors: true
 #     white:   '#4C4C4C'
 
 
+# Colors (Horizon Dark)
 colors:
-  # Default colors
+  # Primary colors
   primary:
-    background: '#292C3E'
-    foreground: '#EBEBEB'
-
-  # Cursor colors
-  cursor:
-   # text:   '#FF261E'
-   # cursor: '#FF261E'
-   text:       '#FF00AF'
-   cursor:     '#FF00AF'
+    background: '0x1c1e26'
+    foreground: '0xe0e0e0'
 
   # Normal colors
   normal:
-    black:   '#0d0d0d'
-    red:     '#FF301B'
-    green:   '#A0E521'
-    yellow:  '#FFC620'
-    blue:    '#1BA6FA'
-    magenta: '#E41D91'
-    cyan:    '#21DEEF'
-    white:   '#EBEBEB'
+    black: '0x16161c'
+    red: '0xe95678'
+    green: '0x29d398'
+    yellow: '0xfab795'
+    blue: '0x26bbd9'
+    magenta: '0xee64ac'
+    cyan: '0x59e1e3'
+    white: '0xd5d8da'
 
   # Bright colors
   bright:
-    black:   '#6D7070'
-    red:     '#FF4352'
-    green:   '#B8E466'
-    yellow:  '#FFD750'
-    blue:    '#1BA6FA'
-    magenta: '#FF00AF'
-    cyan:    '#73FBF1'
-    white:   '#FEFEF8'
+    black: '0x5b5858'
+    red: '0xec6a88'
+    green: '0x3fdaa4'
+    yellow: '0xfbc3a7'
+    blue: '0x3fc4de'
+    magenta: '0xf075b5'
+    cyan: '0x6be4e6'
+    white: '0xd5d8da'
 
 # Visual Bell
 #
@@ -208,7 +202,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -276,9 +270,6 @@ selection:
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
-
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
 
 cursor:
   # Cursor style
