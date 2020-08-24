@@ -149,7 +149,7 @@ function! StatusLine(current)
 endfunction
 
 let g:crystalline_statusline_fn = 'StatusLine'
-let g:crystalline_theme = 'hybrid'
+let g:crystalline_theme = 'badwolf'
 set showtabline=0
 set laststatus=2
 
