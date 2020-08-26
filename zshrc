@@ -79,19 +79,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 eval "$(pyenv init -)"
 
-function zle-line-init zle-keymap-select {
-  PROMPT=`~/code/purs_saj/target/release/purs prompt -k "$KEYMAP" -r "$?"`
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-autoload -Uz add-zsh-hook
-
-function _prompt_purs_precmd() {
-  ~/code/purs_saj/target/release/purs precmd
-}
-add-zsh-hook precmd _prompt_purs_precmd
+eval "$(starship init zsh)"
 
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"

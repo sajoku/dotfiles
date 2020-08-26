@@ -1,0 +1,51 @@
+# disable starship from forcing a new line to be taken. Solved the empty line 
+# at start of terminal
+add_newline = false
+
+#I'm not a fan of having multiple lines but let's see if 
+# we can get by, so disable=false for now. Setting to true will result in a
+# single line.
+[line_break]
+disabled = false
+
+# Replace the "" symbol in the prompt with "➟"
+[character]      # The name of the module we are configuring is "character"
+use_symbol_for_status = true
+symbol = "λ"
+error_symbol = "✖"
+style_success = "#00A652"
+style_failure = "#df382c"
+
+[username]
+disabled = true
+
+# configure directory
+[directory]
+truncate_to_repo = true # truncates directory to root folder if in github repo
+prefix = ""
+style = "cyan"
+
+[git_branch]
+style="red"
+symbol = ""
+
+[git_status]
+prefix=""
+suffix=""
+style="red"
+
+
+[package]
+disabled=true
+[python]
+disabled=true
+[nodejs]
+disabled=true
+[crystal]
+disabled=true
+[elixir]
+disabled=true
+[golang]
+disabled=true
+[ruby]
+disabled=true
