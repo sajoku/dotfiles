@@ -123,63 +123,68 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
+
 # colors:
+#   # Default colors
 #   primary:
-#     background: '#EFEFEF'
-#     foreground: '#262626'
-#   cursor:
-#     text:       '#FF00AF'
-#     cursor:     '#FF00AF'
+#     background: '0xffffff'
+#     foreground: '0x464b50'
 
+#   # Normal colors
 #   normal:
-#     black:    '#EEEEEE'
-#     red:      '#DBDBDB'
-#     yellow:   '#5A5A5A'
-#     green:    '#646464'
-#     blue:     '#00BAFF'
-#     magenta:  '#E41D91'
-#     cyan:     '#949494'
-#     white:    '#262626'
+#     black:   '0x1e1e1e'
+#     red:     '0xcf6a4c'
+#     green:   '0x8f9d6a'
+#     yellow:  '0xf9ee98'
+#     blue:    '0x7587a6'
+#     magenta: '0x9b859d'
+#     cyan:    '0xafc4db'
+#     white:   '0xa7a7a7'
 
+#   # Bright colors
 #   bright:
-#     black:   '#FFFFFF'
-#     red:     '#DBDBDB'
-#     yellow:  '#5A5A5A'
-#     green:   '#00FFAF'
-#     blue:    '#767676'
-#     magenta: '#FF00AF'
-#     cyan:    '#949494'
-#     white:   '#4C4C4C'
+#     black:   '0x5f5a60'
+#     red:     '0xcf6a4c'
+#     green:   '0x8f9d6a'
+#     yellow:  '0xf9ee98'
+#     blue:    '0x7587a6'
+#     magenta: '0x9b859d'
+#     cyan:    '0xafc4db'
+#     white:   '0xffffff'
 
 
-# Colors (Horizon Dark)
+#Rigel (https://github.com/Rigellute/rigel/blob/master/alacritty.yml)
 colors:
-  # Primary colors
+  # Default colors
   primary:
-    background: '0x1c1e26'
-    foreground: '0xe0e0e0'
+    background: '0x002635'
+    foreground: '0xe6e6dc'
 
   # Normal colors
   normal:
-    black: '0x16161c'
-    red: '0xe95678'
-    green: '0x29d398'
-    yellow: '0xfab795'
-    blue: '0x26bbd9'
-    magenta: '0xee64ac'
-    cyan: '0x59e1e3'
-    white: '0xd5d8da'
+    black:   '0x00384d'
+    red:     '0xc43061'
+    green:   '0x7fc06e'
+    yellow:  '0xf08e48'
+    blue:    '0x1c8db2'
+    magenta: '0xc694ff'
+    cyan:    '0x00cccc'
+    white:   '0x77929e'
 
   # Bright colors
   bright:
-    black: '0x5b5858'
-    red: '0xec6a88'
-    green: '0x3fdaa4'
-    yellow: '0xfbc3a7'
-    blue: '0x3fc4de'
-    magenta: '0xf075b5'
-    cyan: '0x6be4e6'
-    white: '0xd5d8da'
+    black:   '0x517f8d'
+    red:     '0xff5a67'
+    green:   '0x9cf087'
+    yellow:  '0xffcc1b'
+    blue:    '0x7eb2dd'
+    magenta: '0xfb94ff'
+    cyan:    '0x00ffff'
+    white:   '0xb7cff9'
+
+  cursor:
+    text: "0x002635"
+    cursor: "0xffcc1b"
 
 # Visual Bell
 #
