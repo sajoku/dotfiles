@@ -45,6 +45,9 @@ let g:netrw_sort_sequence = '[\/]$,*' " sort is affecting only: directories on t
 "Mapping keys
 "---------------------------------
 " Shortcuts
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 map <Leader>n :Lexplore<CR>
 
 map <Leader>ea: :EasyAlign \<CR>
@@ -224,9 +227,6 @@ if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc')))
   exec printf('source %s/%s', getcwd(), '.vimrc')
 endif
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 
 function! s:SourceConfigFilesIn(directory)
