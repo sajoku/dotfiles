@@ -27,7 +27,6 @@ call minpac#add('vim-test/vim-test')
 call minpac#add('fatih/vim-go')
 
 
-"coc.vim intellisense
 "call minpac#add('neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'})
 "call minpac#add('neoclide/coc.nvim')
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
