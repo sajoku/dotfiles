@@ -217,10 +217,10 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
 augroup myautocmds
   autocmd!
-  au FileType python       nnoremap <leader>d oimport pdb; pdb.set_trace()<ESC>
-  au FileType ruby         nnoremap <leader>d obinding.pry<ESC>
-  au FileType javascript   nnoremap <leader>d odebugger;<ESC>
-  au FileType typescript   nnoremap <leader>d odebugger;<ESC>
+  au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>d obinding.pry<ESC>
+  au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>d oimport pdb; pdb.set_trace()<ESC>
+  au BufNewFile,BufRead,BufEnter *.js nnoremap <leader>d odebugger;<ESC>
+  au BufNewFile,BufRead,BufEnter *.ts nnoremap <leader>d odebugger;<ESC>
 augroup END
 
 "nnoremap <leader>f %!python -m json.tool
