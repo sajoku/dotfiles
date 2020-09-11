@@ -213,7 +213,13 @@ nnoremap <leader>G :Gcommit<cr>
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
+"inject a debugger statement based on the current filetype
+"nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
+autocmd FileType python       nnoremap <leader>d oimport pdb; pdb.set_trace()<ESC>
+autocmd FileType ruby         nnoremap <leader>d obinding.pry<ESC>
+autocmd FileType javascript   nnoremap <leader>d odebugger;<ESC>
+autocmd FileType typescript   nnoremap <leader>d odebugger;<ESC>
+
 "nnoremap <leader>f %!python -m json.tool
 
 "If openen a read only file without sudo:
