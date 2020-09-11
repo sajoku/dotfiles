@@ -215,10 +215,13 @@ autocmd QuickFixCmdPost    l* nested lwindow
 
 "inject a debugger statement based on the current filetype
 "nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
-autocmd FileType python       nnoremap <leader>d oimport pdb; pdb.set_trace()<ESC>
-autocmd FileType ruby         nnoremap <leader>d obinding.pry<ESC>
-autocmd FileType javascript   nnoremap <leader>d odebugger;<ESC>
-autocmd FileType typescript   nnoremap <leader>d odebugger;<ESC>
+augroup myautocmds
+  autocmd!
+  au FileType python       nnoremap <leader>d oimport pdb; pdb.set_trace()<ESC>
+  au FileType ruby         nnoremap <leader>d obinding.pry<ESC>
+  au FileType javascript   nnoremap <leader>d odebugger;<ESC>
+  au FileType typescript   nnoremap <leader>d odebugger;<ESC>
+augroup END
 
 "nnoremap <leader>f %!python -m json.tool
 
