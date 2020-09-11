@@ -13,7 +13,6 @@ disabled = false
 use_symbol_for_status = true
 symbol = "λ"
 error_symbol = "✖"
-style_success = "#00A652"
 style_failure = "#df382c"
 
 [username]
