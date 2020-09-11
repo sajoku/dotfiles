@@ -15,6 +15,9 @@ symbol = "λ"
 error_symbol = "✖"
 style_failure = "#df382c"
 
+[cmd_duration]
+disable=true
+
 [username]
 disabled = true
 
