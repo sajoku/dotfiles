@@ -187,7 +187,6 @@ if executable('ag')
 endif
 nmap g/ :Ack!<space>
 nmap <c-p> :cclose<CR>:FzfFiles<CR>
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
