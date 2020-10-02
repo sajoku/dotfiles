@@ -33,13 +33,25 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
-let g:netrw_banner = 1 "Show the banner until i get all these commands in my muscle memory
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 2
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-let g:netrw_list_hide = &wildignore
-let g:netrw_sort_sequence = '[\/]$,*' " sort is affecting only: directories on the top, files below
+" NERDTree File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('py', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('rb', 'Magenta', 'none', '#ff00ff', '#151515')
 
 "---------------------------------
 "Mapping keys
@@ -48,7 +60,7 @@ let g:netrw_sort_sequence = '[\/]$,*' " sort is affecting only: directories on t
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-map <Leader>n :Lexplore<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 map <Leader>ea: :EasyAlign \<CR>
 map <Leader>ea = :EasyAlign =<CR>
