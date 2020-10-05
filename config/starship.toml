@@ -24,7 +24,7 @@ disabled = true
 # configure directory
 [directory]
 truncate_to_repo = true # truncates directory to root folder if in github repo
-prefix = ""
+format = ""
 style = "cyan"
 
 [git_branch]
@@ -32,8 +32,7 @@ style="red"
 symbol = ""
 
 [git_status]
-prefix=""
-suffix=""
+format = "[$all_status$ahead_behind]($style) "
 style="red"
 
 
