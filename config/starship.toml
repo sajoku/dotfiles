@@ -24,8 +24,8 @@ disabled = true
 # configure directory
 [directory]
 truncate_to_repo = true # truncates directory to root folder if in github repo
-format = ""
 style = "cyan"
+truncation_length = 2
 
 [git_branch]
 style="red"
