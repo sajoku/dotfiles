@@ -1,5 +1,6 @@
 [push]
   default = current
+  followTags = true
 [color]
   branch = auto
   diff = auto
@@ -22,8 +23,12 @@
   br = branch
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   clone-branches = "! git branch -a | sed -n \"/\\/HEAD /d; /\\/master$/d; /remotes/p;\" | xargs -L1 git checkout -t"
+  stash-all = stash save --include-untracked
+[merge]
+  conflictstyle = diff3
 [diff]
   #external = git_diff_wrapper
+  colorMoved = default
 [core]
   excludesfile = /Users/sajoku/.gitignore_global
   whitespace = warn
