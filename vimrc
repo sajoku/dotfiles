@@ -217,8 +217,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,rel
 let g:fzf_command_prefix = 'Fzf'
 
 nnoremap <ctrl>p :FZF<CR>
-nnoremap <leader>p :FZF<CR>
-nnoremap <leader>b :FzfBuffers<CR>
 
 "Git
 nnoremap <leader>G :Gcommit<cr>
