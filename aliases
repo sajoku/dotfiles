@@ -8,10 +8,6 @@ alias lh="ls -lh"
 alias ll="ls -la"
 alias ls="ls -F"
 
-# vim
-alias vimp="pipenv run vim"
-alias vim="nvim"
-
 # git
 alias gb='git branch'
 alias gc='git commit'
