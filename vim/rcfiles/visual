@@ -20,11 +20,6 @@ set splitright
 set diffopt+=iwhite
 set diffopt+=vertical
 
-" floating windows
-" highlight VertSplit guibg=NONE
-" highlight NormalFloat guifg=#999999 guibg=#222222
-" hi Pmenu guibg=#222222 guifg=#999999
-
 "Zoom and resize stuff
 "Resize splits with shift-(h,j,k,l)
 nnoremap <S-h> :exe "vertical resize +10"<CR>
