@@ -85,7 +85,7 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 # Keep pipenv packages inside projects instead of home directory (This is what's being done in production so mimick that behaviour)
-export PIPENV_VENV_IN_PROJECT=1
+#export PIPENV_VENV_IN_PROJECT=1
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 
