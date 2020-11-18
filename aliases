@@ -5,8 +5,8 @@ alias a='ls -lrthG'
 alias l="ls -lAh"
 alias la='ls -A'
 alias lh="ls -lh"
-alias ll="ls -la"
-alias ls="ls -F"
+alias ls='ls -G'
+alias ll='ls -lG'
 
 # git
 alias gb='git branch'
