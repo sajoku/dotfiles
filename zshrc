@@ -68,6 +68,12 @@ fi
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.venv,.tox}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+eval "$(pyenv init -)"
+
+eval "$(starship init zsh)"
+
+source <(kubectl completion zsh)
+
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
