@@ -197,8 +197,8 @@ let g:VtrAppendNewline = 1
 "SEARCHING --------------------
 set rtp+=/usr/local/opt/fzf
 " shortcut for searching through whole folder
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
 endif
 nmap g/ :Ack!<space>
 nmap <c-p> :cclose<CR>:FzfFiles<CR>
@@ -249,7 +249,8 @@ if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc')))
   exec printf('source %s/%s', getcwd(), '.vimrc')
 endif
 
-
+" https://github.com/sheerun/vim-polyglot/issues/613
+let g:polyglot_is_disabled={}
 
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/dotfiles/vim/' . a:directory . '/*'
