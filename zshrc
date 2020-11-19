@@ -86,7 +86,7 @@ if [ -d /usr/local/share/chruby ]; then
   source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
-pyenv
+# pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
