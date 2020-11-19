@@ -18,28 +18,23 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-plugins=(git osx)
+plugins=(git fzf)
 
-#Disable xterm colors since we set this in the tmux settings
-#[ "$TERM" = "xterm" ] && TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh
 export TERM=xterm
 
-export GOPATH=$HOME/gocode
-
 unsetopt correct_all
+
 export BUNDLER_EDITOR=nvim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# use vim as the visual editor
 export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # ensure dotfiles bin directory is loaded first
+export PATH="$HOME/dotfiles/bin:$PATH"
 export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.bin:/usr/local/bin:$PATH"
-export PATH="$HOME/dotfiles/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # mkdir .git/safe in the root of repositories you trust
@@ -67,30 +62,33 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   export GPG_TTY
 fi
 
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.venv,.tox}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
+
+
+#NVM (package manager for node)
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 #automatically switch to rubies
 if [ -d /usr/local/share/chruby ]; then
   source /usr/local/share/chruby/chruby.sh
   source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.venv,.tox}/*" 2> /dev/null'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-eval "$(pyenv init -)"
+pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 eval "$(starship init zsh)"
-
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-# Keep pipenv packages inside projects instead of home directory (This is what's being done in production so mimick that behaviour)
-#export PIPENV_VENV_IN_PROJECT=1
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
-
-
-#NVM (package manager for node)
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
