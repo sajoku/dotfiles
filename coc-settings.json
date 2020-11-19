@@ -11,7 +11,6 @@
   "diagnostic.warningSign": "❌",
   "diagnostic.hintSign": "💁",
   "diagnostic.infoSign": "💁",
-  "diagnostic.signOffset": 999999,
   "diagnostic.maxWindowHeight": 20,
   "signature.maxWindowHeight": 20,
   "diagnostic.checkCurrentLine": true,
