@@ -11,6 +11,10 @@ HISTSIZE=20000
 HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
+# Colorize terminal
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+export GREP_OPTIONS="--color"
+
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
@@ -68,6 +72,12 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.venv,.tox}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+eval "$(pyenv init -)"
+
+eval "$(starship init zsh)"
+
+source <(kubectl completion zsh)
 
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
