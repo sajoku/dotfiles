@@ -77,11 +77,10 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-# Font configuration (changes require restart)
 font:
   normal:
     family: JetBrains Mono
-    style: Regular
+    style: ExtraLight
   bold:
     family: JetBrains Mono
     style: Bold
