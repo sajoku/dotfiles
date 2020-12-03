@@ -29,10 +29,8 @@ call minpac#add('vim-test/vim-test')
 "golang
 call minpac#add('fatih/vim-go')
 
-
-"call minpac#add('neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'})
-"call minpac#add('neoclide/coc.nvim')
-call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
+call minpac#add('neoclide/coc.nvim', {'branch': 'release' })
+"call minpac#add('neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'})
 
 "-->
 call minpac#add('sheerun/vim-polyglot')
