@@ -21,7 +21,7 @@ fi
 plugins=(git fzf)
 
 source $ZSH/oh-my-zsh.sh
-export TERM=xterm
+export TERM="xterm-256color"
 
 unsetopt correct_all
 
