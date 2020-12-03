@@ -18,7 +18,8 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-plugins=(git fzf)
+plugins=(git fzf zsh-autosuggestions)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=green,bg=bold"
 
 source $ZSH/oh-my-zsh.sh
 export TERM="xterm-256color"
