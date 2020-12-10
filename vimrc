@@ -40,8 +40,11 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
+
+"Exclude nonmodifiable (basically nerdtree)
+let g:golden_ratio_exclude_nonmodifiable = 1
 "NerdTree configuration
-let g:NERDTreeWinSize=60
+let g:NERDTreeWinSize=40
 " NERDTree File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
