@@ -10,9 +10,6 @@ if filereadable(expand("~/dotfiles/vimrc.packages"))
 endif
 
 " minpac commands:
-" command! PackUpdate call minpac#update()
-" command! PackClean call minpac#clean()
-" command! PackStatus call minpac#status()
 command! PackUpdate source $MYVIMRC | call minpac#update()
 command! PackClean  source $MYVIMRC | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
@@ -29,7 +26,7 @@ set encoding=utf-8
 if has("termguicolors")
   set termguicolors
 endif
-colorscheme purify
+colorscheme dim
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
