@@ -22,11 +22,7 @@ syntax enable
 syntax on
 set encoding=utf-8
 
-
-if has("termguicolors")
-  set termguicolors
-endif
-colorscheme dim
+silent! colorscheme dim
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
