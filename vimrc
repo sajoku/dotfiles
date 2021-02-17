@@ -255,9 +255,6 @@ if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc')))
   exec printf('source %s/%s', getcwd(), '.vimrc')
 endif
 
-" https://github.com/sheerun/vim-polyglot/issues/613
-let g:polyglot_is_disabled={}
-
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/dotfiles/vim/' . a:directory . '/*'
   for config_file in split(glob(directory_splat), '\n')
