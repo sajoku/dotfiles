@@ -67,15 +67,9 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   export GPG_TTY
 fi
 
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.venv,.tox,coverage,tmp,}/*" -g "!{.DS_Store,.keep}" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-eval "$(pyenv init -)"
-
-eval "$(starship init zsh)"
 
 source <(kubectl completion zsh)
 
