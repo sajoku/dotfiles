@@ -86,6 +86,9 @@ inoremap jj <esc>
 " insert blank lines without going into insert mode
 nmap go o<esc>
 
+"Copy the current filepath
+nmap <Leader>cp :let @+=expand("%p")<CR>
+
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
