@@ -9,7 +9,7 @@ highlight ModeMsg        cterm=bold
 highlight CursorLineNr   ctermfg=3
 highlight Question       ctermfg=2
 highlight Title          ctermfg=5
-highlight WarningMsg     ctermfg=1
+highlight WarningMsg     ctermfg=1 ctermbg=3
 highlight WildMenu       ctermfg=0 ctermbg=11
 highlight Conceal        ctermfg=7 ctermbg=7
 highlight SpellBad       ctermbg=9
