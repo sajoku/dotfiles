@@ -22,7 +22,7 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-plugins=(git fzf zsh-autosuggestions)
+plugins=(git fzf)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=green,bg=bold"
 
 source $ZSH/oh-my-zsh.sh
