@@ -40,10 +40,6 @@
   smudge = git media smudge %f
 [status]
   short = 1
-[filter "hawser"]
-  clean = git hawser clean %f
-  smudge = git hawser smudge %f
-  required = true
 [init]
   templatedir = ~/dotfiles/git_template
 [filter "lfs"]
@@ -51,5 +47,5 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
-[rerere]
-  enabled = true
+# [rerere]
+#   enabled = true
