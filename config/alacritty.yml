@@ -318,8 +318,8 @@ mouse:
     #   - (Linux/BSD) xdg-open
     #   - (Windows) explorer
     launcher:
-      program: -open
-      args: []
+      program: open
+      args: ["-a","Safari"]
 
     # URL modifiers
     #
