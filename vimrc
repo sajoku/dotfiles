@@ -250,6 +250,10 @@ augroup END
 "" format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
 
+"CocAction
+nnoremap <silent><nowait> <space>d :call CocAction("jumpDefinition", v:false)<CR>
+
+
 set secure
 if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc')))
   exec printf('source %s/%s', getcwd(), '.vimrc')
