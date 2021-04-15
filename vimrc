@@ -252,6 +252,12 @@ let g:go_fmt_command = "goimports"
 
 "CocAction
 nnoremap <silent><nowait> <space>d :call CocAction("jumpDefinition", v:false)<CR>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" " Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
 set secure
