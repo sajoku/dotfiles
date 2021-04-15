@@ -1,6 +1,5 @@
 {
   "coc.preferences.jumpCommand": "drop",
-  "coc.preferences.hoverTarget": "float",
   "diagnostic.refreshOnInsertMode": true,
   "suggest.floatEnable": true,
   "suggest.noselect": false,
