@@ -189,8 +189,8 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 
-if filereadable(expand("~/dotfiles/vimrc.test_runners"))
-  source ~/dotfiles/vimrc.test_runners
+if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc.test_runners')))
+  exec printf('source %s/%s', getcwd(), '.vimrc.test_runners')
 endif
 let g:test#strategy = 'vtr'
 
