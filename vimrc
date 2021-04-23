@@ -225,7 +225,7 @@ let g:fzf_command_prefix = 'Fzf'
 nnoremap <ctrl>p :FZF<CR>
 
 "Git
-nnoremap <leader>G :Gcommit<cr>
+nnoremap <leader>G :Git commit<cr>
 
 " Allow ale to open the quickfix window and show all warnings and errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
