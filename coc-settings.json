@@ -39,6 +39,6 @@
   "solargraph.formatting": true,
   "solargraph.hover": false,
   "python.linting.enabled": true,
-  "python.formatting.provider": "black",
+  /* "python.formatting.provider": "black", */
   "coc.preferences.extensionUpdateCheck": "daily"
 }
