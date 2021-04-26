@@ -10,9 +10,16 @@ set signcolumn=yes
 "end of coc specific settings
 
 set backspace=2      " Backspace deletes like most programs in insert mode
-set nobackup
-set nowritebackup
-set noswapfile
+
+" ===== Instead of backing up files, just reload the buffer when it changes. =====
+" The buffer is an in-memory representation of a file, it's what you edit
+set autoread                         " Auto-reload buffers when file changed on disk
+set nobackup                         " Don't use backup files
+set nowritebackup                    " Don't backup the file while editing
+set noswapfile                       " Don't create swapfiles for new buffers
+set updatecount=0                    " Don't try to write swapfiles after some number of updates
+set backupskip=/tmp/*,/private/tmp/* " Let me edit crontab files
+
 set history=100
 set ruler            " show the cursor position all the time
 set showcmd          " display incomplete commands
