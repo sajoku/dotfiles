@@ -10,8 +10,8 @@ disabled = false
 
 # Replace the "" symbol in the prompt with "➟"
 [character]      # The name of the module we are configuring is "character"
-success_symbol = "λ"
-error_symbol = "✖"
+success_symbol = "[λ](green)"
+error_symbol = "[~@](red)"
 vicmd_symbol = "[❮](bold green)"
 
 [cmd_duration]
@@ -33,19 +33,3 @@ symbol = ""
 [git_status]
 format = "[$all_status$ahead_behind]($style) "
 style="red"
-
-
-[package]
-disabled=true
-[python]
-disabled=true
-[nodejs]
-disabled=true
-[crystal]
-disabled=true
-[elixir]
-disabled=true
-[golang]
-disabled=true
-[ruby]
-disabled=true
