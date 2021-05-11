@@ -259,6 +259,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+"create skeleton files for these 
+autocmd BufNewFile readme.md 0r ~/dotfiles/skeletons/readme.md
+autocmd BufNewFile *.rb 0r ~/dotfiles/skeletons/ruby.rb
+
 
 set secure
 if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc')))
@@ -273,6 +277,8 @@ function! s:SourceConfigFilesIn(directory)
     endif
   endfor
 endfunction
+
+
 "source files from rcfiles moves config files for plugins to own files
 call s:SourceConfigFilesIn('rcplugins')
 call s:SourceConfigFilesIn('rcfiles')
