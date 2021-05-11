@@ -37,7 +37,11 @@
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
-  "solargraph.hover": false,
+  "solargraph.hover": true,
+  "solargraph.definitions": true,
+  "solargraph.useBundler": true,
+  "codeLens.enable": true,
+  "pyright.enable": true,
   "python.linting.enabled": true,
   /* "python.formatting.provider": "black", */
   "coc.preferences.extensionUpdateCheck": "daily"
