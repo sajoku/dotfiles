@@ -258,6 +258,10 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+"Pick a differnt color for the currentl selection
+nnoremap <silent><nowait> <space>c :call CocAction('colorPresentation')<CR>
+
+let g:coc_global_extensions = ['coc-solargraph']
 
 "create skeleton files for these 
 autocmd BufNewFile readme.md 0r ~/dotfiles/skeletons/readme.md

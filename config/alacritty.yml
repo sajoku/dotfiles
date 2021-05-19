@@ -108,30 +108,40 @@ draw_bold_text_with_bright_colors: false
 colors:
   # Default colors
   primary:
-    background: '#282a36'
-    foreground: '#eff0eb'
+    background: '#161616'
+    foreground: '#e4e4e4'
+
+  # Cursor volors
+  cursor:
+    text: '#feffff'
+    cursor: '#ffb472'
 
   # Normal colors
   normal:
-    black: '#282a36'
-    red: '#ff5c57'
-    green: '#5af78e'
-    yellow: '#f3f99d'
-    blue: '#57c7ff'
-    magenta: '#ff6ac1'
-    cyan: '#9aedfe'
-    white: '#f1f1f0'
+    black: '#a3a3a3'
+    red: '#e98885'
+    green: '#a3c38b'
+    yellow: '#ffc68d'
+    blue: '#a6cae2'
+    magenta: '#e7cdfb'
+    cyan: '#00a69f'
+    white: '#e4e4e4'
 
   # Bright colors
   bright:
-    black: '#686868'
-    red: '#ff5c57'
-    green: '#5af78e'
-    yellow: '#f3f99d'
-    blue: '#57c7ff'
-    magenta: '#ff6ac1'
-    cyan: '#9aedfe'
-    white: '#f1f1f0'
+    black: '#c8c8c8'
+    red: '#ffb2b0'
+    green: '#c8e2b9'
+    yellow: '#ffe1af'
+    blue: '#bddff7'
+    magenta: '#fce2ff'
+    cyan: '#0bbdb6'
+    white: '#feffff'
+
+  # Selection colors
+  selection:
+    text: '#5963a2'
+    background: '#f6f6f6'
 
 # Background opacity
 #
