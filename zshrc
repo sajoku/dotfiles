@@ -92,6 +92,8 @@ export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 #automatically switch to rubies
 if [ -d /usr/local/share/chruby ]; then
   source /usr/local/share/chruby/chruby.sh
@@ -99,8 +101,6 @@ if [ -d /usr/local/share/chruby ]; then
 fi
 
 # pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+eval "$(pyenv init -)"
 
 eval "$(starship init zsh)"
