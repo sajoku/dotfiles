@@ -241,6 +241,10 @@ augroup myautocmds
   au BufNewFile,BufRead,BufEnter *.ts nnoremap <leader>d odebugger;<ESC>
 augroup END
 
+
+au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>c ofrom celery.contrib import rdb;rdb.set_trace()<ESC>
+
+
 "nnoremap <leader>f %!python -m json.tool
 
 "If openen a read only file without sudo:
