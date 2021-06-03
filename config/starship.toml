@@ -1,21 +1,15 @@
-# disable starship from forcing a new line to be taken. Solved the empty line 
-# at start of terminal
 add_newline = false
 
-#I'm not a fan of having multiple lines but let's see if 
-# we can get by, so disable=false for now. Setting to true will result in a
-# single line.
 [line_break]
 disabled = false
 
-# Replace the "" symbol in the prompt with "➟"
-[character]      # The name of the module we are configuring is "character"
+[character]
 success_symbol = "[λ](green)"
 error_symbol = "[~@](red)"
 vicmd_symbol = "[❮](bold green)"
 
-[cmd_duration]
-disabled=true
+# [cmd_duration]
+# disabled=true
 
 [username]
 disabled = true
@@ -33,3 +27,15 @@ symbol = ""
 [git_status]
 format = "[$all_status$ahead_behind]($style) "
 style="red"
+
+[python]
+disabled=true
+
+[nodejs]
+disabled=true
+
+[rust]
+disabled=true
+
+[ruby]
+disabled=true
