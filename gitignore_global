@@ -18,3 +18,4 @@ vendor/bundle
 *.csr
 .vim/coc-settings.json
 public.cert
+local_notes/
