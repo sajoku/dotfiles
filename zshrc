@@ -102,5 +102,7 @@ fi
 
 # pyenv
 eval "$(pyenv init -)"
+#Direnv: Loads .envrc files 
+eval "$(direnv hook zsh)"
 
 eval "$(starship init zsh)"
