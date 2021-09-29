@@ -87,18 +87,10 @@ export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 
 # alias ssm=$'f() { unset AWS_VAULT; aws-vault exec $1 -- aws ssm start-session --target $( aws-vault exec $1 -- aws ec2 describe-instances --region eu-west-1 --filters "Name=tag:Name,Values='\''$2'\''" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[*].InstanceId" --output=text) };f'
 
-#NVM (package manager for node)
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-#automatically switch to rubies
-if [ -d /usr/local/share/chruby ]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
-fi
+
+#asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
 
 # pyenv
 eval "$(pyenv init -)"
