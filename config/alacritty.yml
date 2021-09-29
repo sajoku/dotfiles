@@ -10,8 +10,8 @@ scrolling:
   history: 0
 font:
   normal:
-    family: JetBrains Mono
-    style: Light
+    family: JetBrains Mono        
+    style: Regular
   bold:
     family: JetBrains Mono
     style: Bold
@@ -23,26 +23,26 @@ font:
 draw_bold_text_with_bright_colors: false
 colors:
   primary:
-    background: "#2D2A2E"
-    foreground: "#FCFCFA"
+    background: "#282a36"
+    foreground: "#f8f8f2"
   normal:
-    black: "#403E41"
-    red: "#FF6188"
-    green: "#A9DC76"
-    yellow: "#FFD866"
-    blue: "#FC9867"
-    magenta: "#AB9DF2"
-    cyan: "#78DCE8"
-    white: "#FCFCFA"
+    black: "#000000"
+    red: "#ff5555"
+    green: "#50fa7b"
+    yellow: "#f1fa8c"
+    blue: "#caa9fa"
+    magenta: "#ff79c6"
+    cyan: "#8be9fd"
+    white: "#bfbfbf"
   bright:
-    black: "#727072"
-    red: "#FF6188"
-    green: "#A9DC76"
-    yellow: "#FFD866"
-    blue: "#FC9867"
-    magenta: "#AB9DF2"
-    cyan: "#78DCE8"
-    white: "#FCFCFA"
+    black: "#575b70"
+    red: "#ff6e67"
+    green: "#5af78e"
+    yellow: "#f4f99d"
+    blue: "#caa9fa"
+    magenta: "#ff92d0"
+    cyan: "#9aedfe"
+    white: "#e6e6e6"
 background_opacity: 1
 shell:
   program: /bin/zsh
