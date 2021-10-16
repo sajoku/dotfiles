@@ -8,16 +8,22 @@ window:
   startup_mode: SimpleFullscreen
 scrolling:
   history: 0
+cursor:
+  style: Block
+  unfocused_hollow: true
 font:
   normal:
-    family: JetBrains Mono        
+    family: Space Mono
     style: Regular
   bold:
-    family: JetBrains Mono
+    family: Space Mono
     style: Bold
   italic:
-    family: JetBrains Mono
+    family: Space Mono
     style: Italic
+  bold_italic:
+    family: Space Mono
+    style: Bold Italic
   size: 12
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: false
@@ -48,6 +54,8 @@ shell:
   program: /bin/zsh
   args:
     - --login
+selection:
+  save_to_clipboard: false
 mouse:
   hints:
     launcher:
