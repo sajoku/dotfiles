@@ -19,3 +19,5 @@ vendor/bundle
 .vim/coc-settings.json
 public.cert
 local_notes/
+certificate.crt
+localhost.crt
