@@ -93,7 +93,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 . /usr/local/opt/asdf/libexec/asdf.sh
 
 # pyenv
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 #Direnv: Loads .envrc files 
 eval "$(direnv hook zsh)"
 
