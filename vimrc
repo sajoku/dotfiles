@@ -22,7 +22,18 @@ syntax enable
 syntax on
 set encoding=utf-8
 
+function! MyHighlights() abort
+    highlight CocHighlightText  ctermfg=magenta ctermbg=yellow guifg=magenta
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
+
 silent! colorscheme dim
+
+
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
@@ -262,6 +273,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
 "Pick a differnt color for the currentl selection
 nnoremap <silent><nowait> <space>c :call CocAction('colorPresentation')<CR>
 
@@ -290,3 +302,4 @@ endfunction
 "source files from rcfiles moves config files for plugins to own files
 call s:SourceConfigFilesIn('rcplugins')
 call s:SourceConfigFilesIn('rcfiles')
+
