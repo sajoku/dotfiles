@@ -74,11 +74,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 source <(kubectl completion zsh)
 
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
-
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
@@ -87,14 +85,20 @@ export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 
 # alias ssm=$'f() { unset AWS_VAULT; aws-vault exec $1 -- aws ssm start-session --target $( aws-vault exec $1 -- aws ec2 describe-instances --region eu-west-1 --filters "Name=tag:Name,Values='\''$2'\''" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[*].InstanceId" --output=text) };f'
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+#export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 #asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+#. /usr/local/opt/asdf/libexec/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # pyenv
-eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
 #Direnv: Loads .envrc files 
 eval "$(direnv hook zsh)"
 
 eval "$(starship init zsh)"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=/opt/homebrew/bin:$PATH
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
