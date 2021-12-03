@@ -10,8 +10,6 @@
   "diagnostic.warningSign": "❌",
   "diagnostic.hintSign": "💁",
   "diagnostic.infoSign": "💁",
-  "diagnostic.maxWindowHeight": 20,
-  "signature.maxWindowHeight": 20,
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "coc.preferences.formatOnSaveFiletypes": [
@@ -40,6 +38,7 @@
   "solargraph.hover": true,
   "solargraph.definitions": true,
   "solargraph.useBundler": false,
+  "solargraph.transport": "stdio",
   "codeLens.enable": true,
   "pyright.enable": true,
   "python.linting.enabled": true,
