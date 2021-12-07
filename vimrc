@@ -297,6 +297,7 @@ function! s:SourceConfigFilesIn(directory)
   endfor
 endfunction
 
+let g:python3_host_prog = "~/.pyenv/versions/3.10.0/bin/python"
 
 "source files from rcfiles moves config files for plugins to own files
 call s:SourceConfigFilesIn('ftplugin')
