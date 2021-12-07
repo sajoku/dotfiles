@@ -74,8 +74,7 @@ call NERDTreeHighlightFile('rb', 'Magenta', 'none', '#ff00ff', '#151515')
 "Mapping keys
 "---------------------------------
 " Shortcuts
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 
 map <Leader>n :NERDTreeToggle<CR>
 
@@ -300,6 +299,5 @@ endfunction
 
 
 "source files from rcfiles moves config files for plugins to own files
-call s:SourceConfigFilesIn('rcplugins')
+call s:SourceConfigFilesIn('ftplugin')
 call s:SourceConfigFilesIn('rcfiles')
-
