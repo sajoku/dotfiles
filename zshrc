@@ -22,7 +22,7 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-plugins=(git fzf)
+plugins=(git fzf asdf)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=green,bg=bold"
 
 source $ZSH/oh-my-zsh.sh
@@ -87,10 +87,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 #export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
-#asdf
-#. /usr/local/opt/asdf/libexec/asdf.sh
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
 # pyenv
 eval "$(pyenv init -)"
 
@@ -102,3 +98,7 @@ eval "$(starship init zsh)"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+
+#asdf
+#. /usr/local/opt/asdf/libexec/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
