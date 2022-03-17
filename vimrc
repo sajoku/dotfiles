@@ -221,8 +221,8 @@ nmap <c-p> :cclose<CR>:FzfFiles<CR>
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
-let g:fzf_files_options =
-\ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+let g:fzf_files_options = 
+      \ '--preview "bat {} 2> /dev/null | head -'.&lines.'"'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
 "
