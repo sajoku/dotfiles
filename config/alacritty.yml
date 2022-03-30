@@ -1,6 +1,7 @@
 env:
   TERM: xterm-256color
 window:
+  opacity: 1.0
   padding:
     x: 0
     y: 0
@@ -49,7 +50,6 @@ colors:
     magenta: "#ff92d0"
     cyan: "#9aedfe"
     white: "#e6e6e6"
-background_opacity: 1
 shell:
   program: /bin/zsh
   args:
