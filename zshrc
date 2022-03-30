@@ -99,6 +99,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
+# completion for op (1password)
+eval "$(op completion zsh)"; compdef _op op
+
 #asdf
 #. /usr/local/opt/asdf/libexec/asdf.sh
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
