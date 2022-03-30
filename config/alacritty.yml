@@ -14,18 +14,18 @@ cursor:
   unfocused_hollow: true
 font:
   normal:
-    family: Space Mono
+    family: JetBrains Mono
     style: Regular
   bold:
-    family: Space Mono
+    family: JetBrains Mono
     style: Bold
   italic:
-    family: Space Mono
+    family: JetBrains Mono
     style: Italic
   bold_italic:
-    family: Space Mono
+    family: JetBrains Mono
     style: Bold Italic
-  size: 12
+  size: 18
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: false
 colors:
