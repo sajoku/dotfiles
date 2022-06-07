@@ -1,48 +1,3 @@
-add_newline = false
-
-
-# [line_break]
-# disabled = false
-
-# # [cmd_duration]
-# # disabled=true
-
-# [username]
-# disabled = true
-
-# # configure directory
-# [directory]
-# truncate_to_repo = true # truncates directory to root folder if in github repo
-# style = "cyan"
-# truncation_length = 2
-
-# [git_branch]
-# style="red"
-# truncation_symbol = ""
-
-# [git_state]
-# format = '[\($state( $progress_current of $progress_total)\)]($style) '
-# cherry_pick = "[🍒 PICKING](bold red)"
-
-# [git_status]
-# format = "[$all_status$ahead_behind]($style) "
-# style="bold yellow"
-
-
-# [python]
-# disabled=true
-
-# [nodejs]
-# disabled=true
-
-# [rust]
-# disabled=true
-
-# [ruby]
-# disabled=true
-
-#PURE config preset (taken from https://starship.rs/presets/#pure), this
-#overrides some of the already set options
 format = """
 $username\
 $hostname\
@@ -53,6 +8,7 @@ $git_status\
 $cmd_duration\
 $line_break\
 $python\
+$aws\
 $character"""
 
 [directory]
@@ -60,7 +16,7 @@ style = "blue"
 
 [character]
 success_symbol = "[λ](green)"
-error_symbol = "[~@](red)"
+error_symbol = "[κ](red)"
 vicmd_symbol = "[❮](bold green)"
 
 [git_branch]
@@ -70,12 +26,12 @@ style = "bright-black"
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
 style = "cyan"
-conflicted = ""
-untracked = ""
-modified = ""
-staged = ""
-renamed = ""
-deleted = ""
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
 stashed = "≡"
 
 [git_state]
@@ -89,3 +45,8 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[aws]
+format = "on [$symbol$profile]($style) "
+style = "bold blue"
+symbol = "🅰 "
