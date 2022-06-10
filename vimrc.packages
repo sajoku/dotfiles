@@ -7,7 +7,7 @@ call minpac#add('tpope/vim-commentary')
 "call minpac#add('tpope/vim-vinegar')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
-call minpac#add('tpope/vim-endwise')
+"call minpac#add('tpope/vim-endwise')
 call minpac#add('junegunn/vim-easy-align')
 call minpac#add('rhysd/git-messenger.vim')
 call minpac#add('airblade/vim-gitgutter')
@@ -15,6 +15,7 @@ call minpac#add('preservim/nerdtree')
 
 "syntax highlighting straight from nvim
 call minpac#add('nvim-treesitter/nvim-treesitter')
+call minpac#add('RRethy/nvim-treesitter-endwise')
 
 
 call minpac#add('mileszs/ack.vim')
@@ -36,7 +37,7 @@ call minpac#add('antoinemadec/coc-fzf')
 "call minpac#add('neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'})
 
 "-->
-call minpac#add('sheerun/vim-polyglot')
+"call minpac#add('sheerun/vim-polyglot')
 "<--
 "
 "->Python
@@ -45,24 +46,11 @@ call minpac#add('nvie/vim-flake8')
 "
 "-> Rails
 call minpac#add('tpope/vim-rails')
-call minpac#add('christoomey/display-table-summary')
 "<- Rails
 "
 "->Ruby
 call minpac#add('tpope/vim-bundler')
 "<-Ruby
-
-"<-- Elixir
-call minpac#add('elixir-editors/vim-elixir')
-"-->
-"
-"<-- VueJS
-call minpac#add('posva/vim-vue')
-"-->
-
-"<--
-call minpac#add('pangloss/vim-javascript')
-"-->
 
 "<-- Auto formatting
 call minpac#add('AndrewRadev/tagalong.vim', {'branch': 'main' })
