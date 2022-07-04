@@ -36,7 +36,6 @@ alias rak='rake'
 
 #directory navigation
 alias dot='cd ~/dotfiles'
-alias code='cd ~/code'
 alias p='cd ~/projects'
 alias pl='cd ~/playground'
 
