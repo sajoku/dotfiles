@@ -31,6 +31,7 @@
   #external = git_diff_wrapper
   colorMoved = default
 [core]
+  pager = delta --dark
   excludesfile = /Users/sajoku/.gitignore_global
   whitespace = warn
   editor = vim
