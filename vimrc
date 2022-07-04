@@ -18,8 +18,8 @@ let &runtimepath.=',~/.vim/pack/minpac/start'
 
 filetype plugin indent on
 
-syntax enable
-syntax on
+" syntax enable
+" syntax on
 set encoding=utf-8
 
 function! MyHighlights() abort
