@@ -40,7 +40,7 @@
   "solargraph.useBundler": true,
   "solargraph.bundlerPath": "/Users/sajoku/.asdf/shims/bundle",
   "solargraph.transport": "socket" ,
-  "solargraph.logLevel": "debug",
+  "solargraph.logLevel": "warn",
   "solargraph.checkGemVersion": true,
   "codeLens.enable": true,
   "pyright.enable": true,
