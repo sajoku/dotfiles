@@ -47,6 +47,7 @@ autocmd BufReadPost *
 
 "Exclude nonmodifiable (basically nerdtree)
 let g:golden_ratio_exclude_nonmodifiable = 1
+
 "NerdTree configuration
 let g:NERDTreeWinSize=40
 " NERDTree File highlighting
@@ -56,7 +57,7 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
 endfunction
 
 call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('md', 'yellow', 'none', '#3366FF', '#151515')
 call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
@@ -70,6 +71,20 @@ call NERDTreeHighlightFile('py', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('rb', 'Magenta', 'none', '#ff00ff', '#151515')
 "End of Nerdtree configuration
 
+"open in a vertial split
+"let g:netrw_browse_split =1 
+
+"Nerdtree like setup for netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Lexplore
+" augroup END
+
 "---------------------------------
 "Mapping keys
 "---------------------------------
@@ -77,6 +92,8 @@ call NERDTreeHighlightFile('rb', 'Magenta', 'none', '#ff00ff', '#151515')
 
 
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>f :NERDTreeFind<CR>
+"map <Leader>n :Lexplore<CR>
 
 map <Leader>ea: :EasyAlign \<CR>
 map <Leader>ea = :EasyAlign =<CR>
@@ -211,7 +228,7 @@ let g:VtrClearEmptyLines = 0
 let g:VtrAppendNewline = 1
 
 "SEARCHING --------------------
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 " shortcut for searching through whole folder
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
@@ -272,6 +289,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
 
 "Pick a differnt color for the currentl selection
 nnoremap <silent><nowait> <space>c :call CocAction('colorPresentation')<CR>
