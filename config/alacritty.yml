@@ -14,16 +14,16 @@ cursor:
   unfocused_hollow: true
 font:
   normal:
-    family: JetBrains Mono
+    family: MonoLisa Custom
     style: Regular
   bold:
-    family: JetBrains Mono
+    family: MonoLisa Custom
     style: Bold
   italic:
-    family: JetBrains Mono
+    family: MonoLisa Custom
     style: Italic
   bold_italic:
-    family: JetBrains Mono
+    family: MonoLisa Custom
     style: Bold Italic
   size: 18
 draw_bold_text_with_bright_colors: false
