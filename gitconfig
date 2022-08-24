@@ -28,14 +28,13 @@
 [merge]
   conflictstyle = diff3
 [diff]
-  #external = git_diff_wrapper
   colorMoved = default
 [core]
   pager = delta --dark
   excludesfile = /Users/sajoku/.gitignore_global
   whitespace = warn
-  editor = vim
   date = human
+  editor = nvim
 [filter "media"]
   required = true
   clean = git media clean %f
@@ -44,10 +43,19 @@
   short = 1
 [init]
   templatedir = ~/dotfiles/git_template
+  defaultBranch = main
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
-# [rerere]
-#   enabled = true
+[blame]
+  ignoreRevsFile = .git-blame-ignore-revs
+[push]
+  autoSetupRemote = true
+[commit]
+  gpgsign = true
+[pull]
+  ff = only
+[credential]
+  helper = /usr/local/share/gcm-core/git-credential-manager-core
