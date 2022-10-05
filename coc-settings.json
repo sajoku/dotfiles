@@ -1,10 +1,8 @@
 {
   "coc.preferences.jumpCommand": "drop",
   "diagnostic.refreshOnInsertMode": true,
-  "suggest.floatEnable": true,
   "suggest.noselect": false,
   "suggest.acceptSuggestionOnCommitCharacter": true,
-  "suggest.enablePreview": false,
   "suggest.enablePreselect": true,
   "diagnostic.errorSign": "🚫",
   "diagnostic.warningSign": "❌",
