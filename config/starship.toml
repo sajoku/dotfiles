@@ -47,6 +47,6 @@ format = "[$virtualenv]($style) "
 style = "bright-black"
 
 [aws]
-format = "on [$symbol$profile]($style) "
-style = "bold blue"
+format = "on [$symbol$profile $duration]($style) "
+style = "bold yellow"
 symbol = "🅰 "
