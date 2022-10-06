@@ -21,6 +21,7 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
 alias fb='gb -a | grep -i $1'
+alias gst='git status'
 
 #rails
 alias devlog='tail -f log/development.log'
@@ -59,21 +60,3 @@ alias djdocs="cd ~/.pyenv/versions/3.6.1/lib/python3.6/site-packages/django/cont
 alias am="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Muliphen/"
 
 alias cat="bat"
-#### FUNCTIONS ####
-
-function ip {
-  dig +short myip.opendns.com @resolver1.opendns.com
-}
-
-function ipl {
-  ifconfig | grep -C4 en0 | grep inet
-}
-
-
-function loadNvm {
-  export NVM_DIR="$HOME/.nvm" | [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-}
-
-# function colors {
-#   for i in [0..255]; do printf "\x1b[38;5;${i}mcolor${i}\x1b[0m\n" done
-# }
