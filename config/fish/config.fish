@@ -38,6 +38,7 @@ if status --is-login
   set -gx PATH $PATH "$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
   set -gx PATH $PATH "/opt/homebrew/bin"
   set -gx PATH $PATH "/opt/homebrew/opt/openssl@3/bin"
+  set -gx PATH $PATH $HOME"/.config/yarn/global/node_modules/.bin"
  
   #Make sure we always run with an active tmux session
   tmux_chooser
