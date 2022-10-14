@@ -28,7 +28,7 @@ font:
     family: MonoLisa Custom
     style: Bold Italic
   size: 18
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 # github Alacritty Colors
 colors:
   # Default colors
