@@ -35,7 +35,6 @@ if status --is-login
   set -gx PATH $PATH ".git/safe/../../bin"
 
   #set -gx PATH $PATH "PYENV_ROOT/bin:$PATH"
-  set -gx PATH $PATH "$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
   set -gx PATH $PATH "/opt/homebrew/bin"
   set -gx PATH $PATH "/opt/homebrew/opt/openssl@3/bin"
   set -gx PATH $PATH $HOME"/.config/yarn/global/node_modules/.bin"
