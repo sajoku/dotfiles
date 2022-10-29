@@ -11,6 +11,7 @@ vim/plugin/*.*
 vim/autoload/*.*
 vim/plugged/*.*
 vim/plugged
+.yarn/cache/*.*
 base16.rb
 vimrc.test_runners
 bin/op
