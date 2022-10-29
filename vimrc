@@ -23,7 +23,7 @@ filetype plugin indent on
 set encoding=utf-8
 
 function! MyHighlights() abort
-    highlight CocHighlightText  ctermfg=magenta ctermbg=yellow guifg=magenta
+    highlight CocHighlightText  ctermfg=black ctermbg=7 guifg=magenta
 endfunction
 
 augroup MyColors
