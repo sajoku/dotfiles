@@ -28,8 +28,10 @@ call minpac#add('vim-test/vim-test')
 "golang
 call minpac#add('fatih/vim-go')
 
-call minpac#add('neoclide/coc.nvim', {'branch': 'master' })
-call minpac#add('antoinemadec/coc-fzf')
+"LSP
+call minpac#add('neovim/nvim-lspconfig')
+" call minpac#add('neoclide/coc.nvim', {'branch': 'master' })
+" call minpac#add('antoinemadec/coc-fzf')
 "call minpac#add('neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'})
 
 "-->
