@@ -1,10 +1,12 @@
 " Folding configurations
 "------------------------
 
-"Enable indent folding
-set foldenable
-set foldmethod=indent
-set foldlevel=999
+"Enable folding
+"set foldenable
+set nofoldenable    " disable folding
+set foldmethod=expr
+"Requires nvim-treesitter
+set foldexpr=nvim_treesitter#foldexpr()
 
 " So I never use s, and I want a single key map to toggle folds, thus
 " lower s = toggle <=> upper S = toggle recursive
