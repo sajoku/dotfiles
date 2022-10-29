@@ -282,19 +282,17 @@ au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>c ofrom celery.contrib impo
 let g:go_fmt_command = "goimports"
 
 "CocAction
-nnoremap <silent><nowait> <space>d :call CocAction("jumpDefinition", v:false)<CR>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"nnoremap <silent><nowait> <space>d :call CocAction("jumpDefinition", v:false)<CR>
+"" Do default action for next item.
+"nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+"" Do default action for previous item.
+"nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+"" " Highlight the symbol and its references when holding the cursor.
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
 "Pick a differnt color for the currentl selection
-nnoremap <silent><nowait> <space>c :call CocAction('colorPresentation')<CR>
-
-let g:coc_global_extensions = ['coc-solargraph']
+"nnoremap <silent><nowait> <space>c :call CocAction('colorPresentation')<CR>
 
 "create skeleton files for these 
 autocmd BufNewFile readme.md 0r ~/dotfiles/skeletons/readme.md
