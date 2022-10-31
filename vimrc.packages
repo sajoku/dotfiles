@@ -33,6 +33,16 @@ call minpac#add('neovim/nvim-lspconfig')
 call minpac#add('williamboman/mason.nvim')
 call minpac#add('williamboman/mason-lspconfig.nvim')
 
+"LSP Autocompletion
+"ms-jpq/coq_nvim")
+call minpac#add('hrsh7th/cmp-nvim-lsp')
+call minpac#add('hrsh7th/cmp-buffer')
+call minpac#add('hrsh7th/nvim-cmp')
+call minpac#add('ray-x/cmp-treesitter')
+
+"LSP 
+call minpac#add('jose-elias-alvarez/null-ls.nvim')
+
 " call minpac#add('neoclide/coc.nvim', {'branch': 'master' })
 " call minpac#add('antoinemadec/coc-fzf')
 "call minpac#add('neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'})
