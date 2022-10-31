@@ -143,6 +143,12 @@ require('lspconfig')['solargraph'].setup{
   flags = lsp_flags,
   init_options = {
     formatting = true
+  },
+  settings = {
+    solargraph = {
+      diagnostics = true,
+      formatting = true,
+    },
   }
 }
 require('lspconfig')['ruby_ls'].setup{
