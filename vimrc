@@ -22,14 +22,14 @@ filetype plugin indent on
 " syntax on
 set encoding=utf-8
 
-function! MyHighlights() abort
-    highlight CocHighlightText  ctermfg=black ctermbg=7 guifg=magenta
-endfunction
+" function! MyHighlights() abort
+"     highlight CocHighlightText  ctermfg=black ctermbg=7 guifg=magenta
+" endfunction
 
-augroup MyColors
-    autocmd!
-    autocmd ColorScheme * call MyHighlights()
-augroup END
+" augroup MyColors
+"     autocmd!
+"     autocmd ColorScheme * call MyHighlights()
+" augroup END
 
 silent! colorscheme dim
 
@@ -178,7 +178,7 @@ au BufNewFile,BufRead *.py
 let python_highlight_all = 1
 
 function! StatusDiagnostic() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
+  let info = get(b:, '', {})
   if empty(info) | return '' | endif
   let msgs = []
   if get(info, 'error', 0)

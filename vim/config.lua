@@ -134,59 +134,20 @@ local on_attach = function(client, bufnr)
 
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-require('lspconfig')['solargraph'].setup{
-  on_attach = on_attach,
-  flags = lsp_flags,
-  init_options = {
-    formatting = true
-  },
-  settings = {
-    solargraph = {
-      diagnostics = true,
-      formatting = true,
-    },
-  }
-}
-require('lspconfig')['ruby_ls'].setup{
-  on_attach = on_attach,
-  flags = lsp_flags,
-  default_config = {
-    cmd = { "bundle", "exec", "ruby-lsp" },
-    filetypes = { "ruby" },
-    init_options = {
-      enabledFeatures = enabled_features,
-    },
-    settings = {},
-  },
-  commands = {
-    FormatRuby = {
-      function()
-        vim.lsp.buf.format({
-          name = "ruby_lsp",
-          async = true,
-        })
-      end,
-      description = "Format using ruby-lsp",
-    },
-  },
-}
-require('lspconfig')['pyright'].setup{
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['tsserver'].setup{
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['rust_analyzer'].setup{
-  on_attach = on_attach,
-  flags = lsp_flags,
-  -- Server-specific settings...
-  settings = {
-    ["rust-analyzer"] = {}
-  }
-}
+require("mason").setup()
+mason_lspconfig = require("mason-lspconfig")
+mason_lspconfig.setup({
+    ensure_installed = { "solargraph", "rust_analyzer",
+    "pyright", "marksman",
+    "sumneko_lua", "tsserver",
+    "html", "glint",
+    "dockerls", "bashls",
+    "cucumber_language_server", "sqls", "taplo", "tailwindcss", "terraformls", "yamlls" }
+})
+mason_lspconfig.setup_handlers({
+  function (server_name)
+    require("lspconfig")[server_name].setup {
+      on_attach = on_attach,
+    }
+  end
+})
