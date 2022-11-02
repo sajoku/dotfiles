@@ -20,12 +20,15 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
+    { name = 'luasnip' },
+    { name = 'path' },
     { name = 'treesitter' },
   }),
 
 })
 
 vim.cmd [[
+  "- or in nvim ->  vim.opt.completeopt={"menuone", "noinsert", "noselect"}
   set completeopt=menuone,noinsert,noselect
   highlight! default link CmpItemKind CmpItemMenuDefault
 ]]
