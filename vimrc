@@ -33,8 +33,6 @@ set encoding=utf-8
 
 silent! colorscheme dim
 
-
-
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
 
@@ -216,6 +214,7 @@ nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc.test_runners')))
   exec printf('source %s/%s', getcwd(), '.vimrc.test_runners')
