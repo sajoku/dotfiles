@@ -209,8 +209,9 @@ set laststatus=2
 au VimResized * exe "normal! \<c-w>="
 
 runtime! macros/matchit.vim
-
-" These are coming from jank-m/vim-test
+"Running  commands from vim to fish is slow when the shell is set to fish :(
+"Setting it to bin/sh it's fast although we lose fish as the shell
+set shell=/bin/sh
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
