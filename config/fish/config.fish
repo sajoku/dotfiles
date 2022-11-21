@@ -13,8 +13,8 @@ if status is-interactive
   set -gx BUNDLER_EDITOR nvim
 
 
-  # Hide some things we never want to see :D
-  set -x export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.venv,.tox,coverage,tmp,.yarn,}/*" -g "!{.DS_Store,.keep}" 2> /dev/null'
+  set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,.venv,.tox,coverage,tmp,.yarn,}/*" -g "!{.DS_Store,.keep}" 2> /dev/null'
+  set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 
   #set -gx PYENV_ROOT "$HOME/.pyenv"
 
@@ -28,6 +28,8 @@ if status is-interactive
 end
 
 if status --is-login
+
+  # Hide some things we never want to see :D
   set -gx PATH $PATH "$HOME/dotfiles/bin"
   set -gx PATH $PATH "$HOME/.bin:/usr/local/sbin"
   set -gx PATH $PATH "$HOME/.bin:/usr/local/bin"
