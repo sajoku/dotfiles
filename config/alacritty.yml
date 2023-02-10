@@ -1,5 +1,10 @@
+live_config_reload: true
 env:
   TERM: xterm-256color
+shell:
+  program: /opt/homebrew/bin/fish
+  args:
+    - --login
 window:
   opacity: 1.0
   padding:
@@ -7,109 +12,109 @@ window:
     y: 0
   decorations: transparent
   startup_mode: SimpleFullscreen
-# shell:
-#   program: /opt/homebrew/bin/fish
-scrolling:
-  history: 0
 cursor:
   style: Block
   unfocused_hollow: true
+  vi_mode_style:
+    shape: Block
 font:
   normal:
-    family: MonoLisa Custom
-    style: Regular
+    family: MonoLisa
+    style: Light
   bold:
-    family: MonoLisa Custom
+    family: MonoLisa
     style: Bold
   italic:
-    family: MonoLisa Custom
+    family: MonoLisa
     style: Regular Italic
   bold_italic:
-    family: MonoLisa Custom
+    family: MonoLisa
     style: Bold Italic
   size: 14
-draw_bold_text_with_bright_colors: true
+  offset:
+    x: 0
+    y: 0
 # github Alacritty Colors
 # Catpuccin - Frappe
 colors:
   # Default colors
   primary:
-    background: '#303446' # base
-    foreground: '#C6D0F5' # text
+    background: '#24273A' # base
+    foreground: '#CAD3F5' # text
     # Bright and dim foreground colors
-    dim_foreground: '#C6D0F5' # text
-    bright_foreground: '#C6D0F5' # text
+    dim_foreground: '#CAD3F5' # text
+    bright_foreground: '#CAD3F5' # text
 
   # Cursor colors
   cursor:
-    text: '#303446' # base
-    cursor: '#F2D5CF' # rosewater
+    text: '#24273A' # base
+    cursor: '#F4DBD6' # rosewater
   vi_mode_cursor:
-    text: '#303446' # base
-    cursor: '#BABBF1' # lavender
+    text: '#24273A' # base
+    cursor: '#B7BDF8' # lavender
 
   # Search colors
   search:
     matches:
-      foreground: '#303446' # base
-      background: '#A5ADCE' # subtext0
+      foreground: '#24273A' # base
+      background: '#A5ADCB' # subtext0
     focused_match:
-      foreground: '#303446' # base
-      background: '#A6D189' # green
+      foreground: '#24273A' # base
+      background: '#A6DA95' # green
   footer_bar:
-    foreground: '#303446' # base
-    background: '#A5ADCE' # subtext0
+    foreground: '#24273A' # base
+    background: '#A5ADCB' # subtext0
 
   # Keyboard regex hints
   hints:
     start:
-      foreground: '#303446' # base
-      background: '#E5C890' # yellow
+      foreground: '#24273A' # base
+      background: '#EED49F' # yellow
     end:
-      foreground: '#303446' # base
-      background: '#A5ADCE' # subtext0
+      foreground: '#24273A' # base
+      background: '#A5ADCB' # subtext0
 
   # Selection colors
   selection:
-    text: '#303446' # base
-    background: '#F2D5CF' # rosewater
+    text: '#24273A' # base
+    background: '#F4DBD6' # rosewater
 
   # Normal colors
   normal:
-    black: '#51576D' # surface1
-    red: '#E78284' # red
-    green: '#A6D189' # green
-    yellow: '#E5C890' # yellow
-    blue: '#8CAAEE' # blue
-    magenta: '#F4B8E4' # pink
-    cyan: '#81C8BE' # teal
-    white: '#B5BFE2' # subtext1
+    black: '#494D64' # surface1
+    red: '#ED8796' # red
+    green: '#A6DA95' # green
+    yellow: '#EED49F' # yellow
+    blue: '#8AADF4' # blue
+    magenta: '#F5BDE6' # pink
+    cyan: '#8BD5CA' # teal
+    white: '#B8C0E0' # subtext1
 
   # Bright colors
   bright:
-    black: '#626880' # surface2
-    red: '#E78284' # red
-    green: '#A6D189' # green
-    yellow: '#E5C890' # yellow
-    blue: '#8CAAEE' # blue
-    magenta: '#F4B8E4' # pink
-    cyan: '#81C8BE' # teal
-    white: '#A5ADCE' # subtext0
+    black: '#5B6078' # surface2
+    red: '#ED8796' # red
+    green: '#A6DA95' # green
+    yellow: '#EED49F' # yellow
+    blue: '#8AADF4' # blue
+    magenta: '#F5BDE6' # pink
+    cyan: '#8BD5CA' # teal
+    white: '#A5ADCB' # subtext0
 
   # Dim colors
   dim:
-    black: '#51576D' # surface1
-    red: '#E78284' # red
-    green: '#A6D189' # green
-    yellow: '#E5C890' # yellow
-    blue: '#8CAAEE' # blue
-    magenta: '#F4B8E4' # pink
-    cyan: '#81C8BE' # teal
-    white: '#B5BFE2' # subtext1
+    black: '#494D64' # surface1
+    red: '#ED8796' # red
+    green: '#A6DA95' # green
+    yellow: '#EED49F' # yellow
+    blue: '#8AADF4' # blue
+    magenta: '#F5BDE6' # pink
+    cyan: '#8BD5CA' # teal
+    white: '#B8C0E0' # subtext1
 
   indexed_colors:
-    - { index: 16, color: '#EF9F76' }
-    - { index: 17, color: '#F2D5CF' }
+    - { index: 16, color: '#F5A97F' }
+    - { index: 17, color: '#F4DBD6' }
 selection:
   save_to_clipboard: false
 mouse:
@@ -119,4 +124,4 @@ mouse:
       args:
         - -a
         - Safari
-theme: Catppuccin-Frappe
+theme: Catppuccin-Macchiato
