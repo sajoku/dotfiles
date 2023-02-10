@@ -21,17 +21,20 @@ success_symbol = "[λ](green)"
 error_symbol = "[κ](red)"
 vicmd_symbol = "[❮](bold green)"
 
-[git_branch]
-format = "[$branch]($style)"
-style = "bright-black"
+# [git_branch]
+# format = "[$branch]($style)"
+# style = "bright-black"
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
 stashed = "≡"
 
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+[git_metrics]
+disabled = false
+
+# [git_state]
+# format = '\([$state( $progress_current/$progress_total)]($style)\) '
+# style = "bright-black"
 
 [cmd_duration]
 format = "[$duration]($style) "
