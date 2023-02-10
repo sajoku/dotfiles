@@ -10,6 +10,8 @@ $line_break\
 $python\
 $aws\
 $character"""
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
 
 [directory]
 style = "blue"
@@ -24,14 +26,7 @@ format = "[$branch]($style)"
 style = "bright-black"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-conflicted = "​"
-untracked = "​"
-modified = "​"
-staged = "​"
-renamed = "​"
-deleted = "​"
+format = '([$all_status$ahead_behind]($style) )'
 stashed = "≡"
 
 [git_state]
