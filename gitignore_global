@@ -21,3 +21,9 @@ public.cert
 local_notes/
 certificate.crt
 localhost.crt
+ignore-folder/
+prijsindexatie
+.yarn/cache/*
+.yarn/*
+notifier.rb
+parse_csv.rb
