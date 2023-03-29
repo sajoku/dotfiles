@@ -13,22 +13,21 @@ window:
   decorations: transparent
   startup_mode: SimpleFullscreen
 cursor:
-  style: Block
   unfocused_hollow: true
   vi_mode_style:
     shape: Block
 font:
   normal:
-    family: MonoLisa
+    family: MonoLisaLight Nerd Font
     style: Light
   bold:
-    family: MonoLisa
+    family: MonoLisa Nerd Font
     style: Bold
   italic:
-    family: MonoLisa
+    family: MonoLisa Nerd Font
     style: Regular Italic
   bold_italic:
-    family: MonoLisa
+    family: MonoLisa Nerd Font
     style: Bold Italic
   size: 14
   offset:
