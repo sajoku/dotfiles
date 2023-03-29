@@ -191,7 +191,6 @@ mason_lspconfig.setup({
 		"rust_analyzer",
 		"pyright",
 		"marksman",
-		"sumneko_lua",
 		"tsserver",
 		"html",
 		"glint",
