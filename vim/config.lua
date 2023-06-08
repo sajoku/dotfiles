@@ -197,7 +197,7 @@ mason_lspconfig.setup({
 		"dockerls",
 		"bashls",
 		"cucumber_language_server",
-		"sqls",
+		"sqlls",
 		"taplo",
 		"tailwindcss",
 		"terraformls",
