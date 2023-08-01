@@ -6,7 +6,7 @@ call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('junegunn/vim-easy-align')
-call minpac#add('airblade/vim-gitgutter')
+call minpac#add('airblade/vim-gitgutter', {'branch': 'main' })
 call minpac#add('preservim/nerdtree')
 call minpac#add('ryanoasis/vim-devicons')
 
@@ -16,6 +16,7 @@ call minpac#add("nvim-treesitter/nvim-treesitter-textobjects")
 call minpac#add("nvim-treesitter/nvim-treesitter-context")
 call minpac#add('RRethy/nvim-treesitter-endwise')
 call minpac#add('slim-template/vim-slim')
+call minpac#add('catppuccin/vim', { 'as': 'catppuccin' })
 
 
 
