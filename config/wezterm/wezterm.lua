@@ -4,12 +4,12 @@ function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		return "Catppuccin Mocha"
 	else
-		return "Catppuccin Frappe"
+		return "Catppuccin Macchiato"
 	end
 end
 
 return {
-	font = wezterm.font("MonoLisa Custom"),
+	font = wezterm.font("MonoLisa Variable"),
 	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 	hide_tab_bar_if_only_one_tab = true,
 
