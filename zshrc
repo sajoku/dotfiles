@@ -67,15 +67,6 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-
-# alias ssm=$'f() { unset AWS_VAULT; aws-vault exec $1 -- aws ssm start-session --target $( aws-vault exec $1 -- aws ec2 describe-instances --region eu-west-1 --filters "Name=tag:Name,Values='\''$2'\''" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[*].InstanceId" --output=text) };f'
-
-#export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
 # pyenv
 eval "$(pyenv init -)"
 
@@ -92,5 +83,4 @@ export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 eval "$(op completion zsh)"; compdef _op op
 
 #asdf
-#. /usr/local/opt/asdf/libexec/asdf.sh
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
