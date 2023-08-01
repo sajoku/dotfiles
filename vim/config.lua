@@ -115,22 +115,23 @@ require("null-ls").setup({
 		require("null-ls").builtins.completion.spell,
 		require("null-ls").builtins.diagnostics.standardrb,
 		require("null-ls").builtins.formatting.standardrb,
-		require("null-ls").builtins.formatting.isort,
-		require("null-ls").builtins.formatting.black,
+		require("null-ls").builtins.diagnostics.ruff,
+		require("null-ls").builtins.formatting.ruff,
 	},
 })
 require("mason-null-ls").setup({
-	ensure_installed = { "jq", "standardrb", "isort", "mypy", "prettier" },
+	ensure_installed = { "jq", "standardrb", "isort", "mypy", "prettier", "ruff" },
 	automatic_installation = true,
 })
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
+		bufnr = bufnr,
 		filter = function(client)
 			-- apply whatever logic you want (in this example, we'll only use null-ls)
+			-- This makes sure we only format whe null-ls is the lsp provided
 			return client.name == "null-ls"
 		end,
-		bufnr = bufnr,
 	})
 end
 
@@ -139,7 +140,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local on_attach = function(client, bufnr)
 	-- Check if we can autoformat
-	if client.supports_method("textDocument/formatting") then
+	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = augroup,
@@ -165,8 +166,8 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gR", vim.lsp.buf.rename, bufopts)
 	vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-	vim.keymap.set("n", "<space>f", function()
-		vim.lsp.buf.format({ async = true })
+	vim.keymap.set("n", "<space>F", function()
+		vim.lsp.buf.format({ async = false })
 	end, bufopts)
 	vim.api.nvim_create_autocmd("CursorHold", {
 		buffer = bufnr,
@@ -184,12 +185,11 @@ local on_attach = function(client, bufnr)
 	})
 end
 
-mason_lspconfig = require("mason-lspconfig")
+local mason_lspconfig = require("mason-lspconfig")
 mason_lspconfig.setup({
 	ensure_installed = {
 		"solargraph",
 		"rust_analyzer",
-		"pyright",
 		"marksman",
 		"tsserver",
 		"html",
