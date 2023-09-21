@@ -140,6 +140,7 @@ lspconfig.lua_ls.setup {}
 lspconfig.tailwindcss.setup({})
 lspconfig.marksman.setup({})
 lspconfig.html.setup({})
+lspconfig.cssls.setup {}
 
 lspconfig.pyright.setup({})
 local on_attach_ruff_lsp = function(client, bufnr)
@@ -148,7 +149,10 @@ local on_attach_ruff_lsp = function(client, bufnr)
 end
 lspconfig.ruff_lsp.setup({
   on_attach = on_attach_ruff_lsp,
+  init_options = {
+  }
 })
+
 lspconfig.tsserver.setup({})
 lspconfig.standardrb.setup({
 })
@@ -182,7 +186,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+    --vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
     vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
     vim.keymap.set("n", "<space>wl", function()
