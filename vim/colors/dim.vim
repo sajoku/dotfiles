@@ -25,7 +25,7 @@ highlight DiffText       ctermfg=0    ctermbg=11   cterm=bold
 highlight Visual         ctermfg=NONE ctermbg=NONE cterm=inverse
 
 " Highlight search matches in black, with a yellow background
-highlight Search         ctermfg=0    ctermbg=13 cterm=italic
+highlight Search         ctermfg=0    ctermbg=3 cterm=italic
 
 " Dim line numbers, comments, color columns, the status line, splits and sign
 " columns.
