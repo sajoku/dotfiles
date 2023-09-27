@@ -11,8 +11,6 @@ let colors_name = "dim"
 highlight TSMethod  cterm=italic
 highlight TSParameter cterm=italic
 
-" Check if we can get some niceties in by making some things italic
-higlight Function        cterm=italic
 
 " In diffs, added lines are green, changed lines are yellow, deleted lines are
 " red, and changed text (within a changed line) is bright yellow and bold.
