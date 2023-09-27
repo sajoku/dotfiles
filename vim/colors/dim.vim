@@ -42,6 +42,7 @@ if &background == "light"
   highlight StatusLineNC ctermfg=8    ctermbg=7    cterm=NONE
   highlight VertSplit    ctermfg=8    ctermbg=7    cterm=NONE
   highlight SignColumn                ctermbg=NONE
+  highlight ErrorMsg     ctermfg=232 ctermbg=7 guifg=#141413 guibg=#ff9eb8
 else
   highlight LineNr       ctermfg=8
   highlight Comment      ctermfg=0    ctermbg=5     cterm=italic
@@ -55,4 +56,5 @@ else
   highlight StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
   highlight VertSplit    ctermfg=7    ctermbg=8    cterm=NONE
   highlight SignColumn                ctermbg=NONE
+  highlight ErrorMsg     ctermfg=232 ctermbg=211 guifg=#141413 guibg=#ff9eb8
 endif
