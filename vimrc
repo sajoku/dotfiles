@@ -230,7 +230,7 @@ set guioptions-=e
 set laststatus=2
 let g:crystalline_auto_prefix_groups = 1
 
-let g:crystalline_theme = 'onehalflight'
+let g:crystalline_theme = 'hybrid'
 set showtabline=0
 set laststatus=2
 
