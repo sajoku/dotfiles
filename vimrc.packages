@@ -28,6 +28,9 @@ else
   call minpac#add('junegunn/fzf')
   call minpac#add('junegunn/fzf.vim')
   call minpac#add('roman/golden-ratio')
+  
+  " ->
+  call minpac#add('rhysd/git-messenger.vim')
 
   "->Tests
   call minpac#add('vim-test/vim-test')
