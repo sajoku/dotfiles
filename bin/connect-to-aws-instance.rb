@@ -35,11 +35,9 @@ if status.success?
     print "Enter the number of the instance (or press Ctrl+C to quit): "
     instance_number = gets.chomp.to_i
 
-    if instance_number.positive? && instance_number <= instances.length
-      break
-    else
-      puts "Invalid input. Please enter a valid number."
-    end
+    break if instance_number.positive? && instance_number <= instances.length
+
+    puts "Invalid input. Please enter a valid number."
   end
 
   # Get the instance ID based on the selected number
