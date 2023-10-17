@@ -24,7 +24,7 @@ symbol = " "
 
 [aws]
 format = "on [$symbol$profile $duration]($style) "
-style = "bold yellow"
+style = "yellow"
 symbol = "  "
 
 [buf]
@@ -51,8 +51,8 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-
-
+style="yellow"
+format="[$symbol$branch(:$remote_branch)]($style) '"
 
 [golang]
 symbol = " "
