@@ -16,7 +16,7 @@ else
   call minpac#add('ryanoasis/vim-devicons')
 
   "syntax highlighting straight from nvim
-  call minpac#add('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate')
+  call minpac#add('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
   call minpac#add("nvim-treesitter/nvim-treesitter-textobjects")
   call minpac#add("nvim-treesitter/nvim-treesitter-context")
   call minpac#add('RRethy/nvim-treesitter-endwise')
