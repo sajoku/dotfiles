@@ -4,6 +4,7 @@ if !exists('g:loaded_minpac')
   echomsg "MinPac not available on this system. Find me in vimrc.packages"
 else
   call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
 
   call minpac#add('tpope/vim-fugitive')
   call minpac#add('tpope/vim-commentary')
