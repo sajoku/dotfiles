@@ -1,13 +1,13 @@
-require("nvim-treesitter.configs").setup({
-  -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html", "css" },
+require('nvim-treesitter.configs').setup({
+  -- A list of parser names, or 'all'
+  ensure_installed = { 'c', 'lua', 'rust', 'ruby', 'python', 'json', 'vim', 'yaml', 'html', 'css', 'htmldjango' },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   auto_install = true,
-  -- List of parsers to ignore installing (for "all")
-  --ignore_install = { "javascript" },
+  -- List of parsers to ignore installing (for 'all')
+  --ignore_install = { 'javascript' },
 
   highlight = {
     enable = true,
@@ -21,10 +21,10 @@ require("nvim-treesitter.configs").setup({
   },
 })
 
-require("treesitter-context").setup({
+require('treesitter-context').setup({
   enable = true,         -- Enable this plugin (Can be enabled/disabled later via commands)
   max_lines = 0,         -- How many lines the window should span. Values <= 0 mean no limit.
-  trim_scope = "outer",  -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  trim_scope = 'outer',  -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
   min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
   patterns = {           -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
     -- For all filetypes
@@ -32,60 +32,60 @@ require("treesitter-context").setup({
     -- By setting the 'default' entry below, you can control which nodes you want to
     -- appear in the context window.
     default = {
-      "class",
-      "function",
-      "method",
-      "for",
-      "while",
-      "if",
-      "switch",
-      "case",
+      'class',
+      'function',
+      'method',
+      'for',
+      'while',
+      'if',
+      'switch',
+      'case',
     },
     -- Patterns for specific filetypes
     -- If a pattern is missing, *open a PR* so everyone can benefit.
     tex = {
-      "chapter",
-      "section",
-      "subsection",
-      "subsubsection",
+      'chapter',
+      'section',
+      'subsection',
+      'subsubsection',
     },
     rust = {
-      "impl_item",
-      "struct",
-      "enum",
+      'impl_item',
+      'struct',
+      'enum',
     },
     scala = {
-      "object_definition",
+      'object_definition',
     },
     vhdl = {
-      "process_statement",
-      "architecture_body",
-      "entity_declaration",
+      'process_statement',
+      'architecture_body',
+      'entity_declaration',
     },
     markdown = {
-      "section",
+      'section',
     },
     elixir = {
-      "anonymous_function",
-      "arguments",
-      "block",
-      "do_block",
-      "list",
-      "map",
-      "tuple",
-      "quoted_content",
+      'anonymous_function',
+      'arguments',
+      'block',
+      'do_block',
+      'list',
+      'map',
+      'tuple',
+      'quoted_content',
     },
     json = {
-      "pair",
+      'pair',
     },
     yaml = {
-      "block_mapping_pair",
+      'block_mapping_pair',
     },
   },
   exact_patterns = {
     -- Example for a specific filetype with Lua patterns
-    -- Treat patterns.rust as a Lua pattern (i.e "^impl_item$" will
-    -- exactly match "impl_item" only)
+    -- Treat patterns.rust as a Lua pattern (i.e '^impl_item$' will
+    -- exactly match 'impl_item' only)
     -- rust = true,
   },
 
@@ -93,7 +93,7 @@ require("treesitter-context").setup({
   --     you can safely ignore them.
 
   zindex = 20,     -- The Z-index of the context window
-  mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
+  mode = 'cursor', -- Line used to calculate context. Choices: 'cursor', 'topline'
   -- Separator between context and content. Should be a single character string, like '-'.
   -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
   separator = nil,
@@ -105,26 +105,26 @@ local async_formatting = function(bufnr)
 
   vim.lsp.buf_request(
     bufnr,
-    "textDocument/formatting",
+    'textDocument/formatting',
     vim.lsp.util.make_formatting_params({}),
     function(err, res, ctx)
       if err then
-        local err_msg = type(err) == "string" and err or err.message
+        local err_msg = type(err) == 'string' and err or err.message
         -- you can modify the log message / level (or ignore it completely)
-        vim.notify("formatting: " .. err_msg, vim.log.levels.WARN)
+        vim.notify('formatting: ' .. err_msg, vim.log.levels.WARN)
         return
       end
 
       -- don't apply results if buffer is unloaded or has been modified
-      if not vim.api.nvim_buf_is_loaded(bufnr) or vim.api.nvim_buf_get_option(bufnr, "modified") then
+      if not vim.api.nvim_buf_is_loaded(bufnr) or vim.api.nvim_buf_get_option(bufnr, 'modified') then
         return
       end
 
       if res then
         local client = vim.lsp.get_client_by_id(ctx.client_id)
-        vim.lsp.util.apply_text_edits(res, bufnr, client and client.offset_encoding or "utf-16")
+        vim.lsp.util.apply_text_edits(res, bufnr, client and client.offset_encoding or 'utf-16')
         vim.api.nvim_buf_call(bufnr, function()
-          vim.cmd("silent noautocmd update")
+          vim.cmd('silent noautocmd update')
         end)
       end
     end
@@ -133,7 +133,7 @@ end
 
 -- Setup language servers.
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local lspconfig = require("lspconfig")
+local lspconfig = require('lspconfig')
 
 lspconfig.luau_lsp.setup({})
 lspconfig.lua_ls.setup {}
@@ -160,50 +160,50 @@ lspconfig.solargraph.setup {}
 lspconfig.rust_analyzer.setup({
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
-    ["rust-analyzer"] = {},
+    ['rust-analyzer'] = {},
   },
 })
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-    --vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-    vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set("n", "<space>wl", function()
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, opts)
-    vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
-    vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "<space>f", function()
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format({ async = true })
     end, opts)
   end,
 })
 
 -- On save format the code
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd('BufWritePre', {
   buffer = buffer,
   callback = function()
     vim.lsp.buf.format { async = false }
