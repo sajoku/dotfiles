@@ -15,10 +15,12 @@ local act = wezterm.action
 return {
   --font = wezterm.font("MonoLisa Variable"),
   --font = wezterm.font("CommitMono"),
-  font = wezterm.font("MonoLisa Variable", { stretch = 'UltraCondensed' }),
+  font = wezterm.font("MonoLisa Variable", { stretch = 'UltraCondensed', weight = "Light" }),
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   --colors = scheme_for_appearance(wezterm.gui.get_appearance()),
   hide_tab_bar_if_only_one_tab = true,
+  font_size = 16,
+  line_height = 0.84,
 
   keys = {
     {
