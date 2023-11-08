@@ -18,18 +18,15 @@ let &runtimepath.=',~/.vim/pack/minpac/start'
 
 filetype plugin indent on
 
-" syntax enable
-" syntax on
 set encoding=utf-8
 
-" function! MyHighlights() abort
-"     highlight CocHighlightText  ctermfg=black ctermbg=7 guifg=magenta
-" endfunction
-
-" augroup MyColors
-"     autocmd!
-"     autocmd ColorScheme * call MyHighlights()
-" augroup END
+"This must be before the colorscheme command otherwise
+" it will not stick
+augroup matchup_matchparen_highlight
+  autocmd!
+  autocmd ColorScheme * hi MatchParen ctermfg=red guifg=red ctermbg=NONE
+  autocmd ColorScheme * hi MatchWord ctermfg=red guifg=blue ctermbg=NONE cterm=italic gui=italic
+augroup END
 
 silent! colorscheme dim
 
@@ -237,7 +234,12 @@ set laststatus=2
 " autoresize splits when resizing
 au VimResized * exe "normal! \<c-w>="
 
-runtime! macros/matchit.vim
+let g:matchup_matchparen_nomode = 'i'
+let g:matchup_matchpref = {}
+let g:matchup_matchpref.html = {'tagnameonly': 1}
+let g:matchup_matchpref.htmldjango = {'tagnameonly': 1}
+
+
 "Running  commands from vim to fish is slow when the shell is set to fish :(
 "Setting it to bin/sh it's fast although we lose fish as the shell
 set shell=/bin/sh
