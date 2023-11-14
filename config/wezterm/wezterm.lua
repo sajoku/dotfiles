@@ -43,5 +43,14 @@ return {
     {
       key = '5', mods = 'CMD', action = act.SendString "\x13\x35"
     },
+    {
+      key = '6', mods = 'CMD', action = act.SendString "\x13\x36"
+    },
+    {
+      key = '7', mods = 'CMD', action = act.SendString "\x13\x37"
+    },
+    {
+      key = '8', mods = 'CMD', action = act.SendString "\x13\x38"
+    },
   },
 }
