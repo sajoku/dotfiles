@@ -7,7 +7,7 @@ function scheme_for_appearance(appearance)
     --return require('lua/rose-pine-moon').colors()
   else
     --return require('lua/rose-pine-moon').colors()
-    return "Catppuccin Frappe"
+    return "Catppuccin Macchiato"
   end
 end
 
@@ -15,13 +15,18 @@ local act = wezterm.action
 return {
   --font = wezterm.font("MonoLisa Variable"),
   --font = wezterm.font("CommitMono"),
-  font = wezterm.font("MonoLisa Variable", { stretch = 'UltraCondensed', weight = "Light" }),
+  --font = wezterm.font("MonoLisa Variable", { stretch = 'UltraCondensed' }),
+  --font = wezterm.font("MonaSpace Neon"),
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   --colors = scheme_for_appearance(wezterm.gui.get_appearance()),
   hide_tab_bar_if_only_one_tab = true,
   font_size = 16,
-  line_height = 0.84,
-
+  --line_height = 0.84,
+  --
+  -- ligatures test: => ==> <== != === => <=  --> <-- --> <!-- !~
+  font = wezterm.font('MonaSpace Neon'),
+  harfbuzz_features = { 'ss01=1', 'ss02=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'calt=1',
+    'dlig=1' },
   keys = {
     {
       key = "n",
