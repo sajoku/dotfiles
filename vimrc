@@ -24,11 +24,13 @@ set encoding=utf-8
 " it will not stick
 augroup matchup_matchparen_highlight
   autocmd!
-  autocmd ColorScheme * hi MatchParen ctermfg=red guifg=red ctermbg=NONE
-  autocmd ColorScheme * hi MatchWord ctermfg=red guifg=blue ctermbg=NONE cterm=italic gui=italic
+  autocmd ColorScheme * hi MatchParen ctermbg=NONE
+  autocmd ColorScheme * hi MatchWord  ctermbg=NONE cterm=underline gui=underline
 augroup END
 
-silent! colorscheme dim
+"silent! colorscheme dim
+
+colorscheme catppuccin-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
