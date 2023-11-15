@@ -268,8 +268,9 @@ set rtp+=/opt/homebrew/opt/fzf
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
-nmap g/ :Ack!<space>
-nmap <c-p> :cclose<CR>:FzfFiles<CR>
+"nmap g/ :Ack!<space>
+""nmap <c-p> :cclose<CR>:FzfFiles<CR>
+"nnoremap <ctrl>p  :Telescope find_files<cr>
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
@@ -286,7 +287,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,rel
 " FZF commands and not have to remember 'Colors' and 'History/' etc.
 let g:fzf_command_prefix = 'Fzf'
 
-nnoremap <ctrl>p :FZF<CR>
 
 "Git
 nnoremap <leader>G :Git commit<cr>

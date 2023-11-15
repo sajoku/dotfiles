@@ -104,38 +104,6 @@ require('treesitter-context').setup({
   separator = nil,
 })
 
--- Autoformatting with LSP
-local async_formatting = function(bufnr)
-  bufnr = bufnr or vim.api.nvim_get_current_buf()
-
-  vim.lsp.buf_request(
-    bufnr,
-    'textDocument/formatting',
-    vim.lsp.util.make_formatting_params({}),
-    function(err, res, ctx)
-      if err then
-        local err_msg = type(err) == 'string' and err or err.message
-        -- you can modify the log message / level (or ignore it completely)
-        vim.notify('formatting: ' .. err_msg, vim.log.levels.WARN)
-        return
-      end
-
-      -- don't apply results if buffer is unloaded or has been modified
-      if not vim.api.nvim_buf_is_loaded(bufnr) or vim.api.nvim_buf_get_option(bufnr, 'modified') then
-        return
-      end
-
-      if res then
-        local client = vim.lsp.get_client_by_id(ctx.client_id)
-        vim.lsp.util.apply_text_edits(res, bufnr, client and client.offset_encoding or 'utf-16')
-        vim.api.nvim_buf_call(bufnr, function()
-          vim.cmd('silent noautocmd update')
-        end)
-      end
-    end
-  )
-end
-
 -- Completions with nvim-cmp
 local cmp = require 'cmp'
 
@@ -158,7 +126,6 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
   }, {
     { name = 'buffer' },
@@ -168,7 +135,7 @@ cmp.setup({
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
-    { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+    { name = 'git' },
   }, {
     { name = 'buffer' },
   })
@@ -282,3 +249,10 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.lsp.buf.format { async = false }
   end
 })
+local builtin = require('telescope.builtin')
+local actions = require("telescope.actions")
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
