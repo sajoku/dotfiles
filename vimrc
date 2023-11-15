@@ -264,29 +264,6 @@ let g:VtrAppendNewline = 1
 
 "SEARCHING --------------------
 set rtp+=/opt/homebrew/opt/fzf
-" shortcut for searching through whole folder
-if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
-endif
-"nmap g/ :Ack!<space>
-""nmap <c-p> :cclose<CR>:FzfFiles<CR>
-"nnoremap <ctrl>p  :Telescope find_files<cr>
-
-command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
-
-let g:fzf_files_options = 
-      \ '--preview "bat {} 2> /dev/null | head -'.&lines.'"'
-
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,/build/,*.nib,*.tmp,*.log,releases/*,*.pyc
-"
-" FZF
-" -----------------
-" This prefixes all FZF-provided commands with 'Fzf' so I can easily find cool
-" FZF commands and not have to remember 'Colors' and 'History/' etc.
-let g:fzf_command_prefix = 'Fzf'
-
 
 "Git
 nnoremap <leader>G :Git commit<cr>
