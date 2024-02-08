@@ -1,3 +1,64 @@
+require("rose-pine").setup({
+  variant = "auto",      -- auto, main, moon, or dawn
+  dark_variant = "main", -- main, moon, or dawn
+  dim_inactive_windows = false,
+  extend_background_behind_borders = true,
+
+  enable = {
+    terminal = true,
+    legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+    migrations = true,        -- Handle deprecated options automatically
+  },
+
+  styles = {
+    bold = true,
+    italic = true,
+    transparency = true,
+  },
+
+  highlight_groups = {
+    StatusLine = { fg = "love", bg = "love", blend = 10 },
+    StatusLineNC = { fg = "subtle", bg = "surface" },
+    TelescopeBorder = { fg = "highlight_high", bg = "none" },
+    TelescopeNormal = { bg = "none" },
+    TelescopePromptNormal = { bg = "base" },
+    TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+    TelescopeSelection = { fg = "text", bg = "base" },
+    TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+  },
+})
+
+local auto_dark_mode = require('auto-dark-mode')
+auto_dark_mode.setup({
+  update_interval = 1000,
+  set_dark_mode = function()
+    vim.api.nvim_set_option('background', 'dark')
+    vim.cmd("colorscheme rose-pine-moon")
+  end,
+  set_light_mode = function()
+    vim.api.nvim_set_option('background', 'light')
+    vim.cmd("colorscheme rose-pine-dawn")
+  end,
+})
+
+-- require("catppuccin").setup({
+--   flavour = "mocha", -- latte, frappe, macchiato, mocha
+--   background = {     -- :h background
+--     light = "mocha",
+--     dark = "mocha",
+--   },
+--   transparent_background = true, -- disables setting the background color.
+--   show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
+--   term_colors = true,            -- sets terminal colors (e.g. `g:terminal_color_0`)
+--   dim_inactive = {
+--     enabled = true,              -- dims the background color of inactive window
+--     shade = "light",
+--     percentage = 0.45,           -- percentage of the shade to apply to the inactive window
+--   },
+-- })
+
+
+
 require('nvim-treesitter.configs').setup({
   -- A list of parser names, or 'all'
   ensure_installed = { 'c', 'lua', 'rust', 'ruby', 'python', 'json', 'vim', 'yaml', 'html', 'css', 'htmldjango',
@@ -104,64 +165,6 @@ require('treesitter-context').setup({
   separator = nil,
 })
 
--- Completions with nvim-cmp
-local cmp = require 'cmp'
-
-cmp.setup({
-  snippet = {
-    -- REQUIRED - you must specify a snippet engine
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-    end,
-  },
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  }),
-  sources = cmp.config.sources({
-    { name = 'luasnip' }, -- For luasnip users.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'git' },
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
-
--- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 -- Setup language servers.
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lspconfig = require('lspconfig')
@@ -174,7 +177,7 @@ lspconfig.html.setup({})
 lspconfig.cssls.setup {}
 
 lspconfig.pyright.setup({
-  capabilities = capabilities,
+  --capabilities = capabilities,
 })
 local on_attach_ruff_lsp = function(client, bufnr)
   -- Disable hover in favor of Pyright
@@ -250,9 +253,10 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end
 })
 local builtin = require('telescope.builtin')
-local actions = require("telescope.actions")
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
+vim.keymap.set('n', 'g/', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})

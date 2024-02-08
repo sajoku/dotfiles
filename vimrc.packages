@@ -80,7 +80,10 @@ else
 
   "Colors and theme related
   call minpac#add('rbong/vim-crystalline')
-  call minpac#add('catppuccin/nvim', { 'as': 'catppuccin' })
+  call minpac#add('catppuccin/nvim', { 'name': 'catppuccin' })
+
+  call minpac#add('rose-pine/neovim', {'name': 'rose-pine'})
+  call minpac#add('f-person/auto-dark-mode.nvim')
 
   "tmux
   "call minpac#add('sajoku/vim-tmux-navigator', {'branch': 'indicator'})
