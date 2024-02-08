@@ -28,9 +28,7 @@ augroup matchup_matchparen_highlight
   autocmd ColorScheme * hi MatchWord  ctermbg=NONE cterm=underline gui=underline
 augroup END
 
-"silent! colorscheme dim
-
-colorscheme catppuccin-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+"colorscheme catppuccin-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
