@@ -13,6 +13,9 @@ error_symbol = "[κ](red)"
 [git_metrics]
 disabled = false
 
+[bun]
+format = 'via [🍔 $version](bold green) '
+
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
