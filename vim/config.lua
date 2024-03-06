@@ -58,7 +58,6 @@ auto_dark_mode.setup({
 -- })
 
 
-
 require('nvim-treesitter.configs').setup({
   -- A list of parser names, or 'all'
   ensure_installed = { 'c', 'lua', 'rust', 'ruby', 'python', 'json', 'vim', 'yaml', 'html', 'css', 'htmldjango',
@@ -85,6 +84,9 @@ require('nvim-treesitter.configs').setup({
     enable = true, -- mandatory, false will disable the whole extension
     disable = {},  -- optional, list of language that will be disabled
   },
+  autotag = {
+    enable = true,
+  }
 })
 
 require('treesitter-context').setup({

@@ -22,6 +22,7 @@ else
   call minpac#add("nvim-treesitter/nvim-treesitter-context")
   call minpac#add('RRethy/nvim-treesitter-endwise')
   call minpac#add('andymass/vim-matchup')
+
   call minpac#add('slim-template/vim-slim')
   call minpac#add('catppuccin/vim', { 'as': 'catppuccin' })
 
@@ -72,9 +73,10 @@ else
   call minpac#add('tpope/vim-bundler')
   "<-Ruby
 
-  "<-- Auto formatting
-  call minpac#add('AndrewRadev/tagalong.vim', {'branch': 'main' })
-  "-->
+  ""<-- Auto formatting
+  "call minpac#add('AndrewRadev/tagalong.vim', {'branch': 'main' })
+  call minpac#add("windwp/nvim-ts-autotag")
+  ""-->
 
   "handlebars - mustach
   call minpac#add('mustache/vim-mustache-handlebars')
