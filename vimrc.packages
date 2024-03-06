@@ -17,6 +17,7 @@ else
 
   "syntax highlighting straight from nvim
   call minpac#add('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
+  call minpac#add('https://github.com/apple/pkl-neovim.git')
   call minpac#add("nvim-treesitter/nvim-treesitter-textobjects")
   call minpac#add("nvim-treesitter/nvim-treesitter-context")
   call minpac#add('RRethy/nvim-treesitter-endwise')
@@ -86,7 +87,6 @@ else
   call minpac#add('f-person/auto-dark-mode.nvim')
 
   "tmux
-  "call minpac#add('sajoku/vim-tmux-navigator', {'branch': 'indicator'})
   call minpac#add('christoomey/vim-tmux-navigator')
   call minpac#add('christoomey/vim-tmux-runner')
 endif

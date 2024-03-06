@@ -207,6 +207,19 @@ lspconfig.rust_analyzer.setup({
   },
 })
 
+local hasConfigs, configs = pcall(require, "nvim-treesitter.configs")
+if hasConfigs then
+  configs.setup {
+    ensure_installed = "pkl",
+    highlight = {
+      enable = true, -- false will disable the whole extension
+    },
+    indent = {
+      enable = true
+    }
+  }
+end
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
