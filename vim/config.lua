@@ -41,6 +41,8 @@ auto_dark_mode.setup({
   end,
 })
 
+require('nvim-highlight-colors').setup {}
+
 -- require("catppuccin").setup({
 --   flavour = "mocha", -- latte, frappe, macchiato, mocha
 --   background = {     -- :h background
@@ -173,7 +175,14 @@ local lspconfig = require('lspconfig')
 
 lspconfig.luau_lsp.setup({})
 lspconfig.lua_ls.setup {}
-lspconfig.tailwindcss.setup({})
+local on_attach_tailwind = function(client, bufnr)
+  -- other stuff --
+  require("tailwindcss-colors").buf_attach(bufnr)
+end
+
+lspconfig.tailwindcss.setup({
+  on_attach = on_attach_tailwind,
+})
 lspconfig.marksman.setup({})
 lspconfig.html.setup({})
 lspconfig.cssls.setup {}
