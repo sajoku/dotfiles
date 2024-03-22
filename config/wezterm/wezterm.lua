@@ -15,7 +15,7 @@ local act = wezterm.action
 return {
   --font = wezterm.font("MonoLisa Variable"),
   --font = wezterm.font("CommitMono"),
-  font = wezterm.font("MonoLisa Variable", { stretch = 'UltraCondensed' }),
+  font = wezterm.font("MonoLisa Variable"),
   freetype_load_flags = 'NO_HINTING', --Fix some settings specific for MonoLisa, https://github.com/wez/wezterm/issues/3919
   --font = wezterm.font("MonaSpace Neon"),
   --color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
