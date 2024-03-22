@@ -1,63 +1,22 @@
-require("rose-pine").setup({
-  variant = "auto",      -- auto, main, moon, or dawn
-  dark_variant = "main", -- main, moon, or dawn
-  dim_inactive_windows = false,
-  extend_background_behind_borders = true,
-
-  enable = {
-    terminal = true,
-    legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-    migrations = true,        -- Handle deprecated options automatically
-  },
-
-  styles = {
-    bold = true,
-    italic = true,
-    transparency = true,
-  },
-
-  highlight_groups = {
-    StatusLine = { fg = "love", bg = "love", blend = 10 },
-    StatusLineNC = { fg = "subtle", bg = "surface" },
-    TelescopeBorder = { fg = "highlight_high", bg = "none" },
-    TelescopeNormal = { bg = "none" },
-    TelescopePromptNormal = { bg = "base" },
-    TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-    TelescopeSelection = { fg = "text", bg = "base" },
-    TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
-  },
-})
-
-local auto_dark_mode = require('auto-dark-mode')
-auto_dark_mode.setup({
-  update_interval = 1000,
-  set_dark_mode = function()
-    vim.api.nvim_set_option('background', 'dark')
-    vim.cmd("colorscheme rose-pine-moon")
-  end,
-  set_light_mode = function()
-    vim.api.nvim_set_option('background', 'light')
-    vim.cmd("colorscheme rose-pine-dawn")
-  end,
-})
-
 require('nvim-highlight-colors').setup {}
 
--- require("catppuccin").setup({
---   flavour = "mocha", -- latte, frappe, macchiato, mocha
---   background = {     -- :h background
---     light = "mocha",
---     dark = "mocha",
---   },
---   transparent_background = true, -- disables setting the background color.
---   show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
---   term_colors = true,            -- sets terminal colors (e.g. `g:terminal_color_0`)
---   dim_inactive = {
---     enabled = true,              -- dims the background color of inactive window
---     shade = "light",
---     percentage = 0.45,           -- percentage of the shade to apply to the inactive window
---   },
--- })
+require("catppuccin").setup({
+  flavour = "frappe", -- latte, frappe, macchiato, mocha
+  background = {      -- :h background
+    light = "mocha",
+    dark = "mocha",
+  },
+  transparent_background = true, -- disables setting the background color.
+  show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
+  term_colors = true,            -- sets terminal colors (e.g. `g:terminal_color_0`)
+  dim_inactive = {
+    enabled = true,              -- dims the background color of inactive window
+    shade = "light",
+    percentage = 0.15,           -- percentage of the shade to apply to the inactive window
+  },
+})
+vim.cmd.colorscheme "catppuccin"
+
 
 
 require('nvim-treesitter.configs').setup({

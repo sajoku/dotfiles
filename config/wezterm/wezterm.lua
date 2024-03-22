@@ -3,11 +3,10 @@ local wezterm = require("wezterm")
 function scheme_for_appearance(appearance)
   -- Macchiato, Frappe, Latte, Mocha
   if appearance:find("Dark") then
-    return require('lua/rose-pine-moon').colors()
-    --return "Catppuccin Frappe"
+    return "Catppuccin Macchiato"
   else
-    return require('lua/rose-pine-dawn').colors()
-    --return "Catppuccin Mocha"
+    --return require('tokyonight_day').colors()
+    return "Catppuccin Frappe"
   end
 end
 
@@ -18,8 +17,8 @@ return {
   font = wezterm.font("MonoLisa Variable"),
   freetype_load_flags = 'NO_HINTING', --Fix some settings specific for MonoLisa, https://github.com/wez/wezterm/issues/3919
   --font = wezterm.font("MonaSpace Neon"),
-  --color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-  colors = scheme_for_appearance(wezterm.gui.get_appearance()),
+  color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+  --colors = scheme_for_appearance(wezterm.gui.get_appearance()),
   hide_tab_bar_if_only_one_tab = true,
   font_size = 16,
   --line_height = 0.84,
