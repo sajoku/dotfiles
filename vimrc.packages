@@ -78,6 +78,7 @@ else
   ""<-- Auto formatting
   "call minpac#add('AndrewRadev/tagalong.vim', {'branch': 'main' })
   call minpac#add("windwp/nvim-ts-autotag")
+  call minpac#add("windwp/nvim-autopairs")
   ""-->
 
   "handlebars - mustach
@@ -89,6 +90,7 @@ else
 
   call minpac#add('rose-pine/neovim', {'name': 'rose-pine'})
   call minpac#add('f-person/auto-dark-mode.nvim')
+  call minpac#add("folke/tokyonight.nvim")
 
   "tmux
   call minpac#add('christoomey/vim-tmux-navigator')
