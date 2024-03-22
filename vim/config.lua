@@ -88,6 +88,20 @@ require('nvim-treesitter.configs').setup({
   },
   autotag = {
     enable = true,
+    enable_rename = true,
+    enable_close = true,
+    enable_close_on_slash = true,
+    filetypes = {
+      'html', 'htmldjango',
+      'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte',
+      'vue', 'tsx',
+      'jsx', 'rescript', 'ts',
+      'rb', 'ruby',
+      'xml',
+      'php',
+      'markdown',
+      'astro', 'glimmer', 'handlebars', 'hbs'
+    }
   }
 })
 
