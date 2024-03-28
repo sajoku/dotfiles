@@ -252,7 +252,7 @@ nmap <silent> <leader>g :TestVisit<CR>
 if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc.test_runners')))
   exec printf('source %s/%s', getcwd(), '.vimrc.test_runners')
 endif
-let g:test#strategy = 'vtr'
+let g:test#strategy = 'vimux'
 
 
 "Python support for vim tmux runner

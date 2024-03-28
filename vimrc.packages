@@ -95,4 +95,6 @@ else
   "tmux
   call minpac#add('christoomey/vim-tmux-navigator')
   call minpac#add('christoomey/vim-tmux-runner')
+  call minpac#add('preservim/vimux')
+
 endif
