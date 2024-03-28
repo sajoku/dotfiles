@@ -1,19 +1,30 @@
 require('nvim-highlight-colors').setup {}
 
 require("catppuccin").setup({
-  flavour = "frappe", -- latte, frappe, macchiato, mocha
-  background = {      -- :h background
-    light = "mocha",
-    dark = "mocha",
+  flavour = "auto", -- latte, frappe, macchiato, mocha
+  background = {    -- :h background
+    light = "latte",
+    dark = "frappe",
   },
   transparent_background = true, -- disables setting the background color.
   show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
   term_colors = true,            -- sets terminal colors (e.g. `g:terminal_color_0`)
   dim_inactive = {
     enabled = true,              -- dims the background color of inactive window
-    shade = "light",
-    percentage = 0.15,           -- percentage of the shade to apply to the inactive window
+    shade = "dark",
+    percentage = 0.42,           -- percentage of the shade to apply to the inactive window
   },
+  integrations = {
+    cmp = true,
+    gitgutter = true,
+    nvimtree = true,
+    treesitter = true,
+    notify = true,
+    mini = {
+      enabled = true,
+      indentscope_color = "",
+    },
+  }
 })
 vim.cmd.colorscheme "catppuccin"
 
@@ -158,7 +169,18 @@ lspconfig.tailwindcss.setup({
 })
 lspconfig.marksman.setup({})
 lspconfig.html.setup({})
-lspconfig.cssls.setup {}
+local cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
+cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.cssls.setup {
+  capabilities = cssls_capabilities,
+  settings = {
+    css = {
+      lint = {
+        unknownAtRules = 'ignore' --ignore @apply and @tailwind
+      }
+    }
+  }
+}
 
 lspconfig.pyright.setup({
   --capabilities = capabilities,
