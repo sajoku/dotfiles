@@ -8,8 +8,6 @@ set foldmethod=expr
 "Requires nvim-treesitter
 set foldexpr=nvim_treesitter#foldexpr()
 
-" So I never use s, and I want a single key map to toggle folds, thus
-" lower s = toggle <=> upper S = toggle recursive
 nnoremap <leader>ff za
 nnoremap <leader>FF zA
 
