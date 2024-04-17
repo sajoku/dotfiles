@@ -12,19 +12,17 @@ end
 
 local act = wezterm.action
 return {
-  --font = wezterm.font("MonoLisa Variable"),
-  --font = wezterm.font("CommitMono"),
-  font = wezterm.font("MonoLisa Variable"),
-  freetype_load_flags = 'NO_HINTING', --Fix some settings specific for MonoLisa, https://github.com/wez/wezterm/issues/3919
-  --font = wezterm.font("MonaSpace Neon"),
+  font = wezterm.font("Berkeley Mono Variable"),
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   --colors = scheme_for_appearance(wezterm.gui.get_appearance()),
   hide_tab_bar_if_only_one_tab = true,
   font_size = 16,
   --line_height = 0.84,
   --
-  -- ligatures test: => ==> <== != === => <=  --> <-- --> <!-- !~
-  -- Or Radon Var, Krypton Var, Xenon Var
+  -- /* ligatures test  */
+  -- => ==> <== != === => <=  --> <-- --> <!-- !~
+  -- 0 1 2 3 4 5 6 7 8 9
+  -- www ### ## #   /* /*
   -- font = wezterm.font('MonaSpace Neon Var'),
   -- harfbuzz_features = { 'ss01=1', 'ss02=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'calt=1',
   --   'dlig=1' },
