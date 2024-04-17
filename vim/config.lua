@@ -182,9 +182,20 @@ lspconfig.cssls.setup {
   }
 }
 
-lspconfig.pyright.setup({
-  --capabilities = capabilities,
-})
+lspconfig.pyright.setup {
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+}
 local on_attach_ruff_lsp = function(client, bufnr)
   -- Disable hover in favor of Pyright
   client.server_capabilities.hoverProvider = false
