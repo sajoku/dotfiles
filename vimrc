@@ -20,6 +20,7 @@ filetype plugin indent on
 
 set encoding=utf-8
 
+
 "This must be before the colorscheme command otherwise
 " it will not stick
 augroup matchup_matchparen_highlight
@@ -28,7 +29,8 @@ augroup matchup_matchparen_highlight
   autocmd ColorScheme * hi MatchWord  ctermbg=NONE cterm=underline gui=underline
 augroup END
 
-"colorscheme catppuccin "-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+
+"colorscheme catppuccin-frappe "-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
 set noshowmode                           "Do not show the regular mode ( --- INSERT --) because airline already does this"
@@ -325,7 +327,7 @@ function! s:SourceConfigFilesIn(directory)
   endfor
 endfunction
 
-let g:python3_host_prog = "~/.pyenv/versions/3.10.0/bin/python"
+let g:python3_host_prog = "~/.pyenv/versions/3.12.2/bin/python"
 
 "source files from rcfiles moves config files for plugins to own files
 call s:SourceConfigFilesIn('ftplugin')
