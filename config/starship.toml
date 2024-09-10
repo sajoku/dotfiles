@@ -7,7 +7,7 @@ style = "blue"
 read_only = " "
 
 [character]
-success_symbol = "[\uf0a9](green)"
+success_symbol = "[\uf0a9](blue)"
 error_symbol = "[κ](red)"
 
 [git_metrics]
