@@ -4,7 +4,9 @@ spec_hits = []
 checks = {
   '_spec\.rb$' => ['focus:\s*true'],
   '\.rb$' => ['binding\.pry', "debugger"],
-  '\.py$' => ["code.interact"]
+  '\.py$' => ["code.interact"],
+  '\.ts$' => ["console.debug"],
+  '\.js$' => ["console.debug"]
 }
 
 # Find the names of all the filenames that have been (A)dded (C)opied or (M)odified
@@ -31,7 +33,7 @@ filenames.each do |filename|
 end
 
 if spec_hits.any?
-  puts "\e[33m>>> Remove the following problems from these files before committing\e[0m"
+  puts "Remove the following problems from these files: \n"
   puts spec_hits.join("\n")
 end
 
