@@ -277,7 +277,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 augroup myautocmds
   autocmd!
   au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>d obinding.pry<ESC>
-  au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>d oimport pdb; pdb.set_trace()<ESC>
+  au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>d obreakpoint()<ESC>
   au BufNewFile,BufRead,BufEnter *.js nnoremap <leader>d odebugger;<ESC>
   au BufNewFile,BufRead,BufEnter *.ts nnoremap <leader>d odebugger;<ESC>
 augroup END
