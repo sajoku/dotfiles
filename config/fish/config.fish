@@ -35,6 +35,7 @@ if status --is-login
   set -gx PATH $PATH "$HOME/.bin:/usr/local/bin"
   set -gx PATH $PATH "$HOME/.cargo/bin"
   set -gx PATH $PATH ".git/safe/../../bin"
+  set -gx PATH $PATH "$HOME/go/bin"
 
   #set -gx PATH $PATH "PYENV_ROOT/bin:$PATH"
   set -gx PATH $PATH "/opt/homebrew/bin"
