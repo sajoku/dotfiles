@@ -23,17 +23,13 @@ alias grs='git rebase --skip'
 alias fb='gb -a | grep -i $1'
 alias gst='git status'
 
+alias gco-fzf='gco $(git tag | fzf)'
+alias gcb='gco $(gb | fzf)'
+alias gpf="git push --force-with-lease"
+
 #rails
 alias devlog='tail -f log/development.log'
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
-
-#rake typos
-alias ake='rake'
-alias raek='rake'
-alias rk="rake"
-alias rkae='rake'
-alias rale='rake'
-alias rak='rake'
 
 #directory navigation
 alias dot='cd ~/dotfiles'
@@ -49,11 +45,11 @@ alias tma='tmux attach'
 alias wion='networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
 alias wioff='networksetup -setairportpower en0 off'
 
-#shows lines of code for rb files
+#shows lines of code for coding files
+alias locate_rb="find . -name '*.rb' | xargs wc -l"
+alias locate_py="find . -name '*.py' | xargs wc -l"
 
-alias loc="find . -name '*.rb' | xargs wc -l"
-
-#move to django builtin tempaltes
+#move to django builtin templates
 alias djdocs="cd ~/.pyenv/versions/3.6.1/lib/python3.6/site-packages/django/contrib/admin/templates/registration"
 
 #move to administration directory on iCloud Drive
