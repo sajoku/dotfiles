@@ -1,0 +1,6 @@
+#!/bin/sh
+
+brew upgrade
+fisher update
+
+#//nvim vimrc.packages
