@@ -26,7 +26,8 @@ else
   call minpac#add('slim-template/vim-slim')
   call minpac#add('catppuccin/vim', { 'as': 'catppuccin' })
 
-
+  call minpac#add("SmiteshP/nvim-navic")
+  call minpac#add("utilyre/barbecue.nvim")
 
   call minpac#add('mileszs/ack.vim')
   call minpac#add('junegunn/fzf')
