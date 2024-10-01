@@ -6,19 +6,20 @@ function scheme_for_appearance(appearance)
     return "Catppuccin Macchiato"
   else
     --return require('tokyonight_day').colors()
-    -- return "Catppuccin Frappe"
-    return "rose-pine-dawn"
+    return "Catppuccin Frappe"
+    --return "rose-pine-dawn"
   end
 end
 
 local act = wezterm.action
 return {
-  font = wezterm.font("Berkeley Mono Variable"),
+  font = wezterm.font({ family = "Berkeley Mono Variable" }),
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   --colors = scheme_for_appearance(wezterm.gui.get_appearance()),
   hide_tab_bar_if_only_one_tab = true,
-  font_size = 16,
+  font_size = 18,
   --line_height = 0.84,
+  --line_height = 0.87,
   --
   -- /* ligatures test  */
   -- => ==> <== != === => <=  --> <-- --> <!-- !~
