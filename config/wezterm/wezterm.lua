@@ -6,7 +6,7 @@ function scheme_for_appearance(appearance)
     return "Catppuccin Macchiato"
   else
     --return require('tokyonight_day').colors()
-    return "Catppuccin Frappe"
+    return "Catppuccin Latte"
     --return "rose-pine-dawn"
   end
 end
