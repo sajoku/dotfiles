@@ -10,8 +10,8 @@ if filereadable(expand("~/dotfiles/vimrc.packages"))
 endif
 
 " minpac commands:
-command! PackUpdate source $MYVIMRC | call minpac#update()
-command! PackClean  source $MYVIMRC | call minpac#clean()
+command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
+command! PackClean  source $MYVIMRC | call PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
 
 let &runtimepath.=',~/.vim/pack/minpac/start'
