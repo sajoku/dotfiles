@@ -59,7 +59,7 @@ require("catppuccin").setup({
 })
 
 -- setup must be called before loading
-vim.cmd.colorscheme "catppuccin-latte"
+vim.cmd.colorscheme "catppuccin-mocha"
 --vim.cmd.colorscheme "catppuccin-latte"
 --vim.o.background = "dark" -- set moon or dawn
 
