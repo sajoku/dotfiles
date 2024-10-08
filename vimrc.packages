@@ -87,7 +87,7 @@ function! PackInit() abort
     call minpac#add('mustache/vim-mustache-handlebars')
   
     "Colors and theme related
-    call minpac#add('rbong/vim-crystalline')
+    call minpac#add('nvim-lualine/lualine.nvim')
     call minpac#add('catppuccin/nvim', { 'name': 'catppuccin' })
     "tmux
     call minpac#add('christoomey/vim-tmux-navigator')

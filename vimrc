@@ -21,15 +21,6 @@ filetype plugin indent on
 set encoding=utf-8
 
 
-"This must be before the colorscheme command otherwise
-" it will not stick
-augroup matchup_matchparen_highlight
-  autocmd!
-  autocmd ColorScheme * hi MatchParen ctermbg=NONE
-  autocmd ColorScheme * hi MatchWord  ctermbg=NONE cterm=underline gui=underline
-augroup END
-
-
 "colorscheme catppuccin-frappe "-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 set clipboard=unnamed                    "Allow copy paste in terminal vim
@@ -165,71 +156,14 @@ function! StatusDiagnostic() abort
 endfunction
 
 
-function! g:GroupSuffix()
-  if mode() ==# 'i' && &paste
-    return '2'
-  endif
-  if &modified
-    return '1'
-  endif
-  return ''
-endfunction
 
-function! g:CrystallineStatuslineFn(winnr)
-  let g:crystalline_group_suffix = g:GroupSuffix()
-  let l:curr = a:winnr == winnr()
-  let l:s = ''
 
-  if l:curr
-    let l:s .= crystalline#ModeSection(0, 'A', 'B')
-  else
-    let l:s .= crystalline#HiItem('Fill')
-  endif
-  let l:s .= ' %f%h%w%m%r '
-  if l:curr
-    let l:s .= crystalline#Sep(0, 'B', 'Fill') . ' %{fugitive#Head()} - %{StatusDiagnostic()}'
-  endif
 
-  let l:s .= '%='
-  if l:curr
-    let l:s .= crystalline#Sep(1, 'Fill', 'B') . '%{&paste ? " PASTE " : " "}'
-    let l:s .= crystalline#Sep(1, 'B', 'A')
-  endif
-  if winwidth(a:winnr) > 80
-    let l:s .= ' %{&ft} %l/%L %2v %P '
-  else
-    let l:s .= ' '
-  endif
-
-  return l:s
-endfunction
-
-function! g:CrystallineTablineFn()
-  let l:max_width = &columns
-  let l:right = '%='
-
-  let l:right .= crystalline#Sep(1, 'TabFill', 'TabType')
-  let l:max_width -= 1
-
-  let l:vimlabel = has('nvim') ?  ' NVIM ' : ' VIM '
-  let l:right .= l:vimlabel
-  let l:max_width -= strchars(l:vimlabel)
-
-  let l:max_tabs = 23
-
-  return crystalline#DefaultTabline({
-        \ 'enable_sep': 1,
-        \ 'max_tabs': l:max_tabs,
-        \ 'max_width': l:max_width
-        \ }) . l:right
-endfunction
 
 set showtabline=2
 set guioptions-=e
 set laststatus=2
-let g:crystalline_auto_prefix_groups = 1
 
-let g:crystalline_theme = 'hybrid'
 set showtabline=0
 set laststatus=2
 
@@ -294,19 +228,6 @@ au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>c ofrom celery.contrib impo
 "Golang (vim-go settings)
 "" format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
-
-"CocAction
-"nnoremap <silent><nowait> <space>d :call CocAction("jumpDefinition", v:false)<CR>
-"" Do default action for next item.
-"nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-"" Do default action for previous item.
-"nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-"" " Highlight the symbol and its references when holding the cursor.
-"autocmd CursorHold * silent call CocActionAsync('highlight')
-
-
-"Pick a differnt color for the currentl selection
-"nnoremap <silent><nowait> <space>c :call CocAction('colorPresentation')<CR>
 
 "create skeleton files for these 
 autocmd BufNewFile readme.md 0r ~/dotfiles/skeletons/readme.md
