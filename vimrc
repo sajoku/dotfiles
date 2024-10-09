@@ -20,6 +20,15 @@ filetype plugin indent on
 
 set encoding=utf-8
 
+"This must be before the colorscheme command otherwise it will not stick
+" This highlights match-up with underlines in things like html files instead of 
+" coloring the whole line. So this keeps the regular syntax highlighting
+augroup matchup_matchparen_highlight
+  autocmd!
+  autocmd ColorScheme * hi MatchParen ctermbg=NONE
+  autocmd ColorScheme * hi MatchWord  ctermbg=NONE cterm=underline gui=underline
+augroup END
+
 
 "colorscheme catppuccin-frappe "-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
@@ -174,6 +183,7 @@ let g:matchup_matchparen_nomode = 'i'
 let g:matchup_matchpref = {}
 let g:matchup_matchpref.html = {'tagnameonly': 1}
 let g:matchup_matchpref.htmldjango = {'tagnameonly': 1}
+let g:matchup_matchparen_offscreen = {'method': 'popup'}
 
 
 "Running  commands from vim to fish is slow when the shell is set to fish :(
