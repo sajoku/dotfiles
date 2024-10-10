@@ -1,6 +1,7 @@
 require('nvim-highlight-colors').setup {}
 require("barbecue").setup()
 
+
 require("catppuccin").setup({
   flavour = "auto", -- latte, frappe, macchiato, mocha
   -- background = {    -- :h background
@@ -128,6 +129,7 @@ require('nvim-ts-autotag').setup({
   }
 })
 
+
 require('treesitter-context').setup({
   enable = true,         -- Enable this plugin (Can be enabled/disabled later via commands)
   max_lines = 0,         -- How many lines the window should span. Values <= 0 mean no limit.
@@ -211,7 +213,7 @@ require('treesitter-context').setup({
 local lspconfig = require('lspconfig')
 
 lspconfig.luau_lsp.setup({})
-lspconfig.lua_ls.setup {}
+lspconfig.lua_ls.setup({})
 local on_attach_tailwind = function(client, bufnr)
   -- other stuff --
   require("tailwindcss-colors").buf_attach(bufnr)
@@ -349,6 +351,16 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
+vim.diagnostic.config({
+  virtual_text = {
+    source = "if_many", -- Or "if_many"
+    prefix = '', -- Could be '●', '▎', 'x'
+  },
+  float = {
+    source = "always", -- Or "if_many"
+  },
+})
+
 -- Use LspAttach autocommand to only map the following keysvimrc
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -387,6 +399,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.lsp.buf.format { async = false }
   end
 })
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
