@@ -1,2 +1,10 @@
+import readline
 import rlcompleter
-pdb.Pdb.complete=rlcompleter.Completer(locals()).complete
+#import pdbpp
+
+readline.parse_and_bind("tab: complete")
+
+# try:
+#     import pdbpp  # pdb++ with color and sticky mode
+# except (ImportError, ModuleNotFoundError):
+#     pass
