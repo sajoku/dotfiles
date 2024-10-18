@@ -56,11 +56,11 @@ require("catppuccin").setup({
         ok = { "italic" },
       },
       underlines = {
-        errors = { "underline" },
-        hints = { "underline" },
-        warnings = { "underline" },
-        information = { "underline" },
-        ok = { "underline" },
+        errors = { "undercurl" },
+        hints = { "undercurl" },
+        warnings = { "undercurl" },
+        information = { "undercurl" },
+        ok = { "undercurl" },
       },
       inlay_hints = {
         background = true,
@@ -251,8 +251,8 @@ lspconfig.pyright.setup {
     },
   },
 }
-local on_attach_ruff_lsp = function(client, bufnr)
-end
+-- local on_attach_ruff_lsp = function(_client, bufnr)
+-- end
 lspconfig.ruff.setup({
   init_options = {
     settings = {
