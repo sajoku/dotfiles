@@ -32,6 +32,7 @@ set laststatus=2     " Always display the status line
 set showmatch
 set autowrite        " Automatically :write before running commands
 set formatoptions-=t " Don't auto-break long lines (re-enable this for prose)
+set formatoptions+=r " Don't auto-break long lines (re-enable this for prose)
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -50,6 +51,12 @@ set nojoinspaces
 set number
 set numberwidth=5
 set relativenumber
+
+set smarttab
+set scrolloff=10
+set breakindent
+set wildignore=*/node_mdules
+
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
