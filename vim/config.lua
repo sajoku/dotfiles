@@ -222,8 +222,30 @@ end
 lspconfig.tailwindcss.setup({
   on_attach = on_attach_tailwind,
 })
+
 lspconfig.marksman.setup({})
-lspconfig.html.setup({})
+
+lspconfig.html.setup({
+  filetypes = { 'html', 'templ' } -- ,'htmldjango' }
+})
+
+-- lspconfig.superhtml.setup {
+--   filetypes = { 'superhtml', 'djangohtml' }
+-- }
+--lspconfig.superhtml.setup({
+--  name = 'superhtml',
+--  cmd = { 'superhtml', 'lsp' },
+--  filetypes = { 'html', 'shtml', 'htm', 'htmldjango' },
+--  --root_dir = require('lspconfig.util').root_pattern('.git')
+--  root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1])
+--})
+--
+
+-- This does not trigger on htmldjango (check local .vimrc in projects also;))
+-- This only triggers shtml and html files as htmldjango will produce to much
+-- errors because of the {} and {%%} tags
+lspconfig.superhtml.setup({})
+
 local cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
 cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.cssls.setup {
