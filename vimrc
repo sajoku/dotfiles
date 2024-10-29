@@ -26,7 +26,7 @@ set encoding=utf-8
 augroup matchup_matchparen_highlight
   autocmd!
   autocmd ColorScheme * hi MatchParen ctermbg=NONE
-  autocmd ColorScheme * hi MatchWord  ctermbg=NONE cterm=underline gui=underline
+  autocmd ColorScheme * hi MatchWord  ctermbg=NONE cterm=undercurl gui=undercurl
 augroup END
 
 
