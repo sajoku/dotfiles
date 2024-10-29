@@ -221,6 +221,23 @@ end
 
 lspconfig.tailwindcss.setup({
   on_attach = on_attach_tailwind,
+  settings = {
+    tailwindCSS = {
+      classAttributes = { "class", "className", "class:list", "classList", "ngClass", "extra_class", ".*className" },
+      lint = {
+        cssConflict = "warning",
+        invalidApply = "error",
+        invalidConfigPath = "error",
+        invalidScreen = "error",
+        invalidTailwindDirective = "error",
+        invalidVariant = "error",
+        recommendedVariantOrder = "warning"
+      },
+      sortSelection = true,
+      codeAction = true,
+      validate = true
+    }
+  }
 })
 
 lspconfig.marksman.setup({})
