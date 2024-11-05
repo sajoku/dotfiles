@@ -3,10 +3,10 @@ local wezterm = require("wezterm")
 function scheme_for_appearance(appearance)
   -- Macchiato, Frappe, Latte, Mocha
   if appearance:find("Dark") then
-    return "Catppuccin Macchiato"
+    return "Catppuccin Frappe"
   else
     --return require('tokyonight_day').colors()
-    return "Catppuccin Mocha"
+    return "Catppuccin Latte"
     --return "rose-pine-dawn"
   end
 end
@@ -14,12 +14,14 @@ end
 local act = wezterm.action
 return {
   font = wezterm.font({ family = "Berkeley Mono Variable" }),
+  --font = wezterm.font({ family = "Monaspace Neon Var" }),
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   --colors = scheme_for_appearance(wezterm.gui.get_appearance()),
   hide_tab_bar_if_only_one_tab = true,
   font_size = 18,
   --line_height = 0.84,
   --line_height = 0.87,
+  freetype_load_flags = 'NO_HINTING',
   --
   -- /* ligatures test  */
   -- => ==> <== != === => <=  --> <-- --> <!-- !~

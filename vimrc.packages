@@ -93,6 +93,7 @@ function! PackInit() abort
     call minpac#add('christoomey/vim-tmux-navigator')
     call minpac#add('christoomey/vim-tmux-runner')
     call minpac#add('preservim/vimux')
+    call minpac#add('f-person/auto-dark-mode.nvim')
   
   endif
 endfunction

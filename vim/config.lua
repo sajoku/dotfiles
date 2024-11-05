@@ -75,8 +75,19 @@ require('lualine').setup {
   }
 }
 
+local auto_dark_mode = require('auto-dark-mode')
+
+auto_dark_mode.setup({
+  update_interval = 3000,
+  set_dark_mode = function()
+    vim.cmd('colorscheme catppuccin-frappe')
+  end,
+  set_light_mode = function()
+    vim.cmd('colorscheme catppuccin-latte')
+  end,
+})
 -- setup must be called before loading
-vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.cmd.colorscheme "catppuccin-macchiato"
 --vim.cmd.colorscheme "catppuccin-latte"
 --vim.o.background = "dark" -- set moon or dawn
 
