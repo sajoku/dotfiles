@@ -300,6 +300,17 @@ lspconfig.html.setup({
 -- This only triggers shtml and html files as htmldjango will produce to much
 -- errors because of the {} and {%%} tags
 lspconfig.superhtml.setup({})
+local function get_django_settings()
+  return os.getenv("DJANGO_SETTINGS_MODULE") or ""
+end
+lspconfig.djlsp.setup {
+  cmd = { "/Users/sajoku/.pyenv/shims/djlsp" },
+  init_options = {
+    djlsp = {
+      django_settings_module = get_django_settings()
+    }
+  }
+}
 
 local cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
 cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -388,7 +399,7 @@ cmp.setup {
     ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
     ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
     -- C-b (back) C-f (forward) for snippet placeholder navigation.
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
@@ -414,7 +425,8 @@ cmp.setup {
   }),
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    { name = 'luasnip', },
+    { name = 'path', },
   },
 }
 
@@ -450,7 +462,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- Pressing gd while go to definition
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
@@ -462,7 +474,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts) -- pressing gr wil find all reference
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format({ async = true })
     end, opts)
