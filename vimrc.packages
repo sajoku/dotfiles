@@ -26,6 +26,7 @@ function! PackInit() abort
   
     call minpac#add('slim-template/vim-slim')
     call minpac#add('catppuccin/nvim', { 'name': 'catppuccin' })
+    call minpac#add("rebelot/kanagawa.nvim")
   
     call minpac#add("SmiteshP/nvim-navic")
     call minpac#add("utilyre/barbecue.nvim")
@@ -37,7 +38,8 @@ function! PackInit() abort
     call minpac#add("nvim-telescope/telescope-fzf-native.nvim", {"do": "make"})
     call minpac#add("nvim-lua/plenary.nvim")
     call minpac#add('roman/golden-ratio')
-    
+    call minpac#add("folke/todo-comments.nvim")
+
     " ->
     call minpac#add('rhysd/git-messenger.vim')
   
