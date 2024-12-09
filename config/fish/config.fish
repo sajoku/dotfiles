@@ -72,5 +72,3 @@ set -g fish_color_valid_path --underline
 pyenv init - | source
 direnv hook fish | source
 starship init fish | source
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
