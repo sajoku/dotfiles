@@ -261,7 +261,7 @@ lspconfig.tailwindcss.setup({
   on_attach = on_attach_tailwind,
   settings = {
     tailwindCSS = {
-      classAttributes = { "class", "className", "class:list", "classList", "ngClass", "extra_class", ".*className" },
+      classAttributes = { "class", "className", "class:list", "classList", "ngClass", "extra_class", ".*className", "add_class" },
       lint = {
         cssConflict = "warning",
         invalidApply = "error",
