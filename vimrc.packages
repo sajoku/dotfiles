@@ -40,6 +40,11 @@ function! PackInit() abort
     call minpac#add('roman/golden-ratio')
     call minpac#add("folke/todo-comments.nvim")
 
+    " currently tryin out-->
+
+    call minpac#add("folke/which-key.nvim")
+    " <-
+
     " ->
     call minpac#add('rhysd/git-messenger.vim')
   
