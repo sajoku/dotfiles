@@ -1,0 +1,319 @@
+tap "1password/tap"
+tap "elastic/tap"
+tap "eth-p/software"
+tap "hashicorp/tap"
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "microsoft/git"
+tap "oven-sh/bun"
+tap "puma/puma"
+tap "unused-code/formulae"
+tap "wez/wezterm"
+# Search tool like grep, but optimized for programmers
+brew "ack"
+# Run your GitHub Actions locally
+brew "act"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
+# Color management engine supporting ICC profiles
+brew "little-cms2"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
+# New file format for still image compression
+brew "jpeg-xl"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# Columnar in-memory analytics layer designed to accelerate big data
+brew "apache-arrow"
+# Use AWS IAM credentials to authenticate to Kubernetes
+brew "aws-iam-authenticator"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Parser generator
+brew "bison"
+# Collection of portable C++ source libraries
+brew "boost"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
+# Tool to obtain certs from Let's Encrypt and autoenable HTTPS
+brew "certbot"
+# Computational Geometry Algorithms Library
+brew "cgal"
+# Anti-virus software
+brew "clamav"
+# Cross-platform make
+brew "cmake"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Cross-platform C++ GUI toolkit
+brew "wxwidgets"
+# Visually compare two PDF files
+brew "diff-pdf"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
+# EXIF parsing library
+brew "libexif"
+# Read, write, modify, and display EXIF data on the command-line
+brew "exif"
+# C library of Git core methods that is re-entrant and linkable
+brew "libgit2"
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Image processing and image analysis library
+brew "leptonica"
+# Multi-format archive and compression library
+brew "libarchive"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Libraries to talk to Microsoft SQL Server and Sybase databases
+brew "freetds"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU compiler collection
+brew "gcc"
+# Library for encoding and decoding .avif files
+brew "libavif"
+# File format designed to store large amounts of data
+brew "hdf5"
+# Cartographic Projections Library
+brew "proj"
+# Database of common MIME types
+brew "shared-mime-info"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# Postgres C API library
+brew "libpq"
+# GNOME XML library
+brew "libxml2"
+# Adds spatial SQL capabilities to SQLite
+brew "libspatialite"
+# Libraries and data formats for array-oriented scientific data
+brew "netcdf"
+# Optimized BLAS library
+brew "openblas"
+# Package for scientific computing with Python
+brew "numpy"
+# Geospatial Data Abstraction Library
+brew "gdal"
+# GitHub command-line tool
+brew "gh"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# GIF image/animation creator/editor
+brew "gifsicle"
+# Distributed revision control system
+brew "git"
+# Official GitLab CI runner
+brew "gitlab-runner"
+# TUI Git client inspired by Magit
+brew "gitu"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# Image manipulation
+brew "netpbm"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Kubernetes package manager
+brew "helm"
+# Process manager for Procfile-based applications
+brew "hivemind"
+# Improved top (interactive process viewer)
+brew "htop"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick@6"
+# Calculate various network masks, etc. from a given IP address
+brew "ipcalc"
+# Utility to optimize JPEG files
+brew "jpegoptim"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Modern load testing tool, using Go and JavaScript
+brew "k6"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Tool that can switch between kubectl contexts easily and create aliases
+brew "kubectx"
+# Portable Foreign Function Interface library
+brew "libffi"
+# XML security library
+brew "libxmlsec1"
+# YAML Parser
+brew "libyaml"
+# Language Server for the Lua language
+brew "lua-language-server"
+# Package manager for the Lua programming language
+brew "luarocks"
+# Language Server Protocol for Markdown
+brew "marksman"
+# High performance, distributed memory object caching system
+brew "memcached", restart_service: true
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# Open source relational database management system
+brew "mysql"
+# Open source relational database management system
+brew "mysql-client"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
+# Modern shell for the GitHub era
+brew "nushell"
+# Development kit for the Java programming language
+brew "openjdk"
+# Development kit for the Java programming language
+brew "openjdk@11"
+# Open source distributed and RESTful search engine
+brew "opensearch"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
+brew "openvpn"
+# PNG file optimizer
+brew "optipng"
+# Terminal multiplexer
+brew "tmux"
+# Process manager for Procfile-based applications and tmux
+brew "overmind"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Python dependency management tool
+brew "pipenv"
+# PNG image optimizing utility
+brew "pngquant"
+# Object-relational database system
+brew "postgresql@16", restart_service: true
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Cross-platform application and UI framework
+brew "qt"
+# Persistent key-value database, with built-in net interface
+brew "redis", restart_service: true
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
+# Safe, concurrent, practical language
+brew "rust"
+# C++ wrapper library around CGAL
+brew "sfcgal"
+# HTTP regression testing and benchmarking utility
+brew "siege"
+# Launcher to analyze a project with SonarQube
+brew "sonar-scanner"
+# Editor of encrypted files
+brew "sops"
+# Cross-shell prompt for astronauts
+brew "starship"
+# User interface to the TELNET protocol
+brew "telnet"
+# Terraform version manager inspired by rbenv
+brew "tfenv"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Maintained ctags implementation
+brew "universal-ctags"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Google's JavaScript engine
+brew "v8"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Execute commands when watched files change
+brew "watchexec"
+# Internet file retriever
+brew "wget"
+# JavaScript package manager
+brew "yarn"
+# Fast static site generator in a single binary with everything built-in
+brew "zola"
+# Everything you need to get started with Heroku
+brew "heroku/brew/heroku"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
+# A tool to manage rack apps in development with puma
+brew "puma/puma/puma-dev"
+# Identify potentially unused code
+brew "unused-code/formulae/unused"
+# Command-line interface for 1Password
+cask "1password-cli"
+# Automated testing of webapps for Google Chrome
+cask "chromedriver"
+# Cross-platform Git credential storage for multiple hosting providers
+cask "git-credential-manager"
+# Cross-platform Git credential storage for multiple hosting providers
+cask "git-credential-manager"
+# Browser for ambitious developers
+cask "polypane"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
+vscode "bierner.markdown-mermaid"
+vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+vscode "castwide.solargraph"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
+vscode "fourdigits.djlsp"
+vscode "koichisasada.vscode-rdbg"
+vscode "mechatroner.rainbow-csv"
+vscode "misogi.ruby-rubocop"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "mvllow.rose-pine"
+vscode "shopify.ruby-extensions-pack"
+vscode "shopify.ruby-lsp"
+vscode "sianglim.slim"
+vscode "sorbet.sorbet-vscode-extension"
+vscode "vayan.haml"
+vscode "vscodevim.vim"
+vscode "vstirbu.vscode-mermaid-preview"
+vscode "zainchen.json"
