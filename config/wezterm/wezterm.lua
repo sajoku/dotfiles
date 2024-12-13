@@ -1,35 +1,17 @@
 local wezterm = require("wezterm")
+local config = wezterm.config_builder()
 
-function scheme_for_appearance(appearance)
+local function scheme_for_appearance(appearance)
   -- Macchiato, Frappe, Latte, Mocha
   if appearance:find("Dark") then
     return "Catppuccin Frappe"
   else
-    --return require('tokyonight_day').colors()
     return "Catppuccin Latte"
-    --return "rose-pine-dawn"
   end
 end
 
-local act = wezterm.action
-return {
-  font = wezterm.font({ family = "Berkeley Mono Variable" }),
-  --font = wezterm.font({ family = "Monaspace Neon Var" }),
-  color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-  --colors = scheme_for_appearance(wezterm.gui.get_appearance()),
-  hide_tab_bar_if_only_one_tab = true,
-  font_size = 18,
-  --line_height = 0.84,
-  --line_height = 0.87,
-  freetype_load_flags = 'NO_HINTING',
-  --
-  -- /* ligatures test  */
-  -- => ==> <== != === => <=  --> <-- --> <!-- !~
-  -- 0 1 2 3 4 5 6 7 8 9
-  -- www ### ## #   /* /*
-  -- font = wezterm.font('MonaSpace Neon Var'),
-  -- harfbuzz_features = { 'ss01=1', 'ss02=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'calt=1',
-  --   'dlig=1' },
+local function set_keys()
+  local act = wezterm.action
   keys = {
     {
       key = "n",
@@ -60,5 +42,15 @@ return {
     {
       key = '8', mods = 'CMD', action = act.SendString "\x13\x38"
     },
-  },
-}
+  }
+  return keys
+end
+
+config.font = wezterm.font({ family = "Berkeley Mono Variable", weight = "Light" })
+config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+config.hide_tab_bar_if_only_one_tab = true
+config.font_size = 16
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 30
+config.keys = set_keys()
+return config
