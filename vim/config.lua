@@ -489,14 +489,18 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end
 })
 
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
-vim.keymap.set('n', 'g/', builtin.live_grep, {})
+--vim.keymap.set('n', 'g/', builtin.live_grep, {})
+vim.keymap.set("n", "<space>fg", require "lua.telescope.multi-ripgrep")
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+vim.keymap.set("n", "<space>fg", require "lua.telescope.multi-ripgrep")
 
 -- Prepend mise shims to PATH
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
