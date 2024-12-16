@@ -110,7 +110,8 @@ auto_dark_mode.setup({
     --vim.cmd("colorscheme kanagawa")
   end,
   set_light_mode = function()
-    vim.cmd('colorscheme catppuccin-latte')
+    vim.cmd('colorscheme catppuccin-frappe')
+    --vim.cmd("colorscheme kanagawa")
   end,
 })
 -- setup must be called before loading
@@ -339,6 +340,7 @@ lspconfig.pyright.setup {
     },
   },
 }
+
 -- local on_attach_ruff_lsp = function(_client, bufnr)
 -- end
 lspconfig.ruff.setup({
@@ -390,51 +392,93 @@ if hasConfigs then
 end
 
 
+local blink = require('blink.cmp')
+blink.setup({
+  highlight = {},
+  keymap = { preset = "enter" },
+  signature = {
+    enabled = true,
+  },
+  documentation = {
+    auto_show = true,
+    auto_show_delay_ms = 300,
+  },
+  --trigger = { signature_help = { enabled = true } },
+  sources = {
+    completion = {
+      enabled_providers = {
+        -- NOTE: blink >v0.7.6 moved `sources.completion.enabled_providers` to `sources.default`
+        "lsp",
+        "path",
+        "snippets",
+        "buffer",
+        "ripgrep", -- 👈🏻 add "ripgrep" here
+      },
+    },
+    providers = {
+      -- 👇🏻👇🏻 add the ripgrep provider config below
+      ripgrep = {
+        module = "blink-ripgrep",
+        name = "Ripgrep",
+        opts = {
+          prefix_min_len = 3,
+          context_size = 5,
+          max_filesize = "1M",
+          additional_rg_options = {}
+        },
+      },
+    },
+  },
+})
+
+
+
+
 -- luasnip setup
-local luasnip = require 'luasnip'
+-- local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
-local cmp = require 'cmp'
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
-    -- C-b (back) C-f (forward) for snippet placeholder navigation.
-    ['<C-space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  }),
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip', },
-    { name = 'path', },
-  },
-}
+-- local cmp = require 'cmp'
+-- cmp.setup {
+--   snippet = {
+--     expand = function(args)
+--       luasnip.lsp_expand(args.body)
+--     end,
+--   },
+--   mapping = cmp.mapping.preset.insert({
+--     ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
+--     ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
+--     -- C-b (back) C-f (forward) for snippet placeholder navigation.
+--     ['<C-space>'] = cmp.mapping.complete(),
+--     ['<CR>'] = cmp.mapping.confirm {
+--       behavior = cmp.ConfirmBehavior.Replace,
+--       select = true,
+--     },
+--     ['<Tab>'] = cmp.mapping(function(fallback)
+--       if cmp.visible() then
+--         cmp.select_next_item()
+--       elseif luasnip.expand_or_jumpable() then
+--         luasnip.expand_or_jump()
+--       else
+--         fallback()
+--       end
+--     end, { 'i', 's' }),
+--     ['<S-Tab>'] = cmp.mapping(function(fallback)
+--       if cmp.visible() then
+--         cmp.select_prev_item()
+--       elseif luasnip.jumpable(-1) then
+--         luasnip.jump(-1)
+--       else
+--         fallback()
+--       end
+--     end, { 'i', 's' }),
+--   }),
+--   sources = {
+--     { name = 'nvim_lsp' },
+--     { name = 'luasnip', },
+--     { name = 'path', },
+--   },
+-- }
 
 
 
@@ -502,7 +546,8 @@ vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
 --vim.keymap.set('n', 'g/', builtin.live_grep, {})
-vim.keymap.set("n", "<space>fg", require "lua.telescope.multi-ripgrep")
+--vim.keymap.set("n", "<space>fg", require "lua.telescope.multi-ripgrep")
+vim.keymap.set("n", "g/", require "lua.telescope.multi-ripgrep")
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
@@ -510,3 +555,6 @@ vim.keymap.set("n", "<space>fg", require "lua.telescope.multi-ripgrep")
 
 -- Prepend mise shims to PATH
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+
+--init todo-comments
+require("todo-comments").setup()
