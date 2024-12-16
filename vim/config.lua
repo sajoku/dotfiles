@@ -362,7 +362,13 @@ lspconfig.ts_ls.setup({
 })
 lspconfig.standardrb.setup({})
 -- lspconfig.solargraph.setup {}
-lspconfig.ruby_lsp.setup {}
+local lspconfig = require('lspconfig')
+lspconfig.ruby_lsp.setup({
+  init_options = {
+    formatter = 'standard',
+    linters = { 'standard' },
+  },
+})
 lspconfig.rust_analyzer.setup({
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
