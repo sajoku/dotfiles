@@ -110,7 +110,7 @@ auto_dark_mode.setup({
     --vim.cmd("colorscheme kanagawa")
   end,
   set_light_mode = function()
-    vim.cmd('colorscheme catppuccin-frappe')
+    vim.cmd('colorscheme catppuccin-latte')
     --vim.cmd("colorscheme kanagawa")
   end,
 })
