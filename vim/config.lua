@@ -394,26 +394,24 @@ end
 
 local blink = require('blink.cmp')
 blink.setup({
-  highlight = {},
   keymap = { preset = "enter" },
+  completion = {
+    -- Show documentation when selecting a completion item
+    documentation = { auto_show = true, auto_show_delay_ms = 300 },
+    -- Display a preview of the selected item on the current line
+    ghost_text = { enabled = true },
+  },
   signature = {
     enabled = true,
   },
-  documentation = {
-    auto_show = true,
-    auto_show_delay_ms = 300,
-  },
   --trigger = { signature_help = { enabled = true } },
   sources = {
-    completion = {
-      enabled_providers = {
-        -- NOTE: blink >v0.7.6 moved `sources.completion.enabled_providers` to `sources.default`
-        "lsp",
-        "path",
-        "snippets",
-        "buffer",
-        "ripgrep", -- 👈🏻 add "ripgrep" here
-      },
+    default = {
+      "lsp",
+      "path",
+      "snippets",
+      "buffer",
+      "ripgrep", -- 👈🏻 add "ripgrep" here
     },
     providers = {
       -- 👇🏻👇🏻 add the ripgrep provider config below
@@ -430,58 +428,6 @@ blink.setup({
     },
   },
 })
-
-
-
-
--- luasnip setup
--- local luasnip = require 'luasnip'
-
--- nvim-cmp setup
--- local cmp = require 'cmp'
--- cmp.setup {
---   snippet = {
---     expand = function(args)
---       luasnip.lsp_expand(args.body)
---     end,
---   },
---   mapping = cmp.mapping.preset.insert({
---     ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
---     ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
---     -- C-b (back) C-f (forward) for snippet placeholder navigation.
---     ['<C-space>'] = cmp.mapping.complete(),
---     ['<CR>'] = cmp.mapping.confirm {
---       behavior = cmp.ConfirmBehavior.Replace,
---       select = true,
---     },
---     ['<Tab>'] = cmp.mapping(function(fallback)
---       if cmp.visible() then
---         cmp.select_next_item()
---       elseif luasnip.expand_or_jumpable() then
---         luasnip.expand_or_jump()
---       else
---         fallback()
---       end
---     end, { 'i', 's' }),
---     ['<S-Tab>'] = cmp.mapping(function(fallback)
---       if cmp.visible() then
---         cmp.select_prev_item()
---       elseif luasnip.jumpable(-1) then
---         luasnip.jump(-1)
---       else
---         fallback()
---       end
---     end, { 'i', 's' }),
---   }),
---   sources = {
---     { name = 'nvim_lsp' },
---     { name = 'luasnip', },
---     { name = 'path', },
---   },
--- }
-
-
-
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
