@@ -1,0 +1,18 @@
+theme = light:catppuccin-frappe,dark:catppuccin-mocha
+
+font-family = "Berkeley Mono Variable"
+font-size = 18
+
+background-opacity = 0.95
+background-blur-radius = 20
+
+
+cursor-style = block_hollow
+cursor-style-blink = true
+
+macos-icon = official
+
+window-colorspace = display-p3
+
+macos-titlebar-style = hidden
+macos-non-native-fullscreen = true
