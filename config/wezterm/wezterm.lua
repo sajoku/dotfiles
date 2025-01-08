@@ -6,7 +6,7 @@ local function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
     return "Catppuccin Frappe"
   else
-    return "Catppuccin Latte"
+    return "Catppuccin Frappe"
   end
 end
 
@@ -46,11 +46,14 @@ local function set_keys()
   return keys
 end
 
-config.font = wezterm.font({ family = "Berkeley Mono Variable", weight = "Light" })
+config.font = wezterm.font({ family = "Berkeley Mono Variable" })
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 config.hide_tab_bar_if_only_one_tab = true
 config.font_size = 16
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 30
 config.keys = set_keys()
+config.freetype_load_flags = 'NO_HINTING'
+config.freetype_load_target = 'Normal'
+config.line_height = 0.87
 return config
