@@ -75,49 +75,17 @@ require('lualine').setup {
   }
 }
 
--- Default options:
-require('kanagawa').setup({
-  compile = false,  -- enable compiling the colorscheme
-  undercurl = true, -- enable undercurls
-  commentStyle = { italic = true },
-  functionStyle = {},
-  keywordStyle = { italic = true },
-  statementStyle = { bold = true },
-  typeStyle = {},
-  transparent = false,   -- do not set background color
-  dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
-  terminalColors = true, -- define vim.g.terminal_color_{0,17}
-  colors = {             -- add/modify theme and palette colors
-    palette = {},
-    theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-  },
-  overrides = function(colors) -- add/modify highlights
-    return {}
-  end,
-  theme = "dragon",  -- Load "wave" theme when 'background' option is not set
-  background = {     -- map the value of 'background' option to a theme
-    dark = "dragon", -- try "dragon" !
-    light = "dragon"
-  },
-})
-
 local auto_dark_mode = require('auto-dark-mode')
 
 auto_dark_mode.setup({
   update_interval = 3000,
   set_dark_mode = function()
-    vim.cmd('colorscheme catppuccin-frappe')
-    --vim.cmd("colorscheme kanagawa")
+    vim.cmd('colorscheme xcodedark')
   end,
   set_light_mode = function()
-    vim.cmd('colorscheme catppuccin-latte')
-    --vim.cmd("colorscheme kanagawa")
+    vim.cmd('colorscheme xcode')
   end,
 })
--- setup must be called before loading
--- vim.cmd.colorscheme "catppuccin-macchiato"
---vim.cmd.colorscheme "catppuccin-latte"
---vim.o.background = "dark" -- set moon or dawn
 
 require('nvim-treesitter.configs').setup({
   -- A list of parser names, or 'all'
@@ -396,6 +364,8 @@ local blink = require('blink.cmp')
 blink.setup({
   keymap = { preset = "enter" },
   completion = {
+    -- do not show in the cmdline of vim/nvim because I know these commands
+    menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end },
     -- Show documentation when selecting a completion item
     documentation = { auto_show = true, auto_show_delay_ms = 300 },
     -- Display a preview of the selected item on the current line
@@ -411,7 +381,7 @@ blink.setup({
       "path",
       "snippets",
       "buffer",
-      "ripgrep", -- 👈🏻 add "ripgrep" here
+      --"ripgrep", -- 👈🏻 add "ripgrep" here
     },
     providers = {
       -- 👇🏻👇🏻 add the ripgrep provider config below

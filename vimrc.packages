@@ -15,7 +15,7 @@ function! PackInit() abort
     call minpac#add('airblade/vim-gitgutter', {'branch': 'main' })
     call minpac#add('preservim/nerdtree')
     call minpac#add('nvim-tree/nvim-web-devicons')
-  
+
     "syntax highlighting straight from nvim
     call minpac#add('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
     call minpac#add('https://github.com/apple/pkl-neovim.git')
@@ -101,6 +101,7 @@ function! PackInit() abort
     "Colors and theme related
     call minpac#add('nvim-lualine/lualine.nvim')
     call minpac#add('catppuccin/nvim', { 'name': 'catppuccin' })
+    call minpac#add("lunacookies/vim-colors-xcode")
     "tmux
     call minpac#add('christoomey/vim-tmux-navigator')
     call minpac#add('christoomey/vim-tmux-runner')

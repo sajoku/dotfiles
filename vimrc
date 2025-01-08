@@ -44,6 +44,10 @@ autocmd BufReadPost *
 
 "NerdTree configuration
 let g:NERDTreeWinSize=31
+let g:NERDTreeShowHidden=1
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>f :NERDTreeFind<CR>
+"map <Leader>n :Lexplore<CR>
 
 "open in a vertial split
 "let g:netrw_browse_split =1 
@@ -65,9 +69,6 @@ let g:netrw_winsize = 25
 " Shortcuts
 
 
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>f :NERDTreeFind<CR>
-"map <Leader>n :Lexplore<CR>
 
 map <Leader>ea: :EasyAlign \<CR>
 map <Leader>ea = :EasyAlign =<CR>
