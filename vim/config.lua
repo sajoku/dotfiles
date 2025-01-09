@@ -362,10 +362,12 @@ end
 
 local blink = require('blink.cmp')
 blink.setup({
-  keymap = { preset = "enter" },
+  keymap = {
+    preset = "enter",
+  },
   completion = {
     -- do not show in the cmdline of vim/nvim because I know these commands
-    menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end },
+    -- menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end },
     -- Show documentation when selecting a completion item
     documentation = { auto_show = true, auto_show_delay_ms = 300 },
     -- Display a preview of the selected item on the current line
@@ -383,6 +385,7 @@ blink.setup({
       "buffer",
       --"ripgrep", -- 👈🏻 add "ripgrep" here
     },
+    cmdline = {},
     providers = {
       -- 👇🏻👇🏻 add the ripgrep provider config below
       ripgrep = {
