@@ -48,6 +48,12 @@ let g:NERDTreeShowHidden=1
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 "map <Leader>n :Lexplore<CR>
+let g:nvim_tree_show_icons = {
+    \ 'git': 1,
+    \ 'folders': 1,
+    \ 'files': 1,
+    \ 'folder_arrows': 1,
+    \ }
 
 "open in a vertial split
 "let g:netrw_browse_split =1 
@@ -222,6 +228,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 augroup myautocmds
   autocmd!
   au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>d obinding.pry<ESC>
+  au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>1 oputs("[DBG] => #{expand('%')}")<ESC>
   au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>d obreakpoint()<ESC>
   au BufNewFile,BufRead,BufEnter *.js nnoremap <leader>d odebugger;<ESC>
   au BufNewFile,BufRead,BufEnter *.ts nnoremap <leader>d odebugger;<ESC>
