@@ -381,13 +381,17 @@ lspconfig.ts_ls.setup({
     }
   }
 })
-lspconfig.standardrb.setup({})
+
+-- enable json
+lspconfig.jsonls.setup {}
+
+--lspconfig.standardrb.setup({})
 -- lspconfig.solargraph.setup {}
-local lspconfig = require('lspconfig')
+-- --local lspconfig = require('lspconfig')
 lspconfig.ruby_lsp.setup({
   init_options = {
-    formatter = 'standard',
-    linters = { 'standard' },
+    formatter = 'rubocop',
+    linters = { 'rubocop' },
   },
 })
 lspconfig.rust_analyzer.setup({
