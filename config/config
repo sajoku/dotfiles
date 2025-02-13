@@ -1,4 +1,4 @@
-theme = light:xcodelight,dark:xcodedark
+theme = light:rose-pine-dawn,dark:rose-pine-moon
 
 font-family = "Berkeley Mono Variable"
 font-size = 18
@@ -6,7 +6,7 @@ font-size = 18
 background-opacity = 0.95
 background-blur-radius = 20
 
-cursor-style = block
+cursor-style = block_hollow
 cursor-style-blink = true
 
 macos-icon = official
@@ -21,5 +21,3 @@ window-save-state = always
 
 # keybindings
 keybind = cmd+s>r=reload_config
-
-
