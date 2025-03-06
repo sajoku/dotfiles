@@ -229,6 +229,7 @@ augroup myautocmds
   autocmd!
   au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>d obinding.pry<ESC>
   au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>1 oputs("[DBG] => #{expand('%')}")<ESC>
+  au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>1 oprint(f"[DBG] => ")<ESC>
   au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>d obreakpoint()<ESC>
   au BufNewFile,BufRead,BufEnter *.js nnoremap <leader>d odebugger;<ESC>
   au BufNewFile,BufRead,BufEnter *.ts nnoremap <leader>d odebugger;<ESC>
@@ -267,6 +268,7 @@ function! s:SourceConfigFilesIn(directory)
 endfunction
 
 let g:python3_host_prog = "~/.pyenv/versions/3.12.2/bin/python"
+
 
 "source files from rcfiles moves config files for plugins to own files
 call s:SourceConfigFilesIn('ftplugin')
