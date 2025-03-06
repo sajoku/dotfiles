@@ -9,7 +9,7 @@ background-blur-radius = 20
 cursor-style = block_hollow
 cursor-style-blink = true
 
-macos-icon = official
+macos-icon = blueprint
 macos-titlebar-style = transparent
 macos-non-native-fullscreen = true
 
