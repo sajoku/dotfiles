@@ -70,53 +70,57 @@ require("catppuccin").setup({
   },
 })
 require("rose-pine").setup({
-  variant = "auto",      -- auto, main, moon, or dawn
-  dark_variant = "main", -- main, moon, or dawn
-  dim_inactive_windows = false,
+  variant = "dawn",      -- auto, main, moon, or dawn
+  dark_variant = "moon", -- main, moon, or dawn
+  dim_inactive_windows = true,
   extend_background_behind_borders = true,
 
   enable = {
     terminal = true,
-    legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-    migrations = true,        -- Handle deprecated options automatically
+    migrations = true, -- Handle deprecated options automatically
   },
-
   styles = {
     bold = true,
     italic = true,
-    transparency = false,
+    transparency = true,
+  },
+  highlight_groups = {
+    CurSearch = { fg = "base", bg = "leaf", inherit = false },
+    Search = { fg = "text", bg = "leaf", blend = 20, inherit = false },
+    StatusLine = { fg = "love", bg = "love", blend = 10 },
+    StatusLineNC = { fg = "subtle", bg = "surface" },
   },
 
-  groups = {
-    border = "muted",
-    link = "iris",
-    panel = "surface",
+  --   groups = {
+  --     border = "muted",
+  --     link = "iris",
+  --     panel = "surface",
 
-    error = "love",
-    hint = "iris",
-    info = "foam",
-    note = "pine",
-    todo = "rose",
-    warn = "gold",
+  --     error = "love",
+  --     hint = "iris",
+  --     info = "foam",
+  --     note = "pine",
+  --     todo = "rose",
+  --     warn = "gold",
 
-    git_add = "foam",
-    git_change = "rose",
-    git_delete = "love",
-    git_dirty = "rose",
-    git_ignore = "muted",
-    git_merge = "iris",
-    git_rename = "pine",
-    git_stage = "iris",
-    git_text = "rose",
-    git_untracked = "subtle",
+  --     git_add = "foam",
+  --     git_change = "rose",
+  --     git_delete = "love",
+  --     git_dirty = "rose",
+  --     git_ignore = "muted",
+  --     git_merge = "iris",
+  --     git_rename = "pine",
+  --     git_stage = "iris",
+  --     git_text = "rose",
+  --     git_untracked = "subtle",
 
-    h1 = "iris",
-    h2 = "foam",
-    h3 = "rose",
-    h4 = "gold",
-    h5 = "pine",
-    h6 = "foam",
-  },
+  --     h1 = "iris",
+  --     h2 = "foam",
+  --     h3 = "rose",
+  --     h4 = "gold",
+  --     h5 = "pine",
+  --     h6 = "foam",
+  --   },
 })
 
 require('lualine').setup {
@@ -141,7 +145,7 @@ auto_dark_mode.setup({
 require('nvim-treesitter.configs').setup({
   -- A list of parser names, or 'all'
   ensure_installed = { 'c', 'lua', 'rust', 'ruby', 'python', 'json', 'vim', 'yaml', 'html', 'css', 'htmldjango',
-    'javascript', 'typescript' },
+    'javascript', 'typescript', 'query' },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -390,10 +394,40 @@ lspconfig.jsonls.setup {}
 -- --local lspconfig = require('lspconfig')
 lspconfig.ruby_lsp.setup({
   init_options = {
-    formatter = 'rubocop',
-    linters = { 'rubocop' },
+    formatter = 'auto', --or rubocop for most of the projects
+    linters = { 'rubocop', 'erb_lint' },
+    filetypes = { "ruby", "eruby" },
   },
 })
+
+local lint = require("lint")
+lint.linters_by_ft = {
+  eruby = { 'erb_lint' },
+}
+--local erb_lint_auto_correct = require('lint').linters.erb_lint
+-- erb_lint_auto_correct.args = {
+--   'exec', 'erblint', '--format', 'compact', '--autocorrect',
+-- }
+lint.linters.erb_lint = require("lint.util").wrap(lint.linters.erb_lint, function(diagnostic)
+  diagnostic.severity = vim.diagnostic.severity.ERROR
+  return diagnostic
+end)
+vim.api.nvim_create_autocmd({ "BufWritePost", "BufRead" }, {
+  callback = function()
+    -- lint based oon the linters_by_ft defined above
+    require("lint").try_lint()
+  end,
+})
+
+--add a shortcut to format eruby files
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>el",
+  ":!bundle exec erb_lint --lint-all --autocorrect<CR>",
+  { noremap = true, silent = true }
+)
+
+
 lspconfig.rust_analyzer.setup({
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
@@ -401,36 +435,26 @@ lspconfig.rust_analyzer.setup({
   },
 })
 
-local hasConfigs, configs = pcall(require, "nvim-treesitter.configs")
-if hasConfigs then
-  configs.setup {
-    ensure_installed = "pkl",
-    highlight = {
-      enable = true, -- false will disable the whole extension
-    },
-    indent = {
-      enable = true
-    }
-  }
-end
-
 
 local blink = require('blink.cmp')
 blink.setup({
   keymap = {
     preset = "enter",
   },
+  cmdline = {
+    enabled = true
+  },
   completion = {
-    -- do not show in the cmdline of vim/nvim because I know these commands
-    -- menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end },
-    -- Show documentation when selecting a completion item
     documentation = { auto_show = true, auto_show_delay_ms = 300 },
-    -- Display a preview of the selected item on the current line
-    ghost_text = { enabled = true },
+    -- This is currenlty failing .-> It should show the current line with
+    -- "ghost-text" ie. how oit would look like when selecting the current item
+    --ghost_text = { enabled = true },
+    menu = { auto_show = true },
   },
   signature = {
     enabled = true,
   },
+  fuzzy = { implementation = "prefer_rust_with_warning" },
   --trigger = { signature_help = { enabled = true } },
   sources = {
     default = {
@@ -440,7 +464,6 @@ blink.setup({
       "buffer",
       --"ripgrep", -- 👈🏻 add "ripgrep" here
     },
-    cmdline = {},
     providers = {
       -- 👇🏻👇🏻 add the ripgrep provider config below
       ripgrep = {
