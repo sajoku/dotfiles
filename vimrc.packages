@@ -71,15 +71,16 @@ function! PackInit() abort
     " call minpac#add('L3MON4D3/LuaSnip', {'do': 'make install_jsregexp'} )
     " call minpac#add('saadparwaiz1/cmp_luasnip')
   
-    call minpac#add('saghen/blink.cmp', {'rev': 'v0.13.1' })
+    call minpac#add('saghen/blink.cmp', {'rev': 'v1.0.0' })
     "Needed for blink apparently
     "call minpac#add('folke/noice.nvim')
     call minpac#add('rafamadriz/friendly-snippets')
     call minpac#add("mikavilpas/blink-ripgrep.nvim")
- 
+
 
     call minpac#add('brenoprata10/nvim-highlight-colors')
     call minpac#add('themaxmarchuk/tailwindcss-colors.nvim')
+    call minpac#add("luckasRanarison/tailwind-tools.nvim", {"name": "tailwind-tools"})
     "
     "->Python
     call minpac#add('nvie/vim-flake8')

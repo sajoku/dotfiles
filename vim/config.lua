@@ -1,4 +1,6 @@
-require('nvim-highlight-colors').setup {}
+require('nvim-highlight-colors').setup {
+  render = 'virtual',
+}
 require("barbecue").setup()
 
 
@@ -278,7 +280,7 @@ lspconfig.luau_lsp.setup({})
 lspconfig.lua_ls.setup({})
 local on_attach_tailwind = function(client, bufnr)
   -- other stuff --
-  require("tailwindcss-colors").buf_attach(bufnr)
+  --require("tailwindcss-colors").buf_attach(bufnr)
 end
 
 lspconfig.tailwindcss.setup({
@@ -299,6 +301,12 @@ lspconfig.tailwindcss.setup({
       codeAction = true,
       validate = true
     }
+  }
+})
+
+require("tailwind-tools").setup({
+  document_color = {
+    enabled = false
   }
 })
 
