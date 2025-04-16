@@ -3,13 +3,17 @@ theme = light:rose-pine-dawn,dark:rose-pine-moon
 font-family = "Berkeley Mono Variable"
 font-size = 18
 
-background-opacity = 0.95
+background-opacity = 1.0
 background-blur-radius = 20
 
 cursor-style = block
 cursor-style-blink = true
 
-macos-icon = blueprint
+macos-icon = custom-style
+macos-icon-frame=beige
+macos-icon-ghost-color = #BCBEC4
+macos-icon-screen-color = #1E1F22
+
 macos-titlebar-style = transparent
 macos-non-native-fullscreen = true
 
