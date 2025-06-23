@@ -335,14 +335,7 @@ lspconfig.superhtml.setup({})
 local function get_django_settings()
   return os.getenv("DJANGO_SETTINGS_MODULE") or ""
 end
-lspconfig.djlsp.setup {
-  cmd = { "/Users/sajoku/.pyenv/shims/djlsp" },
-  init_options = {
-    djlsp = {
-      django_settings_module = get_django_settings()
-    }
-  }
-}
+
 
 local cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
 cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -403,7 +396,7 @@ lspconfig.jsonls.setup {}
 lspconfig.ruby_lsp.setup({
   init_options = {
     formatter = 'auto', --or rubocop for most of the projects
-    linters = { 'rubocop', 'erb_lint' },
+    linters = { 'rubocop_internal', 'erb_lint' },
     filetypes = { "ruby", "eruby" },
   },
 })
@@ -412,28 +405,33 @@ local lint = require("lint")
 lint.linters_by_ft = {
   eruby = { 'erb_lint' },
 }
---local erb_lint_auto_correct = require('lint').linters.erb_lint
--- erb_lint_auto_correct.args = {
---   'exec', 'erblint', '--format', 'compact', '--autocorrect',
--- }
+
 lint.linters.erb_lint = require("lint.util").wrap(lint.linters.erb_lint, function(diagnostic)
   diagnostic.severity = vim.diagnostic.severity.ERROR
   return diagnostic
 end)
-vim.api.nvim_create_autocmd({ "BufWritePost", "BufRead" }, {
-  callback = function()
-    -- lint based oon the linters_by_ft defined above
-    require("lint").try_lint()
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "BufWritePost", "BufRead" }, {
+--   callback = function()
+--     -- lint based oon the linters_by_ft defined above
+--     require("lint").try_lint()
+--   end,
+-- })
 
 --add a shortcut to format eruby files
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>el",
-  ":!bundle exec erb_lint --lint-all --autocorrect<CR>",
-  { noremap = true, silent = true }
-)
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<leader>el",
+--   ":!bundle exec erb_lint --lint-all --autocorrect<CR>",
+--   { noremap = true, silent = true }
+-- )
+
+local django_settings_module = os.getenv("DJANGO_SETTINGS_MODULE") or "default.settings"
+require 'lspconfig'.djlsp.setup {
+  cmd = { "/Users/sajoku/.pyenv/shims/djlsp" },
+  init_options = {
+    django_settings_module = django_settings_module,
+  }
+}
 
 
 lspconfig.rust_analyzer.setup({
@@ -563,3 +561,4 @@ vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
 --init todo-comments
 require("todo-comments").setup()
+require("lua.plugins.none-ls")

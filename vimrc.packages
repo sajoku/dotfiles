@@ -38,7 +38,7 @@ function! PackInit() abort
     call minpac#add("nvim-telescope/telescope.nvim")
     call minpac#add("nvim-telescope/telescope-fzf-native.nvim", {"do": "make"})
     call minpac#add("nvim-lua/plenary.nvim")
-    call minpac#add('roman/golden-ratio')
+    "call minpac#add('roman/golden-ratio')
     call minpac#add("folke/todo-comments.nvim")
 
     " currently tryin out-->
@@ -59,6 +59,8 @@ function! PackInit() abort
     "LSP
     call minpac#add('neovim/nvim-lspconfig')
     call minpac#add('mfussenegger/nvim-lint')
+
+    call minpac#add("nvimtools/none-ls.nvim")
 
     "LSP Autocompletion
     " call minpac#add('hrsh7th/cmp-nvim-lsp')
