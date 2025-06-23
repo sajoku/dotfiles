@@ -34,9 +34,12 @@ function! PackInit() abort
   
     call minpac#add('mileszs/ack.vim')
     call minpac#add('junegunn/fzf')
-    call minpac#add('junegunn/fzf.vim')
-    call minpac#add("nvim-telescope/telescope.nvim")
-    call minpac#add("nvim-telescope/telescope-fzf-native.nvim", {"do": "make"})
+    call minpac#add("ibhagwan/fzf-lua")
+
+    "call minpac#add('junegunn/fzf.vim')
+    " call minpac#add("nvim-telescope/telescope.nvim")
+    " call minpac#add("nvim-telescope/telescope-fzf-native.nvim", {"do": "make"})
+
     call minpac#add("nvim-lua/plenary.nvim")
     "call minpac#add('roman/golden-ratio')
     call minpac#add("folke/todo-comments.nvim")

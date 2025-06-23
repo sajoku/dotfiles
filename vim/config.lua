@@ -45,9 +45,6 @@ require("catppuccin").setup({
       enabled = true,
       indentscope_color = "",
     },
-    telescope = {
-      enabled = true,
-    },
     native_lsp = {
       enabled = true,
       virtual_text = {
@@ -543,19 +540,22 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
---vim.keymap.set('n', 'g/', builtin.live_grep, {})
---vim.keymap.set("n", "<space>fg", require "lua.telescope.multi-ripgrep")
-vim.keymap.set("n", "g/", require "lua.telescope.multi-ripgrep")
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+local fzf = require('fzf-lua')
+fzf.setup({ 'fzf-tmux', 'ivy' })
+-- Find files
+vim.keymap.set('n', '<leader>ff', fzf.files, {})
+vim.keymap.set('n', '<C-p>', fzf.files, {})
 
-vim.keymap.set("n", "<space>fg", require "lua.telescope.multi-ripgrep")
+-- Live grep
+vim.keymap.set('n', '<leader>fg', fzf.live_grep_native or fzf.live_grep, {})
+vim.keymap.set('n', '<C-f>', fzf.live_grep_native or fzf.live_grep, {})
+vim.keymap.set('n', 'g/', fzf.live_grep_native or fzf.live_grep, {})
 
+-- Buffers
+vim.keymap.set('n', '<leader>fb', fzf.buffers, {})
+
+-- Help tags
+vim.keymap.set('n', '<leader>fh', fzf.help_tags, {})
 -- Prepend mise shims to PATH
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
