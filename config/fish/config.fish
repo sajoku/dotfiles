@@ -46,6 +46,7 @@ if status --is-login
   tmux_chooser
 end
 
+set -x SSH_AUTH_SOCK $HOME/.1password/agent.sock
 
 pyenv init - | source
 direnv hook fish | source
