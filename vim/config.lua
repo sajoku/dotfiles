@@ -1,75 +1,15 @@
+-- Require config files
+require("lua.config.options")
+require("lua.config.filetypes")
+require("lua.config.keymaps")
+
 require('nvim-highlight-colors').setup {
   render = 'virtual',
 }
 require("barbecue").setup()
 
-
-require("catppuccin").setup({
-  flavour = "auto", -- latte, frappe, macchiato, mocha
-  -- background = {    -- :h background
-  --   light = "latte",
-  --   dark = "macchiato",
-  -- },
-  transparent_background = false, -- disables setting the background color.
-  show_end_of_buffer = true,      -- shows the '~' characters after the end of buffers
-  term_colors = true,             -- sets terminal colors (e.g. `g:terminal_color_0`)
-  dim_inactive = {
-    enabled = true,               -- dims the background color of inactive window
-    shade = "light",
-    percentage = 0.35,            -- percentage of the shade to apply to the inactive window
-  },
-  styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { "italic" },      -- Change the style of comments
-    conditionals = { "italic" },
-    loops = {},
-    functions = {},
-    keywords = {},
-    strings = {},
-    variables = {},
-    numbers = {},
-    booleans = {},
-    properties = {},
-    types = {},
-    operators = {},
-    -- miscs = {}, -- Uncomment to turn off hard-coded styles
-  },
-  default_integrations = true,
-  integrations = {
-    cmp = true,
-    gitsigns = true,
-    nvimtree = true,
-    treesitter = true,
-    notify = true,
-    fzf = true,
-    mini = {
-      enabled = true,
-      indentscope_color = "",
-    },
-    native_lsp = {
-      enabled = true,
-      virtual_text = {
-        errors = { "italic" },
-        hints = { "italic" },
-        warnings = { "italic" },
-        information = { "italic" },
-        ok = { "italic" },
-      },
-      underlines = {
-        errors = { "undercurl" },
-        hints = { "undercurl" },
-        warnings = { "undercurl" },
-        information = { "undercurl" },
-        ok = { "undercurl" },
-      },
-      inlay_hints = {
-        background = true,
-      },
-    },
-    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-  },
-})
 require("rose-pine").setup({
-  variant = "dawn",      -- auto, main, moon, or dawn
+  variant = "auto",      -- auto, main, moon, or dawn
   dark_variant = "moon", -- main, moon, or dawn
   dim_inactive_windows = true,
   extend_background_behind_borders = true,
@@ -83,43 +23,6 @@ require("rose-pine").setup({
     italic = true,
     transparency = true,
   },
-  highlight_groups = {
-    CurSearch = { fg = "base", bg = "leaf", inherit = false },
-    Search = { fg = "text", bg = "leaf", blend = 20, inherit = false },
-    StatusLine = { fg = "love", bg = "love", blend = 10 },
-    StatusLineNC = { fg = "subtle", bg = "surface" },
-  },
-
-  --   groups = {
-  --     border = "muted",
-  --     link = "iris",
-  --     panel = "surface",
-
-  --     error = "love",
-  --     hint = "iris",
-  --     info = "foam",
-  --     note = "pine",
-  --     todo = "rose",
-  --     warn = "gold",
-
-  --     git_add = "foam",
-  --     git_change = "rose",
-  --     git_delete = "love",
-  --     git_dirty = "rose",
-  --     git_ignore = "muted",
-  --     git_merge = "iris",
-  --     git_rename = "pine",
-  --     git_stage = "iris",
-  --     git_text = "rose",
-  --     git_untracked = "subtle",
-
-  --     h1 = "iris",
-  --     h2 = "foam",
-  --     h3 = "rose",
-  --     h4 = "gold",
-  --     h5 = "pine",
-  --     h6 = "foam",
-  --   },
 })
 
 require('lualine').setup {
@@ -136,10 +39,10 @@ auto_dark_mode.setup({
     vim.cmd('colorscheme rose-pine-moon')
   end,
   set_light_mode = function()
-    --vim.cmd('colorscheme xcodelight')
     vim.cmd('colorscheme rose-pine-dawn')
   end,
 })
+
 
 require('nvim-treesitter.configs').setup({
   -- A list of parser names, or 'all'
@@ -541,7 +444,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 
 local fzf = require('fzf-lua')
-fzf.setup({ 'fzf-tmux', 'ivy' })
+fzf.setup({
+  { 'telescope', 'ivy' },
+  fzf_colors = {
+    true,
+  },
+})
 -- Find files
 vim.keymap.set('n', '<leader>ff', fzf.files, {})
 vim.keymap.set('n', '<C-p>', fzf.files, {})
