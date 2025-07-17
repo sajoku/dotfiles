@@ -3,6 +3,12 @@ theme = light:rose-pine-dawn,dark:rose-pine-moon
 font-family = "Berkeley Mono Variable"
 font-size = 18
 
+font-variation = "wght=200"
+font-variation-bold = wght=500
+
+adjust-cell-height=2%
+adjust-cell-width=2%
+
 background-opacity = 1.0
 background-blur-radius = 20
 
@@ -22,6 +28,5 @@ mouse-hide-while-typing=true
 window-colorspace = "display-p3"
 window-padding-balance = true
 window-save-state = always
-
 # keybindings
 keybind = cmd+s>r=reload_config
