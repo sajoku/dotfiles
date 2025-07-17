@@ -51,6 +51,8 @@ alias locate_py="find . -name '*.py' | xargs wc -l"
 
 #move to django builtin templates
 alias djdocs="cd ~/.pyenv/versions/3.6.1/lib/python3.6/site-packages/django/contrib/admin/templates/registration"
+alias minpacp="cd ~/.vim/pack/minpac/start"
+
 
 #move to administration directory on iCloud Drive
 alias am="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Muliphen/"
