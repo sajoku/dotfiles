@@ -36,10 +36,6 @@ function! PackInit() abort
     call minpac#add('junegunn/fzf')
     call minpac#add("ibhagwan/fzf-lua")
 
-    "call minpac#add('junegunn/fzf.vim')
-    " call minpac#add("nvim-telescope/telescope.nvim")
-    " call minpac#add("nvim-telescope/telescope-fzf-native.nvim", {"do": "make"})
-
     call minpac#add("nvim-lua/plenary.nvim")
     "call minpac#add('roman/golden-ratio')
     call minpac#add("folke/todo-comments.nvim")
@@ -76,7 +72,7 @@ function! PackInit() abort
     " call minpac#add('L3MON4D3/LuaSnip', {'do': 'make install_jsregexp'} )
     " call minpac#add('saadparwaiz1/cmp_luasnip')
   
-    call minpac#add('saghen/blink.cmp', {'rev': 'v1.0.0' })
+    call minpac#add('saghen/blink.cmp', {'rev': 'v1.4.1' })
     "Needed for blink apparently
     "call minpac#add('folke/noice.nvim')
     call minpac#add('rafamadriz/friendly-snippets')
