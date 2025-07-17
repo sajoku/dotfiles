@@ -48,9 +48,6 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set nojoinspaces
 
 " Display relative line numbers, with absolute line number for current line
-set number
-set numberwidth=5
-set relativenumber
 
 set smarttab
 set scrolloff=10
