@@ -39,7 +39,7 @@ auto_dark_mode.setup({
     vim.cmd('colorscheme rose-pine-moon')
   end,
   set_light_mode = function()
-    vim.cmd('colorscheme rose-pine-dawn')
+    vim.cmd('colorscheme rose-pine-moon')
   end,
 })
 
@@ -187,7 +187,7 @@ lspconfig.tailwindcss.setup({
   on_attach = on_attach_tailwind,
   settings = {
     tailwindCSS = {
-      classAttributes = { "class", "className", "class:list", "classList", "ngClass", "extra_class", ".*className", "add_class" },
+      classAttributes = { "class", "className", "class:list", "classList", "ngClass", "extra_class", ".*className", "add_class", "extra_class=" },
       lint = {
         cssConflict = "warning",
         invalidApply = "error",

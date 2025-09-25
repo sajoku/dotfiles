@@ -23,7 +23,7 @@ $time\n  \
 [󱞪](fg:iris) \
 """
 
-palette = "rose-pine-dawn"
+palette = "rose-pine-moon"
 
 [palettes.rose-pine-moon]
 overlay = '#393552'

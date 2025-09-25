@@ -1,10 +1,10 @@
-theme = light:rose-pine-dawn,dark:rose-pine-moon
+theme = light:Rose Pine Moon,dark:Rose Pine Moon
 
 font-family = "Berkeley Mono Variable"
 font-size = 18
 
-font-variation = "wght=200"
-font-variation-bold = wght=500
+#font-variation = "wght=200"
+#font-variation-bold = wght=500
 
 adjust-cell-height=2%
 adjust-cell-width=2%
@@ -14,11 +14,6 @@ background-blur-radius = 20
 
 cursor-style = block
 cursor-style-blink = true
-
-macos-icon = custom-style
-macos-icon-frame=beige
-macos-icon-ghost-color = #BCBEC4
-macos-icon-screen-color = #1E1F22
 
 macos-titlebar-style = transparent
 macos-non-native-fullscreen = true
