@@ -17,3 +17,4 @@ vimrc.test_runners
 bin/op
 vim/pack
 config/kitty/themes/*.*
+node_modules/
