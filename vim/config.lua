@@ -93,7 +93,7 @@ require("treesitter-context").setup({
   separator = nil,
 })
 
-vim.lsp.enable('luau_lsp')
+--vim.lsp.enable('luau_lsp')
 vim.lsp.enable('lua_ls')
 
 local on_attach_tailwind = function(client, bufnr)
@@ -140,13 +140,18 @@ vim.lsp.config("cssls", {
   }
 })
 
-vim.lsp.enable("pyright")
-vim.lsp.config("pyright", {
+--vim.lsp.enable('pyrefly')
+vim.lsp.config("ty", {
   settings = {
-    pyright = { disableOrganizeImports = true },
-    python = { analysis = { ignore = { "*" } } },
-  }
+    ty = {
+      experimental = {
+        rename = true,
+        autoImport = true,
+      },
+    },
+  },
 })
+vim.lsp.enable('ty')
 
 vim.lsp.enable("ruff")
 vim.lsp.config("ruff", {
@@ -193,10 +198,10 @@ end)
 --   init_options = { django_settings_module = django_settings_module },
 -- })
 
-vim.lsp.enable("rust_analyzer")
-vim.lsp.config("rust_analyzer", {
-  settings = { ["rust-analyzer"] = {} }
-})
+-- vim.lsp.enable("rust_analyzer")
+-- vim.lsp.config("rust_analyzer", {
+--   settings = { ["rust-analyzer"] = {} }
+-- })
 
 local blink = require("blink.cmp")
 blink.setup({
@@ -205,6 +210,7 @@ blink.setup({
   completion = {
     documentation = { auto_show = true, auto_show_delay_ms = 300 },
     menu = { auto_show = true },
+    ghost_text = { enabled = true },
   },
   signature = { enabled = true },
   fuzzy = { implementation = "prefer_rust_with_warning" },
