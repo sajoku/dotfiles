@@ -3,11 +3,14 @@ theme = light:Rose Pine Moon,dark:Rose Pine Moon
 font-family = "Berkeley Mono Variable"
 font-size = 18
 
-#font-variation = "wght=200"
-#font-variation-bold = wght=500
+font-variation = wdth=90
+font-variation = wght=400
+font-variation = slnt=0
+font-feature = +calt
+font-feature = +ss04
 
-adjust-cell-height=2%
-adjust-cell-width=2%
+#adjust-cell-height=2%
+#adjust-cell-width=2%
 
 background-opacity = 1.0
 background-blur-radius = 20
