@@ -6,7 +6,6 @@ require("lua.config.keymaps")
 require("nvim-highlight-colors").setup {
   render = "virtual",
 }
-require("barbecue").setup()
 
 require("rose-pine").setup({
   variant = "auto",
@@ -27,20 +26,12 @@ require("rose-pine").setup({
 
 require("lualine").setup {
   options = {
-    theme = "rose-pine"
+    theme = "rose-pine",
+    icons_enabled = true,
   }
 }
 
-local auto_dark_mode = require("auto-dark-mode")
-auto_dark_mode.setup({
-  update_interval = 3000,
-  set_dark_mode = function()
-    vim.cmd("colorscheme rose-pine-moon")
-  end,
-  set_light_mode = function()
-    vim.cmd("colorscheme rose-pine-moon")
-  end,
-})
+vim.cmd("colorscheme rose-pine")
 
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
@@ -96,13 +87,8 @@ require("treesitter-context").setup({
 --vim.lsp.enable('luau_lsp')
 vim.lsp.enable('lua_ls')
 
-local on_attach_tailwind = function(client, bufnr)
-  -- require("tailwindcss-colors").buf_attach(bufnr)
-end
-
 vim.lsp.enable('tailwindcss')
 vim.lsp.config("tailwindcss", {
-  on_attach = on_attach_tailwind,
   settings = {
     tailwindCSS = {
       classAttributes = {

@@ -5,7 +5,6 @@ vim.filetype.add({
     jbuilder = "ruby",
     eex = "html",
     exs = "elixir",
-    handlebars = "mustache",
   },
   filename = {
     ["Gemfile"] = "ruby",
