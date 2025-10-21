@@ -6,7 +6,7 @@ function! PackInit() abort
   else
     call minpac#init()
     call minpac#add('k-takata/minpac', {'type': 'opt'})
-  
+
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('tpope/vim-commentary')
     call minpac#add('tpope/vim-surround')
@@ -15,7 +15,6 @@ function! PackInit() abort
     call minpac#add('airblade/vim-gitgutter', {'branch': 'main' })
     call minpac#add('preservim/nerdtree')
     call minpac#add('Bekaboo/dropbar.nvim')
-    
 
     "syntax highlighting straight from nvim
     call minpac#add('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
@@ -39,7 +38,8 @@ function! PackInit() abort
     " ->
     call minpac#add('rhysd/git-messenger.vim')
     call minpac#add('sindrets/diffview.nvim')
-    "->Tests
+
+    "-> Tests
     call minpac#add('vim-test/vim-test')
     "<- Tests
 
