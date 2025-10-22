@@ -3,6 +3,8 @@ require("lua.config.options")
 require("lua.config.filetypes")
 require("lua.config.keymaps")
 
+
+
 require("nvim-highlight-colors").setup {
   render = "virtual",
 }
@@ -223,10 +225,14 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
+-- Show warning and errors on the current line
 vim.diagnostic.config({
-  virtual_text = { source = "if_many", prefix = "" },
+  --virtual_text = { source = "if_many", prefix = "" },
+  --virtual_text = { current_line = true },
   float = { source = "always" },
+  virtual_lines = true,
 })
+
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
