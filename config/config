@@ -1,4 +1,4 @@
-theme = light:Rose Pine Moon,dark:Rose Pine Moon
+theme = light:Rose Pine Dawn,dark:Rose Pine Moon
 
 font-family = "Berkeley Mono Variable"
 font-size = 18
@@ -9,8 +9,8 @@ font-variation = slnt=0
 font-feature = +calt
 font-feature = +ss04
 
-#adjust-cell-height=2%
-#adjust-cell-width=2%
+adjust-cell-height=2%
+adjust-cell-width=2%
 
 background-opacity = 1.0
 background-blur-radius = 20
@@ -28,3 +28,4 @@ window-padding-balance = true
 window-save-state = always
 # keybindings
 keybind = cmd+s>r=reload_config
+link-previews = osc8
