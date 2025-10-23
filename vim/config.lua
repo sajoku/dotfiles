@@ -93,10 +93,14 @@ vim.lsp.enable('tailwindcss')
 vim.lsp.config("tailwindcss", {
   settings = {
     tailwindCSS = {
+      includeLanguages = {
+        htmldjango = "html",
+      },
       classAttributes = {
         "class", "className", "class:list", "classList", "ngClass",
         "extra_class", ".*className", "add_class", "extra_class="
       },
+      classFunctions = { "tw", "clsx", "tw\\.[a-z-:]+" },
       lint = {
         cssConflict = "warning",
         invalidApply = "error",
@@ -105,12 +109,14 @@ vim.lsp.config("tailwindcss", {
         invalidTailwindDirective = "error",
         invalidVariant = "error",
         recommendedVariantOrder = "warning",
+        usedBlocklistedClass = "warning",
+        suggestCanonicalClasses = "warning",
       },
       sortSelection = true,
       codeAction = true,
       validate = true,
     }
-  }
+  },
 })
 
 vim.lsp.enable("marksman")
