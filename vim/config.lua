@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd('OptionSet', {
 
 require("lualine").setup {
   options = {
-    theme = "rose-pine",
+    theme = "catppuccin",
     icons_enabled = true,
   }
 }
