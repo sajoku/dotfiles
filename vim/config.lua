@@ -9,21 +9,33 @@ require("nvim-highlight-colors").setup {
   render = "virtual",
 }
 
-require("rose-pine").setup({
-  variant = "auto",
-  dark_variant = "moon",
-  dim_inactive_windows = true,
-  extend_background_behind_borders = true,
+require("catppuccin").setup({
+  flavour = "auto", -- latte, frappe, macchiato, mocha, auto
+  background = {
+    light = "latte",
+    dark = "mocha",
+  },
+})
 
-  enable = {
-    terminal = true,
-    migrations = true,
-  },
-  styles = {
-    bold = true,
-    italic = true,
-    transparency = true,
-  },
+-- Set initial colorscheme based on current background
+if vim.o.background == 'light' then
+  vim.cmd('colorscheme catppuccin-latte')
+else
+  vim.cmd('colorscheme catppuccin-mocha')
+end
+
+-- Switch when background changes
+vim.api.nvim_create_autocmd('OptionSet', {
+  pattern = 'background',
+  callback = function()
+    vim.schedule(function()
+      if vim.o.background == 'light' then
+        vim.cmd('colorscheme catppuccin-latte')
+      else
+        vim.cmd('colorscheme catppuccin-mocha')
+      end
+    end)
+  end,
 })
 
 require("lualine").setup {
@@ -32,8 +44,6 @@ require("lualine").setup {
     icons_enabled = true,
   }
 }
-
-vim.cmd("colorscheme rose-pine")
 
 require("nvim-treesitter.configs").setup({
   ensure_installed = {

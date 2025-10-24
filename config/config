@@ -1,4 +1,5 @@
-theme = light:Rose Pine Dawn,dark:Rose Pine Moon
+#theme = light:Rose Pine Dawn,dark:Rose Pine Moon
+theme = dark:Catppuccin Mocha,light:Catppuccin Mocha
 
 font-family = "Berkeley Mono Variable"
 font-size = 18
