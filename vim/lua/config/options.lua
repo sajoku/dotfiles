@@ -12,4 +12,6 @@ vim.opt.shell = "/bin/sh"
 vim.opt.showtabline = 0
 vim.opt.laststatus = 2
 vim.opt.secure = true
+
+vim.opt.termguicolors = true
 vim.cmd("filetype plugin indent on")
