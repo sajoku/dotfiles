@@ -10,10 +10,9 @@ require("nvim-highlight-colors").setup {
 }
 
 require("catppuccin").setup({
-  flavour = "auto", -- latte, frappe, macchiato, mocha, auto
   background = {
     light = "latte",
-    dark = "mocha",
+    dark = "frappe",
   },
 })
 
@@ -21,22 +20,21 @@ require("catppuccin").setup({
 if vim.o.background == 'light' then
   vim.cmd('colorscheme catppuccin-latte')
 else
-  vim.cmd('colorscheme catppuccin-mocha')
+  vim.cmd('colorscheme catppuccin-frappe')
 end
 
--- Switch when background changes
-vim.api.nvim_create_autocmd('OptionSet', {
-  pattern = 'background',
+vim.api.nvim_create_autocmd("OptionSet", {
+  pattern = "background",
   callback = function()
-    vim.schedule(function()
-      if vim.o.background == 'light' then
-        vim.cmd('colorscheme catppuccin-latte')
-      else
-        vim.cmd('colorscheme catppuccin-mocha')
-      end
-    end)
+    print("Changing color")
+    if vim.o.background == "light" then
+      vim.cmd("colorscheme catppuccin-latte")
+    else
+      vim.cmd("colorscheme catppuccin-frappe")
+    end
   end,
 })
+
 
 require("lualine").setup {
   options = {
@@ -294,4 +292,3 @@ vim.keymap.set("n", "<leader>fh", fzf.help_tags, {})
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
 require("todo-comments").setup()
--- require("lua.plugins.none-ls")
