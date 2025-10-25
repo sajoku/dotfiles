@@ -67,7 +67,7 @@ function! PackInit() abort
     ""<-- Auto formatting
     "call minpac#add('AndrewRadev/tagalong.vim', {'branch': 'main' })
     call minpac#add("windwp/nvim-ts-autotag")
-    call minpac#add("windwp/nvim-autopairs")
+    --call minpac#add("windwp/nvim-autopairs")
     ""-->
     "Colors and theme related
     call minpac#add('nvim-tree/nvim-web-devicons')
