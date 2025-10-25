@@ -27,3 +27,4 @@ prijsindexatie
 .yarn/*
 notifier.rb
 parse_csv.rb
+object-storage/*
