@@ -6,7 +6,6 @@ require("lua.config.keymaps")
 require("nvim-highlight-colors").setup {
   render = "virtual",
 }
-require('mini.animate').setup()
 require('mini.pairs').setup()
 require('mini.cursorword').setup({ delay = 650 })
 
