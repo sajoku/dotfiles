@@ -58,8 +58,19 @@
 [pull]
   ff = only
 [credential]
-  helper = /usr/local/share/gcm-core/git-credential-manager-core
+  helper = /usr/local/share/gcm-core/git-credential-manager
 [gpg]
   format = ssh
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[fetch]
+  prune = true
+[rerere]
+  enabled = true
+[diff "lockb"]
+  textconv = bun
+  binary = true
+[commit]
+  gpgsign = true
+[gpg]
+  format = ssh
