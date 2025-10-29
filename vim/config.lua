@@ -2,43 +2,47 @@
 require("lua.config.options")
 require("lua.config.filetypes")
 require("lua.config.keymaps")
+--require("lua.config.usgc-reticle-it")
+--require("lua.config.usgc-metalgate-st")
 
 require("nvim-highlight-colors").setup {
   render = "virtual",
 }
 require('mini.pairs').setup()
-require('mini.cursorword').setup({ delay = 650 })
+require('mini.cursorword').setup({ delay = 1150 })
 
-require("catppuccin").setup({
-  background = {
-    light = "latte",
-    dark = "frappe",
-  },
-})
+vim.cmd [[colorscheme tokyonight-night]]
+-- require("catppuccin").setup({
+--   background = {
+--     light = "latte",
+--     dark = "frappe",
+--   },
+-- })
 
 -- Set initial colorscheme based on current background
-if vim.o.background == 'light' then
-  vim.cmd('colorscheme catppuccin-latte')
-else
-  vim.cmd('colorscheme catppuccin-frappe')
-end
+-- if vim.o.background == 'light' then
+--   vim.cmd('colorscheme catppuccin-latte')
+-- else
+--   vim.cmd('colorscheme catppuccin-mocha')
+-- end
 
-vim.api.nvim_create_autocmd("OptionSet", {
-  pattern = "background",
-  callback = function()
-    print("Changing color")
-    if vim.o.background == "light" then
-      vim.cmd("colorscheme catppuccin-latte")
-    else
-      vim.cmd("colorscheme catppuccin-frappe")
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd("OptionSet", {
+--   pattern = "background",
+--   callback = function()
+--     print("Changing color")
+--     if vim.o.background == "light" then
+--       vim.cmd("colorscheme catppuccin-latte")
+--     else
+--       vim.cmd("colorscheme catppuccin-mocha")
+--     end
+--   end,
+-- })
 
+--vim.cmd('colorscheme catppuccin-latte')
 
 require("lualine").setup {
   options = {
-    theme = "catppuccin",
+    theme = "tokyonight",
     icons_enabled = true,
   }
 }
@@ -242,9 +246,10 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 -- Show warning and errors on the current line
 vim.diagnostic.config({
   --virtual_text = { source = "if_many", prefix = "" },
-  --virtual_text = { current_line = true },
-  float = { source = "always" },
-  virtual_lines = true,
+  virtual_text = { current_line = true },
+  float = { source = "if_many" },
+  --virtual_lines = true,
+  { virtual_lines = { current_line = true }, virtual_text = true }
 })
 
 

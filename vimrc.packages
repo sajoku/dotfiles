@@ -75,6 +75,8 @@ function! PackInit() abort
     call minpac#add('nvim-lualine/lualine.nvim')
     call minpac#add("rebelot/kanagawa.nvim")
     call minpac#add('catppuccin/nvim', { 'name': 'catppuccin' })
+    call minpac#add('folke/tokyonight.nvim')
+  
     call minpac#add("lunacookies/vim-colors-xcode", {'branch': 'master' })
     call minpac#add( "rose-pine/neovim", {'name': "rose-pine"} )
     "tmux

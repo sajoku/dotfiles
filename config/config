@@ -1,5 +1,6 @@
 #theme = light:Rose Pine Dawn,dark:Rose Pine Moon
-theme = dark:Catppuccin Frappe,light:Catppuccin Frappe
+theme = dark:TokyoNight Night,light:TokyoNight Night
+#theme = dark:Catppuccin Frappe,light:Catppuccin Mocha
 
 #font-family = "Berkeley Mono Variable"
 font-family = "Geist Mono"
@@ -11,8 +12,8 @@ font-variation = slnt=0
 font-feature = +calt
 font-feature = +ss04
 
-adjust-cell-height=2%
-adjust-cell-width=2%
+# adjust-cell-height=2%
+# adjust-cell-width=2%
 
 background-opacity = 1.0
 background-blur-radius = 20
@@ -20,7 +21,7 @@ background-blur-radius = 20
 cursor-style = block
 cursor-style-blink = true
 
-macos-titlebar-style = transparent
+#macos-titlebar-style = transparent
 macos-non-native-fullscreen = true
 
 mouse-hide-while-typing=true
