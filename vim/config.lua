@@ -12,31 +12,18 @@ require('mini.pairs').setup()
 require('mini.cursorword').setup({ delay = 1150 })
 
 vim.cmd [[colorscheme tokyonight-night]]
--- require("catppuccin").setup({
---   background = {
---     light = "latte",
---     dark = "frappe",
---   },
--- })
 
--- Set initial colorscheme based on current background
--- if vim.o.background == 'light' then
---   vim.cmd('colorscheme catppuccin-latte')
--- else
---   vim.cmd('colorscheme catppuccin-mocha')
--- end
-
--- vim.api.nvim_create_autocmd("OptionSet", {
---   pattern = "background",
---   callback = function()
---     print("Changing color")
---     if vim.o.background == "light" then
---       vim.cmd("colorscheme catppuccin-latte")
---     else
---       vim.cmd("colorscheme catppuccin-mocha")
---     end
---   end,
--- })
+vim.api.nvim_create_autocmd("OptionSet", {
+  pattern = "background",
+  callback = function()
+    print("Changing color")
+    if vim.o.background == "light" then
+      vim.cmd("colorscheme tokyonight-day")
+    else
+      vim.cmd("colorscheme tokyonight-night")
+    end
+  end,
+})
 
 --vim.cmd('colorscheme catppuccin-latte')
 

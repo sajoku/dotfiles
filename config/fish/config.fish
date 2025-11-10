@@ -33,6 +33,7 @@ if status --is-login
   set -gx PATH $PATH "$HOME/dotfiles/bin"
   set -gx PATH $PATH "$HOME/.bin:/usr/local/sbin"
   set -gx PATH $PATH "$HOME/.bin:/usr/local/bin"
+  set -gx PATH $PATH "$HOME/.local/bin:/usr/local/bin"
   set -gx PATH $PATH "$HOME/.cargo/bin"
   set -gx PATH $PATH ".git/safe/../../bin"
   set -gx PATH $PATH "$HOME/go/bin"
@@ -51,4 +52,3 @@ set -x SSH_AUTH_SOCK $HOME/.1password/agent.sock
 pyenv init - | source
 direnv hook fish | source
 starship init fish | source
-
