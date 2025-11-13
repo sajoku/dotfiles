@@ -11,25 +11,24 @@ require("nvim-highlight-colors").setup {
 require('mini.pairs').setup()
 require('mini.cursorword').setup({ delay = 1150 })
 
-vim.cmd [[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme catppuccin]]
 
-vim.api.nvim_create_autocmd("OptionSet", {
-  pattern = "background",
-  callback = function()
-    print("Changing color")
-    if vim.o.background == "light" then
-      vim.cmd("colorscheme tokyonight-day")
-    else
-      vim.cmd("colorscheme tokyonight-night")
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd("OptionSet", {
+--   pattern = "background",
+--   callback = function()
+--     if vim.o.background == "light" then
+--       vim.cmd("colorscheme catppuccin-latte")
+--     else
+--       vim.cmd("colorscheme catppuccin-mocha")
+--     end
+--   end,
+-- })
 
 --vim.cmd('colorscheme catppuccin-latte')
 
 require("lualine").setup {
   options = {
-    theme = "tokyonight",
+    theme = "catppuccin",
     icons_enabled = true,
   }
 }

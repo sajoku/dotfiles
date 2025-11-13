@@ -1,14 +1,14 @@
 #theme = light:Rose Pine Dawn,dark:Rose Pine Moon
-theme = dark:TokyoNight Night,light:TokyoNight Day
-#theme = dark:Catppuccin Frappe,light:Catppuccin Mocha
+#theme = dark:TokyoNight Night,light:TokyoNight Day
+theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 
-#font-family = "Berkeley Mono Variable"
-font-family = "Geist Mono"
+font-family = "Berkeley Mono Variable"
+#font-family = "Geist Mono"
 font-size = 18
 
 # font-variation = wdth=90
 # font-variation = wght=400
-font-variation = slnt=0
+#font-variation = slnt=0
 font-feature = +calt
 font-feature = +ss04
 
@@ -31,4 +31,10 @@ window-padding-balance = true
 window-save-state = always
 # keybindings
 keybind = cmd+s>r=reload_config
+link-url = true
 link-previews = osc8
+
+#custom-shader = /Users/sajoku/code/ghostty-shaders/glitchy.glsl
+#custom-shader = /Users/sajoku/code/ghostty-shaders/matrix-hallway.glsl
+#custom-shader = /Users/sajoku/code/ghostty-shaders/cursor_blaze.glsl
+#custom-shader = /Users/sajoku/code/ghostty-shaders/inside-the-matrix.glsl

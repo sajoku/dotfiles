@@ -147,7 +147,7 @@ brew "helm"
 # Process manager for Procfile-based applications
 brew "hivemind"
 # Improved top (interactive process viewer)
-brew "htop"
+brew "btop"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
