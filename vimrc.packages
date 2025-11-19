@@ -12,49 +12,42 @@ function! PackInit() abort
     call minpac#add('tpope/vim-surround')
     call minpac#add('tpope/vim-unimpaired')
     call minpac#add('junegunn/vim-easy-align')
-    call minpac#add('airblade/vim-gitgutter', {'branch': 'main' })
+    call minpac#add("lewis6991/gitsigns.nvim")
     call minpac#add('preservim/nerdtree')
     call minpac#add('Bekaboo/dropbar.nvim')
 
     "syntax highlighting straight from nvim
     call minpac#add('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
-    call minpac#add('https://github.com/apple/pkl-neovim.git')
+    call minpac#add('apple/pkl-neovim')
     call minpac#add("nvim-treesitter/nvim-treesitter-textobjects")
     call minpac#add("nvim-treesitter/nvim-treesitter-context")
-    call minpac#add('RRethy/nvim-treesitter-endwise')
-    call minpac#add('andymass/vim-matchup')
 
-    call minpac#add('slim-template/vim-slim')
-
-    call minpac#add("SmiteshP/nvim-navic")
-    call minpac#add('mileszs/ack.vim')
+    "Search related
     call minpac#add('junegunn/fzf')
     call minpac#add("ibhagwan/fzf-lua")
 
     call minpac#add("nvim-lua/plenary.nvim")
+
+    "Convenience / other
     call minpac#add("folke/todo-comments.nvim")
     call minpac#add("folke/which-key.nvim")
-
-    " ->
     call minpac#add('rhysd/git-messenger.vim')
     call minpac#add('sindrets/diffview.nvim')
+    call minpac#add("folke/trouble.nvim")
 
     "-> Tests
     call minpac#add('vim-test/vim-test')
     "<- Tests
 
-    "golang
-    call minpac#add('fatih/vim-go')
-
     "LSP
     call minpac#add('neovim/nvim-lspconfig')
     call minpac#add('mfussenegger/nvim-lint')
     call minpac#add("nvimtools/none-ls.nvim")
-    call minpac#add('saghen/blink.cmp', {'rev': 'v1.7.0' })
+    call minpac#add('saghen/blink.cmp', {'rev': 'v1.8.0' })
     call minpac#add('rafamadriz/friendly-snippets')
     call minpac#add("mikavilpas/blink-ripgrep.nvim")
 
-    call minpac#add('brenoprata10/nvim-highlight-colors')
+    ""call minpac#add('brenoprata10/nvim-highlight-colors')
     "
     "-> Rails
     call minpac#add('tpope/vim-rails')
@@ -64,11 +57,12 @@ function! PackInit() abort
     call minpac#add('tpope/vim-bundler')
     "<-Ruby
   
-    ""<-- Auto formatting
-    "call minpac#add('AndrewRadev/tagalong.vim', {'branch': 'main' })
+    ""<-- Auto tag / end completion etc
     call minpac#add("windwp/nvim-ts-autotag")
-    --call minpac#add("windwp/nvim-autopairs")
+    call minpac#add('RRethy/nvim-treesitter-endwise')
+    call minpac#add('andymass/vim-matchup')
     ""-->
+
     "Colors and theme related
     call minpac#add('nvim-tree/nvim-web-devicons')
     call minpac#add('echasnovski/mini.nvim')
@@ -77,11 +71,13 @@ function! PackInit() abort
     call minpac#add('catppuccin/nvim', { 'name': 'catppuccin' })
     call minpac#add('folke/tokyonight.nvim')
   
-    call minpac#add("lunacookies/vim-colors-xcode", {'branch': 'master' })
     call minpac#add( "rose-pine/neovim", {'name': "rose-pine"} )
     "tmux
     call minpac#add('christoomey/vim-tmux-navigator')
     call minpac#add('christoomey/vim-tmux-runner')
     call minpac#add('preservim/vimux')
   endif
+   
+   All plugins are up to date. (Updated: 0, Newly installed: 1)
+   (Type "q" to close this window. Type "s" to open the status window.)
 endfunction

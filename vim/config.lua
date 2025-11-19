@@ -5,13 +5,12 @@ require("lua.config.keymaps")
 --require("lua.config.usgc-reticle-it")
 --require("lua.config.usgc-metalgate-st")
 
-require("nvim-highlight-colors").setup {
-  render = "virtual",
-}
-require('mini.pairs').setup()
-require('mini.cursorword').setup({ delay = 1150 })
 
-vim.cmd [[colorscheme catppuccin]]
+require('mini.pairs').setup()
+require('mini.cursorword').setup({ delay = 2150 })
+
+--vim.cmd [[colorscheme catppuccin]]
+vim.cmd("colorscheme rose-pine")
 
 -- vim.api.nvim_create_autocmd("OptionSet", {
 --   pattern = "background",
