@@ -205,6 +205,10 @@ if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc.test_runners')))
   exec printf('source %s/%s', getcwd(), '.vimrc.test_runners')
 endif
 let g:test#strategy = 'vimux'
+""let g:test#strategy = 'neovim_sticky'
+let g:test#echo_command = 0
+let g:test#neovim#start_normal = 1 " If using neovim strategy
+let test#neovim#term_position = "vert botright 70"
 
 
 "Python support for vim tmux runner
@@ -226,7 +230,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "nnoremap <leader>d oimport code; code.interact(local=dict(globals(), **locals()))<ESC>
 augroup myautocmds
   autocmd!
-  au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>d obinding.pry<ESC>
+  au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>d obinding.irb<ESC>
   au BufNewFile,BufRead,BufEnter *.rb nnoremap <leader>1 oputs("[DBG] => #{expand('%')}")<ESC>
   au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>1 oprint(f"[DBG] => ")<ESC>
   au BufNewFile,BufRead,BufEnter *.py nnoremap <leader>d obreakpoint()<ESC>
@@ -265,9 +269,6 @@ function! s:SourceConfigFilesIn(directory)
     endif
   endfor
 endfunction
-
-let g:python3_host_prog = "~/.pyenv/versions/3.12.2/bin/python"
-
 
 "source files from rcfiles moves config files for plugins to own files
 call s:SourceConfigFilesIn('ftplugin')
