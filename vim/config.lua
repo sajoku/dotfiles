@@ -2,28 +2,13 @@
 require("lua.config.options")
 require("lua.config.filetypes")
 require("lua.config.keymaps")
---require("lua.config.usgc-reticle-it")
---require("lua.config.usgc-metalgate-st")
 
 
 require('mini.pairs').setup()
-require('mini.cursorword').setup({ delay = 2150 })
+require('mini.cursorword').setup({ delay = 3150 })
 
 --vim.cmd [[colorscheme catppuccin]]
 vim.cmd("colorscheme rose-pine")
-
--- vim.api.nvim_create_autocmd("OptionSet", {
---   pattern = "background",
---   callback = function()
---     if vim.o.background == "light" then
---       vim.cmd("colorscheme catppuccin-latte")
---     else
---       vim.cmd("colorscheme catppuccin-mocha")
---     end
---   end,
--- })
-
---vim.cmd('colorscheme catppuccin-latte')
 
 require("lualine").setup {
   options = {
@@ -32,10 +17,33 @@ require("lualine").setup {
   }
 }
 
+
+require("trouble").setup({
+  position = "bottom",            -- bottom/top/left/right
+  height = 12,                    -- panel height
+  width = 50,                     -- if using side positions
+  icons = true,
+  mode = "workspace_diagnostics", -- default mode
+  fold_open = "▾",
+  fold_closed = "▸",
+  group = true,
+  padding = true,
+  action_keys = {
+    close = "q",
+    cancel = "<esc>",
+    refresh = "r",
+    jump = { "<cr>", "<tab>" },
+  },
+  auto_open = false,          -- auto-open when diagnostics appear
+  auto_close = false,         -- auto-close when clean
+  use_diagnostic_signs = true -- use signs from LSP
+})
+
+
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html",
-    "css", "htmldjango", "javascript", "typescript", "query"
+    "css", "htmldjango", "javascript", "typescript", "query", "toml"
   },
   sync_install = false,
   auto_install = true,
@@ -82,6 +90,10 @@ require("treesitter-context").setup({
   mode = "cursor",
   separator = nil,
 })
+
+
+-- Enable toml lsp
+vim.lsp.enable('taplo')
 
 --vim.lsp.enable('luau_lsp')
 vim.lsp.enable('lua_ls')
@@ -193,6 +205,21 @@ end)
 -- vim.lsp.config("rust_analyzer", {
 --   settings = { ["rust-analyzer"] = {} }
 -- })
+--
+
+require("conform").setup({
+  formatters_by_ft = {
+    htmldjango = { "djlint" },
+  },
+})
+
+--run conform on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
 
 local blink = require("blink.cmp")
 blink.setup({
