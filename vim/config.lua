@@ -8,7 +8,8 @@ require('mini.pairs').setup()
 require('mini.cursorword').setup({ delay = 3150 })
 
 --vim.cmd [[colorscheme catppuccin]]
-vim.cmd("colorscheme rose-pine")
+--vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme kanagawa")
 
 require("lualine").setup {
   options = {
@@ -91,12 +92,22 @@ require("treesitter-context").setup({
   separator = nil,
 })
 
+--linter and formatter
+vim.lsp.enable('biome')
+vim.lsp.config("biome", {
+    filetypes = {
+
+       --"htmldjango", "astro", "css", "graphql", "html", "javascript", "javascriptreact", "json", "jsonc", "svelte", "typescript", "typescriptreact", "vue" 
+       "htmldjango", "javascript", "css", "html", "json", "jsonc"
+    }
+
+})
 
 -- Enable toml lsp
 vim.lsp.enable('taplo')
 
 --vim.lsp.enable('luau_lsp')
-vim.lsp.enable('lua_ls')
+--vim.lsp.enable('lua_ls')
 
 vim.lsp.enable('tailwindcss')
 vim.lsp.config("tailwindcss", {
@@ -133,15 +144,15 @@ vim.lsp.enable("marksman")
 --vim.lsp.config("html", { filetypes = { "html", "templ" } })
 --vim.lsp.enable("superhtml")
 
-local cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
-cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
-vim.lsp.enable("cssls")
-vim.lsp.config("cssls", {
-  capabilities = cssls_capabilities,
-  settings = {
-    css = { lint = { unknownAtRules = "ignore" } }
-  }
-})
+-- local cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
+-- cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- vim.lsp.enable("cssls")
+-- vim.lsp.config("cssls", {
+--   capabilities = cssls_capabilities,
+--   settings = {
+--     css = { lint = { unknownAtRules = "ignore" } }
+--   }
+-- })
 
 --vim.lsp.enable('pyrefly')
 vim.lsp.config("ty", {
@@ -180,10 +191,10 @@ vim.lsp.config("ruby_lsp", {
   }
 })
 
-vim.lsp.enable('herb_ls')
-vim.lsp.config("herb_ls", {
-  filetypes = { 'html', 'eruby', 'htmldjango' }
-})
+-- vim.lsp.enable('herb_ls')
+-- vim.lsp.config("herb_ls", {
+--   filetypes = { 'html', 'eruby', 'htmldjango' }
+-- })
 
 local lint = require("lint")
 lint.linters_by_ft = {
@@ -207,11 +218,7 @@ end)
 -- })
 --
 
-require("conform").setup({
-  formatters_by_ft = {
-    htmldjango = { "djlint" },
-  },
-})
+vim.lsp.enable('djls')
 
 --run conform on save
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -264,6 +271,16 @@ vim.diagnostic.config({
   { virtual_lines = { current_line = true }, virtual_text = true }
 })
 
+require('hlchunk').setup({
+  chunk = {
+    enable = true
+  },
+  indent = {
+    enable = false
+  }
+})
+
+
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -289,11 +306,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+-- Auto format on save via the LSP
+-- This runs format for all file types and any lsp supporting formatting
 vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     vim.lsp.buf.format { async = false }
   end
 })
+
 
 local fzf = require("fzf-lua")
 fzf.setup({ { "telescope", "ivy" }, fzf_colors = { true } })

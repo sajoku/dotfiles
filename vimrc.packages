@@ -21,6 +21,7 @@ function! PackInit () abort
     call minpac#add('apple/pkl-neovim')
     call minpac#add("nvim-treesitter/nvim-treesitter-textobjects")
     call minpac#add("nvim-treesitter/nvim-treesitter-context")
+    call minpac#add("shellRaining/hlchunk.nvim")
 
     "Search related
     call minpac#add('junegunn/fzf')
