@@ -1,5 +1,7 @@
 #theme = dark:Catppuccin Mocha,light:Catppuccin Latte
-theme = dark:Rose Pine,light:Rose Pine Dawn
+#theme = dark:Rose Pine,light:Rose Pine Dawn
+#theme = dark:kanagaw-wave,light:kanagawa-lotus
+theme = dark:kanagawa-wave,light:kanagawa-wave
 
 #font-family = "Berkeley Mono Variable"
 font-family = "Geist Mono"
@@ -26,6 +28,7 @@ window-save-state = always
 keybind = cmd+s>r=reload_config
 link-url = true
 link-previews = osc8
+
 
 #custom-shader = /Users/sajoku/code/ghostty-shaders/glitchy.glsl
 #custom-shader = /Users/sajoku/code/ghostty-shaders/matrix-hallway.glsl
