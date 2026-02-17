@@ -20,8 +20,6 @@ if status is-interactive
   if [ -f $HOME/.config/fish/aliases.fish ]
     source $HOME/.config/fish/aliases.fish
   end
-
-
 end
 
 if status --is-login
@@ -44,5 +42,5 @@ end
 set -x SSH_AUTH_SOCK $HOME/.1password/agent.sock
 
 pyenv init - | source
-direnv hook fish | source
 starship init fish | source
+mise activate fish | source
