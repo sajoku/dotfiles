@@ -28,6 +28,14 @@ function! PackInit () abort
     call minpac#add("ibhagwan/fzf-lua")
     call minpac#add("nvim-lua/plenary.nvim")
 
+    function! s:hook(hooktype, name)
+      echom a:hooktype
+      :lua require("fff.download").download_or_build_binary()
+    endfunction
+
+    call minpac#add("dmtrKovalenko/fff.nvim", {"do": function('s:hook') })
+    
+
     "Convenience / other
     call minpac#add("folke/todo-comments.nvim")
     call minpac#add("folke/which-key.nvim")
