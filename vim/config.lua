@@ -191,10 +191,10 @@ vim.lsp.config("ruby_lsp", {
   }
 })
 
--- vim.lsp.enable('herb_ls')
--- vim.lsp.config("herb_ls", {
---   filetypes = { 'html', 'eruby', 'htmldjango' }
--- })
+vim.lsp.enable('herb_ls')
+vim.lsp.config("herb_ls", {
+  filetypes = { 'html', 'eruby', 'htmldjango' }
+})
 
 local lint = require("lint")
 lint.linters_by_ft = {
@@ -319,10 +319,12 @@ local fzf = require("fzf-lua")
 fzf.setup({ { "telescope", "ivy" }, fzf_colors = { true } })
 
 vim.keymap.set("n", "<leader>ff", fzf.files, {})
-vim.keymap.set("n", "<C-p>", fzf.files, {})
+--vim.keymap.set("n", "<C-p>", fzf.files, {})
 vim.keymap.set("n", "<leader>fg", fzf.live_grep_native or fzf.live_grep, {})
 vim.keymap.set("n", "<C-f>", fzf.live_grep_native or fzf.live_grep, {})
-vim.keymap.set("n", "g/", fzf.live_grep_native or fzf.live_grep, {})
+--vim.keymap.set("n", "g/", fzf.live_grep_native or fzf.live_grep, {})
+vim.keymap.set('n', 'g/', function() require('fff').live_grep() end, { desc = 'LiFFFe grep' })
+vim.keymap.set('n', '<C-p>', function() require('fff').find_files() end, { desc = 'FFFind files' })
 vim.keymap.set("n", "<leader>fb", fzf.buffers, {})
 vim.keymap.set("n", "<leader>fh", fzf.help_tags, {})
 
