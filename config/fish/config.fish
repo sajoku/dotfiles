@@ -17,20 +17,27 @@ if status is-interactive
     end
 
     pyenv init - | source
+
+    #starship init fish | source
+    function starship_transient_prompt_func
+      starship module character
+    end
     starship init fish | source
+    enable_transience
+
     mise activate fish | source
 end
 
 if status is-login
-    # Homebrew first so it takes priority
-    fish_add_path /opt/homebrew/bin
-    fish_add_path /opt/homebrew/opt/openssl@3/bin
-    fish_add_path $HOME/dotfiles/bin
-    fish_add_path $HOME/.bin
-    fish_add_path $HOME/.local/bin
-    fish_add_path $HOME/.cargo/bin
-    fish_add_path $HOME/go/bin
-    fish_add_path $HOME/.config/yarn/global/node_modules/.bin
+  # Homebrew first so it takes priority
+  fish_add_path /opt/homebrew/bin
+  fish_add_path /opt/homebrew/opt/openssl@3/bin
+  fish_add_path $HOME/dotfiles/bin
+  fish_add_path $HOME/.bin
+  fish_add_path $HOME/.local/bin
+  fish_add_path $HOME/.cargo/bin
+  fish_add_path $HOME/go/bin
+  fish_add_path $HOME/.config/yarn/global/node_modules/.bin
 
-    tmux_chooser
+  tmux_chooser
 end
