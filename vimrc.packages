@@ -11,9 +11,14 @@ function! PackInit () abort
     call minpac#add('tpope/vim-commentary')
     call minpac#add('tpope/vim-surround')
     call minpac#add('tpope/vim-unimpaired')
-    call minpac#add('junegunn/vim-easy-align')
+
+    "signs in number"
     call minpac#add("lewis6991/gitsigns.nvim")
+
+    "file explorer
     call minpac#add('preservim/nerdtree')
+
+    "breadcrumbs"
     call minpac#add('Bekaboo/dropbar.nvim')
 
     "syntax highlighting straight from nvim
@@ -24,9 +29,9 @@ function! PackInit () abort
     call minpac#add("shellRaining/hlchunk.nvim")
 
     "Search related
-    call minpac#add('junegunn/fzf')
-    call minpac#add("ibhagwan/fzf-lua")
-    call minpac#add("nvim-lua/plenary.nvim")
+    " call minpac#add('junegunn/fzf')
+    " call minpac#add("ibhagwan/fzf-lua")
+    " call minpac#add("nvim-lua/plenary.nvim")
 
     function! s:hook(hooktype, name)
       echom a:hooktype
@@ -39,8 +44,6 @@ function! PackInit () abort
     "Convenience / other
     call minpac#add("folke/todo-comments.nvim")
     call minpac#add("folke/which-key.nvim")
-    call minpac#add('rhysd/git-messenger.vim')
-    call minpac#add('sindrets/diffview.nvim')
     call minpac#add("folke/trouble.nvim")
 
     "-> Tests
@@ -51,7 +54,7 @@ function! PackInit () abort
     call minpac#add('neovim/nvim-lspconfig')
     call minpac#add('mfussenegger/nvim-lint')
     call minpac#add("nvimtools/none-ls.nvim")
-    call minpac#add('saghen/blink.cmp', {'rev': 'v1.8.0' })
+    call minpac#add('saghen/blink.cmp', {'rev': 'v1.10.1' })
     call minpac#add('rafamadriz/friendly-snippets')
     call minpac#add("mikavilpas/blink-ripgrep.nvim")
     call minpac#add("stevearc/conform.nvim")
@@ -76,11 +79,12 @@ function! PackInit () abort
     call minpac#add('nvim-tree/nvim-web-devicons')
     call minpac#add('echasnovski/mini.nvim')
     call minpac#add('nvim-lualine/lualine.nvim')
+    "Themes 
     call minpac#add("rebelot/kanagawa.nvim")
-    call minpac#add('catppuccin/nvim', { 'name': 'catppuccin' })
-    call minpac#add('folke/tokyonight.nvim')
+    call minpac#add("catppuccin/nvim", { 'name': 'catppuccin' })
+    call minpac#add("webhooked/kanso.nvim")
+    call minpac#add("rose-pine/neovim", {'name': "rose-pine"} )
 
-    call minpac#add( "rose-pine/neovim", {'name': "rose-pine"} )
     "tmux
     call minpac#add('christoomey/vim-tmux-navigator')
     call minpac#add('christoomey/vim-tmux-runner')
