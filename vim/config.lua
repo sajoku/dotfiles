@@ -9,11 +9,43 @@ require('mini.cursorword').setup({ delay = 3150 })
 
 --vim.cmd [[colorscheme catppuccin]]
 --vim.cmd("colorscheme rose-pine")
-vim.cmd("colorscheme kanagawa")
+--vim.cmd("colorscheme kanagawa")
+--vim.cmd("colorscheme dim")
+-- vim.cmd("colorscheme cyberdream")
+-- require("cyberdream").setup({
+--   -- Set light or dark variant
+--   variant = "auto",
+--   extensions = {
+--     default = true,
+--     base = true,
+--   }
+-- })
+
+-- vim.cmd('colorscheme github_dark')
+-- require('github-theme').setup({
+--   options = {
+--     styles = {
+--       comments = 'italic',
+--       keywords = 'bold',
+--       types = 'italic,bold',
+--     }
+--   }
+-- })
+
+
+require('kanso').setup({
+    dimInactive = false,
+    foreground = {
+        dark = "saturated",
+        light = "saturated"
+    },
+})
+vim.cmd("colorscheme kanso")
 
 require("lualine").setup {
   options = {
-    theme = "catppuccin",
+    --theme = "catppuccin",
+    theme = 'auto',
     icons_enabled = true,
   }
 }
@@ -95,11 +127,11 @@ require("treesitter-context").setup({
 --linter and formatter
 vim.lsp.enable('biome')
 vim.lsp.config("biome", {
-    filetypes = {
+  filetypes = {
 
-       --"htmldjango", "astro", "css", "graphql", "html", "javascript", "javascriptreact", "json", "jsonc", "svelte", "typescript", "typescriptreact", "vue" 
-       "htmldjango", "javascript", "css", "html", "json", "jsonc"
-    }
+    --"htmldjango", "astro", "css", "graphql", "html", "javascript", "javascriptreact", "json", "jsonc", "svelte", "typescript", "typescriptreact", "vue" 
+    "htmldjango", "javascript", "css", "html", "json", "jsonc"
+  }
 
 })
 
@@ -315,18 +347,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 
-local fzf = require("fzf-lua")
-fzf.setup({ { "telescope", "ivy" }, fzf_colors = { true } })
-
-vim.keymap.set("n", "<leader>ff", fzf.files, {})
---vim.keymap.set("n", "<C-p>", fzf.files, {})
-vim.keymap.set("n", "<leader>fg", fzf.live_grep_native or fzf.live_grep, {})
-vim.keymap.set("n", "<C-f>", fzf.live_grep_native or fzf.live_grep, {})
---vim.keymap.set("n", "g/", fzf.live_grep_native or fzf.live_grep, {})
 vim.keymap.set('n', 'g/', function() require('fff').live_grep() end, { desc = 'LiFFFe grep' })
 vim.keymap.set('n', '<C-p>', function() require('fff').find_files() end, { desc = 'FFFind files' })
-vim.keymap.set("n", "<leader>fb", fzf.buffers, {})
-vim.keymap.set("n", "<leader>fh", fzf.help_tags, {})
 
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
