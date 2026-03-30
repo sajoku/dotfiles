@@ -4,8 +4,8 @@
 
 # Specify desired highlighting theme (e.g. "TwoDark"). Run `bat --list-themes`
 # for a list of all available themes
---theme-dark="Catppuccin Frappe"
---theme-light="Catppuccin Latte"
+--theme-dark="lume"
+--theme-light="lume"
 
 
 # Enable this to use italic text on the terminal. This is not supported on all

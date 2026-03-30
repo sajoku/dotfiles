@@ -8,4 +8,4 @@ SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_f
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1epatrickf1/fzf\x2efish\x1erose\x2dpine/fish
 SETUVAR _fisher_rose_2D_pine_2F_fish_files:\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x20Dawn\x2etheme\x1e\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x20Moon\x2etheme\x1e\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x2etheme
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_user_paths:/opt/homebrew/opt/libpq/bin\x1e/Users/sajoku/\x2ebun/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/opt/postgresql\x4016/bin\x1e/opt/homebrew/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS
+SETUVAR fish_user_paths:/Users/sajoku/go/bin\x1e/Users/sajoku/\x2ecargo/bin\x1e/Users/sajoku/\x2elocal/bin\x1e/Users/sajoku/dotfiles/bin\x1e/opt/homebrew/opt/openssl\x403/bin\x1e/opt/homebrew/opt/libpq/bin\x1e/Users/sajoku/\x2ebun/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/opt/postgresql\x4016/bin\x1e/opt/homebrew/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS

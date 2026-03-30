@@ -7,6 +7,16 @@ require("lua.config.keymaps")
 require('mini.pairs').setup()
 require('mini.cursorword').setup({ delay = 3150 })
 
+require('nvim-highlight-colors').setup({})
+
+-- local hipatterns = require('mini.hipatterns')
+-- hipatterns.setup({
+--   highlighters = {
+--     -- Highlight hex color strings (`#rrggbb`) using that color
+--     hex_color = hipatterns.gen_highlighter.hex_color(),
+--   },
+--})
+
 --vim.cmd [[colorscheme catppuccin]]
 --vim.cmd("colorscheme rose-pine")
 --vim.cmd("colorscheme kanagawa")
@@ -33,14 +43,17 @@ require('mini.cursorword').setup({ delay = 3150 })
 -- })
 
 
-require('kanso').setup({
-    dimInactive = false,
-    foreground = {
-        dark = "saturated",
-        light = "saturated"
-    },
-})
-vim.cmd("colorscheme kanso")
+-- require('kanso').setup({
+--     dimInactive = false,
+--     foreground = {
+--         dark = "saturated",
+--         light = "saturated"
+--     },
+-- })
+-- vim.cmd("colorscheme kanso")
+
+require("lume").setup()
+vim.cmd("colorscheme lume")
 
 require("lualine").setup {
   options = {

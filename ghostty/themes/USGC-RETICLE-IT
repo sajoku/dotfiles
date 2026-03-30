@@ -1,0 +1,25 @@
+# Converted from iTermColors
+palette = 0=#262626
+palette = 1=#cd0403
+palette = 2=#f6c444
+palette = 3=#f6c343
+palette = 4=#6ba9ef
+palette = 5=#eb3da2
+palette = 6=#34b9f6
+palette = 7=#ffffff
+palette = 8=#494949
+palette = 9=#cd0403
+palette = 10=#ebec40
+palette = 11=#f6c343
+palette = 12=#ee7ac7
+palette = 13=#eb3da2
+palette = 14=#33d6f6
+palette = 15=#fefefd
+
+background = #000000
+foreground = #45c471
+cursor-color = #868d96
+cursor-text = #ffffff
+selection-background = #01123f
+selection-foreground = #f6c343
+

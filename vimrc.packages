@@ -59,7 +59,7 @@ function! PackInit () abort
     call minpac#add("mikavilpas/blink-ripgrep.nvim")
     call minpac#add("stevearc/conform.nvim")
 
-    ""call minpac#add('brenoprata10/nvim-highlight-colors')
+    call minpac#add('brenoprata10/nvim-highlight-colors')
     "
     "-> Rails
     call minpac#add('tpope/vim-rails')
@@ -84,6 +84,9 @@ function! PackInit () abort
     call minpac#add("catppuccin/nvim", { 'name': 'catppuccin' })
     call minpac#add("webhooked/kanso.nvim")
     call minpac#add("rose-pine/neovim", {'name': "rose-pine"} )
+
+    call minpac#add("danfry1/lume")
+
 
     "tmux
     call minpac#add('christoomey/vim-tmux-navigator')
