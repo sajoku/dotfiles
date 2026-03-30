@@ -1,7 +1,7 @@
 -- Require config files
-require("lua.config.options")
-require("lua.config.filetypes")
-require("lua.config.keymaps")
+require("config.options")
+require("config.filetypes")
+require("config.keymaps")
 
 
 require('mini.pairs').setup()
@@ -86,7 +86,7 @@ require("trouble").setup({
 })
 
 
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
   ensure_installed = {
     "c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html",
     "css", "htmldjango", "javascript", "typescript", "query", "toml"
