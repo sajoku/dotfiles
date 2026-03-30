@@ -9,12 +9,8 @@ if filereadable(expand("~/dotfiles/vimrc.packages"))
   source ~/dotfiles/vimrc.packages
 endif
 
-" minpac commands:
-command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
-command! PackClean  source $MYVIMRC | call PackInit() | call minpac#clean()
-command! PackStatus packadd minpac | call minpac#status()
-
-let &runtimepath.=',~/.vim/pack/minpac/start'
+command! PackUpdate lua vim.pack.update()
+command! PackDel    lua vim.pack.del(vim.fn.input('Plugin name: '))
 
 filetype plugin indent on
 

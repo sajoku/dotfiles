@@ -85,7 +85,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
   end,
 })
 
--- fff.nvim post-install hook
+--fff.nvim post-install hook
 vim.api.nvim_create_autocmd("PackChanged", {
   callback = function(ev)
     if ev.data.spec.name == "fff.nvim" then

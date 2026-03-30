@@ -86,17 +86,29 @@ require("trouble").setup({
 })
 
 
-require("nvim-treesitter").setup({
-  ensure_installed = {
-    "c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html",
-    "css", "htmldjango", "javascript", "typescript", "query", "toml"
+local ts = require('nvim-treesitter')
+ts.install({
+  "c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html",
+  "css", "htmldjango", "javascript", "typescript", "query", "toml"
+})
+
+require('nvim-treesitter').setup()
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    "css", "htmldjango", "javascript", "typescript", "query", "toml", "fish",
+    "csv","c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html",
   },
-  sync_install = false,
-  auto_install = true,
-  highlight = { enable = true, additional_vim_regex_highlighting = false },
-  endwise = { enable = true },
-  indent = { enable = true },
-  matchup = { enable = true, disable = {} },
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { "*" },
+  callback = function()
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
 })
 
 require("nvim-ts-autotag").setup({
