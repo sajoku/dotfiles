@@ -1,13 +1,16 @@
 #theme = dark:Apple System Colors,light:Apple System Colors Light
 #theme = IBM 5153 CGA
-#theme = dark:Kanso Zen,light:Kanso Pearl
-theme = lume
+theme = dark:Kanso Zen,light:Kanso Pearl
+#theme = dark:lume,light:lume
 
 font-family = "Berkeley Mono Variable"
 #font-family = "Geist Mono"
 #font-family = "Departure Mono"
 #font-family = "Jetbrains Mono"
 font-size = 18
+
+# adjust-cell-width=2%
+# adjust-cell-height=2%
 
 font-feature = +calt
 font-feature = +ss04

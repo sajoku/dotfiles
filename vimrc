@@ -9,7 +9,7 @@ if filereadable(expand("~/dotfiles/vimrc.packages"))
   source ~/dotfiles/vimrc.packages
 endif
 
-command! PackUpdate lua vim.pack.update()
+command! PackUpdate lua vim.pack.update(nil, { force = true })
 command! PackDel    lua vim.pack.del(vim.fn.input('Plugin name: '))
 
 filetype plugin indent on
@@ -251,6 +251,7 @@ let g:go_fmt_command = "goimports"
 autocmd BufNewFile readme.md 0r ~/dotfiles/skeletons/readme.md
 autocmd BufNewFile *.rb 0r ~/dotfiles/skeletons/ruby.rb
 
+let g:python3_host_prog = '~/.pyenv/shims/python'
 
 set secure
 if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc')))

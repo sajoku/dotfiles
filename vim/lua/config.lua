@@ -42,18 +42,20 @@ require('nvim-highlight-colors').setup({})
 --   }
 -- })
 
+-- require("lume").setup()
+-- vim.cmd("colorscheme lume")
 
--- require('kanso').setup({
---     dimInactive = false,
---     foreground = {
---         dark = "saturated",
---         light = "saturated"
---     },
--- })
--- vim.cmd("colorscheme kanso")
+require('kanso').setup({
+    dimInactive = false,
+    foreground = {
+        dark = "saturated",
+        light = "saturated"
+    },
+})
+vim.cmd("colorscheme kanso")
 
-require("lume").setup()
-vim.cmd("colorscheme lume")
+require('vim._core.ui2').enable()
+
 
 require("lualine").setup {
   options = {
@@ -100,9 +102,10 @@ vim.api.nvim_create_autocmd('FileType', {
     "csv","c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html",
   },
   callback = function()
-    vim.treesitter.start()
+    pcall(vim.treesitter.start)
   end,
 })
+
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { "*" },
@@ -161,7 +164,7 @@ vim.lsp.config("biome", {
 })
 
 -- Enable toml lsp
-vim.lsp.enable('taplo')
+--vim.lsp.enable('taplo')
 
 --vim.lsp.enable('luau_lsp')
 --vim.lsp.enable('lua_ls')
