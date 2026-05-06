@@ -3,6 +3,7 @@
 
 gui:
   theme:
+    lightTheme: false
     activeBorderColor:
       - "#b8a0e0"
       - bold
