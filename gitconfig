@@ -34,10 +34,11 @@
   colorMoved = default
 [core]
   pager = delta --dark
-  excludesfile = /Users/sajoku/.gitignore_global
+  excludesfile = ~/.gitignore_global
   whitespace = warn
   date = human
   editor = nvim
+  hooksPath = ~/dotfiles/git/hooks/
 [filter "media"]
   required = true
   clean = git media clean %f
@@ -45,7 +46,7 @@
 [status]
   short = 1
 [init]
-  templatedir = ~/dotfiles/git_template
+  templatedir = ~/dotfiles/git/hooks/
   defaultBranch = main
 [filter "lfs"]
   clean = git-lfs clean -- %f
