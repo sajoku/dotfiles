@@ -56,6 +56,7 @@ vim.pack.add({
   "https://github.com/christoomey/vim-tmux-navigator",
   "https://github.com/christoomey/vim-tmux-runner",
   "https://github.com/preservim/vimux",
+  "https://github.com/immanuwell/droast.nvim", 
 })
 
 vim.api.nvim_create_autocmd("PackChanged", {
