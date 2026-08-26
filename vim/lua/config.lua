@@ -17,45 +17,16 @@ require('nvim-highlight-colors').setup({})
 --   },
 --})
 
---vim.cmd [[colorscheme catppuccin]]
---vim.cmd("colorscheme rose-pine")
---vim.cmd("colorscheme kanagawa")
---vim.cmd("colorscheme dim")
--- vim.cmd("colorscheme cyberdream")
--- require("cyberdream").setup({
---   -- Set light or dark variant
---   variant = "auto",
---   extensions = {
---     default = true,
---     base = true,
---   }
--- })
+require("catppuccin").setup({
+    flavour = "auto", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "frappe",
+    },})
+vim.cmd.colorscheme "catppuccin-nvim"
 
--- vim.cmd('colorscheme github_dark')
--- require('github-theme').setup({
---   options = {
---     styles = {
---       comments = 'italic',
---       keywords = 'bold',
---       types = 'italic,bold',
---     }
---   }
--- })
-
--- require("lume").setup()
--- vim.cmd("colorscheme lume")
-
-require('kanso').setup({
-    dimInactive = false,
-    foreground = {
-        dark = "saturated",
-        light = "saturated"
-    },
-})
-vim.cmd("colorscheme kanso")
 
 require('vim._core.ui2').enable()
-
 
 require("lualine").setup {
   options = {
@@ -99,7 +70,7 @@ require('nvim-treesitter').setup()
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
     "css", "htmldjango", "javascript", "typescript", "query", "toml", "fish",
-    "csv","c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html",
+    "csv","c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html"
   },
   callback = function()
     pcall(vim.treesitter.start)
@@ -234,8 +205,8 @@ vim.lsp.config("ruff", {
   }
 })
 
-vim.lsp.enable("ts_ls")
-vim.lsp.config("ts_ls", {
+vim.lsp.enable("tsgo")
+vim.lsp.config("tsgo", {
   settings = {
     completions = { completeFunctionCalls = true }
   }
@@ -264,19 +235,6 @@ lint.linters.erb_lint = require("lint.util").wrap(lint.linters.erb_lint, functio
   diagnostic.severity = vim.diagnostic.severity.ERROR
   return diagnostic
 end)
-
--- local django_settings_module = os.getenv("DJANGO_SETTINGS_MODULE") or "default.settings"
--- vim.lsp.enable("djlsp")
--- vim.lsp.config("djlsp", {
---   cmd = { "/Users/sajoku/.pyenv/shims/djlsp" },
---   init_options = { django_settings_module = django_settings_module },
--- })
-
--- vim.lsp.enable("rust_analyzer")
--- vim.lsp.config("rust_analyzer", {
---   settings = { ["rust-analyzer"] = {} }
--- })
---
 
 vim.lsp.enable('djls')
 
