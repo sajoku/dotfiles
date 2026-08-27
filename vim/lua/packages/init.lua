@@ -52,6 +52,7 @@ vim.pack.add({
   "https://github.com/webhooked/kanso.nvim",
   "https://github.com/rose-pine/neovim",
   "https://github.com/danfry1/lume",
+  "https://github.com/miikanissi/modus-themes.nvim",
 
   "https://github.com/christoomey/vim-tmux-navigator",
   "https://github.com/christoomey/vim-tmux-runner",
