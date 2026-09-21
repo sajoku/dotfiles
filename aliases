@@ -58,3 +58,5 @@ alias minpacp="cd ~/.vim/pack/minpac/start"
 alias am="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Muliphen/"
 
 alias cat="bat"
+alias ll "eza -la"
+alias tree "eza --tree"
