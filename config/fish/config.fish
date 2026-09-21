@@ -41,3 +41,21 @@ if status is-login
 
   tmux_chooser
 end
+
+# Activate mise early so cargo/gem/npm tools are available
+if command -v mise >/dev/null 2>&1
+  mise activate fish --no-hook-env | source
+  mise hook-env -s fish | source
+  if command -q aube
+    aube activate fish | source
+    set -gx PATH $AUBE_SHIM_DIR (string match -v -- $AUBE_SHIM_DIR $PATH)
+  end
+
+  function __mise_refresh_on_cd --on-variable PWD
+    mise hook-env -s fish | source
+  end
+
+  set -gx PATH ~/.cargo/bin $PATH
+end
+
+~/.local/bin/mise activate fish | source
