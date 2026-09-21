@@ -31,11 +31,11 @@ require("modus-themes").setup({
 
   -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
   variants = {
-  modus_operandi = "default", -- Set variant for `modus_operandi` style
-  modus_vivendi = "default", -- Set variant for `modus_vivendi` style
+    modus_operandi = "tinted", -- Set variant for `modus_operandi` style
+    modus_vivendi = "tinted",  -- Set variant for `modus_vivendi` style
   },
-  transparent = false, -- Transparent background (as supported by the terminal)
-  dim_inactive = false, -- "non-current" windows are dimmed
+  transparent = false,         -- Transparent background (as supported by the terminal)
+  dim_inactive = false,        -- "non-current" windows are dimmed
   hide_inactive_statusline = true,
   line_nr_column_background = true,
   sign_column_background = true,
@@ -99,7 +99,7 @@ require('nvim-treesitter').setup()
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
     "css", "htmldjango", "javascript", "typescript", "query", "toml", "fish",
-    "csv","c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html"
+    "csv", "c", "lua", "rust", "ruby", "python", "json", "vim", "yaml", "html"
   },
   callback = function()
     pcall(vim.treesitter.start)
@@ -157,7 +157,7 @@ vim.lsp.enable('biome')
 vim.lsp.config("biome", {
   filetypes = {
 
-    --"htmldjango", "astro", "css", "graphql", "html", "javascript", "javascriptreact", "json", "jsonc", "svelte", "typescript", "typescriptreact", "vue" 
+    --"htmldjango", "astro", "css", "graphql", "html", "javascript", "javascriptreact", "json", "jsonc", "svelte", "typescript", "typescriptreact", "vue"
     "htmldjango", "javascript", "css", "html", "json", "jsonc"
   }
 
@@ -166,8 +166,8 @@ vim.lsp.config("biome", {
 -- Enable toml lsp
 --vim.lsp.enable('taplo')
 
---vim.lsp.enable('luau_lsp')
---vim.lsp.enable('lua_ls')
+vim.lsp.enable('luau_lsp')
+vim.lsp.enable('lua_ls')
 
 vim.lsp.enable('tailwindcss')
 vim.lsp.config("tailwindcss", {
@@ -199,10 +199,20 @@ vim.lsp.config("tailwindcss", {
   },
 })
 
+--vim.lsp.enable("csskit")
+
 vim.lsp.enable("marksman")
 --vim.lsp.enable("html")
 --vim.lsp.config("html", { filetypes = { "html", "templ" } })
---vim.lsp.enable("superhtml")
+vim.api.nvim_create_autocmd("Filetype", {
+  pattern = { "html", "shtml", "htm", "htmldjango" },
+  callback = function()
+    vim.lsp.start({
+      name = "superhtml",
+      cmd = { "superhtml", "lsp" },
+    })
+  end
+})
 
 -- local cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
 -- cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -234,8 +244,8 @@ vim.lsp.config("ruff", {
   }
 })
 
-vim.lsp.enable("tsgo")
-vim.lsp.config("tsgo", {
+vim.lsp.enable("tsc")
+vim.lsp.config("tsc", {
   settings = {
     completions = { completeFunctionCalls = true }
   }
@@ -355,10 +365,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Auto format on save via the LSP
 -- This runs format for all file types and any lsp supporting formatting
-vim.api.nvim_create_autocmd("BufWritePre", {
-  callback = function()
-    vim.lsp.buf.format { async = false }
-  end
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client:supports_method("textDocument/formatting") then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = ev.buf,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = ev.buf, async = false })
+        end,
+      })
+    end
+  end,
 })
 
 
