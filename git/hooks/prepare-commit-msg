@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+COMMIT_MSG_FILE="$1"
+
+COMMIT_SOURCE="$2"
+
+# skip merges, squashes, fixups, amends — only touch regular commits
+# "" (editor commit) and "message" (-m/-F, how lazygit commits)
+case "$COMMIT_SOURCE" in
+  ""|message) ;;
+  *) exit 0 ;;
+esac
+
+
+BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null)
+
+# Match e.g. feature/1337/description, fixup/1337-description, etc.
+ISSUE=$(echo "$BRANCH" | grep -oE '^[a-zA-Z]+/[0-9]+' | grep -oE '[0-9]+$')
+
+if [ -n "$ISSUE" ] && ! grep -q "Ticket #$ISSUE" "$COMMIT_MSG_FILE"; then
+  echo "" >> "$COMMIT_MSG_FILE"
+  echo "Ticket #$ISSUE" >> "$COMMIT_MSG_FILE"
+fi
+
+
