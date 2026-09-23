@@ -30,7 +30,6 @@ vim.pack.add({
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/mfussenegger/nvim-lint",
   "https://github.com/nvimtools/none-ls.nvim",
-  { src = "https://github.com/saghen/blink.cmp", version = "v1.10.1" },
   "https://github.com/rafamadriz/friendly-snippets",
   "https://github.com/mikavilpas/blink-ripgrep.nvim",
   "https://github.com/stevearc/conform.nvim",
@@ -57,8 +56,14 @@ vim.pack.add({
   "https://github.com/christoomey/vim-tmux-navigator",
   "https://github.com/christoomey/vim-tmux-runner",
   "https://github.com/preservim/vimux",
-  "https://github.com/immanuwell/droast.nvim", 
+  "https://github.com/immanuwell/droast.nvim",
 })
+
+vim.pack.add({
+  { src = "https://github.com/saghen/blink.cmp", version = "v1.10.2" },
+  'https://github.com/saghen/blink.lib',
+})
+
 
 vim.api.nvim_create_autocmd("PackChanged", {
   callback = function(ev)
@@ -88,4 +93,3 @@ vim.api.nvim_create_autocmd("PackChanged", {
     end
   end,
 })
-
