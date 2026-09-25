@@ -1,12 +1,14 @@
 #theme = IBM 5153 CGA
 #theme = dark:Catppuccin Frappe,light:Catppuccin Latte
-theme = dark:Modus Vivendi Tinted,light:Modus Operandi Tinted
-#theme = dark:Apple System Colors,light:Apple System Colors Light
+#theme = dark:Modus Vivendi Tinted,light:Modus Operandi Tinted
+theme = dark:Apple System Colors,light:Apple System Colors Light
+
+#theme = dark:flume-dusk,light:flume-mesa
 
 #theme = light:echo-custom-light, dark:echo-custom-dark
 
-font-family = "Berkeley Mono Variable"
-#font-family = "Geist Mono"
+#font-family = "Berkeley Mono Variable"
+font-family = "Geist Mono"
 #font-family = "Departure Mono"
 #font-family = "Jetbrains Mono"
 

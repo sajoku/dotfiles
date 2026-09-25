@@ -18,42 +18,57 @@ require('nvim-highlight-colors').setup({})
 
 
 -- require("catppuccin").setup({
---     flavour = "auto", -- latte, frappe, macchiato, mocha
---     background = { -- :h background
---         light = "latte",
---         dark = "frappe",
---     },})
+--   flavour = "auto",   -- latte, frappe, macchiato, mocha
+--   background = {      -- :h background
+--     light = "latte",
+--     dark = "frappe",
+--   },
+-- })
 -- vim.cmd.colorscheme "catppuccin-nvim"
 
--- Default options
-require("modus-themes").setup({
-  style = "auto",
-
-  -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
-  variants = {
-    modus_operandi = "tinted", -- Set variant for `modus_operandi` style
-    modus_vivendi = "tinted",  -- Set variant for `modus_vivendi` style
-  },
-  transparent = false,         -- Transparent background (as supported by the terminal)
-  dim_inactive = false,        -- "non-current" windows are dimmed
-  hide_inactive_statusline = true,
-  line_nr_column_background = true,
-  sign_column_background = true,
-  styles = {
-    comments = { italic = true },
-    keywords = { italic = true },
-    functions = {},
-    variables = {},
-  },
-  on_colors = function(colors)
-    colors.error = colors.red_faint -- Change error color to the "faint" variant
-  end,
-  on_highlights = function(highlight, color)
-    highlight.Boolean = { fg = color.green } -- Change Boolean highlight to use the green color
-  end,
+require("apple-system-colors").setup({
+  transparent = false, -- let the terminal background show through
+  italic_comments = true,
+  -- nvim_set_hl() specs by group, or function(colors, variant) returning them
+  overrides = {},
 })
-vim.cmd.colorscheme "modus"
+vim.cmd.colorscheme "apple-system-colors"
 
+-- Default options
+-- require("modus-themes").setup({
+--   style = "auto",
+
+--   -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+--   variants = {
+--     modus_operandi = "tinted", -- Set variant for `modus_operandi` style
+--     modus_vivendi = "tinted",  -- Set variant for `modus_vivendi` style
+--   },
+--   transparent = false,         -- Transparent background (as supported by the terminal)
+--   dim_inactive = false,        -- "non-current" windows are dimmed
+--   hide_inactive_statusline = true,
+--   line_nr_column_background = true,
+--   sign_column_background = true,
+--   styles = {
+--     comments = { italic = true },
+--     keywords = { italic = true },
+--     functions = {},
+--     variables = {},
+--   },
+--   on_colors = function(colors)
+--     colors.error = colors.red_faint -- Change error color to the "faint" variant
+--   end,
+--   on_highlights = function(highlight, color)
+--     highlight.Boolean = { fg = color.green } -- Change Boolean highlight to use the green color
+--   end,
+-- })
+-- vim.cmd.colorscheme "modus"
+
+-- require("flume").setup({
+--   schema = vim.o.background == "light" and "mesa" or "dusk",
+--   transparent = true,
+--   terminal_colors = true,
+--   styles = { comments = { italic = true }, keywors = { italic = true } }
+-- })
 
 require('vim._core.ui2').enable()
 

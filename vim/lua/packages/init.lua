@@ -52,16 +52,21 @@ vim.pack.add({
   "https://github.com/rose-pine/neovim",
   "https://github.com/danfry1/lume",
   "https://github.com/miikanissi/modus-themes.nvim",
+  "https://github.com/mitander/flume.nvim",
 
   "https://github.com/christoomey/vim-tmux-navigator",
   "https://github.com/christoomey/vim-tmux-runner",
   "https://github.com/preservim/vimux",
-  "https://github.com/immanuwell/droast.nvim",
+  "https://github.com/immanuwell/droast.nvim"
 })
 
 vim.pack.add({
   { src = "https://github.com/saghen/blink.cmp", version = "v1.10.2" },
   'https://github.com/saghen/blink.lib',
+})
+
+vim.pack.add({
+  "https://github.com/sajoku/apple-system-colors.nvim"
 })
 
 
