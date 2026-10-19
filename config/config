@@ -7,10 +7,12 @@ theme = dark:Apple System Colors,light:Apple System Colors Light
 
 #theme = light:echo-custom-light, dark:echo-custom-dark
 
-#font-family = "Berkeley Mono Variable"
-font-family = "Geist Mono"
+font-family = "Berkeley Mono Variable"
+#font-family = "Geist Mono"
+#font-family = "Geist Pixel"
 #font-family = "Departure Mono"
 #font-family = "Jetbrains Mono"
+#font-family = "SF Mono"
 
 #font-family = "0xProto Regular"
 #font-family = "Monaspace Neon Var"
@@ -28,7 +30,10 @@ font-family = "Geist Mono"
 # font-feature=+ss10
 # font-feature=+liga
 
-font-size = 18
+font-size = 12
+
+adjust-cell-width=1%
+adjust-cell-height=2%
 
 font-feature = +calt
 font-feature = +ss04
@@ -40,6 +45,13 @@ cursor-text=Cornsilk
 
 macos-non-native-fullscreen = true
 macos-icon=retro
+
+window-padding-x = 14
+window-padding-y = 10
+
+window-padding-balance = true
+window-padding-color = extend
+
 mouse-hide-while-typing=true
 
 window-colorspace = "display-p3"
