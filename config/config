@@ -46,8 +46,8 @@ cursor-text=Cornsilk
 macos-non-native-fullscreen = true
 macos-icon=retro
 
-window-padding-x = 14
-window-padding-y = 10
+#window-padding-x = 14
+#window-padding-y = 10
 
 window-padding-balance = true
 window-padding-color = extend
