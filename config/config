@@ -7,8 +7,8 @@ theme = dark:Apple System Colors,light:Apple System Colors Light
 
 #theme = light:echo-custom-light, dark:echo-custom-dark
 
-font-family = "Berkeley Mono Variable"
-#font-family = "Geist Mono"
+#font-family = "Berkeley Mono Variable"
+font-family = "Geist Mono"
 #font-family = "Geist Pixel"
 #font-family = "Departure Mono"
 #font-family = "Jetbrains Mono"
