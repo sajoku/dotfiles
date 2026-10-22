@@ -15,7 +15,8 @@ $python\
 $character"""
 
 [directory]
-style = "blue"
+style = "cyan"
+truncation_length = 2
 
 [character]
 success_symbol = "[→](sky)"

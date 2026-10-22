@@ -28,6 +28,12 @@ gui:
       - '#d20f39'
     defaultFgColor:
       - '#4c4f69'
-  
   authorColors:
     '*': '#7287fd'
+customCommands:
+  - key: '<c-g>'
+    context: 'files'
+    description: 'AI commit message (review in editor)'
+    command: |
+      sh -c 'f=$(mktemp); echo "Generating commit message..."; git diff --staged | aicommit > "$f" && git commit -e -F "$f"; rm -f "$f"'
+    output: terminal

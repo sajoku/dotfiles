@@ -59,3 +59,4 @@ if command -v mise >/dev/null 2>&1
 end
 
 ~/.local/bin/mise activate fish | source
+zoxide init fish | source
