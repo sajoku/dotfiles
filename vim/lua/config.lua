@@ -219,12 +219,14 @@ vim.lsp.config("tailwindcss", {
 vim.lsp.enable("marksman")
 --vim.lsp.enable("html")
 --vim.lsp.config("html", { filetypes = { "html", "templ" } })
+
 vim.api.nvim_create_autocmd("Filetype", {
-  pattern = { "html", "shtml", "htm", "htmldjango" },
+  pattern = { "html", "shtml", "htm" },
   callback = function()
     vim.lsp.start({
       name = "superhtml",
       cmd = { "superhtml", "lsp" },
+      root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1])
     })
   end
 })
@@ -289,6 +291,13 @@ lint.linters.erb_lint = require("lint.util").wrap(lint.linters.erb_lint, functio
   diagnostic.severity = vim.diagnostic.severity.ERROR
   return diagnostic
 end)
+
+--vim.lsp.enable('djls')
+vim.lsp.config('djls', {
+  cmd = { 'djls', 'serve' },
+  filetypes = { 'htmldjango', 'html', 'python' },
+  root_markers = { 'manage.py', 'pyproject.toml', '.git' },
+})
 
 vim.lsp.enable('djls')
 
