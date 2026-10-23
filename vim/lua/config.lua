@@ -295,7 +295,7 @@ end)
 --vim.lsp.enable('djls')
 vim.lsp.config('djls', {
   cmd = { 'djls', 'serve' },
-  filetypes = { 'htmldjango', 'html', 'python' },
+  filetypes = { 'htmldjango', 'python' },
   root_markers = { 'manage.py', 'pyproject.toml', '.git' },
 })
 
