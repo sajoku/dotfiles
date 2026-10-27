@@ -28,8 +28,8 @@ gui:
       - '#d20f39'
     defaultFgColor:
       - '#4c4f69'
-  authorColors:
-    '*': '#7287fd'
+    authorColors:
+      '*': '#7287fd'
 customCommands:
   - key: '<c-g>'
     context: 'files'
