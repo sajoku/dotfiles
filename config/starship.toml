@@ -1,6 +1,6 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
-palette = "catppuccin_mocha"
+palette = "muliphen"
 
 format = """
 $username\
@@ -14,69 +14,69 @@ $line_break\
 $python\
 $character"""
 
+# Only shown over SSH or as root, like before
+[username]
+format = "[ $user ]($style)"
+style_user = "bold fg:midnight bg:blue"
+style_root = "bold fg:midnight bg:coral"
+
+[hostname]
+format = "[ $ssh_symbol$hostname ]($style)"
+ssh_symbol = "⇄ "
+style = "bold fg:midnight bg:lavender"
+
 [directory]
-style = "cyan"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+style = "bold fg:midnight bg:soft"
+read_only = " ⊘ "
+read_only_style = "bold fg:soft bg:coral"
 truncation_length = 2
+truncation_symbol = "…/"
 
 [git_branch]
-format = "[$branch]($style)"
-style = "bright-black"
+format = "[ $branch ]($style)"
+style = "fg:soft bg:indigo"
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+format = "([ $state( $progress_current/$progress_total) ]($style))"
+style = "bold fg:midnight bg:amber"
 
+# The pill only appears when there is something to report
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-# Zero-width spaces: each symbol is invisible, but non-empty, so the "*" still appears.
-conflicted = "\u200B"
-untracked = "\u200B"
-modified = "\u200B"
-staged = "\u200B"
-renamed = "\u200B"
-deleted = "\u200B"
+format = "([ $all_status$ahead_behind ]($style))"
+style = "bold fg:midnight bg:lavender"
+conflicted = "="
+untracked = "?"
+modified = "*"
+staged = "+"
+renamed = "»"
+deleted = "−"
 stashed = "≡"
+ahead = "⇡$count"
+behind = "⇣$count"
+diverged = "⇕"
 
 [cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
+format = " [$duration]($style)"
+style = "bold fg:amber"
 
 [python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
+format = "[($virtualenv )]($style)"
+style = "italic fg:lavender"
 detect_extensions = []
 detect_files = []
 
 [character]
-success_symbol = "[→](sky)"
-error_symbol = "[λ](rosewater)"
-vimcmd_symbol = "[→](green)"
+success_symbol = "[→](bold glow)"
+error_symbol = "[λ](bold coral)"
+vimcmd_symbol = "[←](bold lavender)"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[palettes.muliphen]
+midnight = "#0b1026"
+indigo = "#232c6b"
+blue = "#5b7cff"
+glow = "#8fa8ff"
+soft = "#b8c6ff"
+lavender = "#c4b5fd"
+amber = "#ffc46b"
+coral = "#ff6b8b"
