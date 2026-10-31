@@ -1,7 +1,7 @@
-function tmux_chooser --description "Making sure we always run in tmux"
-  if test "$TMUX" != ""
-    return
-  end
+function tmux_chooser --description "Run in tmux, unless already in tmux or Rex"
+    if set -q TMUX; or set -q REX_SESSION
+        return
+    end
 
-  tat
+    tat
 end

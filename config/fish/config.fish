@@ -18,12 +18,24 @@ if status is-interactive
 
     pyenv init - | source
 
+    ##starship init fish | source
+    #function starship_transient_prompt_func
+    #  starship module character
+    #end
     #starship init fish | source
-    function starship_transient_prompt_func
-      starship module character
+    #enable_transience
+    if status is-interactive
+        set -g pierre_gamut p3
+        set -g pierre_dark dark
+        set -g pierre_light light
+        source ~/dotfiles/pierre/starship/pierre.fish
+    
+        function starship_transient_prompt_func
+            starship module character
+        end
+        starship init fish | source
+        enable_transience
     end
-    starship init fish | source
-    enable_transience
 
     mise activate fish | source
 end
@@ -55,7 +67,7 @@ if command -v mise >/dev/null 2>&1
     mise hook-env -s fish | source
   end
 
-  set -gx PATH ~/.cargo/bin $PATH
+ set -gx PATH ~/.cargo/bin $PATH
 end
 
 ~/.local/bin/mise activate fish | source
