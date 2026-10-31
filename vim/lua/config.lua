@@ -2,6 +2,7 @@
 require("config.options")
 require("config.filetypes")
 require("config.keymaps")
+require("rex.navigation")
 
 
 require('mini.pairs').setup()
@@ -26,13 +27,27 @@ require('nvim-highlight-colors').setup({})
 -- })
 -- vim.cmd.colorscheme "catppuccin-nvim"
 
-require("apple-system-colors").setup({
-  transparent = false, -- let the terminal background show through
-  italic_comments = true,
-  -- nvim_set_hl() specs by group, or function(colors, variant) returning them
-  overrides = {},
+-- require("apple-system-colors").setup({
+--   transparent = false, -- let the terminal background show through
+--   italic_comments = true,
+--   -- nvim_set_hl() specs by group, or function(colors, variant) returning them
+--   overrides = {},
+-- })
+-- vim.cmd.colorscheme "apple-system-colors"
+
+require("pierre").setup({
+  gamut = "p3",
+  bold = true,
+  italic = true,
+  styles = {
+    comments = { italic = true },
+    keywords = { italic = true },
+    conditionals = { "italic", "bold" },
+    functions = { bold = true },
+  },
 })
-vim.cmd.colorscheme "apple-system-colors"
+vim.cmd.colorscheme("pierre")
+
 
 -- Default options
 -- require("modus-themes").setup({
