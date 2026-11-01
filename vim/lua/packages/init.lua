@@ -67,7 +67,7 @@ vim.pack.add({
 })
 
 vim.pack.add({
-  "/Users/sajoku/dotfiles/pierre"
+  "~/dotfiles/pierre"
 })
 
 if not vim.env.REX_SESSION then
