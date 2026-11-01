@@ -1,39 +1,17 @@
 -- Require config files
+require("vimrc")
+require("config.options")
 require("config.options")
 require("config.filetypes")
 require("config.keymaps")
 require("rex.navigation")
 
+require("config.vim_test")
+
 
 require('mini.pairs').setup()
 
 require('nvim-highlight-colors').setup({})
-
--- local hipatterns = require('mini.hipatterns')
--- hipatterns.setup({
---   highlighters = {
---     -- Highlight hex color strings (`#rrggbb`) using that color
---     hex_color = hipatterns.gen_highlighter.hex_color(),
---   },
---})
-
-
--- require("catppuccin").setup({
---   flavour = "auto",   -- latte, frappe, macchiato, mocha
---   background = {      -- :h background
---     light = "latte",
---     dark = "frappe",
---   },
--- })
--- vim.cmd.colorscheme "catppuccin-nvim"
-
--- require("apple-system-colors").setup({
---   transparent = false, -- let the terminal background show through
---   italic_comments = true,
---   -- nvim_set_hl() specs by group, or function(colors, variant) returning them
---   overrides = {},
--- })
--- vim.cmd.colorscheme "apple-system-colors"
 
 require("pierre").setup({
   gamut = "p3",
@@ -48,43 +26,6 @@ require("pierre").setup({
 })
 vim.cmd.colorscheme("pierre")
 
-
--- Default options
--- require("modus-themes").setup({
---   style = "auto",
-
---   -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
---   variants = {
---     modus_operandi = "tinted", -- Set variant for `modus_operandi` style
---     modus_vivendi = "tinted",  -- Set variant for `modus_vivendi` style
---   },
---   transparent = false,         -- Transparent background (as supported by the terminal)
---   dim_inactive = false,        -- "non-current" windows are dimmed
---   hide_inactive_statusline = true,
---   line_nr_column_background = true,
---   sign_column_background = true,
---   styles = {
---     comments = { italic = true },
---     keywords = { italic = true },
---     functions = {},
---     variables = {},
---   },
---   on_colors = function(colors)
---     colors.error = colors.red_faint -- Change error color to the "faint" variant
---   end,
---   on_highlights = function(highlight, color)
---     highlight.Boolean = { fg = color.green } -- Change Boolean highlight to use the green color
---   end,
--- })
--- vim.cmd.colorscheme "modus"
-
--- require("flume").setup({
---   schema = vim.o.background == "light" and "mesa" or "dusk",
---   transparent = true,
---   terminal_colors = true,
---   styles = { comments = { italic = true }, keywors = { italic = true } }
--- })
-
 require('vim._core.ui2').enable()
 
 require("lualine").setup {
@@ -94,7 +35,6 @@ require("lualine").setup {
     icons_enabled = true,
   }
 }
-
 
 require("trouble").setup({
   position = "bottom",            -- bottom/top/left/right

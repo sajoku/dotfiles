@@ -54,9 +54,6 @@ vim.pack.add({
   "https://github.com/miikanissi/modus-themes.nvim",
   "https://github.com/mitander/flume.nvim",
 
-  "https://github.com/christoomey/vim-tmux-navigator",
-  "https://github.com/christoomey/vim-tmux-runner",
-  "https://github.com/preservim/vimux",
   "https://github.com/immanuwell/droast.nvim"
 })
 
@@ -68,6 +65,18 @@ vim.pack.add({
 vim.pack.add({
   "https://github.com/sajoku/apple-system-colors.nvim"
 })
+
+vim.pack.add({
+  "/Users/sajoku/dotfiles/pierre"
+})
+
+if not vim.env.REX_SESSION then
+  vim.pack.add({
+    "https://github.com/christoomey/vim-tmux-navigator",
+    "https://github.com/christoomey/vim-tmux-runner",
+    "https://github.com/preservim/vimux",
+  })
+end
 
 
 vim.api.nvim_create_autocmd("PackChanged", {

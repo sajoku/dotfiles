@@ -200,11 +200,6 @@ nmap <silent> <leader>g :TestVisit<CR>
 if filereadable(expand(printf('%s/%s', getcwd(), '.vimrc.test_runners')))
   exec printf('source %s/%s', getcwd(), '.vimrc.test_runners')
 endif
-let g:test#strategy = 'vimux'
-""let g:test#strategy = 'neovim_sticky'
-let g:test#echo_command = 0
-let g:test#neovim#start_normal = 1 " If using neovim strategy
-let test#neovim#term_position = "vert botright 70"
 
 
 "Python support for vim tmux runner
